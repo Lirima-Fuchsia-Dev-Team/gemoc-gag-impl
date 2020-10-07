@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/inria.fuchsia.gag.specification/src-gen" creationIcons="false"
+    editDirectory="/inria.fuchsia.gag.specification.edit/src-gen" editorDirectory="/inria.fuchsia.gag.specification.editor/src-gen"
+    modelPluginID="inria.fuchsia.gag.specification" modelName="Specification" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>specification.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Specification" basePackage="inria.fuchsia.gag" disposableProviderFactory="true"
+      ecorePackage="specification.ecore#/">
+    <genClasses ecoreClass="specification.ecore#//Rule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/left_hand_side"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Rule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Rule/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/right_hand_side_service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//GAG">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//GAG/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//GAG/name"/>
+      <genOperations ecoreOperation="specification.ecore#//GAG/addRule">
+        <genParameters ecoreParameter="specification.ecore#//GAG/addRule/rule"/>
+      </genOperations>
+      <genOperations ecoreOperation="specification.ecore#//GAG/removeRule">
+        <genParameters ecoreParameter="specification.ecore#//GAG/removeRule/rule"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Value">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Value/sub_value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Value/defined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Value/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Value/name"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Service">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Service/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Service/output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Service/name"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Guard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/conditions_on_patern_variables"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
