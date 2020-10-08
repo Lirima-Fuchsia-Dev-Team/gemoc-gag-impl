@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.concurrent.xdsml">
+    <XDSML_Definition codeExecutor_class="markedgraphl.xdsml.api.impl.MarkedGraphLCodeExecutor" modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.sample.markedgraph.xdsml.MarkedGraphL" solver_class="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare.moc.impl.CcslSolver" toCCSLQVTOFilePath="/org.gemoc.sample.markedgraph.dse/qvto-gen/modeling/MarkedGraphL.qvto" xdsmlFilePath="/org.gemoc.sample.markedgraph.xdsml/src/org/gemoc/sample/markedgraph/xdsml/markedgraph.melange" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.sample.markedgraph.xdsml.MarkedGraphLMT" uri="http://markedgraphlmt/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Transition:markedgraph.aspects.TransitionAspect;MarkedGraph:markedgraph.aspects.MarkedGraphAspect;Place:markedgraph.aspects.PlaceAspect" entryPoints="" exactType="org.gemoc.sample.markedgraph.xdsml.MarkedGraphLMT" id="org.gemoc.sample.markedgraph.xdsml.MarkedGraphL" uri="http://www.example.org/markedgraph">
+      <adapter class="org.gemoc.sample.markedgraph.xdsml.markedgraphl.adapters.markedgraphlmt.MarkedGraphLAdapter" modeltypeId="org.gemoc.sample.markedgraph.xdsml.MarkedGraphLMT" />
+    </language>
+  </extension>
+</plugin>

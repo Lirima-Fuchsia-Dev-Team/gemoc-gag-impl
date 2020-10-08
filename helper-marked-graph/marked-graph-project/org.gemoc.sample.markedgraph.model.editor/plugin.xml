@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated markedgraph -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="markedgraph.presentation.MarkedgraphModelWizardID"
+            name="%_UI_MarkedgraphModelWizard_label"
+            class="markedgraph.presentation.MarkedgraphModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MarkedgraphModelFile.gif">
+         <description>%_UI_MarkedgraphModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated markedgraph -->
+      <editor
+            id="markedgraph.presentation.MarkedgraphEditorID"
+            name="%_UI_MarkedgraphEditor_label"
+            icon="icons/full/obj16/MarkedgraphModelFile.gif"
+            extensions="markedgraph"
+            class="markedgraph.presentation.MarkedgraphEditor"
+            contributorClass="markedgraph.presentation.MarkedgraphActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
