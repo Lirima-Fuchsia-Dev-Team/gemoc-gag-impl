@@ -29,10 +29,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guard">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditions_on_patern_variables"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionPath" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left_hand_side" lowerBound="1"
