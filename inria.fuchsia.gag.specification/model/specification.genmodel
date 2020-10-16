@@ -32,7 +32,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Service/name"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Guard">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/functionPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/classPath"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Rule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/left_hand_side"/>

@@ -391,9 +391,9 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_g8xs0AJvEeubEaFPelAnxg" name="functionPath : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="specification.ecore#//Guard/functionPath"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="specification.ecore#//Guard/functionPath"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_g8xs0AJvEeubEaFPelAnxg" name="classPath : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="specification.ecore#//Guard/classPath"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="specification.ecore#//Guard/classPath"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_tBDXAQJvEeubEaFPelAnxg" labelAlignment="LEFT" description="_QqNvMQJtEeubEaFPelAnxg">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
