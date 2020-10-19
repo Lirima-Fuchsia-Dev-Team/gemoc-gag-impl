@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="inria.fuchsia.gag.xdsml.GagMT" uri="http://inria.fuchsia.gag.xdsml.gagmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="inria.fuchsia.gag.xdsml.GagMT" id="inria.fuchsia.gag.xdsml.Gag" uri="http://inria.fuchsia.gag.xdsml.gag/process/">
+      <adapter class="inria.fuchsia.gag.xdsml.gag.adapters.gagmt.GagAdapter" modeltypeId="inria.fuchsia.gag.xdsml.GagMT"/>
+    </language>
+  </extension>
+</plugin>
