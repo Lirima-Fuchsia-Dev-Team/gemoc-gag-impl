@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="is_open" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appliedRule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instance_of" eType="ecore:EClass ../../inria.fuchsia.gag.specification/model/specification.ecore#//Service"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associated_to" eType="ecore:EClass ../../inria.fuchsia.gag.specification/model/specification.ecore#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sub_task" upperBound="-1"
         eType="#//Task" containment="true"/>
   </eClassifiers>

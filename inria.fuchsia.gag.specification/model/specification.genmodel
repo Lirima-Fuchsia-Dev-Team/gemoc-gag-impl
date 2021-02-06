@@ -20,11 +20,10 @@
         <genParameters ecoreParameter="specification.ecore#//GAG/removeRule/rule"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="specification.ecore#//Value">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Value/sub_value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Value/defined"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Value/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Value/name"/>
+    <genClasses ecoreClass="specification.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Attribute/value"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Service">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Service/input"/>
