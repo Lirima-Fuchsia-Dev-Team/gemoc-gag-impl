@@ -14,7 +14,19 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="privat
  fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:="reexport",
  fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:="reexport",
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:="reexport",
- inria.fuchsia.gag.process;bundle-version=0.0.0;visibility:=private
+ inria.fuchsia.gag.process;bundle-version=0.0.0;visibility:=private,
+ inria.fuchsia.gag.gag
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
+Export-Package: inria.fuchsia.gag.gagmt.specification,
+ inria.fuchsia.gag.gagmt.process.util,
+ inria.fuchsia.gag.gagmt.process.impl,
+ inria.fuchsia.gag.gagmt.specification.impl,
+ inria.fuchsia.gag.gagmt.specification.util,
+ inria.fuchsia.gag.gagmt.process,
+ inria.fuchsia.gag,
+ inria.fuchsia.gag.gag.adapters.gagmt.specification,
+ inria.fuchsia.gag.gag.adapters.gagmt,
+ inria.fuchsia.gag.gag.adapters.gagmt.process
+
