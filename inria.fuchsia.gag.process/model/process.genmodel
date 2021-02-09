@@ -24,7 +24,10 @@
     <genClasses ecoreClass="process.ecore#//Configuration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Configuration/root"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//Configuration/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Configuration/consistent_to"/>
+    </genClasses>
+    <genClasses ecoreClass="process.ecore#//Process">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference process.ecore#//Process/configuration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference process.ecore#//Process/specification"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Specification" ecorePackage="../../inria.fuchsia.gag.specification/model/specification.ecore#/">
@@ -38,11 +41,10 @@
         <genParameters ecoreParameter="../../inria.fuchsia.gag.specification/model/specification.ecore#//GAG/removeRule/rule"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="../../inria.fuchsia.gag.specification/model/specification.ecore#//Value">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../inria.fuchsia.gag.specification/model/specification.ecore#//Value/sub_value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Value/defined"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Value/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Value/name"/>
+    <genClasses ecoreClass="../../inria.fuchsia.gag.specification/model/specification.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Attribute/value"/>
     </genClasses>
     <genClasses ecoreClass="../../inria.fuchsia.gag.specification/model/specification.ecore#//Service">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../inria.fuchsia.gag.specification/model/specification.ecore#//Service/input"/>
@@ -50,8 +52,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Service/name"/>
     </genClasses>
     <genClasses ecoreClass="../../inria.fuchsia.gag.specification/model/specification.ecore#//Guard">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Guard/pattern"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Guard/conditions_on_patern_variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../inria.fuchsia.gag.specification/model/specification.ecore#//Guard/classPath"/>
     </genClasses>
     <genClasses ecoreClass="../../inria.fuchsia.gag.specification/model/specification.ecore#//Rule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../inria.fuchsia.gag.specification/model/specification.ecore#//Rule/left_hand_side"/>

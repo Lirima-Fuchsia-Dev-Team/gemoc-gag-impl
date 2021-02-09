@@ -34,11 +34,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/classPath"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Rule">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/left_hand_side"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/left_hand_side"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Rule/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Rule/parameters"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/right_hand_side_service"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/guard"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/right_hand_side_service"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Rule/guard"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

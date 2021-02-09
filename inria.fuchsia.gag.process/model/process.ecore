@@ -16,7 +16,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Configuration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//Task"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="consistent_to" lowerBound="1"
-        eType="ecore:EClass ../../inria.fuchsia.gag.specification/model/specification.ecore#//GAG"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
+        eType="#//Configuration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1"
+        eType="ecore:EClass ../../inria.fuchsia.gag.specification/model/specification.ecore#//GAG"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
