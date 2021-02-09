@@ -15,14 +15,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//Task/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//Task/is_open"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//Task/appliedRule"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Task/associated_to"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Task/associated_to"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference process.ecore#//Task/sub_task"/>
       <genOperations ecoreOperation="process.ecore#//Task/applyRule">
         <genParameters ecoreParameter="process.ecore#//Task/applyRule/rule"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="process.ecore#//Configuration">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Configuration/root"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Configuration/root"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//Configuration/name"/>
     </genClasses>
     <genClasses ecoreClass="process.ecore#//Process">
