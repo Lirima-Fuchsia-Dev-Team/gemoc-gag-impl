@@ -8,7 +8,8 @@
     <!-- @generated GagMT -->
     <package class="inria.fuchsia.gag.gagmt.specification.SpecificationPackage" genModel="model-gen/GagMT.genmodel" uri="http://inria.fuchsia.gag.gagmt/specification/"/>
   </extension>
-  <extension point="fr.inria.diverse.melange.modeltype">
+  
+<extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="inria.fuchsia.gag.GagMT" uri="http://inria.fuchsia.gag.gagmt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
