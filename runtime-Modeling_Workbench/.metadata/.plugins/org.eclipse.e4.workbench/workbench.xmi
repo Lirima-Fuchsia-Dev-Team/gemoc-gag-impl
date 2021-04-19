@@ -72,6 +72,7 @@
           <tags>persp.newWizSC:org.eclipse.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewMoCProject</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_bKQhUaEwEeuIS-aAMEjDYg" selectedElement="_bKQhWKEwEeuIS-aAMEjDYg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_bKQhUqEwEeuIS-aAMEjDYg" elementId="topLeft" containerData="2500" selectedElement="_bKQhU6EwEeuIS-aAMEjDYg">
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_bKQhU6EwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_bJ58AKEwEeuIS-aAMEjDYg" closeable="true">
                 <tags>View</tags>
                 <tags>categoryTag:General</tags>
@@ -136,7 +137,6 @@
                 </children>
                 <children xsi:type="basic:PartStack" xmi:id="_bKQhZqEwEeuIS-aAMEjDYg" elementId="bottomRight" containerData="4000" selectedElement="_ZdRloKExEeudV6pgujyzzw">
                   <tags>Gemoc</tags>
-                  <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_bKQhZ6EwEeuIS-aAMEjDYg" elementId="org.eclipse.emf.ecoretools.internal.views.EClassHierarchyView" toBeRendered="false" ref="_bKEUEKEwEeuIS-aAMEjDYg" closeable="true">
                     <tags>View</tags>
                     <tags>categoryTag:Ecore Tools</tags>
@@ -206,6 +206,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_bNe0cKEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -326,8 +328,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:Gemoc</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_ZegUsKExEeudV6pgujyzzw" elementId="org.eclipse.gemoc.executionframework.ui.views.engine.EnginesStatusView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -341,7 +341,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_a2OLAKEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_QrtpYKExEeudV6pgujyzzw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ZDVRMKEwEeuIS-aAMEjDYg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Ivu4AKE2EeugxuhlgzptJg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ZDVRMKEwEeuIS-aAMEjDYg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_a2OyEKEwEeuIS-aAMEjDYg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -369,7 +369,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_a2PZIKEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Qr6dsKExEeudV6pgujyzzw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_ZDUDEqEwEeuIS-aAMEjDYg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_IwGrcKE2EeugxuhlgzptJg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_ZDUDEqEwEeuIS-aAMEjDYg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_a2PZIaEwEeuIS-aAMEjDYg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -923,6 +923,11 @@
   <bindingTables xmi:id="_bJY-paEwEeuIS-aAMEjDYg" bindingContext="_bJY-pKEwEeuIS-aAMEjDYg"/>
   <bindingTables xmi:id="_bJZlsaEwEeuIS-aAMEjDYg" bindingContext="_bJZlsKEwEeuIS-aAMEjDYg"/>
   <bindingTables xmi:id="_bJZls6EwEeuIS-aAMEjDYg" bindingContext="_bJZlsqEwEeuIS-aAMEjDYg"/>
+  <bindingTables xmi:id="_Vb76UKE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.diagramEditor" bindingContext="_Vaw1oKE1EeuSIrqmMkG2Bw">
+    <bindings xmi:id="_VcUU0KE1EeuSIrqmMkG2Bw" keySequence="SHIFT+DEL" command="_Vapg66E1EeuSIrqmMkG2Bw"/>
+    <bindings xmi:id="_VcZNUKE1EeuSIrqmMkG2Bw" keySequence="CTRL+O" command="_Vapg6aE1EeuSIrqmMkG2Bw"/>
+    <bindings xmi:id="_VcgiEKE1EeuSIrqmMkG2Bw" keySequence="CTRL+F5" command="_VakoY6E1EeuSIrqmMkG2Bw"/>
+  </bindingTables>
   <rootContext xmi:id="_ZAjC16EwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_ZAjC2KEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="In Windows" description="A window is open">
       <children xmi:id="_ZAjC2aEwEeuIS-aAMEjDYg" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="%bindingcontext.name.bindingView"/>
@@ -974,6 +979,7 @@
       <children xmi:id="_ZDg3a6EwEeuIS-aAMEjDYg" elementId="org.eclipse.egit.ui.ReflogView" name="In Git Reflog View"/>
       <children xmi:id="_ZDg3bKEwEeuIS-aAMEjDYg" elementId="org.eclipse.sirius.table.ui.EditorID.tableContext" name="DTable Editing" description="Sirius DTable Editing"/>
       <children xmi:id="_ZDg3cqEwEeuIS-aAMEjDYg" elementId="org.eclipse.egit.ui.RepositoriesView" name="In Git Repositories View"/>
+      <children xmi:id="_Vaw1oKE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.diagramEditor" name="Graphiti Diagram"/>
     </children>
     <children xmi:id="_ZAjC2qEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.contexts.dialog" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="In Dialogs" description="A dialog is open"/>
     <children xmi:id="_ZDg3QqEwEeuIS-aAMEjDYg" elementId="org.eclipse.acceleo.ui.interpreter.interpreterview" name="Acceleo Interpreter View"/>
@@ -1562,6 +1568,12 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.xtext.xtext.ui.graph"/>
     <tags>View</tags>
     <tags>categoryTag:Xtext</tags>
+  </descriptors>
+  <descriptors xmi:id="_VqZNEKE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.internal.editor.thumbnailview" label="Miniature View" iconURI="platform:/plugin/org.eclipse.graphiti.ui/icons/outline/thumbnail.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.graphiti.ui.internal.editor.ThumbNailView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.graphiti.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -2674,6 +2686,21 @@
   <commands xmi:id="_ap_F0KEwEeuIS-aAMEjDYg" elementId="AUTOGEN:::org.eclipse.jdt.debug.ui.DisplayViewActions/org.eclipse.jdt.debug.ui.displayViewToolbar.Display" commandName="Display" description="Display Result of Evaluating Selected Text" category="_ZDELXqEwEeuIS-aAMEjDYg"/>
   <commands xmi:id="_ap_F0aEwEeuIS-aAMEjDYg" elementId="AUTOGEN:::org.eclipse.jdt.debug.ui.DisplayViewActions/org.eclipse.jdt.debug.ui.displayViewToolbar.Inspect" commandName="Inspect" description="Inspect Result of Evaluating Selected Text" category="_ZDELXqEwEeuIS-aAMEjDYg"/>
   <commands xmi:id="_ap_F0qEwEeuIS-aAMEjDYg" elementId="AUTOGEN:::org.eclipse.pde.ui.logViewActions/org.eclipse.jdt.debug.ui.LogViewActions.showStackTrace" commandName="Show Stack Trace in Console View" description="Show Stack Trace in Console View" category="_ZDELXqEwEeuIS-aAMEjDYg"/>
+  <commands xmi:id="_VakoY6E1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.internal.action.UpdateAction" commandName="Update" description="Update selected Pictogram Elements" category="_VakoYqE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_VakoZKE1EeuSIrqmMkG2Bw" elementId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" commandName="Generates xDSML project for languages defined with xMOF" description="Generates xDSML project for languages defined with xMOF" category="_VakoYaE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_Vapg4KE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.examples.common.commands.openDiagramFromFile" commandName="Open Graphiti Diagram from File" category="_ZDELXqEwEeuIS-aAMEjDYg"/>
+  <commands xmi:id="_Vapg4aE1EeuSIrqmMkG2Bw" elementId="org.modelexecution.fumldebug.libraryregistry.load" commandName="Load Registered Library" description="Load Registered Library" category="_ZDELXqEwEeuIS-aAMEjDYg"/>
+  <commands xmi:id="_Vapg4qE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.internal.action.ToggleContextPadAction" commandName="Hide Context Buttons" description="Toggle hiding the context buttons" category="_VakoYqE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_Vapg46E1EeuSIrqmMkG2Bw" elementId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode" commandName="GenerateXMOFCode" description="Generates code for languages defined with xMOF" category="_VakoYaE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_Vapg5KE1EeuSIrqmMkG2Bw" elementId="org.modelexecution.xmof.gemoc.extension.sirius.AddAnimationLayer" commandName="addAnimationLayer" category="_ZDELXqEwEeuIS-aAMEjDYg"/>
+  <commands xmi:id="_Vapg5aE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.featureExecutionCommand" commandName="Feature execution" description="Execute a custom feature on selected Pictogram Elements" category="_VakoYqE1EeuSIrqmMkG2Bw">
+    <parameters xmi:id="_Vapg5qE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.featureHint" name="Hint" optional="false"/>
+  </commands>
+  <commands xmi:id="_Vapg56E1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.examples.common.saveAsImageCommand" commandName="Save as image..." category="_ZDELXqEwEeuIS-aAMEjDYg"/>
+  <commands xmi:id="_Vapg6KE1EeuSIrqmMkG2Bw" elementId="org.modelexecution.xmof.gemoc.ui.GenerateAll" commandName="GenerateAll" description="Generate all code artefacts for languages defined with xMOF" category="_VakoYaE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_Vapg6aE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.internal.action.SaveImageAction" commandName="Export Diagram" description="Export Diagram" category="_VakoYqE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_Vapg6qE1EeuSIrqmMkG2Bw" elementId="org.modelexecution.xmof.gemoc.ui.AddStepAnnotation" commandName="Add Step Annotation" description="Adds an xMOF Step annotation to the selected BehavioredEOperation" category="_VakoYaE1EeuSIrqmMkG2Bw"/>
+  <commands xmi:id="_Vapg66E1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.internal.action.RemoveAction" commandName="Remove" description="Remove selected Pictogram Elements" category="_VakoYqE1EeuSIrqmMkG2Bw"/>
   <addons xmi:id="_ZAjC26EwEeuIS-aAMEjDYg" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_ZAjC3KEwEeuIS-aAMEjDYg" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_ZAjC3aEwEeuIS-aAMEjDYg" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2685,7 +2712,7 @@
   <addons xmi:id="_ZAjC46EwEeuIS-aAMEjDYg" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_ZAjC5KEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.workbench" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_ZA95kKEwEeuIS-aAMEjDYg" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_Pxn_saExEeudV6pgujyzzw" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_G0ViUaE2EeugxuhlgzptJg" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_ZDDkQKEwEeuIS-aAMEjDYg" elementId="org.eclipse.team.ui.category.team" name="Team" description="Actions that apply when working with a Team"/>
   <categories xmi:id="_ZDDkQaEwEeuIS-aAMEjDYg" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
@@ -2731,4 +2758,6 @@
   <categories xmi:id="_ZDELXKEwEeuIS-aAMEjDYg" elementId="org.eclipse.gemoc.execution.sequential.javaxdsml.ide.ui.GemocSequentialLanguageNature.category" name="GemocSequentialLanguage Project Nature commands"/>
   <categories xmi:id="_ZDELXaEwEeuIS-aAMEjDYg" elementId="org.eclipse.xtext.ui.category.refactoring" name="Refactoring" description="Refactoring Commands"/>
   <categories xmi:id="_ZDELXqEwEeuIS-aAMEjDYg" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
+  <categories xmi:id="_VakoYaE1EeuSIrqmMkG2Bw" elementId="org.modelexecution.xmof.gemoc.ui.commands" name="xMOF commands"/>
+  <categories xmi:id="_VakoYqE1EeuSIrqmMkG2Bw" elementId="org.eclipse.graphiti.ui.Graphiti_Category" name="Edit" description="Graphiti Diagram Editor"/>
 </application:Application>

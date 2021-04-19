@@ -22,7 +22,7 @@ public class GAGAspect {
   
   protected static void _privk3_run(final GAGAspectGAGAspectProperties _self_, final GAG _self) {
     final MessagingSystemManager msManager = new MessagingSystemManager();
-    final MessagingSystem ms = msManager.createBestPlatformMessagingSystem("Gag", "Simple gag\ninterpreter");
+    final MessagingSystem ms = msManager.createBestPlatformMessagingSystem("Gag", "Simple gag\r\ninterpreter");
     URI _uRI = _self.eResource().getURI();
     String _plus = ("Hello world on " + _uRI);
     ms.debug(_plus, "Gag");
