@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.14.0";visibility:="priva
  org.eclipse.gemoc.xdsmlframework.api;bundle-version="4.0.0";visibility:="reexport",
  org.eclipse.gemoc.executionframework.engine;bundle-version="4.0.0";visibility:="reexport",
  fr.inria.gag.specification.model;bundle-version="0.0.0";visibility:="private",
- org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version=0.0.0;visibility:=reexport
+ org.eclipse.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ fr.inria.gag.k3dsa;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
