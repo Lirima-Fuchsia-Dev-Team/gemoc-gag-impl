@@ -123,7 +123,7 @@ public interface SpecificationPackage extends EPackage {
 	int SERVICE__RULES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Input Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Input Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +132,7 @@ public interface SpecificationPackage extends EPackage {
 	int SERVICE__INPUT_PARAMETERS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Output Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Output Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +187,7 @@ public interface SpecificationPackage extends EPackage {
 	int DECOMPOSITION_RULE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Guard</b></em>' reference.
+	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +196,7 @@ public interface SpecificationPackage extends EPackage {
 	int DECOMPOSITION_RULE__GUARD = 0;
 
 	/**
-	 * The feature id for the '<em><b>Semantic</b></em>' reference.
+	 * The feature id for the '<em><b>Semantic</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -396,10 +396,10 @@ public interface SpecificationPackage extends EPackage {
 	EReference getService_Rules();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.inria.gag.specification.model.specification.Service#getInputParameters <em>Input Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.Service#getInputParameters <em>Input Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Input Parameters</em>'.
+	 * @return the meta object for the containment reference list '<em>Input Parameters</em>'.
 	 * @see fr.inria.gag.specification.model.specification.Service#getInputParameters()
 	 * @see #getService()
 	 * @generated
@@ -407,10 +407,10 @@ public interface SpecificationPackage extends EPackage {
 	EReference getService_InputParameters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.inria.gag.specification.model.specification.Service#getOutputParameters <em>Output Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.Service#getOutputParameters <em>Output Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Output Parameters</em>'.
+	 * @return the meta object for the containment reference list '<em>Output Parameters</em>'.
 	 * @see fr.inria.gag.specification.model.specification.Service#getOutputParameters()
 	 * @see #getService()
 	 * @generated
@@ -450,10 +450,10 @@ public interface SpecificationPackage extends EPackage {
 	EClass getDecompositionRule();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getGuard <em>Guard</em>}'.
+	 * Returns the meta object for the containment reference '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getGuard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Guard</em>'.
+	 * @return the meta object for the containment reference '<em>Guard</em>'.
 	 * @see fr.inria.gag.specification.model.specification.DecompositionRule#getGuard()
 	 * @see #getDecompositionRule()
 	 * @generated
@@ -461,10 +461,10 @@ public interface SpecificationPackage extends EPackage {
 	EReference getDecompositionRule_Guard();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getSemantic <em>Semantic</em>}'.
+	 * Returns the meta object for the containment reference '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getSemantic <em>Semantic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Semantic</em>'.
+	 * @return the meta object for the containment reference '<em>Semantic</em>'.
 	 * @see fr.inria.gag.specification.model.specification.DecompositionRule#getSemantic()
 	 * @see #getDecompositionRule()
 	 * @generated
@@ -613,7 +613,7 @@ public interface SpecificationPackage extends EPackage {
 		EReference SERVICE__RULES = eINSTANCE.getService_Rules();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Input Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -621,7 +621,7 @@ public interface SpecificationPackage extends EPackage {
 		EReference SERVICE__INPUT_PARAMETERS = eINSTANCE.getService_InputParameters();
 
 		/**
-		 * The meta object literal for the '<em><b>Output Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Output Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -655,7 +655,7 @@ public interface SpecificationPackage extends EPackage {
 		EClass DECOMPOSITION_RULE = eINSTANCE.getDecompositionRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Guard</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -663,7 +663,7 @@ public interface SpecificationPackage extends EPackage {
 		EReference DECOMPOSITION_RULE__GUARD = eINSTANCE.getDecompositionRule_Guard();
 
 		/**
-		 * The meta object literal for the '<em><b>Semantic</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Semantic</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

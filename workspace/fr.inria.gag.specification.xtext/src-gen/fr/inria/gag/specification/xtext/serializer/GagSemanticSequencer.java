@@ -64,7 +64,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DecompositionRule returns DecompositionRule
 	 *
 	 * Constraint:
-	 *     (name=EString guard=[Guard|EString]? semantic=[SemanticRule|EString]? (subServices+=[Service|EString] subServices+=[Service|EString]*)?)
+	 *     (name=EString (subServices+=[Service|EString] subServices+=[Service|EString]*)? guard=Guard? semantic=SemanticRule?)
 	 */
 	protected void sequence_DecompositionRule(ISerializationContext context, DecompositionRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -133,10 +133,10 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         isAxiom?='isAxiom' 
 	 *         name=EString 
-	 *         (inputParameters+=[Parameter|EString] inputParameters+=[Parameter|EString]*)? 
-	 *         (outputParameters+=[Parameter|EString] outputParameters+=[Parameter|EString]*)? 
 	 *         rules+=DecompositionRule 
-	 *         rules+=DecompositionRule*
+	 *         rules+=DecompositionRule* 
+	 *         (inputParameters+=Parameter inputParameters+=Parameter*)? 
+	 *         (outputParameters+=Parameter outputParameters+=Parameter*)?
 	 *     )
 	 */
 	protected void sequence_Service(ISerializationContext context, Service semanticObject) {

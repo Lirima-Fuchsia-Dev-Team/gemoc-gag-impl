@@ -12,6 +12,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -40,7 +41,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implements DecompositionRule {
 	/**
-	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
+	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGuard()
@@ -50,7 +51,7 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	protected Guard guard;
 
 	/**
-	 * The cached value of the '{@link #getSemantic() <em>Semantic</em>}' reference.
+	 * The cached value of the '{@link #getSemantic() <em>Semantic</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSemantic()
@@ -114,15 +115,6 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public Guard getGuard() {
-		if (guard != null && guard.eIsProxy()) {
-			InternalEObject oldGuard = (InternalEObject) guard;
-			guard = (Guard) eResolveProxy(oldGuard);
-			if (guard != oldGuard) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SpecificationPackage.DECOMPOSITION_RULE__GUARD, oldGuard, guard));
-			}
-		}
 		return guard;
 	}
 
@@ -131,8 +123,18 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Guard basicGetGuard() {
-		return guard;
+	public NotificationChain basicSetGuard(Guard newGuard, NotificationChain msgs) {
+		Guard oldGuard = guard;
+		guard = newGuard;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					SpecificationPackage.DECOMPOSITION_RULE__GUARD, oldGuard, newGuard);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -141,11 +143,20 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void setGuard(Guard newGuard) {
-		Guard oldGuard = guard;
-		guard = newGuard;
-		if (eNotificationRequired())
+		if (newGuard != guard) {
+			NotificationChain msgs = null;
+			if (guard != null)
+				msgs = ((InternalEObject) guard).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.DECOMPOSITION_RULE__GUARD, null, msgs);
+			if (newGuard != null)
+				msgs = ((InternalEObject) newGuard).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.DECOMPOSITION_RULE__GUARD, null, msgs);
+			msgs = basicSetGuard(newGuard, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.DECOMPOSITION_RULE__GUARD,
-					oldGuard, guard));
+					newGuard, newGuard));
 	}
 
 	/**
@@ -154,15 +165,6 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public SemanticRule getSemantic() {
-		if (semantic != null && semantic.eIsProxy()) {
-			InternalEObject oldSemantic = (InternalEObject) semantic;
-			semantic = (SemanticRule) eResolveProxy(oldSemantic);
-			if (semantic != oldSemantic) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC, oldSemantic, semantic));
-			}
-		}
 		return semantic;
 	}
 
@@ -171,8 +173,18 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SemanticRule basicGetSemantic() {
-		return semantic;
+	public NotificationChain basicSetSemantic(SemanticRule newSemantic, NotificationChain msgs) {
+		SemanticRule oldSemantic = semantic;
+		semantic = newSemantic;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC, oldSemantic, newSemantic);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -181,11 +193,20 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void setSemantic(SemanticRule newSemantic) {
-		SemanticRule oldSemantic = semantic;
-		semantic = newSemantic;
-		if (eNotificationRequired())
+		if (newSemantic != semantic) {
+			NotificationChain msgs = null;
+			if (semantic != null)
+				msgs = ((InternalEObject) semantic).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC, null, msgs);
+			if (newSemantic != null)
+				msgs = ((InternalEObject) newSemantic).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC, null, msgs);
+			msgs = basicSetSemantic(newSemantic, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC,
-					oldSemantic, semantic));
+					newSemantic, newSemantic));
 	}
 
 	/**
@@ -229,16 +250,28 @@ public class DecompositionRuleImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SpecificationPackage.DECOMPOSITION_RULE__GUARD:
+			return basicSetGuard(null, msgs);
+		case SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC:
+			return basicSetSemantic(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SpecificationPackage.DECOMPOSITION_RULE__GUARD:
-			if (resolve)
-				return getGuard();
-			return basicGetGuard();
+			return getGuard();
 		case SpecificationPackage.DECOMPOSITION_RULE__SEMANTIC:
-			if (resolve)
-				return getSemantic();
-			return basicGetSemantic();
+			return getSemantic();
 		case SpecificationPackage.DECOMPOSITION_RULE__SUB_SERVICES:
 			return getSubServices();
 		case SpecificationPackage.DECOMPOSITION_RULE__NAME:

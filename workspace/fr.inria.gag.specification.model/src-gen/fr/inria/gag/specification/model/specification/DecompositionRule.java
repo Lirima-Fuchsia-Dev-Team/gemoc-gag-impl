@@ -27,52 +27,52 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DecompositionRule extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Guard</b></em>' reference.
+	 * Returns the value of the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Guard</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guard</em>' reference.
+	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Guard)
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getDecompositionRule_Guard()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Guard getGuard();
 
 	/**
-	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getGuard <em>Guard</em>}' reference.
+	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getGuard <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Guard</em>' reference.
+	 * @param value the new value of the '<em>Guard</em>' containment reference.
 	 * @see #getGuard()
 	 * @generated
 	 */
 	void setGuard(Guard value);
 
 	/**
-	 * Returns the value of the '<em><b>Semantic</b></em>' reference.
+	 * Returns the value of the '<em><b>Semantic</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Semantic</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semantic</em>' reference.
+	 * @return the value of the '<em>Semantic</em>' containment reference.
 	 * @see #setSemantic(SemanticRule)
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getDecompositionRule_Semantic()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	SemanticRule getSemantic();
 
 	/**
-	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getSemantic <em>Semantic</em>}' reference.
+	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.DecompositionRule#getSemantic <em>Semantic</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semantic</em>' reference.
+	 * @param value the new value of the '<em>Semantic</em>' containment reference.
 	 * @see #getSemantic()
 	 * @generated
 	 */

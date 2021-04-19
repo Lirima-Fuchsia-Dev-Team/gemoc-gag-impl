@@ -22,8 +22,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Service/isAxiom"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//DecompositionRule">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//DecompositionRule/guard"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//DecompositionRule/semantic"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//DecompositionRule/guard"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//DecompositionRule/semantic"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//DecompositionRule/subServices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//DecompositionRule/name"/>
     </genClasses>

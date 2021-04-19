@@ -44,7 +44,7 @@ public interface Service extends EObject {
 	EList<DecompositionRule> getRules();
 
 	/**
-	 * Returns the value of the '<em><b>Input Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Input Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -52,15 +52,15 @@ public interface Service extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input Parameters</em>' reference list.
+	 * @return the value of the '<em>Input Parameters</em>' containment reference list.
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getService_InputParameters()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getInputParameters();
 
 	/**
-	 * Returns the value of the '<em><b>Output Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Output Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -68,9 +68,9 @@ public interface Service extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output Parameters</em>' reference list.
+	 * @return the value of the '<em>Output Parameters</em>' containment reference list.
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getService_OutputParameters()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getOutputParameters();

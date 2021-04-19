@@ -1,8 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: fr.inria.gag.configuration.model
-Bundle-SymbolicName: fr.inria.gag.configuration.model; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: fr.inria.gag.configuration.model;singleton:=true
+Automatic-Module-Name: fr.inria.gag.configuration.model
 Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.inria.gag.configuration.model.configuration,
+ fr.inria.gag.configuration.model.configuration.impl,
+ fr.inria.gag.configuration.model.configuration.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime,
- fr.inria.gag.specification.model;bundle-version="0.1.0"
+ fr.inria.gag.specification.model;bundle-version="0.1.0";visibility:=reexport
+Bundle-ActivationPolicy: lazy

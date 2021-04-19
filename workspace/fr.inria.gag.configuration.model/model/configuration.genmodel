@@ -5,13 +5,14 @@
     editDirectory="/fr.inria.gag.configuration.model.edit/src-gen" editorDirectory="/fr.inria.gag.configuration.model.editor/src-gen"
     modelPluginID="fr.inria.gag.configuration.model" modelName="Configuration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    copyrightFields="false" usedGenPackages="../../fr.inria.gag.specification.model/model/specification.genmodel#//specification"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>configuration.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Configuration" basePackage="fr.inria.gag.configuration.model"
       disposableProviderFactory="true" ecorePackage="configuration.ecore#/">
     <genClasses ecoreClass="configuration.ecore#//Configuration">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/root"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/root"/>
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//Data">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Data/value"/>
@@ -19,37 +20,11 @@
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//Task">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/subTasks"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/inputs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/outputs"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/inputs"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/outputs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Task/appliedRule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Task/isOpen"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/service"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Specification" ecorePackage="../../fr.inria.gag.specification.model/model/specification.ecore#/">
-    <genClasses ecoreClass="../../fr.inria.gag.specification.model/model/specification.ecore#//GAG">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//GAG/services"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../fr.inria.gag.specification.model/model/specification.ecore#//GAG/name"/>
-    </genClasses>
-    <genClasses ecoreClass="../../fr.inria.gag.specification.model/model/specification.ecore#//Service">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//Service/rules"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//Service/inputParameters"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//Service/outputParameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../fr.inria.gag.specification.model/model/specification.ecore#//Service/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../fr.inria.gag.specification.model/model/specification.ecore#//Service/isAxiom"/>
-    </genClasses>
-    <genClasses ecoreClass="../../fr.inria.gag.specification.model/model/specification.ecore#//DecompositionRule">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//DecompositionRule/guard"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//DecompositionRule/semantic"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../fr.inria.gag.specification.model/model/specification.ecore#//DecompositionRule/subServices"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../fr.inria.gag.specification.model/model/specification.ecore#//DecompositionRule/name"/>
-    </genClasses>
-    <genClasses ecoreClass="../../fr.inria.gag.specification.model/model/specification.ecore#//Guard">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../fr.inria.gag.specification.model/model/specification.ecore#//Guard/classPath"/>
-    </genClasses>
-    <genClasses ecoreClass="../../fr.inria.gag.specification.model/model/specification.ecore#//SemanticRule"/>
-    <genClasses ecoreClass="../../fr.inria.gag.specification.model/model/specification.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../fr.inria.gag.specification.model/model/specification.ecore#//Parameter/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

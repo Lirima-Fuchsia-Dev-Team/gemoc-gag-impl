@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGagParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GAG'", "'{'", "'services'", "','", "'}'", "'isAxiom'", "'Service'", "'inputParameters'", "'('", "')'", "'outputParameters'", "'rules'", "'DecompositionRule'", "'guard'", "'semantic'", "'subServices'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GAG'", "'{'", "'services'", "','", "'}'", "'isAxiom'", "'Service'", "'rules'", "'inputParameters'", "'outputParameters'", "'DecompositionRule'", "'subServices'", "'('", "')'", "'guard'", "'semantic'", "'Parameter'", "'Guard'", "'classPath'", "'SemanticRule'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -35,11 +35,15 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=6;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -384,7 +388,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleService"
-    // InternalGag.g:186:1: ruleService returns [EObject current=null] : ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= 'rules' otherlv_17= '{' ( (lv_rules_18_0= ruleDecompositionRule ) ) (otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) ) )* otherlv_21= '}' otherlv_22= '}' ) ;
+    // InternalGag.g:186:1: ruleService returns [EObject current=null] : ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'rules' otherlv_5= '{' ( (lv_rules_6_0= ruleDecompositionRule ) ) (otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) ) )* otherlv_9= '}' (otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}' )? (otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}' )? otherlv_22= '}' ) ;
     public final EObject ruleService() throws RecognitionException {
         EObject current = null;
 
@@ -406,20 +410,28 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         Token otherlv_22=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        EObject lv_rules_18_0 = null;
+        EObject lv_rules_6_0 = null;
 
-        EObject lv_rules_20_0 = null;
+        EObject lv_rules_8_0 = null;
+
+        EObject lv_inputParameters_12_0 = null;
+
+        EObject lv_inputParameters_14_0 = null;
+
+        EObject lv_outputParameters_18_0 = null;
+
+        EObject lv_outputParameters_20_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGag.g:192:2: ( ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= 'rules' otherlv_17= '{' ( (lv_rules_18_0= ruleDecompositionRule ) ) (otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) ) )* otherlv_21= '}' otherlv_22= '}' ) )
-            // InternalGag.g:193:2: ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= 'rules' otherlv_17= '{' ( (lv_rules_18_0= ruleDecompositionRule ) ) (otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) ) )* otherlv_21= '}' otherlv_22= '}' )
+            // InternalGag.g:192:2: ( ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'rules' otherlv_5= '{' ( (lv_rules_6_0= ruleDecompositionRule ) ) (otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) ) )* otherlv_9= '}' (otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}' )? (otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}' )? otherlv_22= '}' ) )
+            // InternalGag.g:193:2: ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'rules' otherlv_5= '{' ( (lv_rules_6_0= ruleDecompositionRule ) ) (otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) ) )* otherlv_9= '}' (otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}' )? (otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}' )? otherlv_22= '}' )
             {
-            // InternalGag.g:193:2: ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= 'rules' otherlv_17= '{' ( (lv_rules_18_0= ruleDecompositionRule ) ) (otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) ) )* otherlv_21= '}' otherlv_22= '}' )
-            // InternalGag.g:194:3: ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )? otherlv_16= 'rules' otherlv_17= '{' ( (lv_rules_18_0= ruleDecompositionRule ) ) (otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) ) )* otherlv_21= '}' otherlv_22= '}'
+            // InternalGag.g:193:2: ( ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'rules' otherlv_5= '{' ( (lv_rules_6_0= ruleDecompositionRule ) ) (otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) ) )* otherlv_9= '}' (otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}' )? (otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}' )? otherlv_22= '}' )
+            // InternalGag.g:194:3: ( (lv_isAxiom_0_0= 'isAxiom' ) ) otherlv_1= 'Service' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'rules' otherlv_5= '{' ( (lv_rules_6_0= ruleDecompositionRule ) ) (otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) ) )* otherlv_9= '}' (otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}' )? (otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}' )? otherlv_22= '}'
             {
             // InternalGag.g:194:3: ( (lv_isAxiom_0_0= 'isAxiom' ) )
             // InternalGag.g:195:4: (lv_isAxiom_0_0= 'isAxiom' )
@@ -482,251 +494,25 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalGag.g:235:3: (otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            otherlv_4=(Token)match(input,18,FOLLOW_4); 
 
-            if ( (LA4_0==18) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalGag.g:236:4: otherlv_4= 'inputParameters' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')'
-                    {
-                    otherlv_4=(Token)match(input,18,FOLLOW_11); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getServiceAccess().getInputParametersKeyword_4_0());
-                    			
-                    otherlv_5=(Token)match(input,19,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getServiceAccess().getLeftParenthesisKeyword_4_1());
-                    			
-                    // InternalGag.g:244:4: ( ( ruleEString ) )
-                    // InternalGag.g:245:5: ( ruleEString )
-                    {
-                    // InternalGag.g:245:5: ( ruleEString )
-                    // InternalGag.g:246:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getServiceRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getServiceAccess().getInputParametersParameterCrossReference_4_2_0());
-                    					
-                    pushFollow(FOLLOW_12);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalGag.g:260:4: (otherlv_7= ',' ( ( ruleEString ) ) )*
-                    loop3:
-                    do {
-                        int alt3=2;
-                        int LA3_0 = input.LA(1);
-
-                        if ( (LA3_0==14) ) {
-                            alt3=1;
-                        }
-
-
-                        switch (alt3) {
-                    	case 1 :
-                    	    // InternalGag.g:261:5: otherlv_7= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_7=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_7, grammarAccess.getServiceAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalGag.g:265:5: ( ( ruleEString ) )
-                    	    // InternalGag.g:266:6: ( ruleEString )
-                    	    {
-                    	    // InternalGag.g:266:6: ( ruleEString )
-                    	    // InternalGag.g:267:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getServiceRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getServiceAccess().getInputParametersParameterCrossReference_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_12);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop3;
-                        }
-                    } while (true);
-
-                    otherlv_9=(Token)match(input,20,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getServiceAccess().getRightParenthesisKeyword_4_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalGag.g:287:3: (otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')' )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==21) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalGag.g:288:4: otherlv_10= 'outputParameters' otherlv_11= '(' ( ( ruleEString ) ) (otherlv_13= ',' ( ( ruleEString ) ) )* otherlv_15= ')'
-                    {
-                    otherlv_10=(Token)match(input,21,FOLLOW_11); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getServiceAccess().getOutputParametersKeyword_5_0());
-                    			
-                    otherlv_11=(Token)match(input,19,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getServiceAccess().getLeftParenthesisKeyword_5_1());
-                    			
-                    // InternalGag.g:296:4: ( ( ruleEString ) )
-                    // InternalGag.g:297:5: ( ruleEString )
-                    {
-                    // InternalGag.g:297:5: ( ruleEString )
-                    // InternalGag.g:298:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getServiceRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getServiceAccess().getOutputParametersParameterCrossReference_5_2_0());
-                    					
-                    pushFollow(FOLLOW_12);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalGag.g:312:4: (otherlv_13= ',' ( ( ruleEString ) ) )*
-                    loop5:
-                    do {
-                        int alt5=2;
-                        int LA5_0 = input.LA(1);
-
-                        if ( (LA5_0==14) ) {
-                            alt5=1;
-                        }
-
-
-                        switch (alt5) {
-                    	case 1 :
-                    	    // InternalGag.g:313:5: otherlv_13= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_13=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_13, grammarAccess.getServiceAccess().getCommaKeyword_5_3_0());
-                    	    				
-                    	    // InternalGag.g:317:5: ( ( ruleEString ) )
-                    	    // InternalGag.g:318:6: ( ruleEString )
-                    	    {
-                    	    // InternalGag.g:318:6: ( ruleEString )
-                    	    // InternalGag.g:319:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getServiceRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getServiceAccess().getOutputParametersParameterCrossReference_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_12);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop5;
-                        }
-                    } while (true);
-
-                    otherlv_15=(Token)match(input,20,FOLLOW_14); 
-
-                    				newLeafNode(otherlv_15, grammarAccess.getServiceAccess().getRightParenthesisKeyword_5_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_16=(Token)match(input,22,FOLLOW_4); 
-
-            			newLeafNode(otherlv_16, grammarAccess.getServiceAccess().getRulesKeyword_6());
+            			newLeafNode(otherlv_4, grammarAccess.getServiceAccess().getRulesKeyword_4());
             		
-            otherlv_17=(Token)match(input,12,FOLLOW_15); 
+            otherlv_5=(Token)match(input,12,FOLLOW_11); 
 
-            			newLeafNode(otherlv_17, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_5, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_5());
             		
-            // InternalGag.g:347:3: ( (lv_rules_18_0= ruleDecompositionRule ) )
-            // InternalGag.g:348:4: (lv_rules_18_0= ruleDecompositionRule )
+            // InternalGag.g:243:3: ( (lv_rules_6_0= ruleDecompositionRule ) )
+            // InternalGag.g:244:4: (lv_rules_6_0= ruleDecompositionRule )
             {
-            // InternalGag.g:348:4: (lv_rules_18_0= ruleDecompositionRule )
-            // InternalGag.g:349:5: lv_rules_18_0= ruleDecompositionRule
+            // InternalGag.g:244:4: (lv_rules_6_0= ruleDecompositionRule )
+            // InternalGag.g:245:5: lv_rules_6_0= ruleDecompositionRule
             {
 
-            					newCompositeNode(grammarAccess.getServiceAccess().getRulesDecompositionRuleParserRuleCall_8_0());
+            					newCompositeNode(grammarAccess.getServiceAccess().getRulesDecompositionRuleParserRuleCall_6_0());
             				
             pushFollow(FOLLOW_7);
-            lv_rules_18_0=ruleDecompositionRule();
+            lv_rules_6_0=ruleDecompositionRule();
 
             state._fsp--;
 
@@ -737,7 +523,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"rules",
-            						lv_rules_18_0,
+            						lv_rules_6_0,
             						"fr.inria.gag.specification.xtext.Gag.DecompositionRule");
             					afterParserOrEnumRuleCall();
             				
@@ -747,36 +533,36 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalGag.g:366:3: (otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) ) )*
-            loop7:
+            // InternalGag.g:262:3: (otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) ) )*
+            loop3:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( (LA7_0==14) ) {
-                    alt7=1;
+                if ( (LA3_0==14) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt3) {
             	case 1 :
-            	    // InternalGag.g:367:4: otherlv_19= ',' ( (lv_rules_20_0= ruleDecompositionRule ) )
+            	    // InternalGag.g:263:4: otherlv_7= ',' ( (lv_rules_8_0= ruleDecompositionRule ) )
             	    {
-            	    otherlv_19=(Token)match(input,14,FOLLOW_15); 
+            	    otherlv_7=(Token)match(input,14,FOLLOW_11); 
 
-            	    				newLeafNode(otherlv_19, grammarAccess.getServiceAccess().getCommaKeyword_9_0());
+            	    				newLeafNode(otherlv_7, grammarAccess.getServiceAccess().getCommaKeyword_7_0());
             	    			
-            	    // InternalGag.g:371:4: ( (lv_rules_20_0= ruleDecompositionRule ) )
-            	    // InternalGag.g:372:5: (lv_rules_20_0= ruleDecompositionRule )
+            	    // InternalGag.g:267:4: ( (lv_rules_8_0= ruleDecompositionRule ) )
+            	    // InternalGag.g:268:5: (lv_rules_8_0= ruleDecompositionRule )
             	    {
-            	    // InternalGag.g:372:5: (lv_rules_20_0= ruleDecompositionRule )
-            	    // InternalGag.g:373:6: lv_rules_20_0= ruleDecompositionRule
+            	    // InternalGag.g:268:5: (lv_rules_8_0= ruleDecompositionRule )
+            	    // InternalGag.g:269:6: lv_rules_8_0= ruleDecompositionRule
             	    {
 
-            	    						newCompositeNode(grammarAccess.getServiceAccess().getRulesDecompositionRuleParserRuleCall_9_1_0());
+            	    						newCompositeNode(grammarAccess.getServiceAccess().getRulesDecompositionRuleParserRuleCall_7_1_0());
             	    					
             	    pushFollow(FOLLOW_7);
-            	    lv_rules_20_0=ruleDecompositionRule();
+            	    lv_rules_8_0=ruleDecompositionRule();
 
             	    state._fsp--;
 
@@ -787,7 +573,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"rules",
-            	    							lv_rules_20_0,
+            	    							lv_rules_8_0,
             	    							"fr.inria.gag.specification.xtext.Gag.DecompositionRule");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -802,14 +588,252 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop3;
                 }
             } while (true);
 
-            otherlv_21=(Token)match(input,15,FOLLOW_8); 
+            otherlv_9=(Token)match(input,15,FOLLOW_12); 
 
-            			newLeafNode(otherlv_21, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_10());
+            			newLeafNode(otherlv_9, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_8());
             		
+            // InternalGag.g:291:3: (otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==19) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalGag.g:292:4: otherlv_10= 'inputParameters' otherlv_11= '{' ( (lv_inputParameters_12_0= ruleParameter ) ) (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )* otherlv_15= '}'
+                    {
+                    otherlv_10=(Token)match(input,19,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_10, grammarAccess.getServiceAccess().getInputParametersKeyword_9_0());
+                    			
+                    otherlv_11=(Token)match(input,12,FOLLOW_13); 
+
+                    				newLeafNode(otherlv_11, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_9_1());
+                    			
+                    // InternalGag.g:300:4: ( (lv_inputParameters_12_0= ruleParameter ) )
+                    // InternalGag.g:301:5: (lv_inputParameters_12_0= ruleParameter )
+                    {
+                    // InternalGag.g:301:5: (lv_inputParameters_12_0= ruleParameter )
+                    // InternalGag.g:302:6: lv_inputParameters_12_0= ruleParameter
+                    {
+
+                    						newCompositeNode(grammarAccess.getServiceAccess().getInputParametersParameterParserRuleCall_9_2_0());
+                    					
+                    pushFollow(FOLLOW_7);
+                    lv_inputParameters_12_0=ruleParameter();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getServiceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"inputParameters",
+                    							lv_inputParameters_12_0,
+                    							"fr.inria.gag.specification.xtext.Gag.Parameter");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalGag.g:319:4: (otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) ) )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0==14) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // InternalGag.g:320:5: otherlv_13= ',' ( (lv_inputParameters_14_0= ruleParameter ) )
+                    	    {
+                    	    otherlv_13=(Token)match(input,14,FOLLOW_13); 
+
+                    	    					newLeafNode(otherlv_13, grammarAccess.getServiceAccess().getCommaKeyword_9_3_0());
+                    	    				
+                    	    // InternalGag.g:324:5: ( (lv_inputParameters_14_0= ruleParameter ) )
+                    	    // InternalGag.g:325:6: (lv_inputParameters_14_0= ruleParameter )
+                    	    {
+                    	    // InternalGag.g:325:6: (lv_inputParameters_14_0= ruleParameter )
+                    	    // InternalGag.g:326:7: lv_inputParameters_14_0= ruleParameter
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getServiceAccess().getInputParametersParameterParserRuleCall_9_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_7);
+                    	    lv_inputParameters_14_0=ruleParameter();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getServiceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"inputParameters",
+                    	    								lv_inputParameters_14_0,
+                    	    								"fr.inria.gag.specification.xtext.Gag.Parameter");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop4;
+                        }
+                    } while (true);
+
+                    otherlv_15=(Token)match(input,15,FOLLOW_14); 
+
+                    				newLeafNode(otherlv_15, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_9_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalGag.g:349:3: (otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}' )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==20) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalGag.g:350:4: otherlv_16= 'outputParameters' otherlv_17= '{' ( (lv_outputParameters_18_0= ruleParameter ) ) (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )* otherlv_21= '}'
+                    {
+                    otherlv_16=(Token)match(input,20,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_16, grammarAccess.getServiceAccess().getOutputParametersKeyword_10_0());
+                    			
+                    otherlv_17=(Token)match(input,12,FOLLOW_13); 
+
+                    				newLeafNode(otherlv_17, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_10_1());
+                    			
+                    // InternalGag.g:358:4: ( (lv_outputParameters_18_0= ruleParameter ) )
+                    // InternalGag.g:359:5: (lv_outputParameters_18_0= ruleParameter )
+                    {
+                    // InternalGag.g:359:5: (lv_outputParameters_18_0= ruleParameter )
+                    // InternalGag.g:360:6: lv_outputParameters_18_0= ruleParameter
+                    {
+
+                    						newCompositeNode(grammarAccess.getServiceAccess().getOutputParametersParameterParserRuleCall_10_2_0());
+                    					
+                    pushFollow(FOLLOW_7);
+                    lv_outputParameters_18_0=ruleParameter();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getServiceRule());
+                    						}
+                    						add(
+                    							current,
+                    							"outputParameters",
+                    							lv_outputParameters_18_0,
+                    							"fr.inria.gag.specification.xtext.Gag.Parameter");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalGag.g:377:4: (otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) ) )*
+                    loop6:
+                    do {
+                        int alt6=2;
+                        int LA6_0 = input.LA(1);
+
+                        if ( (LA6_0==14) ) {
+                            alt6=1;
+                        }
+
+
+                        switch (alt6) {
+                    	case 1 :
+                    	    // InternalGag.g:378:5: otherlv_19= ',' ( (lv_outputParameters_20_0= ruleParameter ) )
+                    	    {
+                    	    otherlv_19=(Token)match(input,14,FOLLOW_13); 
+
+                    	    					newLeafNode(otherlv_19, grammarAccess.getServiceAccess().getCommaKeyword_10_3_0());
+                    	    				
+                    	    // InternalGag.g:382:5: ( (lv_outputParameters_20_0= ruleParameter ) )
+                    	    // InternalGag.g:383:6: (lv_outputParameters_20_0= ruleParameter )
+                    	    {
+                    	    // InternalGag.g:383:6: (lv_outputParameters_20_0= ruleParameter )
+                    	    // InternalGag.g:384:7: lv_outputParameters_20_0= ruleParameter
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getServiceAccess().getOutputParametersParameterParserRuleCall_10_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_7);
+                    	    lv_outputParameters_20_0=ruleParameter();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getServiceRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"outputParameters",
+                    	    								lv_outputParameters_20_0,
+                    	    								"fr.inria.gag.specification.xtext.Gag.Parameter");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop6;
+                        }
+                    } while (true);
+
+                    otherlv_21=(Token)match(input,15,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_21, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_10_4());
+                    			
+
+                    }
+                    break;
+
+            }
+
             otherlv_22=(Token)match(input,15,FOLLOW_2); 
 
             			newLeafNode(otherlv_22, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_11());
@@ -837,7 +861,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalGag.g:403:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalGag.g:415:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -845,8 +869,8 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGag.g:403:47: (iv_ruleEString= ruleEString EOF )
-            // InternalGag.g:404:2: iv_ruleEString= ruleEString EOF
+            // InternalGag.g:415:47: (iv_ruleEString= ruleEString EOF )
+            // InternalGag.g:416:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -873,7 +897,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalGag.g:410:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalGag.g:422:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -884,10 +908,10 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:416:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalGag.g:417:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalGag.g:428:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalGag.g:429:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalGag.g:417:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalGag.g:429:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -905,7 +929,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalGag.g:418:3: this_STRING_0= RULE_STRING
+                    // InternalGag.g:430:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -918,7 +942,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGag.g:426:3: this_ID_1= RULE_ID
+                    // InternalGag.g:438:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -953,7 +977,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDecompositionRule"
-    // InternalGag.g:437:1: entryRuleDecompositionRule returns [EObject current=null] : iv_ruleDecompositionRule= ruleDecompositionRule EOF ;
+    // InternalGag.g:449:1: entryRuleDecompositionRule returns [EObject current=null] : iv_ruleDecompositionRule= ruleDecompositionRule EOF ;
     public final EObject entryRuleDecompositionRule() throws RecognitionException {
         EObject current = null;
 
@@ -961,8 +985,8 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGag.g:437:58: (iv_ruleDecompositionRule= ruleDecompositionRule EOF )
-            // InternalGag.g:438:2: iv_ruleDecompositionRule= ruleDecompositionRule EOF
+            // InternalGag.g:449:58: (iv_ruleDecompositionRule= ruleDecompositionRule EOF )
+            // InternalGag.g:450:2: iv_ruleDecompositionRule= ruleDecompositionRule EOF
             {
              newCompositeNode(grammarAccess.getDecompositionRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -989,34 +1013,38 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDecompositionRule"
-    // InternalGag.g:444:1: ruleDecompositionRule returns [EObject current=null] : ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'guard' ( ( ruleEString ) ) )? (otherlv_6= 'semantic' ( ( ruleEString ) ) )? (otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )? otherlv_14= '}' ) ;
+    // InternalGag.g:456:1: ruleDecompositionRule returns [EObject current=null] : ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) ) )? (otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) ) )? otherlv_14= '}' ) ;
     public final EObject ruleDecompositionRule() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
         Token otherlv_9=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
         Token otherlv_14=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+        EObject lv_guard_11_0 = null;
+
+        EObject lv_semantic_13_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGag.g:450:2: ( ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'guard' ( ( ruleEString ) ) )? (otherlv_6= 'semantic' ( ( ruleEString ) ) )? (otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )? otherlv_14= '}' ) )
-            // InternalGag.g:451:2: ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'guard' ( ( ruleEString ) ) )? (otherlv_6= 'semantic' ( ( ruleEString ) ) )? (otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )? otherlv_14= '}' )
+            // InternalGag.g:462:2: ( ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) ) )? (otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) ) )? otherlv_14= '}' ) )
+            // InternalGag.g:463:2: ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) ) )? (otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) ) )? otherlv_14= '}' )
             {
-            // InternalGag.g:451:2: ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'guard' ( ( ruleEString ) ) )? (otherlv_6= 'semantic' ( ( ruleEString ) ) )? (otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )? otherlv_14= '}' )
-            // InternalGag.g:452:3: () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'guard' ( ( ruleEString ) ) )? (otherlv_6= 'semantic' ( ( ruleEString ) ) )? (otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )? otherlv_14= '}'
+            // InternalGag.g:463:2: ( () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) ) )? (otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) ) )? otherlv_14= '}' )
+            // InternalGag.g:464:3: () otherlv_1= 'DecompositionRule' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? (otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) ) )? (otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) ) )? otherlv_14= '}'
             {
-            // InternalGag.g:452:3: ()
-            // InternalGag.g:453:4: 
+            // InternalGag.g:464:3: ()
+            // InternalGag.g:465:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1026,15 +1054,15 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_3); 
+            otherlv_1=(Token)match(input,21,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDecompositionRuleAccess().getDecompositionRuleKeyword_1());
             		
-            // InternalGag.g:463:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalGag.g:464:4: (lv_name_2_0= ruleEString )
+            // InternalGag.g:475:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalGag.g:476:4: (lv_name_2_0= ruleEString )
             {
-            // InternalGag.g:464:4: (lv_name_2_0= ruleEString )
-            // InternalGag.g:465:5: lv_name_2_0= ruleEString
+            // InternalGag.g:476:4: (lv_name_2_0= ruleEString )
+            // InternalGag.g:477:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getDecompositionRuleAccess().getNameEStringParserRuleCall_2_0());
@@ -1061,30 +1089,34 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_16); 
+            otherlv_3=(Token)match(input,12,FOLLOW_15); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDecompositionRuleAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalGag.g:486:3: (otherlv_4= 'guard' ( ( ruleEString ) ) )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalGag.g:498:3: (otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==24) ) {
-                alt9=1;
+            if ( (LA10_0==22) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalGag.g:487:4: otherlv_4= 'guard' ( ( ruleEString ) )
+                    // InternalGag.g:499:4: otherlv_4= 'subServices' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')'
                     {
-                    otherlv_4=(Token)match(input,24,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,22,FOLLOW_16); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getDecompositionRuleAccess().getGuardKeyword_4_0());
+                    				newLeafNode(otherlv_4, grammarAccess.getDecompositionRuleAccess().getSubServicesKeyword_4_0());
                     			
-                    // InternalGag.g:491:4: ( ( ruleEString ) )
-                    // InternalGag.g:492:5: ( ruleEString )
+                    otherlv_5=(Token)match(input,23,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getDecompositionRuleAccess().getLeftParenthesisKeyword_4_1());
+                    			
+                    // InternalGag.g:507:4: ( ( ruleEString ) )
+                    // InternalGag.g:508:5: ( ruleEString )
                     {
-                    // InternalGag.g:492:5: ( ruleEString )
-                    // InternalGag.g:493:6: ruleEString
+                    // InternalGag.g:508:5: ( ruleEString )
+                    // InternalGag.g:509:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -1092,7 +1124,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     						}
                     					
 
-                    						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getGuardGuardCrossReference_4_1_0());
+                    						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSubServicesServiceCrossReference_4_2_0());
                     					
                     pushFollow(FOLLOW_17);
                     ruleEString();
@@ -1108,132 +1140,30 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
                     }
 
-
-                    }
-                    break;
-
-            }
-
-            // InternalGag.g:508:3: (otherlv_6= 'semantic' ( ( ruleEString ) ) )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==25) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalGag.g:509:4: otherlv_6= 'semantic' ( ( ruleEString ) )
-                    {
-                    otherlv_6=(Token)match(input,25,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getDecompositionRuleAccess().getSemanticKeyword_5_0());
-                    			
-                    // InternalGag.g:513:4: ( ( ruleEString ) )
-                    // InternalGag.g:514:5: ( ruleEString )
-                    {
-                    // InternalGag.g:514:5: ( ruleEString )
-                    // InternalGag.g:515:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDecompositionRuleRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSemanticSemanticRuleCrossReference_5_1_0());
-                    					
-                    pushFollow(FOLLOW_18);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalGag.g:530:3: (otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==26) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalGag.g:531:4: otherlv_8= 'subServices' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')'
-                    {
-                    otherlv_8=(Token)match(input,26,FOLLOW_11); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getDecompositionRuleAccess().getSubServicesKeyword_6_0());
-                    			
-                    otherlv_9=(Token)match(input,19,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getDecompositionRuleAccess().getLeftParenthesisKeyword_6_1());
-                    			
-                    // InternalGag.g:539:4: ( ( ruleEString ) )
-                    // InternalGag.g:540:5: ( ruleEString )
-                    {
-                    // InternalGag.g:540:5: ( ruleEString )
-                    // InternalGag.g:541:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDecompositionRuleRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSubServicesServiceCrossReference_6_2_0());
-                    					
-                    pushFollow(FOLLOW_12);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalGag.g:555:4: (otherlv_11= ',' ( ( ruleEString ) ) )*
-                    loop11:
+                    // InternalGag.g:523:4: (otherlv_7= ',' ( ( ruleEString ) ) )*
+                    loop9:
                     do {
-                        int alt11=2;
-                        int LA11_0 = input.LA(1);
+                        int alt9=2;
+                        int LA9_0 = input.LA(1);
 
-                        if ( (LA11_0==14) ) {
-                            alt11=1;
+                        if ( (LA9_0==14) ) {
+                            alt9=1;
                         }
 
 
-                        switch (alt11) {
+                        switch (alt9) {
                     	case 1 :
-                    	    // InternalGag.g:556:5: otherlv_11= ',' ( ( ruleEString ) )
+                    	    // InternalGag.g:524:5: otherlv_7= ',' ( ( ruleEString ) )
                     	    {
-                    	    otherlv_11=(Token)match(input,14,FOLLOW_3); 
+                    	    otherlv_7=(Token)match(input,14,FOLLOW_3); 
 
-                    	    					newLeafNode(otherlv_11, grammarAccess.getDecompositionRuleAccess().getCommaKeyword_6_3_0());
+                    	    					newLeafNode(otherlv_7, grammarAccess.getDecompositionRuleAccess().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalGag.g:560:5: ( ( ruleEString ) )
-                    	    // InternalGag.g:561:6: ( ruleEString )
+                    	    // InternalGag.g:528:5: ( ( ruleEString ) )
+                    	    // InternalGag.g:529:6: ( ruleEString )
                     	    {
-                    	    // InternalGag.g:561:6: ( ruleEString )
-                    	    // InternalGag.g:562:7: ruleEString
+                    	    // InternalGag.g:529:6: ( ruleEString )
+                    	    // InternalGag.g:530:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -1241,9 +1171,9 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     	    							}
                     	    						
 
-                    	    							newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSubServicesServiceCrossReference_6_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSubServicesServiceCrossReference_4_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_12);
+                    	    pushFollow(FOLLOW_17);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -1262,14 +1192,118 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop11;
+                    	    break loop9;
                         }
                     } while (true);
 
-                    otherlv_13=(Token)match(input,20,FOLLOW_8); 
+                    otherlv_9=(Token)match(input,24,FOLLOW_18); 
 
-                    				newLeafNode(otherlv_13, grammarAccess.getDecompositionRuleAccess().getRightParenthesisKeyword_6_4());
+                    				newLeafNode(otherlv_9, grammarAccess.getDecompositionRuleAccess().getRightParenthesisKeyword_4_4());
                     			
+
+                    }
+                    break;
+
+            }
+
+            // InternalGag.g:550:3: (otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) ) )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==25) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // InternalGag.g:551:4: otherlv_10= 'guard' ( (lv_guard_11_0= ruleGuard ) )
+                    {
+                    otherlv_10=(Token)match(input,25,FOLLOW_19); 
+
+                    				newLeafNode(otherlv_10, grammarAccess.getDecompositionRuleAccess().getGuardKeyword_5_0());
+                    			
+                    // InternalGag.g:555:4: ( (lv_guard_11_0= ruleGuard ) )
+                    // InternalGag.g:556:5: (lv_guard_11_0= ruleGuard )
+                    {
+                    // InternalGag.g:556:5: (lv_guard_11_0= ruleGuard )
+                    // InternalGag.g:557:6: lv_guard_11_0= ruleGuard
+                    {
+
+                    						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getGuardGuardParserRuleCall_5_1_0());
+                    					
+                    pushFollow(FOLLOW_20);
+                    lv_guard_11_0=ruleGuard();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDecompositionRuleRule());
+                    						}
+                    						set(
+                    							current,
+                    							"guard",
+                    							lv_guard_11_0,
+                    							"fr.inria.gag.specification.xtext.Gag.Guard");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalGag.g:575:3: (otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==26) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalGag.g:576:4: otherlv_12= 'semantic' ( (lv_semantic_13_0= ruleSemanticRule ) )
+                    {
+                    otherlv_12=(Token)match(input,26,FOLLOW_21); 
+
+                    				newLeafNode(otherlv_12, grammarAccess.getDecompositionRuleAccess().getSemanticKeyword_6_0());
+                    			
+                    // InternalGag.g:580:4: ( (lv_semantic_13_0= ruleSemanticRule ) )
+                    // InternalGag.g:581:5: (lv_semantic_13_0= ruleSemanticRule )
+                    {
+                    // InternalGag.g:581:5: (lv_semantic_13_0= ruleSemanticRule )
+                    // InternalGag.g:582:6: lv_semantic_13_0= ruleSemanticRule
+                    {
+
+                    						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSemanticSemanticRuleParserRuleCall_6_1_0());
+                    					
+                    pushFollow(FOLLOW_8);
+                    lv_semantic_13_0=ruleSemanticRule();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDecompositionRuleRule());
+                    						}
+                    						set(
+                    							current,
+                    							"semantic",
+                    							lv_semantic_13_0,
+                    							"fr.inria.gag.specification.xtext.Gag.SemanticRule");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
@@ -1301,6 +1335,374 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleDecompositionRule"
 
+
+    // $ANTLR start "entryRuleParameter"
+    // InternalGag.g:608:1: entryRuleParameter returns [EObject current=null] : iv_ruleParameter= ruleParameter EOF ;
+    public final EObject entryRuleParameter() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleParameter = null;
+
+
+        try {
+            // InternalGag.g:608:50: (iv_ruleParameter= ruleParameter EOF )
+            // InternalGag.g:609:2: iv_ruleParameter= ruleParameter EOF
+            {
+             newCompositeNode(grammarAccess.getParameterRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleParameter=ruleParameter();
+
+            state._fsp--;
+
+             current =iv_ruleParameter; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleParameter"
+
+
+    // $ANTLR start "ruleParameter"
+    // InternalGag.g:615:1: ruleParameter returns [EObject current=null] : ( () otherlv_1= 'Parameter' ( (lv_name_2_0= ruleEString ) ) ) ;
+    public final EObject ruleParameter() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGag.g:621:2: ( ( () otherlv_1= 'Parameter' ( (lv_name_2_0= ruleEString ) ) ) )
+            // InternalGag.g:622:2: ( () otherlv_1= 'Parameter' ( (lv_name_2_0= ruleEString ) ) )
+            {
+            // InternalGag.g:622:2: ( () otherlv_1= 'Parameter' ( (lv_name_2_0= ruleEString ) ) )
+            // InternalGag.g:623:3: () otherlv_1= 'Parameter' ( (lv_name_2_0= ruleEString ) )
+            {
+            // InternalGag.g:623:3: ()
+            // InternalGag.g:624:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getParameterAccess().getParameterAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,27,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getParameterAccess().getParameterKeyword_1());
+            		
+            // InternalGag.g:634:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalGag.g:635:4: (lv_name_2_0= ruleEString )
+            {
+            // InternalGag.g:635:4: (lv_name_2_0= ruleEString )
+            // InternalGag.g:636:5: lv_name_2_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getParameterAccess().getNameEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_2_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getParameterRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_2_0,
+            						"fr.inria.gag.specification.xtext.Gag.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleParameter"
+
+
+    // $ANTLR start "entryRuleGuard"
+    // InternalGag.g:657:1: entryRuleGuard returns [EObject current=null] : iv_ruleGuard= ruleGuard EOF ;
+    public final EObject entryRuleGuard() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleGuard = null;
+
+
+        try {
+            // InternalGag.g:657:46: (iv_ruleGuard= ruleGuard EOF )
+            // InternalGag.g:658:2: iv_ruleGuard= ruleGuard EOF
+            {
+             newCompositeNode(grammarAccess.getGuardRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleGuard=ruleGuard();
+
+            state._fsp--;
+
+             current =iv_ruleGuard; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleGuard"
+
+
+    // $ANTLR start "ruleGuard"
+    // InternalGag.g:664:1: ruleGuard returns [EObject current=null] : ( () otherlv_1= 'Guard' otherlv_2= '{' (otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) ) )? otherlv_5= '}' ) ;
+    public final EObject ruleGuard() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        AntlrDatatypeRuleToken lv_classPath_4_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGag.g:670:2: ( ( () otherlv_1= 'Guard' otherlv_2= '{' (otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) ) )? otherlv_5= '}' ) )
+            // InternalGag.g:671:2: ( () otherlv_1= 'Guard' otherlv_2= '{' (otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            {
+            // InternalGag.g:671:2: ( () otherlv_1= 'Guard' otherlv_2= '{' (otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            // InternalGag.g:672:3: () otherlv_1= 'Guard' otherlv_2= '{' (otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) ) )? otherlv_5= '}'
+            {
+            // InternalGag.g:672:3: ()
+            // InternalGag.g:673:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getGuardAccess().getGuardAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,28,FOLLOW_4); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getGuardAccess().getGuardKeyword_1());
+            		
+            otherlv_2=(Token)match(input,12,FOLLOW_22); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getGuardAccess().getLeftCurlyBracketKeyword_2());
+            		
+            // InternalGag.g:687:3: (otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==29) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalGag.g:688:4: otherlv_3= 'classPath' ( (lv_classPath_4_0= ruleEString ) )
+                    {
+                    otherlv_3=(Token)match(input,29,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getGuardAccess().getClassPathKeyword_3_0());
+                    			
+                    // InternalGag.g:692:4: ( (lv_classPath_4_0= ruleEString ) )
+                    // InternalGag.g:693:5: (lv_classPath_4_0= ruleEString )
+                    {
+                    // InternalGag.g:693:5: (lv_classPath_4_0= ruleEString )
+                    // InternalGag.g:694:6: lv_classPath_4_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getGuardAccess().getClassPathEStringParserRuleCall_3_1_0());
+                    					
+                    pushFollow(FOLLOW_8);
+                    lv_classPath_4_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getGuardRule());
+                    						}
+                    						set(
+                    							current,
+                    							"classPath",
+                    							lv_classPath_4_0,
+                    							"fr.inria.gag.specification.xtext.Gag.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_5=(Token)match(input,15,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getGuardAccess().getRightCurlyBracketKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleGuard"
+
+
+    // $ANTLR start "entryRuleSemanticRule"
+    // InternalGag.g:720:1: entryRuleSemanticRule returns [EObject current=null] : iv_ruleSemanticRule= ruleSemanticRule EOF ;
+    public final EObject entryRuleSemanticRule() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSemanticRule = null;
+
+
+        try {
+            // InternalGag.g:720:53: (iv_ruleSemanticRule= ruleSemanticRule EOF )
+            // InternalGag.g:721:2: iv_ruleSemanticRule= ruleSemanticRule EOF
+            {
+             newCompositeNode(grammarAccess.getSemanticRuleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSemanticRule=ruleSemanticRule();
+
+            state._fsp--;
+
+             current =iv_ruleSemanticRule; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSemanticRule"
+
+
+    // $ANTLR start "ruleSemanticRule"
+    // InternalGag.g:727:1: ruleSemanticRule returns [EObject current=null] : ( () otherlv_1= 'SemanticRule' ) ;
+    public final EObject ruleSemanticRule() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGag.g:733:2: ( ( () otherlv_1= 'SemanticRule' ) )
+            // InternalGag.g:734:2: ( () otherlv_1= 'SemanticRule' )
+            {
+            // InternalGag.g:734:2: ( () otherlv_1= 'SemanticRule' )
+            // InternalGag.g:735:3: () otherlv_1= 'SemanticRule'
+            {
+            // InternalGag.g:735:3: ()
+            // InternalGag.g:736:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getSemanticRuleAccess().getSemanticRuleAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,30,FOLLOW_2); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSemanticRuleAccess().getSemanticRuleKeyword_1());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSemanticRule"
+
     // Delegated rules
 
 
@@ -1315,14 +1717,18 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000000C000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000640000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000104000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000600000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000007008000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000006008000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004008000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000188000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000108000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000006408000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001004000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000006008000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004008000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000020008000L});
 
 }

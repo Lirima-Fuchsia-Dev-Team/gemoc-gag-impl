@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -53,7 +52,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected EList<DecompositionRule> rules;
 
 	/**
-	 * The cached value of the '{@link #getInputParameters() <em>Input Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getInputParameters() <em>Input Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInputParameters()
@@ -63,7 +62,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected EList<Parameter> inputParameters;
 
 	/**
-	 * The cached value of the '{@link #getOutputParameters() <em>Output Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getOutputParameters() <em>Output Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutputParameters()
@@ -151,7 +150,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 */
 	public EList<Parameter> getInputParameters() {
 		if (inputParameters == null) {
-			inputParameters = new EObjectResolvingEList<Parameter>(Parameter.class, this,
+			inputParameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
 					SpecificationPackage.SERVICE__INPUT_PARAMETERS);
 		}
 		return inputParameters;
@@ -164,7 +163,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 */
 	public EList<Parameter> getOutputParameters() {
 		if (outputParameters == null) {
-			outputParameters = new EObjectResolvingEList<Parameter>(Parameter.class, this,
+			outputParameters = new EObjectContainmentEList<Parameter>(Parameter.class, this,
 					SpecificationPackage.SERVICE__OUTPUT_PARAMETERS);
 		}
 		return outputParameters;
@@ -223,6 +222,10 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		switch (featureID) {
 		case SpecificationPackage.SERVICE__RULES:
 			return ((InternalEList<?>) getRules()).basicRemove(otherEnd, msgs);
+		case SpecificationPackage.SERVICE__INPUT_PARAMETERS:
+			return ((InternalEList<?>) getInputParameters()).basicRemove(otherEnd, msgs);
+		case SpecificationPackage.SERVICE__OUTPUT_PARAMETERS:
+			return ((InternalEList<?>) getOutputParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

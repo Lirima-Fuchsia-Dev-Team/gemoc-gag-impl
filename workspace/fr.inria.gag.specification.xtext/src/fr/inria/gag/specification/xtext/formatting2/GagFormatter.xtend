@@ -26,7 +26,13 @@ class GagFormatter extends AbstractFormatter2 {
 		for (decompositionRule : service.rules) {
 			decompositionRule.format
 		}
+		for (parameter : service.inputParameters) {
+			parameter.format
+		}
+		for (parameter : service.outputParameters) {
+			parameter.format
+		}
 	}
 	
-	// TODO: implement for 
+	// TODO: implement for DecompositionRule
 }

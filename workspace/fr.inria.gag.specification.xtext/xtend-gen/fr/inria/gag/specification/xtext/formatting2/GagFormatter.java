@@ -6,6 +6,7 @@ package fr.inria.gag.specification.xtext.formatting2;
 import com.google.inject.Inject;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
 import fr.inria.gag.specification.model.specification.GAG;
+import fr.inria.gag.specification.model.specification.Parameter;
 import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.xtext.services.GagGrammarAccess;
 import java.util.Arrays;
@@ -33,6 +34,14 @@ public class GagFormatter extends AbstractFormatter2 {
     EList<DecompositionRule> _rules = service.getRules();
     for (final DecompositionRule decompositionRule : _rules) {
       document.<DecompositionRule>format(decompositionRule);
+    }
+    EList<Parameter> _inputParameters = service.getInputParameters();
+    for (final Parameter parameter : _inputParameters) {
+      document.<Parameter>format(parameter);
+    }
+    EList<Parameter> _outputParameters = service.getOutputParameters();
+    for (final Parameter parameter_1 : _outputParameters) {
+      document.<Parameter>format(parameter_1);
     }
   }
   
