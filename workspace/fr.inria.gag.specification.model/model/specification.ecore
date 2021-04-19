@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="specification" nsURI="http://www.inria.fr/gag/specification" nsPrefix="specification">
+  <eClassifiers xsi:type="ecore:EClass" name="GAG">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1" eType="#//Service" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" lowerBound="1" upperBound="-1" eType="#//DecompositionRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputParameters" upperBound="-1" eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputParameters" upperBound="-1" eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAxiom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecompositionRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//Guard"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semantic" eType="#//SemanticRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subServices" upperBound="-1" eType="#//Service"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Guard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

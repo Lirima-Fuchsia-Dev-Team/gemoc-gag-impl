@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated specification -->
+      <package
+            uri="http://www.inria.fr/gag/specification"
+            class="fr.inria.gag.specification.model.specification.SpecificationPackage"
+            genModel="model/specification.genmodel"/>
+   </extension>
+
+</plugin>

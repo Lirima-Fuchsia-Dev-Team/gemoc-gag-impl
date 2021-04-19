@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.gag.configuration.model/src-gen" creationIcons="false"
+    editDirectory="/fr.inria.gag.configuration.model.edit/src-gen" editorDirectory="/fr.inria.gag.configuration.model.editor/src-gen"
+    modelPluginID="fr.inria.gag.configuration.model" modelName="Model" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>model.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Model" basePackage="fr.inria.gag.configuration" disposableProviderFactory="true"
+      ecorePackage="model.ecore#/">
+    <genClasses ecoreClass="model.ecore#//Configuration"/>
+    <genClasses ecoreClass="model.ecore#//Data"/>
+    <genClasses ecoreClass="model.ecore#//Task"/>
+  </genPackages>
+</genmodel:GenModel>
