@@ -422,28 +422,18 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_JPw4M6EQEeuCArx7s8ya2A" name="[0..*] inputParameters" sourceNode="_JPS-IKEQEeuCArx7s8ya2A" targetNode="_JPNekKEQEeuCArx7s8ya2A">
       <target xmi:type="ecore:EReference" href="specification.ecore#//Service/inputParameters"/>
       <semanticElements xmi:type="ecore:EReference" href="specification.ecore#//Service/inputParameters"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_JPxfQKEQEeuCArx7s8ya2A" routingStyle="manhattan" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_JPxfQqEQEeuCArx7s8ya2A" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_JPxfQaEQEeuCArx7s8ya2A" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_8CME0KEpEeuyEMWXzeWgSw" description="_JPvqEKEQEeuCArx7s8ya2A" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_8CME0qEpEeuyEMWXzeWgSw" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_8CME0aEpEeuyEMWXzeWgSw" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_JPxfRqEQEeuCArx7s8ya2A" name="[0..*] outputParameters" sourceNode="_JPS-IKEQEeuCArx7s8ya2A" targetNode="_JPNekKEQEeuCArx7s8ya2A">
       <target xmi:type="ecore:EReference" href="specification.ecore#//Service/outputParameters"/>
       <semanticElements xmi:type="ecore:EReference" href="specification.ecore#//Service/outputParameters"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_JPyGUKEQEeuCArx7s8ya2A" routingStyle="manhattan" strokeColor="0,0,0">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_JPyGUqEQEeuCArx7s8ya2A" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_JPyGUaEQEeuCArx7s8ya2A" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_8v8is6EpEeuyEMWXzeWgSw" description="_JPvqEKEQEeuCArx7s8ya2A" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_8v8itaEpEeuyEMWXzeWgSw" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_8v8itKEpEeuyEMWXzeWgSw" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>

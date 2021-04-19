@@ -16,8 +16,8 @@
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Service">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Service/rules"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Service/inputParameters"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Service/outputParameters"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Service/inputParameters"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Service/outputParameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Service/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Service/isAxiom"/>
     </genClasses>
