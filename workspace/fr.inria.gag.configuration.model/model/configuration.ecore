@@ -6,25 +6,46 @@
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
     <details key="specification" value="../../fr.inria.gag.specification.model/model/specification.ecore#/"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Configuration">
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration" eSuperTypes="../../fr.inria.gag.specification.model/model/specification.ecore#//RuntimeData">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//Task"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eAnnotations source="aspect"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-        eType="ecore:EClass ../../fr.inria.gag.specification.model/model/specification.ecore#//Parameter"/>
+        eType="ecore:EClass ../../fr.inria.gag.specification.model/model/specification.ecore#//Parameter">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subTasks" upperBound="-1"
-        eType="#//Task" containment="true"/>
+        eType="#//Task" containment="true">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
-        eType="#//Data" containment="true"/>
+        eType="#//Data" containment="true">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
-        eType="#//Data" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appliedRule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//Data" containment="true">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appliedRule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOpen" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass ../../fr.inria.gag.specification.model/model/specification.ecore#//Service"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass ../../fr.inria.gag.specification.model/model/specification.ecore#//Service">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

@@ -13,6 +13,7 @@
     <genClasses ecoreClass="specification.ecore#//GAG">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//GAG/services"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//GAG/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//GAG/configuration"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Service">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//Service/rules"/>
@@ -34,5 +35,6 @@
     <genClasses ecoreClass="specification.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Parameter/name"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="specification.ecore#//RuntimeData"/>
   </genPackages>
 </genmodel:GenModel>
