@@ -3,6 +3,7 @@
 package fr.inria.gag.specification.model.specification.impl;
 
 import fr.inria.gag.specification.model.specification.GAG;
+import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.inria.gag.specification.model.specification.impl.GAGImpl#getServices <em>Services</em>}</li>
  *   <li>{@link fr.inria.gag.specification.model.specification.impl.GAGImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.GAGImpl#getConfiguration <em>Configuration</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class GAGImpl extends MinimalEObjectImpl.Container implements GAG {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeData configuration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +136,63 @@ public class GAGImpl extends MinimalEObjectImpl.Container implements GAG {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RuntimeData getConfiguration() {
+		return configuration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConfiguration(RuntimeData newConfiguration, NotificationChain msgs) {
+		RuntimeData oldConfiguration = configuration;
+		configuration = newConfiguration;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					SpecificationPackage.GAG__CONFIGURATION, oldConfiguration, newConfiguration);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConfiguration(RuntimeData newConfiguration) {
+		if (newConfiguration != configuration) {
+			NotificationChain msgs = null;
+			if (configuration != null)
+				msgs = ((InternalEObject) configuration).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.GAG__CONFIGURATION, null, msgs);
+			if (newConfiguration != null)
+				msgs = ((InternalEObject) newConfiguration).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.GAG__CONFIGURATION, null, msgs);
+			msgs = basicSetConfiguration(newConfiguration, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.GAG__CONFIGURATION,
+					newConfiguration, newConfiguration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case SpecificationPackage.GAG__SERVICES:
 			return ((InternalEList<?>) getServices()).basicRemove(otherEnd, msgs);
+		case SpecificationPackage.GAG__CONFIGURATION:
+			return basicSetConfiguration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +209,8 @@ public class GAGImpl extends MinimalEObjectImpl.Container implements GAG {
 			return getServices();
 		case SpecificationPackage.GAG__NAME:
 			return getName();
+		case SpecificationPackage.GAG__CONFIGURATION:
+			return getConfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +231,9 @@ public class GAGImpl extends MinimalEObjectImpl.Container implements GAG {
 		case SpecificationPackage.GAG__NAME:
 			setName((String) newValue);
 			return;
+		case SpecificationPackage.GAG__CONFIGURATION:
+			setConfiguration((RuntimeData) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +252,9 @@ public class GAGImpl extends MinimalEObjectImpl.Container implements GAG {
 		case SpecificationPackage.GAG__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case SpecificationPackage.GAG__CONFIGURATION:
+			setConfiguration((RuntimeData) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +271,8 @@ public class GAGImpl extends MinimalEObjectImpl.Container implements GAG {
 			return services != null && !services.isEmpty();
 		case SpecificationPackage.GAG__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case SpecificationPackage.GAG__CONFIGURATION:
+			return configuration != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,6 +2,7 @@
  */
 package fr.inria.gag.configuration.model.configuration;
 
+import fr.inria.gag.specification.model.specification.SpecificationPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -75,7 +76,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION__ROOT = 0;
+	int CONFIGURATION__ROOT = SpecificationPackage.RUNTIME_DATA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Configuration</em>' class.
@@ -84,7 +85,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION_FEATURE_COUNT = 1;
+	int CONFIGURATION_FEATURE_COUNT = SpecificationPackage.RUNTIME_DATA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Configuration</em>' class.
@@ -93,7 +94,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION_OPERATION_COUNT = 0;
+	int CONFIGURATION_OPERATION_COUNT = SpecificationPackage.RUNTIME_DATA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.inria.gag.configuration.model.configuration.impl.DataImpl <em>Data</em>}' class.

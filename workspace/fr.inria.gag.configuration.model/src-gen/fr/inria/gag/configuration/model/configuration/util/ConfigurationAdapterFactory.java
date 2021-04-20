@@ -4,6 +4,7 @@ package fr.inria.gag.configuration.model.configuration.util;
 
 import fr.inria.gag.configuration.model.configuration.*;
 
+import fr.inria.gag.specification.model.specification.RuntimeData;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -82,6 +83,11 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRuntimeData(RuntimeData object) {
+			return createRuntimeDataAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -139,6 +145,20 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.RuntimeData <em>Runtime Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.specification.model.specification.RuntimeData
+	 * @generated
+	 */
+	public Adapter createRuntimeDataAdapter() {
 		return null;
 	}
 

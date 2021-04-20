@@ -298,6 +298,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		configurationEClass.getESuperTypes().add(theSpecificationPackage.getRuntimeData());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE,
@@ -337,6 +338,8 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		// Create annotations
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
+		// aspect
+		createAspectAnnotations();
 	}
 
 	/**
@@ -349,6 +352,28 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		String source = "http://www.eclipse.org/OCL/Import";
 		addAnnotation(this, source, new String[] { "ecore", "http://www.eclipse.org/emf/2002/Ecore", "specification",
 				"../../fr.inria.gag.specification.model/model/specification.ecore#/" });
+	}
+
+	/**
+	 * Initializes the annotations for <b>aspect</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createAspectAnnotations() {
+		String source = "aspect";
+		addAnnotation(configurationEClass, source, new String[] {});
+		addAnnotation(getConfiguration_Root(), source, new String[] {});
+		addAnnotation(dataEClass, source, new String[] {});
+		addAnnotation(getData_Value(), source, new String[] {});
+		addAnnotation(getData_Parameter(), source, new String[] {});
+		addAnnotation(taskEClass, source, new String[] {});
+		addAnnotation(getTask_SubTasks(), source, new String[] {});
+		addAnnotation(getTask_Inputs(), source, new String[] {});
+		addAnnotation(getTask_Outputs(), source, new String[] {});
+		addAnnotation(getTask_AppliedRule(), source, new String[] {});
+		addAnnotation(getTask_IsOpen(), source, new String[] {});
+		addAnnotation(getTask_Service(), source, new String[] {});
 	}
 
 } //ConfigurationPackageImpl

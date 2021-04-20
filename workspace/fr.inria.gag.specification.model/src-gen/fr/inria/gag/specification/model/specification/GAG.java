@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fr.inria.gag.specification.model.specification.GAG#getServices <em>Services</em>}</li>
  *   <li>{@link fr.inria.gag.specification.model.specification.GAG#getName <em>Name</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.GAG#getConfiguration <em>Configuration</em>}</li>
  * </ul>
  *
  * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getGAG()
@@ -65,5 +66,31 @@ public interface GAG extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Configuration</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Configuration</em>' containment reference.
+	 * @see #setConfiguration(RuntimeData)
+	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getGAG_Configuration()
+	 * @model containment="true"
+	 * @generated
+	 */
+	RuntimeData getConfiguration();
+
+	/**
+	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.GAG#getConfiguration <em>Configuration</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Configuration</em>' containment reference.
+	 * @see #getConfiguration()
+	 * @generated
+	 */
+	void setConfiguration(RuntimeData value);
 
 } // GAG

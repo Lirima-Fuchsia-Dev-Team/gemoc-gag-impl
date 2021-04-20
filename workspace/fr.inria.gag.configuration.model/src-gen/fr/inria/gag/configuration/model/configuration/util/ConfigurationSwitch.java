@@ -4,6 +4,7 @@ package fr.inria.gag.configuration.model.configuration.util;
 
 import fr.inria.gag.configuration.model.configuration.*;
 
+import fr.inria.gag.specification.model.specification.RuntimeData;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -70,6 +71,8 @@ public class ConfigurationSwitch<T> extends Switch<T> {
 			Configuration configuration = (Configuration) theEObject;
 			T result = caseConfiguration(configuration);
 			if (result == null)
+				result = caseRuntimeData(configuration);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -134,6 +137,21 @@ public class ConfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTask(Task object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeData(RuntimeData object) {
 		return null;
 	}
 

@@ -6,6 +6,7 @@ import fr.inria.gag.configuration.model.configuration.Configuration;
 import fr.inria.gag.configuration.model.configuration.ConfigurationPackage;
 import fr.inria.gag.configuration.model.configuration.Task;
 
+import fr.inria.gag.specification.model.specification.impl.RuntimeDataImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -13,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ConfigurationImpl extends MinimalEObjectImpl.Container implements Configuration {
+public class ConfigurationImpl extends RuntimeDataImpl implements Configuration {
 	/**
 	 * The cached value of the '{@link #getRoot() <em>Root</em>}' containment reference.
 	 * <!-- begin-user-doc -->

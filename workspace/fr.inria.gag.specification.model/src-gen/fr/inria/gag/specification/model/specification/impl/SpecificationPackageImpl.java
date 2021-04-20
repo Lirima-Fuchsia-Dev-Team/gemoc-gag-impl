@@ -5,6 +5,7 @@ package fr.inria.gag.specification.model.specification.impl;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
 import fr.inria.gag.specification.model.specification.Guard;
 import fr.inria.gag.specification.model.specification.Parameter;
+import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.SemanticRule;
 import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.model.specification.SpecificationFactory;
@@ -65,6 +66,13 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * @generated
 	 */
 	private EClass parameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeDataEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -155,6 +163,15 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 */
 	public EAttribute getGAG_Name() {
 		return (EAttribute) gagEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGAG_Configuration() {
+		return (EReference) gagEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -306,6 +323,15 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRuntimeData() {
+		return runtimeDataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SpecificationFactory getSpecificationFactory() {
 		return (SpecificationFactory) getEFactoryInstance();
 	}
@@ -333,6 +359,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		gagEClass = createEClass(GAG);
 		createEReference(gagEClass, GAG__SERVICES);
 		createEAttribute(gagEClass, GAG__NAME);
+		createEReference(gagEClass, GAG__CONFIGURATION);
 
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__RULES);
@@ -354,6 +381,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
+
+		runtimeDataEClass = createEClass(RUNTIME_DATA);
 	}
 
 	/**
@@ -395,6 +424,9 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEAttribute(getGAG_Name(), ecorePackage.getEString(), "name", null, 1, 1,
 				fr.inria.gag.specification.model.specification.GAG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGAG_Configuration(), this.getRuntimeData(), null, "configuration", null, 0, 1,
+				fr.inria.gag.specification.model.specification.GAG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_Rules(), this.getDecompositionRule(), null, "rules", null, 1, -1, Service.class,
@@ -438,8 +470,26 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(runtimeDataEClass, RuntimeData.class, "RuntimeData", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// aspect
+		createAspectAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>aspect</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createAspectAnnotations() {
+		String source = "aspect";
+		addAnnotation(getGAG_Configuration(), source, new String[] {});
 	}
 
 } //SpecificationPackageImpl

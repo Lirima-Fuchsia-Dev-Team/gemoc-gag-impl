@@ -2,7 +2,7 @@
  */
 package fr.inria.gag.configuration.model.configuration;
 
-import org.eclipse.emf.ecore.EObject;
+import fr.inria.gag.specification.model.specification.RuntimeData;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Configuration extends EObject {
+public interface Configuration extends RuntimeData {
 	/**
 	 * Returns the value of the '<em><b>Root</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
