@@ -12,6 +12,7 @@ import fr.inria.gag.specification.model.specification.Parameter
 import fr.inria.diverse.k3.al.annotationprocessor.Main
 
 import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystemManager
+import org.eclipse.emf.common.util.EList
 // end of our imports
 import static extension fr.inria.gag.k3dsa.specification.aspects.GAGAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ServiceAspect.*
@@ -20,9 +21,20 @@ import static extension fr.inria.gag.k3dsa.specification.aspects.GuardAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.SemanticRuleAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ParameterAspect.*
 import fr.inria.gag.k3dsa.Console
+import fr.inria.diverse.k3.al.annotationprocessor.Step
+import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
+import fr.inria.gag.configuration.model.configuration.ConfigurationFactory
 
 @Aspect(className=GAG)
 class GAGAspect {
+	@Step
+	@InitializeModel
+	def void initializeModel(EList<String> args){
+		val configuration = ConfigurationFactory.eINSTANCE.createConfiguration
+		configuration.root = ConfigurationFactory.eINSTANCE.createTask
+	}
+	
+	
 	@Main
 	def void run() {
 // println('hello world')
@@ -35,6 +47,7 @@ interpreter")
 	* 
 	*/
 	Console.debug("Hello world on " + _self.eResource.URI);
+	
 	}
 }
 
