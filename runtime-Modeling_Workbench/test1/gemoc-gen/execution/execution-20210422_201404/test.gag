@@ -1,0 +1,23 @@
+GAG "g" {
+	services {
+		isAxiom
+		Service "s1" {
+			rules
+			{
+				DecompositionRule "R1" {
+					
+				}
+			}
+		},
+		isAxiom
+		Service "s2" {
+			rules
+			{
+				DecompositionRule "R2" {
+					
+				}
+			}
+		}
+	}
+	
+}

@@ -22,7 +22,7 @@ GAG "g" {
 				},
 				
 				DecompositionRule "R2_2" {
-			 	subServices (s3)
+					subServices (s3)
 				}
 			}
 		},
