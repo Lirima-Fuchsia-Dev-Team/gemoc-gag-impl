@@ -19,16 +19,22 @@ import static extension fr.inria.gag.k3dsa.specification.aspects.DecompositionRu
 import static extension fr.inria.gag.k3dsa.specification.aspects.GuardAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.SemanticRuleAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ParameterAspect.*
+import fr.inria.gag.k3dsa.Console
 
 @Aspect(className=GAG)
 class GAGAspect {
 	@Main
 	def void run() {
 // println('hello world')
+/* 
 		val MessagingSystemManager msManager = new MessagingSystemManager
 		val ms = msManager.createBestPlatformMessagingSystem("Gag", "Simple gag
 interpreter")
 		ms.debug("Hello world on " + _self.eResource.URI, "Gag")
+	
+	* 
+	*/
+	Console.debug("Hello world on " + _self.eResource.URI);
 	}
 }
 

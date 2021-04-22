@@ -2,11 +2,10 @@ package fr.inria.gag.k3dsa.specification.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
+import fr.inria.gag.k3dsa.Console;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
 import fr.inria.gag.specification.model.specification.GAG;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystem;
-import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystemManager;
 
 @Aspect(className = GAG.class)
 @SuppressWarnings("all")
@@ -21,10 +20,8 @@ public class GAGAspect {
   }
   
   protected static void _privk3_run(final GAGAspectGAGAspectProperties _self_, final GAG _self) {
-    final MessagingSystemManager msManager = new MessagingSystemManager();
-    final MessagingSystem ms = msManager.createBestPlatformMessagingSystem("Gag", "Simple gag\ninterpreter");
     URI _uRI = _self.eResource().getURI();
     String _plus = ("Hello world on " + _uRI);
-    ms.debug(_plus, "Gag");
+    Console.debug(_plus);
   }
 }

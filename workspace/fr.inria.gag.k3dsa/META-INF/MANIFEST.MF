@@ -18,4 +18,3 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version
  org.eclipse.gemoc.executionframework.engine;bundle-version="4.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Bundle-Activator: fr.inria.gag.k3dsa.Activator
