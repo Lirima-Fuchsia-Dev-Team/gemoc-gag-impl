@@ -1,0 +1,36 @@
+GAG "g" {
+	services {
+		isAxiom
+		Service "s1" {
+			rules
+			{
+				DecompositionRule "R1_1" {
+					subServices (s1, s2)
+				},
+				DecompositionRule "R1_2" {
+					subServices (s3)
+				}
+			}
+		},
+		isAxiom
+		Service "s2" {
+			rules
+			{
+				DecompositionRule "R2_1" {
+					subServices (s1, s2)
+				},
+				DecompositionRule "R2_2" {
+					subServices (s3)
+				}
+			}
+		},
+		isAxiom
+		Service "s3" {
+			rules
+			{
+				DecompositionRule "R3_1" {
+				}
+			}
+		}
+	}
+}

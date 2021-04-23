@@ -9,6 +9,7 @@ import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
 import fr.inria.gag.configuration.model.configuration.Task;
 import fr.inria.gag.k3dsa.Console;
 import fr.inria.gag.k3dsa.GagGuardExecutor;
+import fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
 import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
@@ -208,8 +209,8 @@ public class GAGAspect {
         Task task = GAGAspect.chooseTask(_self, openTask);
         DecompositionRule rule = GAGAspect.chooseRule(_self, task);
         GAGAspect.applyRule(_self, task, rule);
-        String _string = conf.toString();
-        String _plus_1 = ("La configuration resultante est " + _string);
+        String _print = ConfigurationAspect.print(conf);
+        String _plus_1 = ("La configuration resultante est " + _print);
         Console.debug(_plus_1);
         openTask = GAGAspect.getOpenTask(_self, conf.getRoot());
       }

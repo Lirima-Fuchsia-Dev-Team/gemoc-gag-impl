@@ -14,6 +14,8 @@ import static extension fr.inria.gag.k3dsa.specification.aspects.DecompositionRu
 import static extension fr.inria.gag.k3dsa.specification.aspects.GuardAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.SemanticRuleAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ParameterAspect.*
+import static extension fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect.*
+
 import fr.inria.gag.k3dsa.Console
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
@@ -51,7 +53,7 @@ class GAGAspect {
 			var task = chooseTask(_self, openTask);
 			var rule = chooseRule(_self, task);
 			applyRule(_self, task, rule);
-			Console.debug("La configuration resultante est " + conf.toString());
+			Console.debug("La configuration resultante est " + conf.print());
 			openTask = getOpenTask(_self, conf.root);
 		}
 		Console.debug("Exécution terminée !");
