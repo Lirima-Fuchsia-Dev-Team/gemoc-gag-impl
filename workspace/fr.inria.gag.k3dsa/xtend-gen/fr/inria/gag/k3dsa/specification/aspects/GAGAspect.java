@@ -8,7 +8,9 @@ import fr.inria.gag.configuration.model.configuration.Configuration;
 import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
 import fr.inria.gag.configuration.model.configuration.Task;
 import fr.inria.gag.k3dsa.Console;
+import fr.inria.gag.k3dsa.GagGuardExecutor;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
+import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
 import fr.inria.gag.specification.model.specification.GAG;
 import fr.inria.gag.specification.model.specification.RuntimeData;
@@ -16,6 +18,7 @@ import fr.inria.gag.specification.model.specification.Service;
 import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 
 @Aspect(className = GAG.class)
@@ -152,6 +155,40 @@ public class GAGAspect {
     };
   }
   
+  public static void evaluateAllGuardsForTesting(final GAG _self) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void evaluateAllGuardsForTesting()
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_evaluateAllGuardsForTesting(_self_, (fr.inria.gag.specification.model.specification.GAG)_self);
+    };
+  }
+  
+  public static void staticGuardEvalForTesting(final GAG _self) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void staticGuardEvalForTesting()
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_staticGuardEvalForTesting(_self_, (fr.inria.gag.specification.model.specification.GAG)_self);
+    };
+  }
+  
+  public static GagGuardExecutor exec(final GAG _self) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# GagGuardExecutor exec()
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	result = fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_exec(_self_, (fr.inria.gag.specification.model.specification.GAG)_self);
+    };
+    return (fr.inria.gag.k3dsa.GagGuardExecutor)result;
+  }
+  
+  public static void exec(final GAG _self, final GagGuardExecutor exec) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void exec(GagGuardExecutor)
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_exec(_self_, (fr.inria.gag.specification.model.specification.GAG)_self,exec);
+    };
+  }
+  
   protected static void _privk3_initializeModel(final GAGAspectGAGAspectProperties _self_, final GAG _self, final EList<String> args) {
     final Configuration configuration = ConfigurationFactory.eINSTANCE.createConfiguration();
     _self.setConfiguration(configuration);
@@ -161,6 +198,7 @@ public class GAGAspect {
     URI _uRI = _self.eResource().getURI();
     String _plus = ("Hello world on " + _uRI);
     Console.debug(_plus);
+    GAGAspect.staticGuardEvalForTesting(_self);
     RuntimeData _configuration = _self.getConfiguration();
     final Configuration conf = ((Configuration) _configuration);
     GAGAspect.chooseTheAxiom(_self);
@@ -170,9 +208,13 @@ public class GAGAspect {
         Task task = GAGAspect.chooseTask(_self, openTask);
         DecompositionRule rule = GAGAspect.chooseRule(_self, task);
         GAGAspect.applyRule(_self, task, rule);
+        String _string = conf.toString();
+        String _plus_1 = ("La configuration resultante est " + _string);
+        Console.debug(_plus_1);
         openTask = GAGAspect.getOpenTask(_self, conf.getRoot());
       }
     }
+    Console.debug("Exécution terminée !");
   }
   
   protected static void _privk3_chooseTheAxiom(final GAGAspectGAGAspectProperties _self_, final GAG _self) {
@@ -189,7 +231,7 @@ public class GAGAspect {
         }
       }
     }
-    Console.debug("Veillez choisir le service axiome de démarrage parmi les services suivants : ");
+    Console.debug("Veuillez choisir le service axiome de démarrage parmi les services suivants : ");
     String txtAf = "";
     int _size_1 = axioms.size();
     ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
@@ -197,10 +239,10 @@ public class GAGAspect {
       {
         Service _get = axioms.get((i_1).intValue());
         final Service element = ((Service) _get);
-        String _txtAf = txtAf;
+        String _plus = (Integer.valueOf(((i_1).intValue() + 1)) + "- ");
         String _name = element.getName();
-        String _plus = (((" " + Integer.valueOf(((i_1).intValue() + 1))) + "- ") + _name);
-        txtAf = (_txtAf + _plus);
+        String _plus_1 = (_plus + _name);
+        Console.debug(_plus_1);
       }
     }
     final String choice = Console.readConsoleLine(txtAf);
@@ -215,19 +257,17 @@ public class GAGAspect {
   }
   
   protected static Task _privk3_chooseTask(final GAGAspectGAGAspectProperties _self_, final GAG _self, final ArrayList<Task> openTasks) {
-    RuntimeData _configuration = _self.getConfiguration();
-    final Configuration conf = ((Configuration) _configuration);
-    Console.debug("Veillez choisir la tâche à traiter parmi les tâches suivantes : ");
+    Console.debug("Veuillez choisir la tâche à traiter parmi les tâches suivantes : ");
     String txtAf = "";
     int _size = openTasks.size();
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
     for (final Integer i : _doubleDotLessThan) {
       {
         final Task element = openTasks.get((i).intValue());
-        String _txtAf = txtAf;
+        String _plus = (Integer.valueOf(((i).intValue() + 1)) + "- ");
         String _name = element.getService().getName();
-        String _plus = (((" " + Integer.valueOf(((i).intValue() + 1))) + "- ") + _name);
-        txtAf = (_txtAf + _plus);
+        String _plus_1 = (_plus + _name);
+        Console.debug(_plus_1);
       }
     }
     final String choice = Console.readConsoleLine(txtAf);
@@ -236,17 +276,17 @@ public class GAGAspect {
   }
   
   protected static DecompositionRule _privk3_chooseRule(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task t) {
-    Console.debug("Veillez choisir la règle de décomposition à appliquer parmi les règles suivantes : ");
+    Console.debug("Veuillez choisir la règle de décomposition à appliquer parmi les règles suivantes : ");
     String txtAf = "";
     int _size = t.getService().getRules().size();
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
     for (final Integer i : _doubleDotLessThan) {
       {
         final DecompositionRule element = t.getService().getRules().get((i).intValue());
-        String _txtAf = txtAf;
+        String _plus = (Integer.valueOf(((i).intValue() + 1)) + "- ");
         String _name = element.getName();
-        String _plus = (((" " + Integer.valueOf(((i).intValue() + 1))) + "- ") + _name);
-        txtAf = (_txtAf + _plus);
+        String _plus_1 = (_plus + _name);
+        Console.debug(_plus_1);
       }
     }
     final String choice = Console.readConsoleLine(txtAf);
@@ -287,6 +327,71 @@ public class GAGAspect {
         st.setIsOpen(true);
         t.getSubTasks().add(st);
       }
+    }
+  }
+  
+  protected static void _privk3_evaluateAllGuardsForTesting(final GAGAspectGAGAspectProperties _self_, final GAG _self) {
+    URI _uRI = _self.eResource().getURI();
+    String _plus = ("Trying guard evaluation on " + _uRI);
+    Console.debug(_plus);
+    EList<Service> _services = _self.getServices();
+    for (final Service service : _services) {
+      ServiceAspect.evaluateAllGuardsForTesting(service, GAGAspect.exec(_self));
+    }
+  }
+  
+  protected static void _privk3_staticGuardEvalForTesting(final GAGAspectGAGAspectProperties _self_, final GAG _self) {
+    URI _uRI = _self.eResource().getURI();
+    String _plus = ("Trying static guard evaluation on " + _uRI);
+    Console.debug(_plus);
+    try {
+      boolean _isRuleActivable = GAGAspect.exec(_self).isRuleActivable("F:/Workspace/Fuchsia/gemoc-gag-impl/runtime-Modeling_Workbench/gag.with.guard/bin", "urifia.gag.MyCustomGAGGuard");
+      String _plus_1 = ("Fixed guard evaluation result is : " + Boolean.valueOf(_isRuleActivable));
+      Console.debug(_plus_1);
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        final Exception e = (Exception)_t;
+        Console.error("Exception on guard evaluation", e);
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+  }
+  
+  protected static GagGuardExecutor _privk3_exec(final GAGAspectGAGAspectProperties _self_, final GAG _self) {
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getExec") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (fr.inria.gag.k3dsa.GagGuardExecutor) ret;
+    				} else {
+    					return null;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.exec;
+  }
+  
+  protected static void _privk3_exec(final GAGAspectGAGAspectProperties _self_, final GAG _self, final GagGuardExecutor exec) {
+    boolean setterCalled = false;
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setExec")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, exec);
+    			setterCalled = true;
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.exec = exec;
     }
   }
 }

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Base
+Bundle-SymbolicName: fr.inria.gag.guard.base
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: fr.inria.gag.guard.base
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.inria.gag.guard.base

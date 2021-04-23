@@ -12,6 +12,6 @@
 <booleanAttribute key="Generic MultiDimensional Trace" value="false"/>
 <stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void fr.inria.gag.k3dsa.specification.aspects.GAGAspect.run(fr.inria.gag.specification.model.specification.GAG)"/>
 <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
-<stringAttribute key="Resource" value="/test1/test.gag"/>
+<stringAttribute key="Resource" value="/gag.with.guard/Gag/test.gag"/>
 <stringAttribute key="airdResource" value=""/>
 </launchConfiguration>

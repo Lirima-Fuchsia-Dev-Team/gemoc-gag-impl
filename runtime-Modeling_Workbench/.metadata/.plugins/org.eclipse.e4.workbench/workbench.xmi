@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_7ZPeYKOuEeugO_fp-04kOA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_7ZPeYaOuEeugO_fp-04kOA" bindingContexts="_7ZPi36OuEeugO_fp-04kOA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; tooltip=&quot;test1/test.gag&quot;>&#xD;&#xA;&lt;persistable path=&quot;/test1/test.gag&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; tooltip=&quot;test/test.gag&quot;>&#xD;&#xA;&lt;persistable path=&quot;/test/test.gag&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; tooltip=&quot;gag.with.guard/Gag/test.gag&quot;>&#xD;&#xA;&lt;persistable path=&quot;/gag.with.guard/Gag/test.gag&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; tooltip=&quot;test1/test.gag&quot;>&#xD;&#xA;&lt;persistable path=&quot;/test1/test.gag&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; tooltip=&quot;test/test.gag&quot;>&#xD;&#xA;&lt;persistable path=&quot;/test/test.gag&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_7ZPeYaOuEeugO_fp-04kOA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_7ZPeYqOuEeugO_fp-04kOA" x="0" y="0" width="1024" height="768">
@@ -94,7 +94,7 @@
               </children>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_7ZPebKOuEeugO_fp-04kOA" containerData="7500" selectedElement="_7ZPecaOuEeugO_fp-04kOA">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_7ZPebaOuEeugO_fp-04kOA" containerData="7500" selectedElement="_7ZPebqOuEeugO_fp-04kOA" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_7ZPebaOuEeugO_fp-04kOA" containerData="7018" selectedElement="_7ZPebqOuEeugO_fp-04kOA" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_7ZPebqOuEeugO_fp-04kOA" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_7ZPf36OuEeugO_fp-04kOA"/>
                 <children xsi:type="basic:PartStack" xmi:id="_7ZPeb6OuEeugO_fp-04kOA" elementId="right" containerData="2500" selectedElement="_7ZPecKOuEeugO_fp-04kOA">
                   <children xsi:type="advanced:Placeholder" xmi:id="_7ZPecKOuEeugO_fp-04kOA" elementId="org.eclipse.ui.views.ContentOutline" ref="_7ZPgUqOuEeugO_fp-04kOA" closeable="true">
@@ -103,7 +103,7 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartSashContainer" xmi:id="_7ZPecaOuEeugO_fp-04kOA" containerData="2500" selectedElement="_7ZPecqOuEeugO_fp-04kOA" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_7ZPecaOuEeugO_fp-04kOA" containerData="2982" selectedElement="_7ZPecqOuEeugO_fp-04kOA" horizontal="true">
                 <children xsi:type="basic:PartStack" xmi:id="_7ZPecqOuEeugO_fp-04kOA" elementId="bottom" containerData="6000" selectedElement="_7ZPeeaOuEeugO_fp-04kOA">
                   <tags>active</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_7ZPec6OuEeugO_fp-04kOA" elementId="org.eclipse.ui.views.PropertySheet" ref="_7ZPgFqOuEeugO_fp-04kOA" closeable="true">
@@ -189,112 +189,10 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_7ZPf36OuEeugO_fp-04kOA" elementId="org.eclipse.ui.editorss" selectedElement="_7ZPf4KOuEeugO_fp-04kOA">
-      <children xsi:type="basic:PartStack" xmi:id="_7ZPf4KOuEeugO_fp-04kOA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_7ZPf4aOuEeugO_fp-04kOA">
+      <children xsi:type="basic:PartStack" xmi:id="_7ZPf4KOuEeugO_fp-04kOA" elementId="org.eclipse.e4.primaryDataStack">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>noFocus</tags>
-        <children xsi:type="basic:Part" xmi:id="_7ZPf4aOuEeugO_fp-04kOA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="test.gag" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; partName=&quot;test.gag&quot; title=&quot;test.gag&quot; tooltip=&quot;test1/test.gag&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/test1/test.gag&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;371&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>fr.inria.gag.specification.xtext.Gag</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf4qOuEeugO_fp-04kOA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf46OuEeugO_fp-04kOA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf5KOuEeugO_fp-04kOA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf5aOuEeugO_fp-04kOA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf5qOuEeugO_fp-04kOA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf56OuEeugO_fp-04kOA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf6KOuEeugO_fp-04kOA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf6aOuEeugO_fp-04kOA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf6qOuEeugO_fp-04kOA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf66OuEeugO_fp-04kOA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf7KOuEeugO_fp-04kOA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf7aOuEeugO_fp-04kOA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf7qOuEeugO_fp-04kOA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf76OuEeugO_fp-04kOA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf8KOuEeugO_fp-04kOA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf8aOuEeugO_fp-04kOA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf8qOuEeugO_fp-04kOA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:fr.inria.gag.specification.xtext.Gag.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_7ZPf86OuEeugO_fp-04kOA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_7ZPf9KOuEeugO_fp-04kOA" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" closeable="true">
@@ -560,7 +458,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7ZPgaKOuEeugO_fp-04kOA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_H8N2wKOvEeumw5vha9rEjA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_7ZVsAaOuEeugO_fp-04kOA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_BLjPEKQOEeuT29UpuQxp_g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_7ZVsAaOuEeugO_fp-04kOA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7ZPgdaOuEeugO_fp-04kOA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -588,7 +486,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7ZPg8qOuEeugO_fp-04kOA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_H8SvQ6OvEeumw5vha9rEjA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_7ZVrqKOuEeugO_fp-04kOA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_BLpVt6QOEeuT29UpuQxp_g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_7ZVrqKOuEeugO_fp-04kOA"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_rRZMQKQKEeuPg4LBapYWkQ" elementId="fr.inria.gag.specification.xtext.Gag" visible="false">
+        <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_7ZPhA6OuEeugO_fp-04kOA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1142,7 +1043,11 @@
   <bindingTables xmi:id="_7ZPi26OuEeugO_fp-04kOA" bindingContext="_7ZPjOaOuEeugO_fp-04kOA"/>
   <bindingTables xmi:id="_7ZPi3KOuEeugO_fp-04kOA" bindingContext="_7ZPjOqOuEeugO_fp-04kOA"/>
   <bindingTables xmi:id="_7ZPi3aOuEeugO_fp-04kOA" bindingContext="_7ZPjO6OuEeugO_fp-04kOA"/>
-  <bindingTables xmi:id="_7ZPi3qOuEeugO_fp-04kOA" elementId="org.eclipse.graphiti.ui.diagramEditor" bindingContext="_7ZPjDaOuEeugO_fp-04kOA"/>
+  <bindingTables xmi:id="_7ZPi3qOuEeugO_fp-04kOA" elementId="org.eclipse.graphiti.ui.diagramEditor" bindingContext="_7ZPjDaOuEeugO_fp-04kOA">
+    <bindings xmi:id="_nK8UQaQKEeuPg4LBapYWkQ" keySequence="SHIFT+DEL" command="_7ZVtNKOuEeugO_fp-04kOA"/>
+    <bindings xmi:id="_nK8UQqQKEeuPg4LBapYWkQ" keySequence="CTRL+O" command="_7ZVtMqOuEeugO_fp-04kOA"/>
+    <bindings xmi:id="_nLPPMKQKEeuPg4LBapYWkQ" keySequence="CTRL+F5" command="_7ZVtJ6OuEeugO_fp-04kOA"/>
+  </bindingTables>
   <rootContext xmi:id="_7ZPi36OuEeugO_fp-04kOA" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_7ZPi4KOuEeugO_fp-04kOA" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="In Windows" description="A window is open">
       <children xmi:id="_7ZPi4aOuEeugO_fp-04kOA" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.ui.workbench" name="%bindingcontext.name.bindingView"/>
@@ -1783,6 +1688,12 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.xtext.xtext.ui.graph"/>
     <tags>View</tags>
     <tags>categoryTag:Xtext</tags>
+  </descriptors>
+  <descriptors xmi:id="_nVYpsKQKEeuPg4LBapYWkQ" elementId="org.eclipse.graphiti.ui.internal.editor.thumbnailview" label="Miniature View" iconURI="platform:/plugin/org.eclipse.graphiti.ui/icons/outline/thumbnail.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.graphiti.ui.internal.editor.ThumbNailView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.graphiti.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
