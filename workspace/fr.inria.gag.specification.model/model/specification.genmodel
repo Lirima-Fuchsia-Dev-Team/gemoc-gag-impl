@@ -47,8 +47,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/libLocation"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Equation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/leftpart"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/rightpart"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/leftpart"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/rightpart"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//IdExpresssion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpresssion/serviceName"/>

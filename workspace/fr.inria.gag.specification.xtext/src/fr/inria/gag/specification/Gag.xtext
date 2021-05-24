@@ -9,7 +9,7 @@ GAG returns GAG:
 	'GAG'
 	name=EString
 	'{'
-		('services' '{' services+=Service ( "," services+=Service)* '}' )?
+		( '{' services+=Service ( "," services+=Service)* '}' )?
 	'}';
 
 
@@ -25,13 +25,14 @@ Expression returns Expression:
 	IdExpresssion | FunctionExpression;
 
 Service returns Service:
-	isAxiom?='isAxiom'
+	(isAxiom?='isAxiom')?
 	'Service'
 	name=EString
 	'{'
-		'rules' '{' rules+=DecompositionRule ( "," rules+=DecompositionRule)* '}' 
-		('inputParameters' '{' inputParameters+=Parameter ( "," inputParameters+=Parameter)* '}' )?
-		('outputParameters' '{' outputParameters+=Parameter ( "," outputParameters+=Parameter)* '}' )?
+		
+		( '(' inputParameters+=Parameter ( "," inputParameters+=Parameter)* ')' )?
+		( '[' outputParameters+=Parameter ( "," outputParameters+=Parameter)* ']' )?
+		':' '{' rules+=DecompositionRule ( "," rules+=DecompositionRule)* '}' 
 	'}';
 
 EString returns ecore::EString:
@@ -39,13 +40,14 @@ EString returns ecore::EString:
 
 DecompositionRule returns DecompositionRule:
 	{DecompositionRule}
-	'DecompositionRule'
+	
 	name=EString
-	'{'
-		('subServices' '(' subServices+=[Service|EString] ( "," subServices+=[Service|EString])* ')' )?
+	':'
+		('sub' ':' subServices+=[Service|EString] ( "," subServices+=[Service|EString])*  )?
 		('guard' guard=Guard)?
-		('semantic' semantic=SemanticRule)?
-	'}';
+		('sem' ':' semantic=SemanticRule)?
+	 ;
+	//'';
 
 Parameter returns Parameter:
 	{Parameter}
@@ -64,14 +66,14 @@ Guard returns Guard:
 
 SemanticRule returns SemanticRule:
 	{SemanticRule}
-	'SemanticRule'
+	
 	'{'
-		('functionDeclaration' '{' functionDeclaration+=FunctionDeclaration ( "," functionDeclaration+=FunctionDeclaration)* '}' )?
-		('equations' '{' equations+=Equation ( "," equations+=Equation)* '}' )?
+		('func :'  functionDeclaration+=FunctionDeclaration ( "," functionDeclaration+=FunctionDeclaration)*  )?
+		('equations :'  equations+=Equation ( "," equations+=Equation)*  )?
 	'}';
 
 FunctionDeclaration returns FunctionDeclaration:
-	'FunctionDeclaration'
+	//'FunctionDeclaration'
 	name=EString
 	'{'
 		'classPath' classPath=EString

@@ -58,9 +58,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftpart" lowerBound="1"
-        eType="#//IdExpresssion"/>
+        eType="#//IdExpresssion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightpart" lowerBound="1"
-        eType="#//Expression"/>
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IdExpresssion" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceName" lowerBound="1"
