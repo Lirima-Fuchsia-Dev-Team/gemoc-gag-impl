@@ -481,7 +481,7 @@ public interface SpecificationPackage extends EPackage {
 	int EQUATION = 8;
 
 	/**
-	 * The feature id for the '<em><b>Leftpart</b></em>' reference.
+	 * The feature id for the '<em><b>Leftpart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -490,7 +490,7 @@ public interface SpecificationPackage extends EPackage {
 	int EQUATION__LEFTPART = 0;
 
 	/**
-	 * The feature id for the '<em><b>Rightpart</b></em>' reference.
+	 * The feature id for the '<em><b>Rightpart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -958,10 +958,10 @@ public interface SpecificationPackage extends EPackage {
 	EClass getEquation();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.Equation#getLeftpart <em>Leftpart</em>}'.
+	 * Returns the meta object for the containment reference '{@link fr.inria.gag.specification.model.specification.Equation#getLeftpart <em>Leftpart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Leftpart</em>'.
+	 * @return the meta object for the containment reference '<em>Leftpart</em>'.
 	 * @see fr.inria.gag.specification.model.specification.Equation#getLeftpart()
 	 * @see #getEquation()
 	 * @generated
@@ -969,10 +969,10 @@ public interface SpecificationPackage extends EPackage {
 	EReference getEquation_Leftpart();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.Equation#getRightpart <em>Rightpart</em>}'.
+	 * Returns the meta object for the containment reference '{@link fr.inria.gag.specification.model.specification.Equation#getRightpart <em>Rightpart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Rightpart</em>'.
+	 * @return the meta object for the containment reference '<em>Rightpart</em>'.
 	 * @see fr.inria.gag.specification.model.specification.Equation#getRightpart()
 	 * @see #getEquation()
 	 * @generated
@@ -1335,7 +1335,7 @@ public interface SpecificationPackage extends EPackage {
 		EClass EQUATION = eINSTANCE.getEquation();
 
 		/**
-		 * The meta object literal for the '<em><b>Leftpart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Leftpart</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1343,7 +1343,7 @@ public interface SpecificationPackage extends EPackage {
 		EReference EQUATION__LEFTPART = eINSTANCE.getEquation_Leftpart();
 
 		/**
-		 * The meta object literal for the '<em><b>Rightpart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Rightpart</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

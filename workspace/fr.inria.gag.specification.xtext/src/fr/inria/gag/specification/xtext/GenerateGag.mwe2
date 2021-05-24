@@ -1,4 +1,4 @@
-module fr.inria.gag.specification.GenerateGag
+module fr.inria.gag.specification.xtext.GenerateGag
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -30,7 +30,7 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
-			name = "fr.inria.gag.specification.Gag"
+			name = "fr.inria.gag.specification.xtext.Gag"
 			fileExtensions = "gag"
 			referencedResource = "platform:/resource/fr.inria.gag.specification.model/model/specification.genmodel"
 			

@@ -9,6 +9,7 @@ import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class EquationImpl extends MinimalEObjectImpl.Container implements Equation {
 	/**
-	 * The cached value of the '{@link #getLeftpart() <em>Leftpart</em>}' reference.
+	 * The cached value of the '{@link #getLeftpart() <em>Leftpart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLeftpart()
@@ -41,7 +42,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	protected IdExpresssion leftpart;
 
 	/**
-	 * The cached value of the '{@link #getRightpart() <em>Rightpart</em>}' reference.
+	 * The cached value of the '{@link #getRightpart() <em>Rightpart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRightpart()
@@ -75,15 +76,6 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * @generated
 	 */
 	public IdExpresssion getLeftpart() {
-		if (leftpart != null && leftpart.eIsProxy()) {
-			InternalEObject oldLeftpart = (InternalEObject) leftpart;
-			leftpart = (IdExpresssion) eResolveProxy(oldLeftpart);
-			if (leftpart != oldLeftpart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecificationPackage.EQUATION__LEFTPART,
-							oldLeftpart, leftpart));
-			}
-		}
 		return leftpart;
 	}
 
@@ -92,8 +84,18 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IdExpresssion basicGetLeftpart() {
-		return leftpart;
+	public NotificationChain basicSetLeftpart(IdExpresssion newLeftpart, NotificationChain msgs) {
+		IdExpresssion oldLeftpart = leftpart;
+		leftpart = newLeftpart;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					SpecificationPackage.EQUATION__LEFTPART, oldLeftpart, newLeftpart);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -102,11 +104,20 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * @generated
 	 */
 	public void setLeftpart(IdExpresssion newLeftpart) {
-		IdExpresssion oldLeftpart = leftpart;
-		leftpart = newLeftpart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.EQUATION__LEFTPART, oldLeftpart,
-					leftpart));
+		if (newLeftpart != leftpart) {
+			NotificationChain msgs = null;
+			if (leftpart != null)
+				msgs = ((InternalEObject) leftpart).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.EQUATION__LEFTPART, null, msgs);
+			if (newLeftpart != null)
+				msgs = ((InternalEObject) newLeftpart).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.EQUATION__LEFTPART, null, msgs);
+			msgs = basicSetLeftpart(newLeftpart, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.EQUATION__LEFTPART, newLeftpart,
+					newLeftpart));
 	}
 
 	/**
@@ -115,15 +126,6 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * @generated
 	 */
 	public Expression getRightpart() {
-		if (rightpart != null && rightpart.eIsProxy()) {
-			InternalEObject oldRightpart = (InternalEObject) rightpart;
-			rightpart = (Expression) eResolveProxy(oldRightpart);
-			if (rightpart != oldRightpart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecificationPackage.EQUATION__RIGHTPART,
-							oldRightpart, rightpart));
-			}
-		}
 		return rightpart;
 	}
 
@@ -132,8 +134,18 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression basicGetRightpart() {
-		return rightpart;
+	public NotificationChain basicSetRightpart(Expression newRightpart, NotificationChain msgs) {
+		Expression oldRightpart = rightpart;
+		rightpart = newRightpart;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					SpecificationPackage.EQUATION__RIGHTPART, oldRightpart, newRightpart);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -142,11 +154,36 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * @generated
 	 */
 	public void setRightpart(Expression newRightpart) {
-		Expression oldRightpart = rightpart;
-		rightpart = newRightpart;
-		if (eNotificationRequired())
+		if (newRightpart != rightpart) {
+			NotificationChain msgs = null;
+			if (rightpart != null)
+				msgs = ((InternalEObject) rightpart).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.EQUATION__RIGHTPART, null, msgs);
+			if (newRightpart != null)
+				msgs = ((InternalEObject) newRightpart).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - SpecificationPackage.EQUATION__RIGHTPART, null, msgs);
+			msgs = basicSetRightpart(newRightpart, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.EQUATION__RIGHTPART,
-					oldRightpart, rightpart));
+					newRightpart, newRightpart));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SpecificationPackage.EQUATION__LEFTPART:
+			return basicSetLeftpart(null, msgs);
+		case SpecificationPackage.EQUATION__RIGHTPART:
+			return basicSetRightpart(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -158,13 +195,9 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SpecificationPackage.EQUATION__LEFTPART:
-			if (resolve)
-				return getLeftpart();
-			return basicGetLeftpart();
+			return getLeftpart();
 		case SpecificationPackage.EQUATION__RIGHTPART:
-			if (resolve)
-				return getRightpart();
-			return basicGetRightpart();
+			return getRightpart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

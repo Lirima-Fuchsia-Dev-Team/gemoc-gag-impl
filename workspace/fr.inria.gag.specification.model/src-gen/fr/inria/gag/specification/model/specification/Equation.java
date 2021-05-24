@@ -23,52 +23,52 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Equation extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Leftpart</b></em>' reference.
+	 * Returns the value of the '<em><b>Leftpart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Leftpart</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Leftpart</em>' reference.
+	 * @return the value of the '<em>Leftpart</em>' containment reference.
 	 * @see #setLeftpart(IdExpresssion)
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getEquation_Leftpart()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	IdExpresssion getLeftpart();
 
 	/**
-	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.Equation#getLeftpart <em>Leftpart</em>}' reference.
+	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.Equation#getLeftpart <em>Leftpart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Leftpart</em>' reference.
+	 * @param value the new value of the '<em>Leftpart</em>' containment reference.
 	 * @see #getLeftpart()
 	 * @generated
 	 */
 	void setLeftpart(IdExpresssion value);
 
 	/**
-	 * Returns the value of the '<em><b>Rightpart</b></em>' reference.
+	 * Returns the value of the '<em><b>Rightpart</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rightpart</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rightpart</em>' reference.
+	 * @return the value of the '<em>Rightpart</em>' containment reference.
 	 * @see #setRightpart(Expression)
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getEquation_Rightpart()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Expression getRightpart();
 
 	/**
-	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.Equation#getRightpart <em>Rightpart</em>}' reference.
+	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.Equation#getRightpart <em>Rightpart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rightpart</em>' reference.
+	 * @param value the new value of the '<em>Rightpart</em>' containment reference.
 	 * @see #getRightpart()
 	 * @generated
 	 */

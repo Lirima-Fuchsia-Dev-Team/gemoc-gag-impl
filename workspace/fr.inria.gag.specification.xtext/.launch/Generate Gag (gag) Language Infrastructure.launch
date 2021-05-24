@@ -12,7 +12,7 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;resources&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext.ide&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext.ui&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext.ui.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/fr.inria.gag.specification.xtext.ui.tests&quot; type=&quot;4&quot;/&gt;&#10;;&lt;/resources&gt;}"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="fr.inria.gag.specification.GenerateGag"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="fr.inria.gag.specification.xtext.GenerateGag"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="fr.inria.gag.specification.xtext"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m"/>
 </launchConfiguration>
