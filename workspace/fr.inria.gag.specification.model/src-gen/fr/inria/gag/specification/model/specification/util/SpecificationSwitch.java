@@ -115,6 +115,45 @@ public class SpecificationSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SpecificationPackage.FUNCTION_DECLARATION: {
+			FunctionDeclaration functionDeclaration = (FunctionDeclaration) theEObject;
+			T result = caseFunctionDeclaration(functionDeclaration);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpecificationPackage.EQUATION: {
+			Equation equation = (Equation) theEObject;
+			T result = caseEquation(equation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpecificationPackage.ID_EXPRESSSION: {
+			IdExpresssion idExpresssion = (IdExpresssion) theEObject;
+			T result = caseIdExpresssion(idExpresssion);
+			if (result == null)
+				result = caseExpression(idExpresssion);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpecificationPackage.EXPRESSION: {
+			Expression expression = (Expression) theEObject;
+			T result = caseExpression(expression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpecificationPackage.FUNCTION_EXPRESSION: {
+			FunctionExpression functionExpression = (FunctionExpression) theEObject;
+			T result = caseFunctionExpression(functionExpression);
+			if (result == null)
+				result = caseExpression(functionExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -222,6 +261,81 @@ public class SpecificationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRuntimeData(RuntimeData object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionDeclaration(FunctionDeclaration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Equation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Equation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEquation(Equation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Id Expresssion</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Id Expresssion</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIdExpresssion(IdExpresssion object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionExpression(FunctionExpression object) {
 		return null;
 	}
 

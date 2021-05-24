@@ -9,19 +9,5 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: fr.inria.gag.specification.model,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
- org.antlr.runtime,
- org.eclipse.xtext.util,
- org.eclipse.xtend.lib;bundle-version="2.14.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: fr.inria.gag.specification.xtext.validation,
- fr.inria.gag.specification.xtext.formatting2,
- fr.inria.gag.specification.xtext,
- fr.inria.gag.specification.xtext.generator,
- fr.inria.gag.specification.xtext.services,
- fr.inria.gag.specification.xtext.parser.antlr,
- fr.inria.gag.specification.xtext.scoping,
- fr.inria.gag.specification.xtext.serializer,
- fr.inria.gag.specification.xtext.parser.antlr.internal
-Import-Package: org.apache.log4j

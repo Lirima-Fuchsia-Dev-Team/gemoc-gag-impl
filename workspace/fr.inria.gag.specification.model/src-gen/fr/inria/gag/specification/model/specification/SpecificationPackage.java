@@ -269,13 +269,22 @@ public interface SpecificationPackage extends EPackage {
 	int GUARD__CLASS_PATH = 0;
 
 	/**
+	 * The feature id for the '<em><b>Lib Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUARD__LIB_LOCATION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD_FEATURE_COUNT = 1;
+	int GUARD_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Guard</em>' class.
@@ -297,13 +306,31 @@ public interface SpecificationPackage extends EPackage {
 	int SEMANTIC_RULE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Function Declaration</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_RULE__FUNCTION_DECLARATION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Equations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_RULE__EQUATIONS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Semantic Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_RULE_FEATURE_COUNT = 0;
+	int SEMANTIC_RULE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Semantic Rule</em>' class.
@@ -378,6 +405,236 @@ public interface SpecificationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RUNTIME_DATA_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getFunctionDeclaration()
+	 * @generated
+	 */
+	int FUNCTION_DECLARATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Class Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__CLASS_PATH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Method</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__METHOD = 2;
+
+	/**
+	 * The feature id for the '<em><b>Lib Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION__LIB_LOCATION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Function Declaration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Function Declaration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_DECLARATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.EquationImpl <em>Equation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.EquationImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getEquation()
+	 * @generated
+	 */
+	int EQUATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Leftpart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUATION__LEFTPART = 0;
+
+	/**
+	 * The feature id for the '<em><b>Rightpart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUATION__RIGHTPART = 1;
+
+	/**
+	 * The number of structural features of the '<em>Equation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Equation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.ExpressionImpl <em>Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.ExpressionImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getExpression()
+	 * @generated
+	 */
+	int EXPRESSION = 10;
+
+	/**
+	 * The number of structural features of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl <em>Id Expresssion</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getIdExpresssion()
+	 * @generated
+	 */
+	int ID_EXPRESSSION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ID_EXPRESSSION__SERVICE_NAME = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameter Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ID_EXPRESSSION__PARAMETER_NAME = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Id Expresssion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ID_EXPRESSSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Id Expresssion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ID_EXPRESSSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl <em>Function Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getFunctionExpression()
+	 * @generated
+	 */
+	int FUNCTION_EXPRESSION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_EXPRESSION__FUNCTION = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Id Expresssions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_EXPRESSION__ID_EXPRESSSIONS = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Function Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Function Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.GAG <em>GAG</em>}'.
@@ -563,6 +820,17 @@ public interface SpecificationPackage extends EPackage {
 	EAttribute getGuard_ClassPath();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.Guard#getLibLocation <em>Lib Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lib Location</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Guard#getLibLocation()
+	 * @see #getGuard()
+	 * @generated
+	 */
+	EAttribute getGuard_LibLocation();
+
+	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.SemanticRule <em>Semantic Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,6 +839,28 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSemanticRule();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.SemanticRule#getFunctionDeclaration <em>Function Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Function Declaration</em>'.
+	 * @see fr.inria.gag.specification.model.specification.SemanticRule#getFunctionDeclaration()
+	 * @see #getSemanticRule()
+	 * @generated
+	 */
+	EReference getSemanticRule_FunctionDeclaration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.SemanticRule#getEquations <em>Equations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Equations</em>'.
+	 * @see fr.inria.gag.specification.model.specification.SemanticRule#getEquations()
+	 * @see #getSemanticRule()
+	 * @generated
+	 */
+	EReference getSemanticRule_Equations();
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.Parameter <em>Parameter</em>}'.
@@ -602,6 +892,166 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRuntimeData();
+
+	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration <em>Function Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function Declaration</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration
+	 * @generated
+	 */
+	EClass getFunctionDeclaration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getName()
+	 * @see #getFunctionDeclaration()
+	 * @generated
+	 */
+	EAttribute getFunctionDeclaration_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getClassPath <em>Class Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class Path</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getClassPath()
+	 * @see #getFunctionDeclaration()
+	 * @generated
+	 */
+	EAttribute getFunctionDeclaration_ClassPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getMethod <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Method</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getMethod()
+	 * @see #getFunctionDeclaration()
+	 * @generated
+	 */
+	EAttribute getFunctionDeclaration_Method();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getLibLocation <em>Lib Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lib Location</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getLibLocation()
+	 * @see #getFunctionDeclaration()
+	 * @generated
+	 */
+	EAttribute getFunctionDeclaration_LibLocation();
+
+	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.Equation <em>Equation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Equation</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Equation
+	 * @generated
+	 */
+	EClass getEquation();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.Equation#getLeftpart <em>Leftpart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Leftpart</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Equation#getLeftpart()
+	 * @see #getEquation()
+	 * @generated
+	 */
+	EReference getEquation_Leftpart();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.Equation#getRightpart <em>Rightpart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Rightpart</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Equation#getRightpart()
+	 * @see #getEquation()
+	 * @generated
+	 */
+	EReference getEquation_Rightpart();
+
+	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.IdExpresssion <em>Id Expresssion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Id Expresssion</em>'.
+	 * @see fr.inria.gag.specification.model.specification.IdExpresssion
+	 * @generated
+	 */
+	EClass getIdExpresssion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.IdExpresssion#getServiceName <em>Service Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Service Name</em>'.
+	 * @see fr.inria.gag.specification.model.specification.IdExpresssion#getServiceName()
+	 * @see #getIdExpresssion()
+	 * @generated
+	 */
+	EAttribute getIdExpresssion_ServiceName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.IdExpresssion#getParameterName <em>Parameter Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parameter Name</em>'.
+	 * @see fr.inria.gag.specification.model.specification.IdExpresssion#getParameterName()
+	 * @see #getIdExpresssion()
+	 * @generated
+	 */
+	EAttribute getIdExpresssion_ParameterName();
+
+	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Expression</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Expression
+	 * @generated
+	 */
+	EClass getExpression();
+
+	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.FunctionExpression <em>Function Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function Expression</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionExpression
+	 * @generated
+	 */
+	EClass getFunctionExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.inria.gag.specification.model.specification.FunctionExpression#getFunction <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Function</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionExpression#getFunction()
+	 * @see #getFunctionExpression()
+	 * @generated
+	 */
+	EReference getFunctionExpression_Function();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpresssions <em>Id Expresssions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Id Expresssions</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpresssions()
+	 * @see #getFunctionExpression()
+	 * @generated
+	 */
+	EReference getFunctionExpression_IdExpresssions();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -771,6 +1221,14 @@ public interface SpecificationPackage extends EPackage {
 		EAttribute GUARD__CLASS_PATH = eINSTANCE.getGuard_ClassPath();
 
 		/**
+		 * The meta object literal for the '<em><b>Lib Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GUARD__LIB_LOCATION = eINSTANCE.getGuard_LibLocation();
+
+		/**
 		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.SemanticRuleImpl <em>Semantic Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -779,6 +1237,22 @@ public interface SpecificationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SEMANTIC_RULE = eINSTANCE.getSemanticRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Function Declaration</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMANTIC_RULE__FUNCTION_DECLARATION = eINSTANCE.getSemanticRule_FunctionDeclaration();
+
+		/**
+		 * The meta object literal for the '<em><b>Equations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMANTIC_RULE__EQUATIONS = eINSTANCE.getSemanticRule_Equations();
 
 		/**
 		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -807,6 +1281,136 @@ public interface SpecificationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RUNTIME_DATA = eINSTANCE.getRuntimeData();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl <em>Function Declaration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getFunctionDeclaration()
+		 * @generated
+		 */
+		EClass FUNCTION_DECLARATION = eINSTANCE.getFunctionDeclaration();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_DECLARATION__NAME = eINSTANCE.getFunctionDeclaration_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_DECLARATION__CLASS_PATH = eINSTANCE.getFunctionDeclaration_ClassPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_DECLARATION__METHOD = eINSTANCE.getFunctionDeclaration_Method();
+
+		/**
+		 * The meta object literal for the '<em><b>Lib Location</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_DECLARATION__LIB_LOCATION = eINSTANCE.getFunctionDeclaration_LibLocation();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.EquationImpl <em>Equation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.EquationImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getEquation()
+		 * @generated
+		 */
+		EClass EQUATION = eINSTANCE.getEquation();
+
+		/**
+		 * The meta object literal for the '<em><b>Leftpart</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EQUATION__LEFTPART = eINSTANCE.getEquation_Leftpart();
+
+		/**
+		 * The meta object literal for the '<em><b>Rightpart</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EQUATION__RIGHTPART = eINSTANCE.getEquation_Rightpart();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl <em>Id Expresssion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getIdExpresssion()
+		 * @generated
+		 */
+		EClass ID_EXPRESSSION = eINSTANCE.getIdExpresssion();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ID_EXPRESSSION__SERVICE_NAME = eINSTANCE.getIdExpresssion_ServiceName();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ID_EXPRESSSION__PARAMETER_NAME = eINSTANCE.getIdExpresssion_ParameterName();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.ExpressionImpl <em>Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.ExpressionImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getExpression()
+		 * @generated
+		 */
+		EClass EXPRESSION = eINSTANCE.getExpression();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl <em>Function Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getFunctionExpression()
+		 * @generated
+		 */
+		EClass FUNCTION_EXPRESSION = eINSTANCE.getFunctionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION_EXPRESSION__FUNCTION = eINSTANCE.getFunctionExpression_Function();
+
+		/**
+		 * The meta object literal for the '<em><b>Id Expresssions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION_EXPRESSION__ID_EXPRESSSIONS = eINSTANCE.getFunctionExpression_IdExpresssions();
 
 	}
 

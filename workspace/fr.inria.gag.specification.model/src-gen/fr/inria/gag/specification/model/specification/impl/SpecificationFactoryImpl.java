@@ -68,6 +68,14 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 			return createSemanticRule();
 		case SpecificationPackage.PARAMETER:
 			return createParameter();
+		case SpecificationPackage.FUNCTION_DECLARATION:
+			return createFunctionDeclaration();
+		case SpecificationPackage.EQUATION:
+			return createEquation();
+		case SpecificationPackage.ID_EXPRESSSION:
+			return createIdExpresssion();
+		case SpecificationPackage.FUNCTION_EXPRESSION:
+			return createFunctionExpression();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +139,46 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionDeclaration createFunctionDeclaration() {
+		FunctionDeclarationImpl functionDeclaration = new FunctionDeclarationImpl();
+		return functionDeclaration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Equation createEquation() {
+		EquationImpl equation = new EquationImpl();
+		return equation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IdExpresssion createIdExpresssion() {
+		IdExpresssionImpl idExpresssion = new IdExpresssionImpl();
+		return idExpresssion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionExpression createFunctionExpression() {
+		FunctionExpressionImpl functionExpression = new FunctionExpressionImpl();
+		return functionExpression;
 	}
 
 	/**

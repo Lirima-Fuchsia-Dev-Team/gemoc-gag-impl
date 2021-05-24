@@ -77,6 +77,42 @@ public interface SpecificationFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
+	 * Returns a new object of class '<em>Function Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function Declaration</em>'.
+	 * @generated
+	 */
+	FunctionDeclaration createFunctionDeclaration();
+
+	/**
+	 * Returns a new object of class '<em>Equation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Equation</em>'.
+	 * @generated
+	 */
+	Equation createEquation();
+
+	/**
+	 * Returns a new object of class '<em>Id Expresssion</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Id Expresssion</em>'.
+	 * @generated
+	 */
+	IdExpresssion createIdExpresssion();
+
+	/**
+	 * Returns a new object of class '<em>Function Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function Expression</em>'.
+	 * @generated
+	 */
+	FunctionExpression createFunctionExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

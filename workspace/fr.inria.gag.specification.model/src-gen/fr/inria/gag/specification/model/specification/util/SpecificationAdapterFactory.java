@@ -102,6 +102,31 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseFunctionDeclaration(FunctionDeclaration object) {
+			return createFunctionDeclarationAdapter();
+		}
+
+		@Override
+		public Adapter caseEquation(Equation object) {
+			return createEquationAdapter();
+		}
+
+		@Override
+		public Adapter caseIdExpresssion(IdExpresssion object) {
+			return createIdExpresssionAdapter();
+		}
+
+		@Override
+		public Adapter caseExpression(Expression object) {
+			return createExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseFunctionExpression(FunctionExpression object) {
+			return createFunctionExpressionAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -215,6 +240,76 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRuntimeDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration <em>Function Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration
+	 * @generated
+	 */
+	public Adapter createFunctionDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.Equation <em>Equation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.specification.model.specification.Equation
+	 * @generated
+	 */
+	public Adapter createEquationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.IdExpresssion <em>Id Expresssion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.specification.model.specification.IdExpresssion
+	 * @generated
+	 */
+	public Adapter createIdExpresssionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.specification.model.specification.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.FunctionExpression <em>Function Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.specification.model.specification.FunctionExpression
+	 * @generated
+	 */
+	public Adapter createFunctionExpressionAdapter() {
 		return null;
 	}
 

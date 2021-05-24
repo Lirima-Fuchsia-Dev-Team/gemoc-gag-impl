@@ -3,7 +3,12 @@
 package fr.inria.gag.specification.model.specification.impl;
 
 import fr.inria.gag.specification.model.specification.DecompositionRule;
+import fr.inria.gag.specification.model.specification.Equation;
+import fr.inria.gag.specification.model.specification.Expression;
+import fr.inria.gag.specification.model.specification.FunctionDeclaration;
+import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.Guard;
+import fr.inria.gag.specification.model.specification.IdExpresssion;
 import fr.inria.gag.specification.model.specification.Parameter;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.SemanticRule;
@@ -73,6 +78,41 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * @generated
 	 */
 	private EClass runtimeDataEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionDeclarationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass equationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass idExpresssionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass expressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -296,8 +336,35 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGuard_LibLocation() {
+		return (EAttribute) guardEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSemanticRule() {
 		return semanticRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSemanticRule_FunctionDeclaration() {
+		return (EReference) semanticRuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSemanticRule_Equations() {
+		return (EReference) semanticRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -325,6 +392,141 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 */
 	public EClass getRuntimeData() {
 		return runtimeDataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFunctionDeclaration() {
+		return functionDeclarationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFunctionDeclaration_Name() {
+		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFunctionDeclaration_ClassPath() {
+		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFunctionDeclaration_Method() {
+		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFunctionDeclaration_LibLocation() {
+		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEquation() {
+		return equationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEquation_Leftpart() {
+		return (EReference) equationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEquation_Rightpart() {
+		return (EReference) equationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIdExpresssion() {
+		return idExpresssionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIdExpresssion_ServiceName() {
+		return (EAttribute) idExpresssionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIdExpresssion_ParameterName() {
+		return (EAttribute) idExpresssionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExpression() {
+		return expressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFunctionExpression() {
+		return functionExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFunctionExpression_Function() {
+		return (EReference) functionExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFunctionExpression_IdExpresssions() {
+		return (EReference) functionExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -376,13 +578,36 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		guardEClass = createEClass(GUARD);
 		createEAttribute(guardEClass, GUARD__CLASS_PATH);
+		createEAttribute(guardEClass, GUARD__LIB_LOCATION);
 
 		semanticRuleEClass = createEClass(SEMANTIC_RULE);
+		createEReference(semanticRuleEClass, SEMANTIC_RULE__FUNCTION_DECLARATION);
+		createEReference(semanticRuleEClass, SEMANTIC_RULE__EQUATIONS);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
 
 		runtimeDataEClass = createEClass(RUNTIME_DATA);
+
+		functionDeclarationEClass = createEClass(FUNCTION_DECLARATION);
+		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__NAME);
+		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__CLASS_PATH);
+		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__METHOD);
+		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__LIB_LOCATION);
+
+		equationEClass = createEClass(EQUATION);
+		createEReference(equationEClass, EQUATION__LEFTPART);
+		createEReference(equationEClass, EQUATION__RIGHTPART);
+
+		idExpresssionEClass = createEClass(ID_EXPRESSSION);
+		createEAttribute(idExpresssionEClass, ID_EXPRESSSION__SERVICE_NAME);
+		createEAttribute(idExpresssionEClass, ID_EXPRESSSION__PARAMETER_NAME);
+
+		expressionEClass = createEClass(EXPRESSION);
+
+		functionExpressionEClass = createEClass(FUNCTION_EXPRESSION);
+		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__FUNCTION);
+		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__ID_EXPRESSSIONS);
 	}
 
 	/**
@@ -414,6 +639,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		idExpresssionEClass.getESuperTypes().add(this.getExpression());
+		functionExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gagEClass, fr.inria.gag.specification.model.specification.GAG.class, "GAG", !IS_ABSTRACT,
@@ -459,11 +686,19 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGuard_ClassPath(), ecorePackage.getEString(), "classPath", null, 0, 1, Guard.class,
+		initEAttribute(getGuard_ClassPath(), ecorePackage.getEString(), "classPath", null, 1, 1, Guard.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuard_LibLocation(), ecorePackage.getEString(), "libLocation", null, 1, 1, Guard.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semanticRuleEClass, SemanticRule.class, "SemanticRule", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSemanticRule_FunctionDeclaration(), this.getFunctionDeclaration(), null,
+				"functionDeclaration", null, 0, -1, SemanticRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSemanticRule_Equations(), this.getEquation(), null, "equations", null, 0, -1,
+				SemanticRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -472,6 +707,51 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		initEClass(runtimeDataEClass, RuntimeData.class, "RuntimeData", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(functionDeclarationEClass, FunctionDeclaration.class, "FunctionDeclaration", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFunctionDeclaration_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFunctionDeclaration_ClassPath(), ecorePackage.getEString(), "classPath", null, 1, 1,
+				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFunctionDeclaration_Method(), ecorePackage.getEString(), "method", null, 1, 1,
+				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFunctionDeclaration_LibLocation(), ecorePackage.getEString(), "libLocation", null, 1, 1,
+				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(equationEClass, Equation.class, "Equation", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEquation_Leftpart(), this.getIdExpresssion(), null, "leftpart", null, 1, 1, Equation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEquation_Rightpart(), this.getExpression(), null, "rightpart", null, 1, 1, Equation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(idExpresssionEClass, IdExpresssion.class, "IdExpresssion", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIdExpresssion_ServiceName(), ecorePackage.getEString(), "serviceName", null, 1, 1,
+				IdExpresssion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIdExpresssion_ParameterName(), ecorePackage.getEString(), "parameterName", null, 1, 1,
+				IdExpresssion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(functionExpressionEClass, FunctionExpression.class, "FunctionExpression", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFunctionExpression_Function(), this.getFunctionDeclaration(), null, "function", null, 1, 1,
+				FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunctionExpression_IdExpresssions(), this.getIdExpresssion(), null, "idExpresssions", null, 0,
+				-1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
