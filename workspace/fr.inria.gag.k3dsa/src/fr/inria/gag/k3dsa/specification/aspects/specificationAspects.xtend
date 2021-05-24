@@ -154,7 +154,7 @@ class GAGAspect {
 		Console.debug("Trying static guard evaluation on " + _self.eResource.URI);
 		try {
 			Console.debug("Fixed guard evaluation result is : " +
-				_self.exec.isRuleActivable("F:/Workspace/Fuchsia/gemoc-gag-impl/runtime-Modeling_Workbench/gag.with.guard/bin", "urifia.gag.MyCustomGAGGuard"));
+				_self.exec.isRuleActivable("E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin", "urifia.gag.MyCustomGAGGuard"));
 		} catch (Exception e) {
 			Console.error("Exception on guard evaluation", e);
 		}
@@ -184,7 +184,7 @@ class GuardAspect {
 		if (_self.classPath !== null && !_self.classPath.isEmpty()) {
 			try {
 				// val String libLocation = _self.libLocation;
-				val String libLocation = "F:/Workspace/Fuchsia/gemoc-gag-impl/runtime-Modeling_Workbench/gag.with.guard/bin";
+				val String libLocation = "E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin";
 				return exec.isRuleActivable(libLocation, _self.classPath)
 			} catch (Exception e) {
 				Console.error("Exception on guard evaluation");

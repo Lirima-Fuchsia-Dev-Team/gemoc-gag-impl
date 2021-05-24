@@ -23,7 +23,7 @@ public class GuardAspect {
   protected static boolean _privk3_isRuleActivable(final GuardAspectGuardAspectProperties _self_, final Guard _self, final GagGuardExecutor exec) {
     if (((_self.getClassPath() != null) && (!_self.getClassPath().isEmpty()))) {
       try {
-        final String libLocation = "F:/Workspace/Fuchsia/gemoc-gag-impl/runtime-Modeling_Workbench/gag.with.guard/bin";
+        final String libLocation = "E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin";
         return exec.isRuleActivable(libLocation, _self.getClassPath());
       } catch (final Throwable _t) {
         if (_t instanceof Exception) {

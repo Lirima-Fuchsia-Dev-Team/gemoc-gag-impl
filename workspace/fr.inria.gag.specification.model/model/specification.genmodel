@@ -30,11 +30,34 @@
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Guard">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/classPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/libLocation"/>
     </genClasses>
-    <genClasses ecoreClass="specification.ecore#//SemanticRule"/>
+    <genClasses ecoreClass="specification.ecore#//SemanticRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//SemanticRule/functionDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//SemanticRule/equations"/>
+    </genClasses>
     <genClasses ecoreClass="specification.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Parameter/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="specification.ecore#//RuntimeData"/>
+    <genClasses ecoreClass="specification.ecore#//FunctionDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/classPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/libLocation"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Equation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/leftpart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/rightpart"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//IdExpresssion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpresssion/serviceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpresssion/parameterName"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//Expression"/>
+    <genClasses ecoreClass="specification.ecore#//FunctionExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/idExpresssions"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
