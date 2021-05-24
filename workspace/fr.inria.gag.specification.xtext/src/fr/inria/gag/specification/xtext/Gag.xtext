@@ -8,9 +8,9 @@ GAG returns GAG:
 	{GAG}
 	'GAG'
 	name=EString
-	'{'
+	
 		( '{' services+=Service ( "," services+=Service)* '}' )?
-	'}';
+	;
 
 
 
@@ -26,14 +26,13 @@ Expression returns Expression:
 
 Service returns Service:
 	(isAxiom?='isAxiom')?
-	'Service'
 	name=EString
-	'{'
+	
 		
 		( '(' inputParameters+=Parameter ( "," inputParameters+=Parameter)* ')' )?
 		( '[' outputParameters+=Parameter ( "," outputParameters+=Parameter)* ']' )?
 		':' '{' rules+=DecompositionRule ( "," rules+=DecompositionRule)* '}' 
-	'}';
+	;
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -51,7 +50,6 @@ DecompositionRule returns DecompositionRule:
 
 Parameter returns Parameter:
 	{Parameter}
-	'Parameter'
 	name=EString;
 
 EBoolean returns ecore::EBoolean:
@@ -91,11 +89,10 @@ Equation returns Equation:
 	';';
 
 IdExpresssion returns IdExpresssion:
-	'IdExpresssion'
-	'{'
+	
 		 serviceName=EString
 		'.'  parameterName=EString
-	'}';
+	;
 
 FunctionExpression returns FunctionExpression:
 	 function=[FunctionDeclaration|EString]
