@@ -92,18 +92,18 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIdExpresssionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIdExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFunctionExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Expression:
-		//	IdExpresssion | FunctionExpression;
+		//	IdExpression | FunctionExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//IdExpresssion | FunctionExpression
+		//IdExpression | FunctionExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//IdExpresssion
-		public RuleCall getIdExpresssionParserRuleCall_0() { return cIdExpresssionParserRuleCall_0; }
+		//IdExpression
+		public RuleCall getIdExpressionParserRuleCall_0() { return cIdExpressionParserRuleCall_0; }
 		
 		//FunctionExpression
 		public RuleCall getFunctionExpressionParserRuleCall_1() { return cFunctionExpressionParserRuleCall_1; }
@@ -636,26 +636,26 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.Equation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cLeftpartAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLeftpartIdExpresssionParserRuleCall_0_0 = (RuleCall)cLeftpartAssignment_0.eContents().get(0);
+		private final RuleCall cLeftpartIdExpressionParserRuleCall_0_0 = (RuleCall)cLeftpartAssignment_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRightpartAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRightpartExpressionParserRuleCall_2_0 = (RuleCall)cRightpartAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Equation:
-		//	leftpart=IdExpresssion
+		//	leftpart=IdExpression
 		//	'=' rightpart=Expression
 		//	';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//leftpart=IdExpresssion '=' rightpart=Expression ';'
+		//leftpart=IdExpression '=' rightpart=Expression ';'
 		public Group getGroup() { return cGroup; }
 		
-		//leftpart=IdExpresssion
+		//leftpart=IdExpression
 		public Assignment getLeftpartAssignment_0() { return cLeftpartAssignment_0; }
 		
-		//IdExpresssion
-		public RuleCall getLeftpartIdExpresssionParserRuleCall_0_0() { return cLeftpartIdExpresssionParserRuleCall_0_0; }
+		//IdExpression
+		public RuleCall getLeftpartIdExpressionParserRuleCall_0_0() { return cLeftpartIdExpressionParserRuleCall_0_0; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
@@ -669,8 +669,8 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		//';'
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
-	public class IdExpresssionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.IdExpresssion");
+	public class IdExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.IdExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cServiceNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cServiceNameEStringParserRuleCall_0_0 = (RuleCall)cServiceNameAssignment_0.eContents().get(0);
@@ -678,7 +678,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParameterNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParameterNameEStringParserRuleCall_2_0 = (RuleCall)cParameterNameAssignment_2.eContents().get(0);
 		
-		//IdExpresssion:
+		//IdExpression:
 		//	serviceName=EString
 		//	'.' parameterName=EString;
 		@Override public ParserRule getRule() { return rule; }
@@ -709,20 +709,20 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFunctionFunctionDeclarationEStringParserRuleCall_0_0_1 = (RuleCall)cFunctionFunctionDeclarationCrossReference_0_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cIdExpresssionsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cIdExpresssionsIdExpresssionParserRuleCall_2_0_0 = (RuleCall)cIdExpresssionsAssignment_2_0.eContents().get(0);
+		private final Assignment cIdExpressionsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cIdExpressionsIdExpressionParserRuleCall_2_0_0 = (RuleCall)cIdExpressionsAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cIdExpresssionsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cIdExpresssionsIdExpresssionParserRuleCall_2_1_1_0 = (RuleCall)cIdExpresssionsAssignment_2_1_1.eContents().get(0);
+		private final Assignment cIdExpressionsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cIdExpressionsIdExpressionParserRuleCall_2_1_1_0 = (RuleCall)cIdExpressionsAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//FunctionExpression:
 		//	function=[FunctionDeclaration|EString]
-		//	'(' (idExpresssions+=IdExpresssion ("," idExpresssions+=IdExpresssion)*)? ')';
+		//	'(' (idExpressions+=IdExpression ("," idExpressions+=IdExpression)*)? ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//function=[FunctionDeclaration|EString] '(' (idExpresssions+=IdExpresssion ("," idExpresssions+=IdExpresssion)*)? ')'
+		//function=[FunctionDeclaration|EString] '(' (idExpressions+=IdExpression ("," idExpressions+=IdExpression)*)? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//function=[FunctionDeclaration|EString]
@@ -737,26 +737,26 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//(idExpresssions+=IdExpresssion ("," idExpresssions+=IdExpresssion)*)?
+		//(idExpressions+=IdExpression ("," idExpressions+=IdExpression)*)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//idExpresssions+=IdExpresssion
-		public Assignment getIdExpresssionsAssignment_2_0() { return cIdExpresssionsAssignment_2_0; }
+		//idExpressions+=IdExpression
+		public Assignment getIdExpressionsAssignment_2_0() { return cIdExpressionsAssignment_2_0; }
 		
-		//IdExpresssion
-		public RuleCall getIdExpresssionsIdExpresssionParserRuleCall_2_0_0() { return cIdExpresssionsIdExpresssionParserRuleCall_2_0_0; }
+		//IdExpression
+		public RuleCall getIdExpressionsIdExpressionParserRuleCall_2_0_0() { return cIdExpressionsIdExpressionParserRuleCall_2_0_0; }
 		
-		//("," idExpresssions+=IdExpresssion)*
+		//("," idExpressions+=IdExpression)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//","
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 		
-		//idExpresssions+=IdExpresssion
-		public Assignment getIdExpresssionsAssignment_2_1_1() { return cIdExpresssionsAssignment_2_1_1; }
+		//idExpressions+=IdExpression
+		public Assignment getIdExpressionsAssignment_2_1_1() { return cIdExpressionsAssignment_2_1_1; }
 		
-		//IdExpresssion
-		public RuleCall getIdExpresssionsIdExpresssionParserRuleCall_2_1_1_0() { return cIdExpresssionsIdExpresssionParserRuleCall_2_1_1_0; }
+		//IdExpression
+		public RuleCall getIdExpressionsIdExpressionParserRuleCall_2_1_1_0() { return cIdExpressionsIdExpressionParserRuleCall_2_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -774,7 +774,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	private final SemanticRuleElements pSemanticRule;
 	private final FunctionDeclarationElements pFunctionDeclaration;
 	private final EquationElements pEquation;
-	private final IdExpresssionElements pIdExpresssion;
+	private final IdExpressionElements pIdExpression;
 	private final FunctionExpressionElements pFunctionExpression;
 	
 	private final Grammar grammar;
@@ -797,7 +797,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSemanticRule = new SemanticRuleElements();
 		this.pFunctionDeclaration = new FunctionDeclarationElements();
 		this.pEquation = new EquationElements();
-		this.pIdExpresssion = new IdExpresssionElements();
+		this.pIdExpression = new IdExpressionElements();
 		this.pFunctionExpression = new FunctionExpressionElements();
 	}
 	
@@ -841,7 +841,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	IdExpresssion | FunctionExpression;
+	//	IdExpression | FunctionExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -949,7 +949,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Equation:
-	//	leftpart=IdExpresssion
+	//	leftpart=IdExpression
 	//	'=' rightpart=Expression
 	//	';';
 	public EquationElements getEquationAccess() {
@@ -960,20 +960,20 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		return getEquationAccess().getRule();
 	}
 	
-	//IdExpresssion:
+	//IdExpression:
 	//	serviceName=EString
 	//	'.' parameterName=EString;
-	public IdExpresssionElements getIdExpresssionAccess() {
-		return pIdExpresssion;
+	public IdExpressionElements getIdExpressionAccess() {
+		return pIdExpression;
 	}
 	
-	public ParserRule getIdExpresssionRule() {
-		return getIdExpresssionAccess().getRule();
+	public ParserRule getIdExpressionRule() {
+		return getIdExpressionAccess().getRule();
 	}
 	
 	//FunctionExpression:
 	//	function=[FunctionDeclaration|EString]
-	//	'(' (idExpresssions+=IdExpresssion ("," idExpresssions+=IdExpresssion)*)? ')';
+	//	'(' (idExpressions+=IdExpression ("," idExpressions+=IdExpression)*)? ')';
 	public FunctionExpressionElements getFunctionExpressionAccess() {
 		return pFunctionExpression;
 	}

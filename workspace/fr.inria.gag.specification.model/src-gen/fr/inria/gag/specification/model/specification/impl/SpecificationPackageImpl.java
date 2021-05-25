@@ -8,7 +8,7 @@ import fr.inria.gag.specification.model.specification.Expression;
 import fr.inria.gag.specification.model.specification.FunctionDeclaration;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.Guard;
-import fr.inria.gag.specification.model.specification.IdExpresssion;
+import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.Parameter;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.SemanticRule;
@@ -98,7 +98,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass idExpresssionEClass = null;
+	private EClass idExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -471,8 +471,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIdExpresssion() {
-		return idExpresssionEClass;
+	public EClass getIdExpression() {
+		return idExpressionEClass;
 	}
 
 	/**
@@ -480,8 +480,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIdExpresssion_ServiceName() {
-		return (EAttribute) idExpresssionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getIdExpression_ServiceName() {
+		return (EAttribute) idExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -489,8 +489,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIdExpresssion_ParameterName() {
-		return (EAttribute) idExpresssionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getIdExpression_ParameterName() {
+		return (EAttribute) idExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -525,7 +525,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunctionExpression_IdExpresssions() {
+	public EReference getFunctionExpression_IdExpressions() {
 		return (EReference) functionExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -599,15 +599,15 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		createEReference(equationEClass, EQUATION__LEFTPART);
 		createEReference(equationEClass, EQUATION__RIGHTPART);
 
-		idExpresssionEClass = createEClass(ID_EXPRESSSION);
-		createEAttribute(idExpresssionEClass, ID_EXPRESSSION__SERVICE_NAME);
-		createEAttribute(idExpresssionEClass, ID_EXPRESSSION__PARAMETER_NAME);
+		idExpressionEClass = createEClass(ID_EXPRESSION);
+		createEAttribute(idExpressionEClass, ID_EXPRESSION__SERVICE_NAME);
+		createEAttribute(idExpressionEClass, ID_EXPRESSION__PARAMETER_NAME);
 
 		expressionEClass = createEClass(EXPRESSION);
 
 		functionExpressionEClass = createEClass(FUNCTION_EXPRESSION);
 		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__FUNCTION);
-		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__ID_EXPRESSSIONS);
+		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__ID_EXPRESSIONS);
 	}
 
 	/**
@@ -639,7 +639,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		idExpresssionEClass.getESuperTypes().add(this.getExpression());
+		idExpressionEClass.getESuperTypes().add(this.getExpression());
 		functionExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
@@ -725,20 +725,20 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		initEClass(equationEClass, Equation.class, "Equation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEquation_Leftpart(), this.getIdExpresssion(), null, "leftpart", null, 1, 1, Equation.class,
+		initEReference(getEquation_Leftpart(), this.getIdExpression(), null, "leftpart", null, 1, 1, Equation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquation_Rightpart(), this.getExpression(), null, "rightpart", null, 1, 1, Equation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(idExpresssionEClass, IdExpresssion.class, "IdExpresssion", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(idExpressionEClass, IdExpression.class, "IdExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIdExpresssion_ServiceName(), ecorePackage.getEString(), "serviceName", null, 1, 1,
-				IdExpresssion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getIdExpression_ServiceName(), ecorePackage.getEString(), "serviceName", null, 1, 1,
+				IdExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIdExpresssion_ParameterName(), ecorePackage.getEString(), "parameterName", null, 1, 1,
-				IdExpresssion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getIdExpression_ParameterName(), ecorePackage.getEString(), "parameterName", null, 1, 1,
+				IdExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE,
@@ -749,7 +749,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEReference(getFunctionExpression_Function(), this.getFunctionDeclaration(), null, "function", null, 1, 1,
 				FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionExpression_IdExpresssions(), this.getIdExpresssion(), null, "idExpresssions", null, 0,
+		initEReference(getFunctionExpression_IdExpressions(), this.getIdExpression(), null, "idExpressions", null, 0,
 				-1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

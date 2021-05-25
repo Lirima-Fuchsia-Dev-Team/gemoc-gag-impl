@@ -72,8 +72,8 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 			return createFunctionDeclaration();
 		case SpecificationPackage.EQUATION:
 			return createEquation();
-		case SpecificationPackage.ID_EXPRESSSION:
-			return createIdExpresssion();
+		case SpecificationPackage.ID_EXPRESSION:
+			return createIdExpression();
 		case SpecificationPackage.FUNCTION_EXPRESSION:
 			return createFunctionExpression();
 		default:
@@ -166,9 +166,9 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IdExpresssion createIdExpresssion() {
-		IdExpresssionImpl idExpresssion = new IdExpresssionImpl();
-		return idExpresssion;
+	public IdExpression createIdExpression() {
+		IdExpressionImpl idExpression = new IdExpressionImpl();
+		return idExpression;
 	}
 
 	/**

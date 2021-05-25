@@ -6,6 +6,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import fr.inria.gag.configuration.model.configuration.Configuration;
 import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
+import fr.inria.gag.configuration.model.configuration.Data;
 import fr.inria.gag.configuration.model.configuration.Task;
 import fr.inria.gag.k3dsa.Console;
 import fr.inria.gag.k3dsa.GagGuardExecutor;
@@ -13,7 +14,9 @@ import fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
 import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
+import fr.inria.gag.specification.model.specification.Equation;
 import fr.inria.gag.specification.model.specification.GAG;
+import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.Service;
 import java.util.ArrayList;
@@ -156,6 +159,24 @@ public class GAGAspect {
     };
   }
   
+  public static Object findReference(final GAG _self, final String[] ref, final EList<Task> tasks) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Object findReference(String[],EList<Task>)
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	result = fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_findReference(_self_, (fr.inria.gag.specification.model.specification.GAG)_self,ref,tasks);
+    };
+    return (java.lang.Object)result;
+  }
+  
+  public static void initTask(final GAG _self, final Task t, final Service s) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void initTask(Task,Service)
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_initTask(_self_, (fr.inria.gag.specification.model.specification.GAG)_self,t,s);
+    };
+  }
+  
   public static void evaluateAllGuardsForTesting(final GAG _self) {
     final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void evaluateAllGuardsForTesting()
@@ -255,6 +276,30 @@ public class GAGAspect {
     conf.setRoot(ConfigurationFactory.eINSTANCE.createTask());
     Task _root = conf.getRoot();
     _root.setService(serviceChoice);
+    Console.debug("Veuillez fournir les valeurs des entrées de l\'axiome ");
+    int _size_2 = conf.getRoot().getService().getInputParameters().size();
+    ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+    for (final Integer i_2 : _doubleDotLessThan_2) {
+      {
+        Data data = ConfigurationFactory.eINSTANCE.createData();
+        data.setParameter(conf.getRoot().getService().getInputParameters().get((i_2).intValue()));
+        String _name = data.getParameter().getName();
+        String _plus = ("Veuillez entrer la valeur du paramètre " + _name);
+        Console.debug(_plus);
+        data.setValue(Console.readConsoleLine(""));
+        conf.getRoot().getInputs().add(data);
+      }
+    }
+    int _size_3 = conf.getRoot().getService().getOutputParameters().size();
+    ExclusiveRange _doubleDotLessThan_3 = new ExclusiveRange(0, _size_3, true);
+    for (final Integer i_3 : _doubleDotLessThan_3) {
+      {
+        Data data = ConfigurationFactory.eINSTANCE.createData();
+        data.setParameter(conf.getRoot().getService().getOutputParameters().get((i_3).intValue()));
+        data.setValue(null);
+        conf.getRoot().getOutputs().add(data);
+      }
+    }
   }
   
   protected static Task _privk3_chooseTask(final GAGAspectGAGAspectProperties _self_, final GAG _self, final ArrayList<Task> openTasks) {
@@ -323,10 +368,73 @@ public class GAGAspect {
     for (final Integer i : _doubleDotLessThan) {
       {
         final Service element = r.getSubServices().get((i).intValue());
-        final Task st = ConfigurationFactory.eINSTANCE.createTask();
-        st.setService(element);
-        st.setIsOpen(true);
+        Task st = ConfigurationFactory.eINSTANCE.createTask();
+        GAGAspect.initTask(_self, st, element);
         t.getSubTasks().add(st);
+      }
+    }
+    int _size_1 = r.getSemantic().getEquations().size();
+    ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+    for (final Integer i_1 : _doubleDotLessThan_1) {
+      {
+        Equation eq = r.getSemantic().getEquations().get((i_1).intValue());
+        String _serviceName = eq.getLeftpart().getServiceName();
+        String _parameterName = eq.getLeftpart().getParameterName();
+        String[] ref1 = new String[] { _serviceName, _parameterName };
+        Object data1 = GAGAspect.findReference(_self, ref1, t.getSubTasks());
+        Object data2 = null;
+        if ((eq instanceof IdExpression)) {
+        }
+      }
+    }
+  }
+  
+  protected static Object _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final EList<Task> tasks) {
+    Data objectRef = ((Data) null);
+    String serviceName = ref[0];
+    String serviceParameter = ref[1];
+    int _size = tasks.size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        Task element = tasks.get((i).intValue());
+        boolean _equals = element.getService().getName().equals(serviceName);
+        if (_equals) {
+          int _size_1 = element.getInputs().size();
+          ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+          for (final Integer j : _doubleDotLessThan_1) {
+            boolean _equals_1 = element.getInputs().get((j).intValue()).getParameter().getName().equals(serviceParameter);
+            if (_equals_1) {
+              objectRef = element.getInputs().get((j).intValue());
+            }
+          }
+        }
+      }
+    }
+    return objectRef;
+  }
+  
+  protected static void _privk3_initTask(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task t, final Service s) {
+    t.setService(s);
+    t.setIsOpen(true);
+    int _size = s.getInputParameters().size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        Data data = ConfigurationFactory.eINSTANCE.createData();
+        data.setParameter(s.getInputParameters().get((i).intValue()));
+        data.setValue(null);
+        t.getInputs().add(data);
+      }
+    }
+    int _size_1 = s.getOutputParameters().size();
+    ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+    for (final Integer i_1 : _doubleDotLessThan_1) {
+      {
+        Data data = ConfigurationFactory.eINSTANCE.createData();
+        data.setParameter(s.getOutputParameters().get((i_1).intValue()));
+        data.setValue(null);
+        t.getOutputs().add(data);
       }
     }
   }

@@ -2,7 +2,7 @@
  */
 package fr.inria.gag.specification.model.specification.impl;
 
-import fr.inria.gag.specification.model.specification.IdExpresssion;
+import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -13,19 +13,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Id Expresssion</b></em>'.
+ * An implementation of the model object '<em><b>Id Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl#getServiceName <em>Service Name</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl#getParameterName <em>Parameter Name</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.IdExpressionImpl#getServiceName <em>Service Name</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.IdExpressionImpl#getParameterName <em>Parameter Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
+public class IdExpressionImpl extends ExpressionImpl implements IdExpression {
 	/**
 	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IdExpresssionImpl() {
+	protected IdExpressionImpl() {
 		super();
 	}
 
@@ -82,7 +82,7 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SpecificationPackage.Literals.ID_EXPRESSSION;
+		return SpecificationPackage.Literals.ID_EXPRESSION;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 		String oldServiceName = serviceName;
 		serviceName = newServiceName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.ID_EXPRESSSION__SERVICE_NAME,
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.ID_EXPRESSION__SERVICE_NAME,
 					oldServiceName, serviceName));
 	}
 
@@ -125,7 +125,7 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 		String oldParameterName = parameterName;
 		parameterName = newParameterName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.ID_EXPRESSSION__PARAMETER_NAME,
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.ID_EXPRESSION__PARAMETER_NAME,
 					oldParameterName, parameterName));
 	}
 
@@ -137,9 +137,9 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SpecificationPackage.ID_EXPRESSSION__SERVICE_NAME:
+		case SpecificationPackage.ID_EXPRESSION__SERVICE_NAME:
 			return getServiceName();
-		case SpecificationPackage.ID_EXPRESSSION__PARAMETER_NAME:
+		case SpecificationPackage.ID_EXPRESSION__PARAMETER_NAME:
 			return getParameterName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -153,10 +153,10 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SpecificationPackage.ID_EXPRESSSION__SERVICE_NAME:
+		case SpecificationPackage.ID_EXPRESSION__SERVICE_NAME:
 			setServiceName((String) newValue);
 			return;
-		case SpecificationPackage.ID_EXPRESSSION__PARAMETER_NAME:
+		case SpecificationPackage.ID_EXPRESSION__PARAMETER_NAME:
 			setParameterName((String) newValue);
 			return;
 		}
@@ -171,10 +171,10 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SpecificationPackage.ID_EXPRESSSION__SERVICE_NAME:
+		case SpecificationPackage.ID_EXPRESSION__SERVICE_NAME:
 			setServiceName(SERVICE_NAME_EDEFAULT);
 			return;
-		case SpecificationPackage.ID_EXPRESSSION__PARAMETER_NAME:
+		case SpecificationPackage.ID_EXPRESSION__PARAMETER_NAME:
 			setParameterName(PARAMETER_NAME_EDEFAULT);
 			return;
 		}
@@ -189,9 +189,9 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SpecificationPackage.ID_EXPRESSSION__SERVICE_NAME:
+		case SpecificationPackage.ID_EXPRESSION__SERVICE_NAME:
 			return SERVICE_NAME_EDEFAULT == null ? serviceName != null : !SERVICE_NAME_EDEFAULT.equals(serviceName);
-		case SpecificationPackage.ID_EXPRESSSION__PARAMETER_NAME:
+		case SpecificationPackage.ID_EXPRESSION__PARAMETER_NAME:
 			return PARAMETER_NAME_EDEFAULT == null ? parameterName != null
 					: !PARAMETER_NAME_EDEFAULT.equals(parameterName);
 		}
@@ -217,4 +217,4 @@ public class IdExpresssionImpl extends ExpressionImpl implements IdExpresssion {
 		return result.toString();
 	}
 
-} //IdExpresssionImpl
+} //IdExpressionImpl

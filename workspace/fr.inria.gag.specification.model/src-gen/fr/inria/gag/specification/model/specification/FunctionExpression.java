@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.specification.model.specification.FunctionExpression#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpresssions <em>Id Expresssions</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpressions <em>Id Expressions</em>}</li>
  * </ul>
  *
  * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getFunctionExpression()
@@ -49,19 +49,19 @@ public interface FunctionExpression extends Expression {
 	void setFunction(FunctionDeclaration value);
 
 	/**
-	 * Returns the value of the '<em><b>Id Expresssions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.IdExpresssion}.
+	 * Returns the value of the '<em><b>Id Expressions</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.IdExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Id Expresssions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Id Expressions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id Expresssions</em>' containment reference list.
-	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getFunctionExpression_IdExpresssions()
+	 * @return the value of the '<em>Id Expressions</em>' containment reference list.
+	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getFunctionExpression_IdExpressions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<IdExpresssion> getIdExpresssions();
+	EList<IdExpression> getIdExpressions();
 
 } // FunctionExpression

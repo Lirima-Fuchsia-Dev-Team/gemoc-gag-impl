@@ -129,11 +129,11 @@ public class SpecificationSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SpecificationPackage.ID_EXPRESSSION: {
-			IdExpresssion idExpresssion = (IdExpresssion) theEObject;
-			T result = caseIdExpresssion(idExpresssion);
+		case SpecificationPackage.ID_EXPRESSION: {
+			IdExpression idExpression = (IdExpression) theEObject;
+			T result = caseIdExpression(idExpression);
 			if (result == null)
-				result = caseExpression(idExpresssion);
+				result = caseExpression(idExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -295,17 +295,17 @@ public class SpecificationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Id Expresssion</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Id Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Id Expresssion</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Id Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIdExpresssion(IdExpresssion object) {
+	public T caseIdExpression(IdExpression object) {
 		return null;
 	}
 

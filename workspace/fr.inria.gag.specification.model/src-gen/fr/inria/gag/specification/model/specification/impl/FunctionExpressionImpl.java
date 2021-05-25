@@ -4,7 +4,7 @@ package fr.inria.gag.specification.model.specification.impl;
 
 import fr.inria.gag.specification.model.specification.FunctionDeclaration;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
-import fr.inria.gag.specification.model.specification.IdExpresssion;
+import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
 import java.util.Collection;
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl#getIdExpresssions <em>Id Expresssions</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl#getIdExpressions <em>Id Expressions</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +48,14 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	protected FunctionDeclaration function;
 
 	/**
-	 * The cached value of the '{@link #getIdExpresssions() <em>Id Expresssions</em>}' containment reference list.
+	 * The cached value of the '{@link #getIdExpressions() <em>Id Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIdExpresssions()
+	 * @see #getIdExpressions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<IdExpresssion> idExpresssions;
+	protected EList<IdExpression> idExpressions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,12 +121,12 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<IdExpresssion> getIdExpresssions() {
-		if (idExpresssions == null) {
-			idExpresssions = new EObjectContainmentEList<IdExpresssion>(IdExpresssion.class, this,
-					SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSSIONS);
+	public EList<IdExpression> getIdExpressions() {
+		if (idExpressions == null) {
+			idExpressions = new EObjectContainmentEList<IdExpression>(IdExpression.class, this,
+					SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS);
 		}
-		return idExpresssions;
+		return idExpressions;
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSSIONS:
-			return ((InternalEList<?>) getIdExpresssions()).basicRemove(otherEnd, msgs);
+		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
+			return ((InternalEList<?>) getIdExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,8 +155,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 			if (resolve)
 				return getFunction();
 			return basicGetFunction();
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSSIONS:
-			return getIdExpresssions();
+		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
+			return getIdExpressions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,9 +173,9 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 		case SpecificationPackage.FUNCTION_EXPRESSION__FUNCTION:
 			setFunction((FunctionDeclaration) newValue);
 			return;
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSSIONS:
-			getIdExpresssions().clear();
-			getIdExpresssions().addAll((Collection<? extends IdExpresssion>) newValue);
+		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
+			getIdExpressions().clear();
+			getIdExpressions().addAll((Collection<? extends IdExpression>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +192,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 		case SpecificationPackage.FUNCTION_EXPRESSION__FUNCTION:
 			setFunction((FunctionDeclaration) null);
 			return;
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSSIONS:
-			getIdExpresssions().clear();
+		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
+			getIdExpressions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -209,8 +209,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 		switch (featureID) {
 		case SpecificationPackage.FUNCTION_EXPRESSION__FUNCTION:
 			return function != null;
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSSIONS:
-			return idExpresssions != null && !idExpresssions.isEmpty();
+		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
+			return idExpressions != null && !idExpressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

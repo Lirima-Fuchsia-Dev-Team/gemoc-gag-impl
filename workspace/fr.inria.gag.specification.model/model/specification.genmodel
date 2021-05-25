@@ -50,14 +50,14 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/leftpart"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/rightpart"/>
     </genClasses>
-    <genClasses ecoreClass="specification.ecore#//IdExpresssion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpresssion/serviceName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpresssion/parameterName"/>
+    <genClasses ecoreClass="specification.ecore#//IdExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpression/serviceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//IdExpression/parameterName"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Expression"/>
     <genClasses ecoreClass="specification.ecore#//FunctionExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/function"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/idExpresssions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/idExpressions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

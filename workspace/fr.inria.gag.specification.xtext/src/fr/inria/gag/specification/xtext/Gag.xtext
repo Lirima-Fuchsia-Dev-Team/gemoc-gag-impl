@@ -22,7 +22,7 @@ GAG returns GAG:
 
 
 Expression returns Expression:
-	IdExpresssion | FunctionExpression;
+	IdExpression | FunctionExpression;
 
 Service returns Service:
 	(isAxiom?='isAxiom')?
@@ -84,11 +84,11 @@ FunctionDeclaration returns FunctionDeclaration:
 
 Equation returns Equation:
 	
-		 leftpart=IdExpresssion
+		 leftpart=IdExpression
 		'=' rightpart=Expression
 	';';
 
-IdExpresssion returns IdExpresssion:
+IdExpression returns IdExpression:
 	
 		 serviceName=EString
 		'.'  parameterName=EString
@@ -96,5 +96,5 @@ IdExpresssion returns IdExpresssion:
 
 FunctionExpression returns FunctionExpression:
 	 function=[FunctionDeclaration|EString]
-		 '(' (idExpresssions+=IdExpresssion ( "," idExpresssions+=IdExpresssion)* )? ')'
+		 '(' (idExpressions+=IdExpression ( "," idExpressions+=IdExpression)* )? ')'
 	;

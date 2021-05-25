@@ -10,7 +10,7 @@ import fr.inria.gag.specification.model.specification.FunctionDeclaration;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.GAG;
 import fr.inria.gag.specification.model.specification.Guard;
-import fr.inria.gag.specification.model.specification.IdExpresssion;
+import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.SemanticRule;
 import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
@@ -58,8 +58,8 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SpecificationPackage.GUARD:
 				sequence_Guard(context, (Guard) semanticObject); 
 				return; 
-			case SpecificationPackage.ID_EXPRESSSION:
-				sequence_IdExpresssion(context, (IdExpresssion) semanticObject); 
+			case SpecificationPackage.ID_EXPRESSION:
+				sequence_IdExpression(context, (IdExpression) semanticObject); 
 				return; 
 			case SpecificationPackage.PARAMETER:
 				sequence_Parameter(context, (fr.inria.gag.specification.model.specification.Parameter) semanticObject); 
@@ -92,7 +92,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Equation returns Equation
 	 *
 	 * Constraint:
-	 *     (leftpart=IdExpresssion rightpart=Expression)
+	 *     (leftpart=IdExpression rightpart=Expression)
 	 */
 	protected void sequence_Equation(ISerializationContext context, Equation semanticObject) {
 		if (errorAcceptor != null) {
@@ -102,7 +102,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.EQUATION__RIGHTPART));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEquationAccess().getLeftpartIdExpresssionParserRuleCall_0_0(), semanticObject.getLeftpart());
+		feeder.accept(grammarAccess.getEquationAccess().getLeftpartIdExpressionParserRuleCall_0_0(), semanticObject.getLeftpart());
 		feeder.accept(grammarAccess.getEquationAccess().getRightpartExpressionParserRuleCall_2_0(), semanticObject.getRightpart());
 		feeder.finish();
 	}
@@ -141,7 +141,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FunctionExpression returns FunctionExpression
 	 *
 	 * Constraint:
-	 *     (function=[FunctionDeclaration|EString] (idExpresssions+=IdExpresssion idExpresssions+=IdExpresssion*)?)
+	 *     (function=[FunctionDeclaration|EString] (idExpressions+=IdExpression idExpressions+=IdExpression*)?)
 	 */
 	protected void sequence_FunctionExpression(ISerializationContext context, FunctionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -183,22 +183,22 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Expression returns IdExpresssion
-	 *     IdExpresssion returns IdExpresssion
+	 *     Expression returns IdExpression
+	 *     IdExpression returns IdExpression
 	 *
 	 * Constraint:
 	 *     (serviceName=EString parameterName=EString)
 	 */
-	protected void sequence_IdExpresssion(ISerializationContext context, IdExpresssion semanticObject) {
+	protected void sequence_IdExpression(ISerializationContext context, IdExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.ID_EXPRESSSION__SERVICE_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.ID_EXPRESSSION__SERVICE_NAME));
-			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.ID_EXPRESSSION__PARAMETER_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.ID_EXPRESSSION__PARAMETER_NAME));
+			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.ID_EXPRESSION__SERVICE_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.ID_EXPRESSION__SERVICE_NAME));
+			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.ID_EXPRESSION__PARAMETER_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.ID_EXPRESSION__PARAMETER_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIdExpresssionAccess().getServiceNameEStringParserRuleCall_0_0(), semanticObject.getServiceName());
-		feeder.accept(grammarAccess.getIdExpresssionAccess().getParameterNameEStringParserRuleCall_2_0(), semanticObject.getParameterName());
+		feeder.accept(grammarAccess.getIdExpressionAccess().getServiceNameEStringParserRuleCall_0_0(), semanticObject.getServiceName());
+		feeder.accept(grammarAccess.getIdExpressionAccess().getParameterNameEStringParserRuleCall_2_0(), semanticObject.getParameterName());
 		feeder.finish();
 	}
 	

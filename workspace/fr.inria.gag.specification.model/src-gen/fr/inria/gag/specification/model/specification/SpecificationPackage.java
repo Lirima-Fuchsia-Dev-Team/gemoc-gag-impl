@@ -545,14 +545,14 @@ public interface SpecificationPackage extends EPackage {
 	int EXPRESSION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl <em>Id Expresssion</em>}' class.
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpressionImpl <em>Id Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl
-	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getIdExpresssion()
+	 * @see fr.inria.gag.specification.model.specification.impl.IdExpressionImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getIdExpression()
 	 * @generated
 	 */
-	int ID_EXPRESSSION = 9;
+	int ID_EXPRESSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Service Name</b></em>' attribute.
@@ -561,7 +561,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSSION__SERVICE_NAME = EXPRESSION_FEATURE_COUNT + 0;
+	int ID_EXPRESSION__SERVICE_NAME = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter Name</b></em>' attribute.
@@ -570,25 +570,25 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSSION__PARAMETER_NAME = EXPRESSION_FEATURE_COUNT + 1;
+	int ID_EXPRESSION__PARAMETER_NAME = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Id Expresssion</em>' class.
+	 * The number of structural features of the '<em>Id Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int ID_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Id Expresssion</em>' class.
+	 * The number of operations of the '<em>Id Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int ID_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl <em>Function Expression</em>}' class.
@@ -610,13 +610,13 @@ public interface SpecificationPackage extends EPackage {
 	int FUNCTION_EXPRESSION__FUNCTION = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id Expresssions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Id Expressions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_EXPRESSION__ID_EXPRESSSIONS = EXPRESSION_FEATURE_COUNT + 1;
+	int FUNCTION_EXPRESSION__ID_EXPRESSIONS = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function Expression</em>' class.
@@ -980,36 +980,36 @@ public interface SpecificationPackage extends EPackage {
 	EReference getEquation_Rightpart();
 
 	/**
-	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.IdExpresssion <em>Id Expresssion</em>}'.
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.IdExpression <em>Id Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Id Expresssion</em>'.
-	 * @see fr.inria.gag.specification.model.specification.IdExpresssion
+	 * @return the meta object for class '<em>Id Expression</em>'.
+	 * @see fr.inria.gag.specification.model.specification.IdExpression
 	 * @generated
 	 */
-	EClass getIdExpresssion();
+	EClass getIdExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.IdExpresssion#getServiceName <em>Service Name</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.IdExpression#getServiceName <em>Service Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Service Name</em>'.
-	 * @see fr.inria.gag.specification.model.specification.IdExpresssion#getServiceName()
-	 * @see #getIdExpresssion()
+	 * @see fr.inria.gag.specification.model.specification.IdExpression#getServiceName()
+	 * @see #getIdExpression()
 	 * @generated
 	 */
-	EAttribute getIdExpresssion_ServiceName();
+	EAttribute getIdExpression_ServiceName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.IdExpresssion#getParameterName <em>Parameter Name</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.IdExpression#getParameterName <em>Parameter Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Parameter Name</em>'.
-	 * @see fr.inria.gag.specification.model.specification.IdExpresssion#getParameterName()
-	 * @see #getIdExpresssion()
+	 * @see fr.inria.gag.specification.model.specification.IdExpression#getParameterName()
+	 * @see #getIdExpression()
 	 * @generated
 	 */
-	EAttribute getIdExpresssion_ParameterName();
+	EAttribute getIdExpression_ParameterName();
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.Expression <em>Expression</em>}'.
@@ -1043,15 +1043,15 @@ public interface SpecificationPackage extends EPackage {
 	EReference getFunctionExpression_Function();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpresssions <em>Id Expresssions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpressions <em>Id Expressions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Id Expresssions</em>'.
-	 * @see fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpresssions()
+	 * @return the meta object for the containment reference list '<em>Id Expressions</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpressions()
 	 * @see #getFunctionExpression()
 	 * @generated
 	 */
-	EReference getFunctionExpression_IdExpresssions();
+	EReference getFunctionExpression_IdExpressions();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1351,14 +1351,14 @@ public interface SpecificationPackage extends EPackage {
 		EReference EQUATION__RIGHTPART = eINSTANCE.getEquation_Rightpart();
 
 		/**
-		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl <em>Id Expresssion</em>}' class.
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpressionImpl <em>Id Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.inria.gag.specification.model.specification.impl.IdExpresssionImpl
-		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getIdExpresssion()
+		 * @see fr.inria.gag.specification.model.specification.impl.IdExpressionImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getIdExpression()
 		 * @generated
 		 */
-		EClass ID_EXPRESSSION = eINSTANCE.getIdExpresssion();
+		EClass ID_EXPRESSION = eINSTANCE.getIdExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Service Name</b></em>' attribute feature.
@@ -1366,7 +1366,7 @@ public interface SpecificationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ID_EXPRESSSION__SERVICE_NAME = eINSTANCE.getIdExpresssion_ServiceName();
+		EAttribute ID_EXPRESSION__SERVICE_NAME = eINSTANCE.getIdExpression_ServiceName();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter Name</b></em>' attribute feature.
@@ -1374,7 +1374,7 @@ public interface SpecificationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ID_EXPRESSSION__PARAMETER_NAME = eINSTANCE.getIdExpresssion_ParameterName();
+		EAttribute ID_EXPRESSION__PARAMETER_NAME = eINSTANCE.getIdExpression_ParameterName();
 
 		/**
 		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -1405,12 +1405,12 @@ public interface SpecificationPackage extends EPackage {
 		EReference FUNCTION_EXPRESSION__FUNCTION = eINSTANCE.getFunctionExpression_Function();
 
 		/**
-		 * The meta object literal for the '<em><b>Id Expresssions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Id Expressions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUNCTION_EXPRESSION__ID_EXPRESSSIONS = eINSTANCE.getFunctionExpression_IdExpresssions();
+		EReference FUNCTION_EXPRESSION__ID_EXPRESSIONS = eINSTANCE.getFunctionExpression_IdExpressions();
 
 	}
 

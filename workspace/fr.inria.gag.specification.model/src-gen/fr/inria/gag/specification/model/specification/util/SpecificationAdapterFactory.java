@@ -112,8 +112,8 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseIdExpresssion(IdExpresssion object) {
-			return createIdExpresssionAdapter();
+		public Adapter caseIdExpression(IdExpression object) {
+			return createIdExpressionAdapter();
 		}
 
 		@Override
@@ -272,16 +272,16 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.IdExpresssion <em>Id Expresssion</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.IdExpression <em>Id Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.inria.gag.specification.model.specification.IdExpresssion
+	 * @see fr.inria.gag.specification.model.specification.IdExpression
 	 * @generated
 	 */
-	public Adapter createIdExpresssionAdapter() {
+	public Adapter createIdExpressionAdapter() {
 		return null;
 	}
 

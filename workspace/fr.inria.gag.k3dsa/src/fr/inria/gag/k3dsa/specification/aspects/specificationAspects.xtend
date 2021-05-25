@@ -7,6 +7,9 @@ import fr.inria.gag.specification.model.specification.DecompositionRule
 import fr.inria.gag.specification.model.specification.Guard
 import fr.inria.gag.specification.model.specification.SemanticRule
 import fr.inria.gag.specification.model.specification.Parameter
+import fr.inria.gag.specification.model.specification.IdExpression
+import fr.inria.gag.specification.model.specification.FunctionExpression
+import fr.inria.gag.configuration.model.configuration.Data
 
 import static extension fr.inria.gag.k3dsa.specification.aspects.GAGAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ServiceAspect.*
@@ -83,6 +86,20 @@ class GAGAspect {
 		val conf = _self.configuration as Configuration
 		conf.root = ConfigurationFactory.eINSTANCE.createTask
 		conf.root.service = serviceChoice;
+		Console.debug("Veuillez fournir les valeurs des entrées de l'axiome ");
+		for ( i : 0 ..< conf.root.service.inputParameters.size) {
+			    var data = ConfigurationFactory.eINSTANCE.createData;
+			    data.parameter = conf.root.service.inputParameters.get(i);
+			    Console.debug("Veuillez entrer la valeur du paramètre "+ data.parameter.name);
+			    data.value = Console.readConsoleLine("");
+				conf.root.inputs.add(data);			
+		}
+		for ( i : 0 ..< conf.root.service.outputParameters.size) {
+			    var data = ConfigurationFactory.eINSTANCE.createData;
+			    data.parameter = conf.root.service.outputParameters.get(i);
+			    data.value =  null ;
+				conf.root.outputs.add(data);			
+		}
 	}
 
 	@Step
@@ -136,10 +153,55 @@ class GAGAspect {
 		// t.subTasks = new EList<Task>();
 		for (i : 0 ..< r.subServices.size) {
 			val element = r.subServices.get(i)
-			val st = ConfigurationFactory.eINSTANCE.createTask;
-			st.service = element;
-			st.isOpen = true;
+			var st = ConfigurationFactory.eINSTANCE.createTask;
+			initTask(_self,st,element);
+			
+			// put the code of semantic rule here
+			
 			t.subTasks.add(st);
+		}
+		for (i:0 ..< r.semantic.equations.size){
+			var eq = r.semantic.equations.get(i);
+			var String[] ref1 = #[eq.leftpart.serviceName, eq.leftpart.parameterName];
+			var data1 = findReference(_self,ref1,t.subTasks)
+			var data2 =null;
+			if (eq instanceof IdExpression){
+				
+			}
+		}
+	}
+	
+	def Object findReference(String[] ref, EList<Task> tasks){
+		var objectRef = null as fr.inria.gag.configuration.model.configuration.Data;
+		var serviceName = ref.get(0);
+		var serviceParameter = ref.get(1);
+		for (i:0 ..< tasks.size){
+			var element =tasks.get(i);
+			if (element.service.name.equals(serviceName)){
+				for (j:0 ..< element.inputs.size){
+					if(element.inputs.get(j).parameter.name.equals(serviceParameter)){
+						objectRef = element.inputs.get(j);
+					} 
+				}
+			} 
+		}
+		return objectRef;
+	}
+	
+	def void initTask (Task t, Service s){
+		t.service=s;
+		t.isOpen=true;
+		for ( i : 0 ..< s.inputParameters.size) {
+			    var data = ConfigurationFactory.eINSTANCE.createData;
+			    data.parameter = s.inputParameters.get(i);
+			    data.value = null;
+				t.inputs.add(data);			
+		}
+		for ( i : 0 ..< s.outputParameters.size) {
+			    var data = ConfigurationFactory.eINSTANCE.createData;
+			    data.parameter = s.outputParameters.get(i);
+			    data.value =  null ;
+				t.outputs.add(data);			
 		}
 	}
 	

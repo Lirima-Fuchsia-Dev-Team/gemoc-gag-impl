@@ -95,13 +95,13 @@ public interface SpecificationFactory extends EFactory {
 	Equation createEquation();
 
 	/**
-	 * Returns a new object of class '<em>Id Expresssion</em>'.
+	 * Returns a new object of class '<em>Id Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Id Expresssion</em>'.
+	 * @return a new object of class '<em>Id Expression</em>'.
 	 * @generated
 	 */
-	IdExpresssion createIdExpresssion();
+	IdExpression createIdExpression();
 
 	/**
 	 * Returns a new object of class '<em>Function Expression</em>'.
