@@ -62,6 +62,8 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 			return createData();
 		case ConfigurationPackage.TASK:
 			return createTask();
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION:
+			return createPendingLocalFunctionComputation();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +97,16 @@ public class ConfigurationFactoryImpl extends EFactoryImpl implements Configurat
 	public Task createTask() {
 		TaskImpl task = new TaskImpl();
 		return task;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PendingLocalFunctionComputation createPendingLocalFunctionComputation() {
+		PendingLocalFunctionComputationImpl pendingLocalFunctionComputation = new PendingLocalFunctionComputationImpl();
+		return pendingLocalFunctionComputation;
 	}
 
 	/**

@@ -6,6 +6,7 @@ import fr.inria.gag.configuration.model.configuration.Configuration;
 import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
 import fr.inria.gag.configuration.model.configuration.ConfigurationPackage;
 import fr.inria.gag.configuration.model.configuration.Data;
+import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation;
 import fr.inria.gag.configuration.model.configuration.Task;
 
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
@@ -44,6 +45,13 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * @generated
 	 */
 	private EClass taskEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pendingLocalFunctionComputationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -128,6 +136,15 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 */
 	public EReference getConfiguration_Root() {
 		return (EReference) configurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfiguration_PendingLocalComputation() {
+		return (EReference) configurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -225,6 +242,33 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPendingLocalFunctionComputation() {
+		return pendingLocalFunctionComputationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPendingLocalFunctionComputation_Functiondeclaration() {
+		return (EReference) pendingLocalFunctionComputationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPendingLocalFunctionComputation_Data() {
+		return (EReference) pendingLocalFunctionComputationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConfigurationFactory getConfigurationFactory() {
 		return (ConfigurationFactory) getEFactoryInstance();
 	}
@@ -251,6 +295,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		// Create classes and their features
 		configurationEClass = createEClass(CONFIGURATION);
 		createEReference(configurationEClass, CONFIGURATION__ROOT);
+		createEReference(configurationEClass, CONFIGURATION__PENDING_LOCAL_COMPUTATION);
 
 		dataEClass = createEClass(DATA);
 		createEAttribute(dataEClass, DATA__VALUE);
@@ -263,6 +308,11 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		createEAttribute(taskEClass, TASK__APPLIED_RULE);
 		createEAttribute(taskEClass, TASK__IS_OPEN);
 		createEReference(taskEClass, TASK__SERVICE);
+
+		pendingLocalFunctionComputationEClass = createEClass(PENDING_LOCAL_FUNCTION_COMPUTATION);
+		createEReference(pendingLocalFunctionComputationEClass,
+				PENDING_LOCAL_FUNCTION_COMPUTATION__FUNCTIONDECLARATION);
+		createEReference(pendingLocalFunctionComputationEClass, PENDING_LOCAL_FUNCTION_COMPUTATION__DATA);
 	}
 
 	/**
@@ -306,6 +356,9 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		initEReference(getConfiguration_Root(), this.getTask(), null, "root", null, 1, 1, Configuration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfiguration_PendingLocalComputation(), this.getPendingLocalFunctionComputation(), null,
+				"pendingLocalComputation", null, 0, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getData_Value(), ecorePackage.getEJavaObject(), "value", null, 0, 1, Data.class, !IS_TRANSIENT,
@@ -331,6 +384,16 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		initEReference(getTask_Service(), theSpecificationPackage.getService(), null, "service", null, 0, 1, Task.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pendingLocalFunctionComputationEClass, PendingLocalFunctionComputation.class,
+				"PendingLocalFunctionComputation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPendingLocalFunctionComputation_Functiondeclaration(),
+				theSpecificationPackage.getFunctionDeclaration(), null, "functiondeclaration", null, 1, 1,
+				PendingLocalFunctionComputation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPendingLocalFunctionComputation_Data(), this.getData(), null, "data", null, 0, -1,
+				PendingLocalFunctionComputation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -364,6 +427,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		String source = "aspect";
 		addAnnotation(configurationEClass, source, new String[] {});
 		addAnnotation(getConfiguration_Root(), source, new String[] {});
+		addAnnotation(getConfiguration_PendingLocalComputation(), source, new String[] {});
 		addAnnotation(dataEClass, source, new String[] {});
 		addAnnotation(getData_Value(), source, new String[] {});
 		addAnnotation(getData_Parameter(), source, new String[] {});
@@ -374,6 +438,9 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		addAnnotation(getTask_AppliedRule(), source, new String[] {});
 		addAnnotation(getTask_IsOpen(), source, new String[] {});
 		addAnnotation(getTask_Service(), source, new String[] {});
+		addAnnotation(pendingLocalFunctionComputationEClass, source, new String[] {});
+		addAnnotation(getPendingLocalFunctionComputation_Functiondeclaration(), source, new String[] {});
+		addAnnotation(getPendingLocalFunctionComputation_Data(), source, new String[] {});
 	}
 
 } //ConfigurationPackageImpl

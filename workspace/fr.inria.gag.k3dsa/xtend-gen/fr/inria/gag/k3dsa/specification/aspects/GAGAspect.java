@@ -400,7 +400,12 @@ public class GAGAspect {
         } else {
           Expression _rightpart_2 = eq.getRightpart();
           FunctionExpression func = ((FunctionExpression) _rightpart_2);
-          data1.setValue(func);
+          boolean _equals = func.getFunction().getName().equals("g");
+          if (_equals) {
+            data1.setValue(Integer.valueOf(5));
+          } else {
+            data1.setValue(Integer.valueOf(7));
+          }
         }
       }
     }

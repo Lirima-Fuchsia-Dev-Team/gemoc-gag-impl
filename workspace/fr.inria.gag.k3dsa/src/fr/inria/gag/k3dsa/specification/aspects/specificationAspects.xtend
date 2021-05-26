@@ -179,7 +179,12 @@ class GAGAspect {
 				data1.value = data2.value;
 			}else {
 				var func = eq.rightpart as FunctionExpression;
-				data1.value = func;
+				if (func.function.name.equals('g')) {
+					data1.value = 5;
+					}
+					else{
+					data1.value = 7;	
+					}
 			}
 			
 		}

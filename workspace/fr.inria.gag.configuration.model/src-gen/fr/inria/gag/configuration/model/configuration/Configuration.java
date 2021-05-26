@@ -3,6 +3,7 @@
 package fr.inria.gag.configuration.model.configuration;
 
 import fr.inria.gag.specification.model.specification.RuntimeData;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ import fr.inria.gag.specification.model.specification.RuntimeData;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.configuration.model.configuration.Configuration#getRoot <em>Root</em>}</li>
+ *   <li>{@link fr.inria.gag.configuration.model.configuration.Configuration#getPendingLocalComputation <em>Pending Local Computation</em>}</li>
  * </ul>
  *
  * @see fr.inria.gag.configuration.model.configuration.ConfigurationPackage#getConfiguration()
@@ -46,5 +48,21 @@ public interface Configuration extends RuntimeData {
 	 * @generated
 	 */
 	void setRoot(Task value);
+
+	/**
+	 * Returns the value of the '<em><b>Pending Local Computation</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pending Local Computation</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pending Local Computation</em>' containment reference list.
+	 * @see fr.inria.gag.configuration.model.configuration.ConfigurationPackage#getConfiguration_PendingLocalComputation()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<PendingLocalFunctionComputation> getPendingLocalComputation();
 
 } // Configuration

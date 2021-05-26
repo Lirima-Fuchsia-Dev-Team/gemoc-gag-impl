@@ -83,6 +83,11 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter casePendingLocalFunctionComputation(PendingLocalFunctionComputation object) {
+			return createPendingLocalFunctionComputationAdapter();
+		}
+
+		@Override
 		public Adapter caseRuntimeData(RuntimeData object) {
 			return createRuntimeDataAdapter();
 		}
@@ -145,6 +150,20 @@ public class ConfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation <em>Pending Local Function Computation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation
+	 * @generated
+	 */
+	public Adapter createPendingLocalFunctionComputationAdapter() {
 		return null;
 	}
 

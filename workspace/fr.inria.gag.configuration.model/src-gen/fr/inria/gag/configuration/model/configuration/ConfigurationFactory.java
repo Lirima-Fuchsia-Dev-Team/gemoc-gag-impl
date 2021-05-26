@@ -50,6 +50,15 @@ public interface ConfigurationFactory extends EFactory {
 	Task createTask();
 
 	/**
+	 * Returns a new object of class '<em>Pending Local Function Computation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pending Local Function Computation</em>'.
+	 * @generated
+	 */
+	PendingLocalFunctionComputation createPendingLocalFunctionComputation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
