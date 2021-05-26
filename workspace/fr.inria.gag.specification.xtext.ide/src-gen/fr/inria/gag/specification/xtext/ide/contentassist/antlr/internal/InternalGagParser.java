@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGagParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GAG'", "'{'", "'}'", "','", "':'", "'('", "')'", "'['", "']'", "'sub'", "'guard'", "'sem'", "'Guard'", "'classPath'", "'libLocation'", "'func'", "'equations'", "'method'", "'='", "';'", "'.'", "'isAxiom'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GAG'", "'{'", "'}'", "','", "':'", "'('", "')'", "'['", "']'", "'sub'", "'guard'", "'sem'", "'Guard'", "'classPath'", "'libLocation'", "'func'", "'equations'", "'method'", "'='", "';'", "'.'", "'Axiom'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -9309,29 +9309,29 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Service__IsAxiomAssignment_0"
-    // InternalGag.g:3085:1: rule__Service__IsAxiomAssignment_0 : ( ( 'isAxiom' ) ) ;
+    // InternalGag.g:3085:1: rule__Service__IsAxiomAssignment_0 : ( ( 'Axiom' ) ) ;
     public final void rule__Service__IsAxiomAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGag.g:3089:1: ( ( ( 'isAxiom' ) ) )
-            // InternalGag.g:3090:2: ( ( 'isAxiom' ) )
+            // InternalGag.g:3089:1: ( ( ( 'Axiom' ) ) )
+            // InternalGag.g:3090:2: ( ( 'Axiom' ) )
             {
-            // InternalGag.g:3090:2: ( ( 'isAxiom' ) )
-            // InternalGag.g:3091:3: ( 'isAxiom' )
+            // InternalGag.g:3090:2: ( ( 'Axiom' ) )
+            // InternalGag.g:3091:3: ( 'Axiom' )
             {
-             before(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); 
-            // InternalGag.g:3092:3: ( 'isAxiom' )
-            // InternalGag.g:3093:4: 'isAxiom'
+             before(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); 
+            // InternalGag.g:3092:3: ( 'Axiom' )
+            // InternalGag.g:3093:4: 'Axiom'
             {
-             before(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); 
+             before(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); 
             match(input,32,FOLLOW_2); 
-             after(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); 
+             after(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); 
 
             }
 
-             after(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); 
+             after(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); 
 
             }
 

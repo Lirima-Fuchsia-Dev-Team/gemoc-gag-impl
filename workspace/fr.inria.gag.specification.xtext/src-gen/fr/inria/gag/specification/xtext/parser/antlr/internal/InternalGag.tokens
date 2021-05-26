@@ -5,6 +5,7 @@
 ':'=20
 ';'=31
 '='=30
+'Axiom'=15
 'GAG'=11
 'Guard'=24
 '['=18
@@ -13,7 +14,6 @@
 'equations'=28
 'func'=27
 'guard'=22
-'isAxiom'=15
 'libLocation'=26
 'method'=29
 'sem'=23

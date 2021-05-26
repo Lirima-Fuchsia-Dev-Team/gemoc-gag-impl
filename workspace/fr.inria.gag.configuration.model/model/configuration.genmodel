@@ -13,6 +13,7 @@
       disposableProviderFactory="true" ecorePackage="configuration.ecore#/">
     <genClasses ecoreClass="configuration.ecore#//Configuration">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/root"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/pendingLocalComputation"/>
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//Data">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Data/value"/>
@@ -25,6 +26,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Task/appliedRule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Task/isOpen"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/service"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//PendingLocalFunctionComputation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PendingLocalFunctionComputation/functiondeclaration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PendingLocalFunctionComputation/data"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

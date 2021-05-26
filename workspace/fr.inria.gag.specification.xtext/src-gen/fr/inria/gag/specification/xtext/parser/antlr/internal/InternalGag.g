@@ -217,15 +217,15 @@ ruleService returns [EObject current=null]
 	(
 		(
 			(
-				lv_isAxiom_0_0='isAxiom'
+				lv_isAxiom_0_0='Axiom'
 				{
-					newLeafNode(lv_isAxiom_0_0, grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0());
+					newLeafNode(lv_isAxiom_0_0, grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getServiceRule());
 					}
-					setWithLastConsumed($current, "isAxiom", true, "isAxiom");
+					setWithLastConsumed($current, "isAxiom", true, "Axiom");
 				}
 			)
 		)?

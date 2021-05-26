@@ -15,6 +15,8 @@ import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
 import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
 import fr.inria.gag.specification.model.specification.Equation;
+import fr.inria.gag.specification.model.specification.Expression;
+import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.GAG;
 import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.RuntimeData;
@@ -159,14 +161,14 @@ public class GAGAspect {
     };
   }
   
-  public static Object findReference(final GAG _self, final String[] ref, final EList<Task> tasks) {
+  public static Data findReference(final GAG _self, final String[] ref, final ArrayList<Task> tasks) {
     final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# Object findReference(String[],EList<Task>)
+    // #DispatchPointCut_before# Data findReference(String[],ArrayList<Task>)
     if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
     	result = fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_findReference(_self_, (fr.inria.gag.specification.model.specification.GAG)_self,ref,tasks);
     };
-    return (java.lang.Object)result;
+    return (fr.inria.gag.configuration.model.configuration.Data)result;
   }
   
   public static void initTask(final GAG _self, final Task t, final Service s) {
@@ -373,6 +375,9 @@ public class GAGAspect {
         t.getSubTasks().add(st);
       }
     }
+    ArrayList<Task> context = new ArrayList<Task>();
+    context.add(t);
+    context.addAll(t.getSubTasks());
     int _size_1 = r.getSemantic().getEquations().size();
     ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
     for (final Integer i_1 : _doubleDotLessThan_1) {
@@ -381,15 +386,27 @@ public class GAGAspect {
         String _serviceName = eq.getLeftpart().getServiceName();
         String _parameterName = eq.getLeftpart().getParameterName();
         String[] ref1 = new String[] { _serviceName, _parameterName };
-        Object data1 = GAGAspect.findReference(_self, ref1, t.getSubTasks());
-        Object data2 = null;
-        if ((eq instanceof IdExpression)) {
+        Data data1 = GAGAspect.findReference(_self, ref1, context);
+        Expression _rightpart = eq.getRightpart();
+        if ((_rightpart instanceof IdExpression)) {
+          Data data2 = ((Data) null);
+          Expression _rightpart_1 = eq.getRightpart();
+          final IdExpression rightPartIdExpression = ((IdExpression) _rightpart_1);
+          String _serviceName_1 = rightPartIdExpression.getServiceName();
+          String _parameterName_1 = rightPartIdExpression.getParameterName();
+          final String[] ref2 = new String[] { _serviceName_1, _parameterName_1 };
+          data2 = GAGAspect.findReference(_self, ref2, context);
+          data1.setValue(data2.getValue());
+        } else {
+          Expression _rightpart_2 = eq.getRightpart();
+          FunctionExpression func = ((FunctionExpression) _rightpart_2);
+          data1.setValue(func);
         }
       }
     }
   }
   
-  protected static Object _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final EList<Task> tasks) {
+  protected static Data _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final ArrayList<Task> tasks) {
     Data objectRef = ((Data) null);
     String serviceName = ref[0];
     String serviceParameter = ref[1];

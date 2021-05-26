@@ -239,7 +239,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         isAxiom?='isAxiom'? 
+	 *         isAxiom?='Axiom'? 
 	 *         name=EString 
 	 *         (inputParameters+=Parameter inputParameters+=Parameter*)? 
 	 *         (outputParameters+=Parameter outputParameters+=Parameter*)? 

@@ -112,7 +112,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.Service");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cIsAxiomAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cIsAxiomIsAxiomKeyword_0_0 = (Keyword)cIsAxiomAssignment_0.eContents().get(0);
+		private final Keyword cIsAxiomAxiomKeyword_0_0 = (Keyword)cIsAxiomAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -144,22 +144,22 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Service:
-		//	isAxiom?='isAxiom'?
+		//	isAxiom?='Axiom'?
 		//	name=EString ('(' inputParameters+=Parameter ("," inputParameters+=Parameter)* ')')? ('[' outputParameters+=Parameter
 		//	("," outputParameters+=Parameter)* ']')?
 		//	':' '{' rules+=DecompositionRule ("," rules+=DecompositionRule)* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//isAxiom?='isAxiom'? name=EString ('(' inputParameters+=Parameter ("," inputParameters+=Parameter)* ')')? ('['
+		//isAxiom?='Axiom'? name=EString ('(' inputParameters+=Parameter ("," inputParameters+=Parameter)* ')')? ('['
 		//outputParameters+=Parameter ("," outputParameters+=Parameter)* ']')? ':' '{' rules+=DecompositionRule (","
 		//rules+=DecompositionRule)* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//isAxiom?='isAxiom'?
+		//isAxiom?='Axiom'?
 		public Assignment getIsAxiomAssignment_0() { return cIsAxiomAssignment_0; }
 		
-		//'isAxiom'
-		public Keyword getIsAxiomIsAxiomKeyword_0_0() { return cIsAxiomIsAxiomKeyword_0_0; }
+		//'Axiom'
+		public Keyword getIsAxiomAxiomKeyword_0_0() { return cIsAxiomAxiomKeyword_0_0; }
 		
 		//name=EString
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -851,7 +851,7 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Service:
-	//	isAxiom?='isAxiom'?
+	//	isAxiom?='Axiom'?
 	//	name=EString ('(' inputParameters+=Parameter ("," inputParameters+=Parameter)* ')')? ('[' outputParameters+=Parameter
 	//	("," outputParameters+=Parameter)* ']')?
 	//	':' '{' rules+=DecompositionRule ("," rules+=DecompositionRule)* '}';

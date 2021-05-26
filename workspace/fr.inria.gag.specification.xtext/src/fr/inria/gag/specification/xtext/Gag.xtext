@@ -25,7 +25,7 @@ Expression returns Expression:
 	IdExpression | FunctionExpression;
 
 Service returns Service:
-	(isAxiom?='isAxiom')?
+	(isAxiom?='Axiom')?
 	name=EString
 	
 		

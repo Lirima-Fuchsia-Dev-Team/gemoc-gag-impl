@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGagParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GAG'", "'{'", "','", "'}'", "'isAxiom'", "'('", "')'", "'['", "']'", "':'", "'sub'", "'guard'", "'sem'", "'Guard'", "'classPath'", "'libLocation'", "'func'", "'equations'", "'method'", "'='", "';'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'GAG'", "'{'", "','", "'}'", "'Axiom'", "'('", "')'", "'['", "']'", "':'", "'sub'", "'guard'", "'sem'", "'Guard'", "'classPath'", "'libLocation'", "'func'", "'equations'", "'method'", "'='", "';'", "'.'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -529,7 +529,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleService"
-    // InternalGag.g:210:1: ruleService returns [EObject current=null] : ( ( (lv_isAxiom_0_0= 'isAxiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' ) ;
+    // InternalGag.g:210:1: ruleService returns [EObject current=null] : ( ( (lv_isAxiom_0_0= 'Axiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' ) ;
     public final EObject ruleService() throws RecognitionException {
         EObject current = null;
 
@@ -563,13 +563,13 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:216:2: ( ( ( (lv_isAxiom_0_0= 'isAxiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' ) )
-            // InternalGag.g:217:2: ( ( (lv_isAxiom_0_0= 'isAxiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' )
+            // InternalGag.g:216:2: ( ( ( (lv_isAxiom_0_0= 'Axiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' ) )
+            // InternalGag.g:217:2: ( ( (lv_isAxiom_0_0= 'Axiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' )
             {
-            // InternalGag.g:217:2: ( ( (lv_isAxiom_0_0= 'isAxiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' )
-            // InternalGag.g:218:3: ( (lv_isAxiom_0_0= 'isAxiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}'
+            // InternalGag.g:217:2: ( ( (lv_isAxiom_0_0= 'Axiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}' )
+            // InternalGag.g:218:3: ( (lv_isAxiom_0_0= 'Axiom' ) )? ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '(' ( (lv_inputParameters_3_0= ruleParameter ) ) (otherlv_4= ',' ( (lv_inputParameters_5_0= ruleParameter ) ) )* otherlv_6= ')' )? (otherlv_7= '[' ( (lv_outputParameters_8_0= ruleParameter ) ) (otherlv_9= ',' ( (lv_outputParameters_10_0= ruleParameter ) ) )* otherlv_11= ']' )? otherlv_12= ':' otherlv_13= '{' ( (lv_rules_14_0= ruleDecompositionRule ) ) (otherlv_15= ',' ( (lv_rules_16_0= ruleDecompositionRule ) ) )* otherlv_17= '}'
             {
-            // InternalGag.g:218:3: ( (lv_isAxiom_0_0= 'isAxiom' ) )?
+            // InternalGag.g:218:3: ( (lv_isAxiom_0_0= 'Axiom' ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -578,20 +578,20 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGag.g:219:4: (lv_isAxiom_0_0= 'isAxiom' )
+                    // InternalGag.g:219:4: (lv_isAxiom_0_0= 'Axiom' )
                     {
-                    // InternalGag.g:219:4: (lv_isAxiom_0_0= 'isAxiom' )
-                    // InternalGag.g:220:5: lv_isAxiom_0_0= 'isAxiom'
+                    // InternalGag.g:219:4: (lv_isAxiom_0_0= 'Axiom' )
+                    // InternalGag.g:220:5: lv_isAxiom_0_0= 'Axiom'
                     {
                     lv_isAxiom_0_0=(Token)match(input,15,FOLLOW_3); 
 
-                    					newLeafNode(lv_isAxiom_0_0, grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0());
+                    					newLeafNode(lv_isAxiom_0_0, grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getServiceRule());
                     					}
-                    					setWithLastConsumed(current, "isAxiom", true, "isAxiom");
+                    					setWithLastConsumed(current, "isAxiom", true, "Axiom");
                     				
 
                     }

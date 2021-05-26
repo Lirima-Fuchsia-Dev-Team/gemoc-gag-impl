@@ -3088,13 +3088,13 @@ rule__Service__IsAxiomAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); }
+		{ before(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); }
 		(
-			{ before(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); }
-			'isAxiom'
-			{ after(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); }
+			{ before(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); }
+			'Axiom'
+			{ after(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); }
 		)
-		{ after(grammarAccess.getServiceAccess().getIsAxiomIsAxiomKeyword_0_0()); }
+		{ after(grammarAccess.getServiceAccess().getIsAxiomAxiomKeyword_0_0()); }
 	)
 ;
 finally {

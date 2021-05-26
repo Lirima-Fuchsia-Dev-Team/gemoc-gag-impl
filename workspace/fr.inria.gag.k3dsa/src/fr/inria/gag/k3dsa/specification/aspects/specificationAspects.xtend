@@ -156,22 +156,36 @@ class GAGAspect {
 			var st = ConfigurationFactory.eINSTANCE.createTask;
 			initTask(_self,st,element);
 			
-			// put the code of semantic rule here
+			
 			
 			t.subTasks.add(st);
 		}
+		
+		// code for the semantic rule here
+		var context= new ArrayList<Task>();
+		context.add(t);
+		context.addAll(t.subTasks);
 		for (i:0 ..< r.semantic.equations.size){
 			var eq = r.semantic.equations.get(i);
 			var String[] ref1 = #[eq.leftpart.serviceName, eq.leftpart.parameterName];
-			var data1 = findReference(_self,ref1,t.subTasks)
-			var data2 =null;
-			if (eq instanceof IdExpression){
-				
+			
+			var data1 = findReference(_self,ref1,context)
+			
+			if (eq.rightpart instanceof IdExpression){
+				var data2 =null as fr.inria.gag.configuration.model.configuration.Data;
+				val rightPartIdExpression = eq.rightpart as IdExpression;
+				val String[] ref2 =  #[rightPartIdExpression.serviceName, rightPartIdExpression.parameterName];
+				data2 = findReference(_self,ref2,context);
+				data1.value = data2.value;
+			}else {
+				var func = eq.rightpart as FunctionExpression;
+				data1.value = func;
 			}
+			
 		}
 	}
 	
-	def Object findReference(String[] ref, EList<Task> tasks){
+	def fr.inria.gag.configuration.model.configuration.Data findReference(String[] ref, ArrayList<Task> tasks){
 		var objectRef = null as fr.inria.gag.configuration.model.configuration.Data;
 		var serviceName = ref.get(0);
 		var serviceParameter = ref.get(1);
