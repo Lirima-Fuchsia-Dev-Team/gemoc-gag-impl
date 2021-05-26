@@ -18,7 +18,7 @@ GAG g {
 				
 		
 		},
-		Axiom S3 (a)[b,c] : {
+		Axiom S3 (a)[b] : {
 			r1 : sub : S1, S2
 				 sem : {
 					equations : 

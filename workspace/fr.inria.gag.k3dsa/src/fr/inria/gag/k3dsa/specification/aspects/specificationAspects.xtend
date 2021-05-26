@@ -29,6 +29,7 @@ import fr.inria.gag.configuration.model.configuration.Task
 import fr.inria.diverse.k3.al.annotationprocessor.Main
 import org.eclipse.emf.common.util.EList
 import fr.inria.gag.k3dsa.GagGuardExecutor
+import fr.inria.gag.k3dsa.EncapsulatedValue
 
 @Aspect(className=GAG)
 class GAGAspect {
@@ -44,7 +45,7 @@ class GAGAspect {
 	@Main
 	def void run() {
 		Console.debug("Hello world on " + _self.eResource.URI);
-		_self.staticGuardEvalForTesting();
+		//_self.staticGuardEvalForTesting();
 		val conf = _self.configuration as Configuration;
 
 		// get the axioms
@@ -91,13 +92,13 @@ class GAGAspect {
 			    var data = ConfigurationFactory.eINSTANCE.createData;
 			    data.parameter = conf.root.service.inputParameters.get(i);
 			    Console.debug("Veuillez entrer la valeur du paramètre "+ data.parameter.name);
-			    data.value = Console.readConsoleLine("");
+			    data.value = new EncapsulatedValue(Console.readConsoleLine(""));
 				conf.root.inputs.add(data);			
 		}
 		for ( i : 0 ..< conf.root.service.outputParameters.size) {
 			    var data = ConfigurationFactory.eINSTANCE.createData;
 			    data.parameter = conf.root.service.outputParameters.get(i);
-			    data.value =  null ;
+			    data.value =  new EncapsulatedValue ;
 				conf.root.outputs.add(data);			
 		}
 	}
@@ -176,14 +177,16 @@ class GAGAspect {
 				val rightPartIdExpression = eq.rightpart as IdExpression;
 				val String[] ref2 =  #[rightPartIdExpression.serviceName, rightPartIdExpression.parameterName];
 				data2 = findReference(_self,ref2,context);
-				data1.value = data2.value;
+				var ecData1=data1.value as EncapsulatedValue;
+				ecData1.addReference( data2.value as EncapsulatedValue);
 			}else {
 				var func = eq.rightpart as FunctionExpression;
+				var ecData1 = data1.value as EncapsulatedValue ;
 				if (func.function.name.equals('g')) {
-					data1.value = 5;
+					 ecData1.value = 8;
 					}
 					else{
-					data1.value = 7;	
+					ecData1.value = 7;	
 					}
 			}
 			
@@ -192,14 +195,23 @@ class GAGAspect {
 	
 	def fr.inria.gag.configuration.model.configuration.Data findReference(String[] ref, ArrayList<Task> tasks){
 		var objectRef = null as fr.inria.gag.configuration.model.configuration.Data;
-		var serviceName = ref.get(0);
-		var serviceParameter = ref.get(1);
+		var serviceName = ref.get(0).toString.trim;
+		var serviceParameter = ref.get(1).toString.trim;
+		//Console.debug(serviceName+"."+serviceParameter);
 		for (i:0 ..< tasks.size){
 			var element =tasks.get(i);
 			if (element.service.name.equals(serviceName)){
+				// we look in inputs and outputs to find the parameter
 				for (j:0 ..< element.inputs.size){
 					if(element.inputs.get(j).parameter.name.equals(serviceParameter)){
 						objectRef = element.inputs.get(j);
+						//Console.debug('i found');
+					} 
+				}
+				for (j:0 ..< element.outputs.size){
+					if(element.outputs.get(j).parameter.name.equals(serviceParameter)){
+						objectRef = element.outputs.get(j);
+						//Console.debug('i found');
 					} 
 				}
 			} 
@@ -213,13 +225,13 @@ class GAGAspect {
 		for ( i : 0 ..< s.inputParameters.size) {
 			    var data = ConfigurationFactory.eINSTANCE.createData;
 			    data.parameter = s.inputParameters.get(i);
-			    data.value = null;
+			    data.value = new EncapsulatedValue;
 				t.inputs.add(data);			
 		}
 		for ( i : 0 ..< s.outputParameters.size) {
 			    var data = ConfigurationFactory.eINSTANCE.createData;
 			    data.parameter = s.outputParameters.get(i);
-			    data.value =  null ;
+			    data.value =  new EncapsulatedValue ;
 				t.outputs.add(data);			
 		}
 	}

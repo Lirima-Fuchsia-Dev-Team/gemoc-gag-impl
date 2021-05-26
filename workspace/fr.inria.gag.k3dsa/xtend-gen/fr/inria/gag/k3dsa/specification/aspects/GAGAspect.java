@@ -9,6 +9,7 @@ import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
 import fr.inria.gag.configuration.model.configuration.Data;
 import fr.inria.gag.configuration.model.configuration.Task;
 import fr.inria.gag.k3dsa.Console;
+import fr.inria.gag.k3dsa.EncapsulatedValue;
 import fr.inria.gag.k3dsa.GagGuardExecutor;
 import fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
@@ -222,7 +223,6 @@ public class GAGAspect {
     URI _uRI = _self.eResource().getURI();
     String _plus = ("Hello world on " + _uRI);
     Console.debug(_plus);
-    GAGAspect.staticGuardEvalForTesting(_self);
     RuntimeData _configuration = _self.getConfiguration();
     final Configuration conf = ((Configuration) _configuration);
     GAGAspect.chooseTheAxiom(_self);
@@ -288,7 +288,9 @@ public class GAGAspect {
         String _name = data.getParameter().getName();
         String _plus = ("Veuillez entrer la valeur du paramètre " + _name);
         Console.debug(_plus);
-        data.setValue(Console.readConsoleLine(""));
+        String _readConsoleLine = Console.readConsoleLine("");
+        EncapsulatedValue _encapsulatedValue = new EncapsulatedValue(_readConsoleLine);
+        data.setValue(_encapsulatedValue);
         conf.getRoot().getInputs().add(data);
       }
     }
@@ -298,7 +300,8 @@ public class GAGAspect {
       {
         Data data = ConfigurationFactory.eINSTANCE.createData();
         data.setParameter(conf.getRoot().getService().getOutputParameters().get((i_3).intValue()));
-        data.setValue(null);
+        EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+        data.setValue(_encapsulatedValue);
         conf.getRoot().getOutputs().add(data);
       }
     }
@@ -396,15 +399,20 @@ public class GAGAspect {
           String _parameterName_1 = rightPartIdExpression.getParameterName();
           final String[] ref2 = new String[] { _serviceName_1, _parameterName_1 };
           data2 = GAGAspect.findReference(_self, ref2, context);
-          data1.setValue(data2.getValue());
+          Object _value = data1.getValue();
+          EncapsulatedValue ecData1 = ((EncapsulatedValue) _value);
+          Object _value_1 = data2.getValue();
+          ecData1.addReference(((EncapsulatedValue) _value_1));
         } else {
           Expression _rightpart_2 = eq.getRightpart();
           FunctionExpression func = ((FunctionExpression) _rightpart_2);
+          Object _value_2 = data1.getValue();
+          EncapsulatedValue ecData1_1 = ((EncapsulatedValue) _value_2);
           boolean _equals = func.getFunction().getName().equals("g");
           if (_equals) {
-            data1.setValue(Integer.valueOf(5));
+            ecData1_1.setValue(Integer.valueOf(8));
           } else {
-            data1.setValue(Integer.valueOf(7));
+            ecData1_1.setValue(Integer.valueOf(7));
           }
         }
       }
@@ -413,8 +421,8 @@ public class GAGAspect {
   
   protected static Data _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final ArrayList<Task> tasks) {
     Data objectRef = ((Data) null);
-    String serviceName = ref[0];
-    String serviceParameter = ref[1];
+    String serviceName = ref[0].toString().trim();
+    String serviceParameter = ref[1].toString().trim();
     int _size = tasks.size();
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
     for (final Integer i : _doubleDotLessThan) {
@@ -428,6 +436,14 @@ public class GAGAspect {
             boolean _equals_1 = element.getInputs().get((j).intValue()).getParameter().getName().equals(serviceParameter);
             if (_equals_1) {
               objectRef = element.getInputs().get((j).intValue());
+            }
+          }
+          int _size_2 = element.getOutputs().size();
+          ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+          for (final Integer j_1 : _doubleDotLessThan_2) {
+            boolean _equals_2 = element.getOutputs().get((j_1).intValue()).getParameter().getName().equals(serviceParameter);
+            if (_equals_2) {
+              objectRef = element.getOutputs().get((j_1).intValue());
             }
           }
         }
@@ -445,7 +461,8 @@ public class GAGAspect {
       {
         Data data = ConfigurationFactory.eINSTANCE.createData();
         data.setParameter(s.getInputParameters().get((i).intValue()));
-        data.setValue(null);
+        EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+        data.setValue(_encapsulatedValue);
         t.getInputs().add(data);
       }
     }
@@ -455,7 +472,8 @@ public class GAGAspect {
       {
         Data data = ConfigurationFactory.eINSTANCE.createData();
         data.setParameter(s.getOutputParameters().get((i_1).intValue()));
-        data.setValue(null);
+        EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+        data.setValue(_encapsulatedValue);
         t.getOutputs().add(data);
       }
     }
