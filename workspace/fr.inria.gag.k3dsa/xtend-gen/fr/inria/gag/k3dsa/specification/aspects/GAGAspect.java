@@ -580,7 +580,9 @@ public class GAGAspect {
           Console.debug(urlList.get(i).toString());
         }
       }
-      String htmlCleanedDescr = "";
+      binding.setVariable("gard", shell.evaluate("new urifia.gag.MyCustomGAGGuard()"));
+      String htmlCleanedDescr = "gard.isRuleActivable()";
+      final Object res = shell.evaluate(htmlCleanedDescr);
     } catch (final Throwable _t) {
       if (_t instanceof Exception) {
         final Exception cnfe = (Exception)_t;

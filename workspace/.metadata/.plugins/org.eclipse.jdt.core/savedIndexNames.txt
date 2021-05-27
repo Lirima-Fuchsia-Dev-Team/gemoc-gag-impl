@@ -22,7 +22,6 @@ INDEX VERSION 1.131+E:\PhD Recherche\Fuchsia Team\Fuchsia Dev\workspace\.metadat
 247662338.index
 78603466.index
 1579700821.index
-4235171588.index
 556864865.index
 500188103.index
 3940383080.index

@@ -320,9 +320,11 @@ class GAGAspect {
 					cl.addURL(urlList.get(i))
 					Console.debug(urlList.get(i).toString);
 			}
-	
-			var htmlCleanedDescr = ""
-			//val res = shell.evaluate(htmlCleanedDescr) as Map<String, Object>
+	        //binding.setVariable("gard","new MyCustomGAGGuard()");
+	        binding.setVariable("gard",shell.evaluate("new urifia.gag.MyCustomGAGGuard()"));
+			//var htmlCleanedDescr = "MyCustomGAGGuard.staticIsRuleActivable()"
+			var htmlCleanedDescr = "gard.isRuleActivable()"
+			val res = shell.evaluate(htmlCleanedDescr) //as Map<String, Object>
 	
 //			for (OutputPin port: _self.outputs) {
 //				//_self.system.sharedMemory.put(portName, res.get(portName))
