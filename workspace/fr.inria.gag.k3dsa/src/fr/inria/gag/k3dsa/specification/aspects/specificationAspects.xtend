@@ -11,6 +11,27 @@ import fr.inria.gag.specification.model.specification.IdExpression
 import fr.inria.gag.specification.model.specification.FunctionExpression
 import fr.inria.gag.configuration.model.configuration.Data
 
+// import for groovy
+import groovy.lang.Binding;
+import  groovy.lang.GroovyShell ;
+
+// eclipse need for groovy
+import org.eclipse.gemoc.commons.eclipse.emf.EMFResource
+import org.eclipse.gemoc.commons.eclipse.core.resources.IFileUtils
+import java.util.ArrayList
+import java.util.Map
+import org.eclipse.core.resources.IProject
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.jdt.core.IJavaProject
+import org.eclipse.jdt.core.JavaCore
+import java.net.URL
+import org.eclipse.core.runtime.IPath
+import org.eclipse.core.runtime.Path
+import org.eclipse.jdt.launching.JavaRuntime
+import java.net.URLClassLoader
+import org.eclipse.core.resources.IResource
+import org.eclipse.core.runtime.IProgressMonitor
+
 import static extension fr.inria.gag.k3dsa.specification.aspects.GAGAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ServiceAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.DecompositionRuleAspect.*
@@ -30,6 +51,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Main
 import org.eclipse.emf.common.util.EList
 import fr.inria.gag.k3dsa.GagGuardExecutor
 import fr.inria.gag.k3dsa.EncapsulatedValue
+import java.util.List
 
 @Aspect(className=GAG)
 class GAGAspect {
@@ -46,6 +68,9 @@ class GAGAspect {
 	def void run() {
 		Console.debug("Hello world on " + _self.eResource.URI);
 		//_self.staticGuardEvalForTesting();
+		
+		// for testing groovy
+		_self.callGroovy(new Binding)
 		val conf = _self.configuration as Configuration;
 
 		// get the axioms
@@ -252,6 +277,62 @@ class GAGAspect {
 			Console.error("Exception on guard evaluation", e);
 		}
 	}
+	
+	//for groovy evaluation
+	def String callGroovy(Binding binding){
+		binding.setVariable("id", "5")
+		
+		//binding.setVariable("projectPath", EMFResource.getIFile(_self).project.location.toOSString)
+		var ClassLoader lastClassLoader = null;//SystemFunction.classLoader;
+		var ClassLoader currentClassLoader = null;
+		try{
+			println("run code")
+			val List<IJavaProject> javaProjects = new ArrayList<IJavaProject>();
+			val IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
+			for(IProject project: projects){
+			 //project.open(null /* IProgressMonitor */);
+			 project.open(null as IProgressMonitor);
+			 val IJavaProject javaProject = JavaCore.create(project);
+			 javaProjects.add(javaProject);
+			}
+			
+			val List<URL> urlList = new ArrayList<URL>();
+			for(IJavaProject project: javaProjects){
+				val String[] classPathEntries = JavaRuntime.computeDefaultRuntimeClassPath(project);
+				for (var int i = 0; i < classPathEntries.length; i++) {
+				 val String entry = classPathEntries.get(i);
+				 val IPath path = new Path(entry);
+				 val URL url = path.toFile().toURI().toURL();
+				 urlList.add(url);
+				}
+				lastClassLoader = project.getClass().getClassLoader();
+				var URL[] urls = newArrayOfSize(urlList.length);
+				for(var int i = 0; i < urlList.length; i++){
+					urls.set(i,urlList.get(i))
+				}
+				currentClassLoader = new URLClassLoader(urls, lastClassLoader);
+				lastClassLoader = currentClassLoader
+			}			
+			
+			val shell = new GroovyShell(/*currentClassLoader,*/ binding)
+			var cl = shell.classLoader
+			for(var int i = 0; i < urlList.length; i++){
+					cl.addURL(urlList.get(i))
+					Console.debug(urlList.get(i).toString);
+			}
+	
+			var htmlCleanedDescr = ""
+			//val res = shell.evaluate(htmlCleanedDescr) as Map<String, Object>
+	
+//			for (OutputPin port: _self.outputs) {
+//				//_self.system.sharedMemory.put(portName, res.get(portName))
+//			}
+		} catch (Exception cnfe){
+			println("Failed to call Groovy script "+cnfe.message)
+			cnfe.printStackTrace()
+		}
+		return ""
+	}	
 }
 
 @Aspect(className=Service)

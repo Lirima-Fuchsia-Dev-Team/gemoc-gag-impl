@@ -113,6 +113,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\PhD Recherche\Fuchsia Team\Fuchsia Dev\runtime-Modeling_Workbench\gag.with.guard"/>
+			<item value="E:\PhD Recherche\Fuchsia Team\Fuchsia Dev\runtime-Modeling_Workbench\TestNewSyntax"/>
 			<item value="F:\Workspace\Fuchsia\gemoc-gag-impl\runtime-Modeling_Workbench\gag.with.guard"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
@@ -120,9 +122,10 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.java"/>
 		</list>
 	</section>
 	<section name="BasicNewProjectResourceWizard">

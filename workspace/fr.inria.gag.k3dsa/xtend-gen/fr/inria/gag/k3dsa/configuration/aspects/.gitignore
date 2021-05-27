@@ -10,3 +10,10 @@
 /.DataAspect.java._trace
 /.DataAspectDataAspectContext.java._trace
 /.DataAspectDataAspectProperties.java._trace
+/.configurationAspects.xtendbin
+/ConfigurationAspect.java
+/ConfigurationAspectConfigurationAspectContext.java
+/ConfigurationAspectConfigurationAspectProperties.java
+/DataAspect.java
+/DataAspectDataAspectContext.java
+/DataAspectDataAspectProperties.java

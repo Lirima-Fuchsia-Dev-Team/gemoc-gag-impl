@@ -21,6 +21,11 @@ public class MyCustomGAGGuard implements IGAGGuard {
         JOptionPane.showMessageDialog(null, "External customized guard function called!", "Message", JOptionPane.INFORMATION_MESSAGE);
         return true;
     }
+    //to remove just for test
+    public static boolean staticIsRuleActivable() {
+        JOptionPane.showMessageDialog(null, "External customized guard function called!", "Message", JOptionPane.INFORMATION_MESSAGE);
+        return true;
+    }
 
     @Override
     public IGAGGuardOutput isRuleActivable(IGAGGuardInput input) {
