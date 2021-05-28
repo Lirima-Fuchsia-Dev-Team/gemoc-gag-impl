@@ -143,7 +143,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConfiguration_PendingLocalComputation() {
+	public EReference getConfiguration_PendingLocalComputations() {
 		return (EReference) configurationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -304,7 +304,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		// Create classes and their features
 		configurationEClass = createEClass(CONFIGURATION);
 		createEReference(configurationEClass, CONFIGURATION__ROOT);
-		createEReference(configurationEClass, CONFIGURATION__PENDING_LOCAL_COMPUTATION);
+		createEReference(configurationEClass, CONFIGURATION__PENDING_LOCAL_COMPUTATIONS);
 
 		dataEClass = createEClass(DATA);
 		createEAttribute(dataEClass, DATA__VALUE);
@@ -366,9 +366,9 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		initEReference(getConfiguration_Root(), this.getTask(), null, "root", null, 1, 1, Configuration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConfiguration_PendingLocalComputation(), this.getPendingLocalFunctionComputation(), null,
-				"pendingLocalComputation", null, 0, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfiguration_PendingLocalComputations(), this.getPendingLocalFunctionComputation(), null,
+				"pendingLocalComputations", null, 0, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getData_Value(), ecorePackage.getEJavaObject(), "value", null, 0, 1, Data.class, !IS_TRANSIENT,
@@ -440,7 +440,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		String source = "aspect";
 		addAnnotation(configurationEClass, source, new String[] {});
 		addAnnotation(getConfiguration_Root(), source, new String[] {});
-		addAnnotation(getConfiguration_PendingLocalComputation(), source, new String[] {});
+		addAnnotation(getConfiguration_PendingLocalComputations(), source, new String[] {});
 		addAnnotation(dataEClass, source, new String[] {});
 		addAnnotation(getData_Value(), source, new String[] {});
 		addAnnotation(getData_Parameter(), source, new String[] {});

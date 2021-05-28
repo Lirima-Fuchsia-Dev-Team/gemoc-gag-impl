@@ -13,7 +13,7 @@ import fr.inria.gag.configuration.model.configuration.Data
 
 // import for groovy
 import groovy.lang.Binding;
-import  groovy.lang.GroovyShell ;
+import groovy.lang.GroovyShell;
 
 // eclipse need for groovy
 import org.eclipse.gemoc.commons.eclipse.emf.EMFResource
@@ -39,6 +39,7 @@ import static extension fr.inria.gag.k3dsa.specification.aspects.GuardAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.SemanticRuleAspect.*
 import static extension fr.inria.gag.k3dsa.specification.aspects.ParameterAspect.*
 import static extension fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect.*
+import static extension fr.inria.gag.k3dsa.configuration.aspects.PendingLocalFunctionComputationAspect.*
 
 import fr.inria.gag.k3dsa.Console
 import fr.inria.diverse.k3.al.annotationprocessor.Step
@@ -52,11 +53,12 @@ import org.eclipse.emf.common.util.EList
 import fr.inria.gag.k3dsa.GagGuardExecutor
 import fr.inria.gag.k3dsa.EncapsulatedValue
 import java.util.List
+import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation
 
 @Aspect(className=GAG)
 class GAGAspect {
 	public GagGuardExecutor exec = new GagGuardExecutor();
-	
+
 	@Step
 	@InitializeModel
 	def void initializeModel(EList<String> args) {
@@ -67,10 +69,9 @@ class GAGAspect {
 	@Main
 	def void run() {
 		Console.debug("Hello world on " + _self.eResource.URI);
-		//_self.staticGuardEvalForTesting();
-		
+		// _self.staticGuardEvalForTesting();
 		// for testing groovy
-		_self.callGroovy(new Binding)
+		//_self.callGroovy(new Binding)
 		val conf = _self.configuration as Configuration;
 
 		// get the axioms
@@ -103,7 +104,7 @@ class GAGAspect {
 		for (i : 0 ..< axioms.size) {
 			val element = axioms.get(i) as Service;
 			Console.debug((i + 1) + "- " + element.name)
-			//txtAf += " " + (i + 1) + "- " + element.name;
+		// txtAf += " " + (i + 1) + "- " + element.name;
 		}
 		// Console.debug(txtAf);
 		val choice = Console.readConsoleLine(txtAf);
@@ -113,18 +114,18 @@ class GAGAspect {
 		conf.root = ConfigurationFactory.eINSTANCE.createTask
 		conf.root.service = serviceChoice;
 		Console.debug("Veuillez fournir les valeurs des entrées de l'axiome ");
-		for ( i : 0 ..< conf.root.service.inputParameters.size) {
-			    var data = ConfigurationFactory.eINSTANCE.createData;
-			    data.parameter = conf.root.service.inputParameters.get(i);
-			    Console.debug("Veuillez entrer la valeur du paramètre "+ data.parameter.name);
-			    data.value = new EncapsulatedValue(Console.readConsoleLine(""));
-				conf.root.inputs.add(data);			
+		for (i : 0 ..< conf.root.service.inputParameters.size) {
+			var data = ConfigurationFactory.eINSTANCE.createData;
+			data.parameter = conf.root.service.inputParameters.get(i);
+			Console.debug("Veuillez entrer la valeur du paramètre " + data.parameter.name);
+			data.value = new EncapsulatedValue(Console.readConsoleLine(""));
+			conf.root.inputs.add(data);
 		}
-		for ( i : 0 ..< conf.root.service.outputParameters.size) {
-			    var data = ConfigurationFactory.eINSTANCE.createData;
-			    data.parameter = conf.root.service.outputParameters.get(i);
-			    data.value =  new EncapsulatedValue ;
-				conf.root.outputs.add(data);			
+		for (i : 0 ..< conf.root.service.outputParameters.size) {
+			var data = ConfigurationFactory.eINSTANCE.createData;
+			data.parameter = conf.root.service.outputParameters.get(i);
+			data.value = new EncapsulatedValue;
+			conf.root.outputs.add(data);
 		}
 	}
 
@@ -135,7 +136,7 @@ class GAGAspect {
 		for (i : 0 ..< openTasks.size) {
 			val element = openTasks.get(i);
 			Console.debug((i + 1) + "- " + element.service.name)
-			//txtAf += " " + (i + 1) + "- " + element.service.name;
+		// txtAf += " " + (i + 1) + "- " + element.service.name;
 		}
 		val choice = Console.readConsoleLine(txtAf);
 		val id = Integer.parseInt(choice);
@@ -149,7 +150,7 @@ class GAGAspect {
 		for (i : 0 ..< t.service.rules.size) {
 			val element = t.service.rules.get(i);
 			Console.debug((i + 1) + "- " + element.name)
-			//txtAf += " " + (i + 1) + "- " + element.name;
+		// txtAf += " " + (i + 1) + "- " + element.name;
 		}
 		val choice = Console.readConsoleLine(txtAf);
 		val id = Integer.parseInt(choice);
@@ -180,87 +181,126 @@ class GAGAspect {
 		for (i : 0 ..< r.subServices.size) {
 			val element = r.subServices.get(i)
 			var st = ConfigurationFactory.eINSTANCE.createTask;
-			initTask(_self,st,element);
-			
-			
-			
+			initTask(_self, st, element);
+
 			t.subTasks.add(st);
 		}
-		
+
 		// code for the semantic rule here
-		var context= new ArrayList<Task>();
+		var conf = _self.configuration as Configuration;
+		var context = new ArrayList<Task>();
 		context.add(t);
 		context.addAll(t.subTasks);
-		for (i:0 ..< r.semantic.equations.size){
+		for (i : 0 ..< r.semantic.equations.size) {
 			var eq = r.semantic.equations.get(i);
 			var String[] ref1 = #[eq.leftpart.serviceName, eq.leftpart.parameterName];
-			
-			var data1 = findReference(_self,ref1,context)
-			
-			if (eq.rightpart instanceof IdExpression){
-				var data2 =null as fr.inria.gag.configuration.model.configuration.Data;
+
+			var data1 = findReference(_self, ref1, context)
+
+			if (eq.rightpart instanceof IdExpression) {
+				var data2 = null as fr.inria.gag.configuration.model.configuration.Data;
 				val rightPartIdExpression = eq.rightpart as IdExpression;
-				val String[] ref2 =  #[rightPartIdExpression.serviceName, rightPartIdExpression.parameterName];
-				data2 = findReference(_self,ref2,context);
-				var ecData1=data1.value as EncapsulatedValue;
-				ecData1.addReference( data2.value as EncapsulatedValue);
-			}else {
+				val String[] ref2 = #[rightPartIdExpression.serviceName, rightPartIdExpression.parameterName];
+				data2 = findReference(_self, ref2, context);
+				var ecData1 = data1.value as EncapsulatedValue;
+				ecData1.addReference(data2.value as EncapsulatedValue);
+			} else {
 				var func = eq.rightpart as FunctionExpression;
-				var ecData1 = data1.value as EncapsulatedValue ;
-				if (func.function.name.equals('g')) {
-					 ecData1.value = 8;
-					}
-					else{
-					ecData1.value = 7;	
-					}
+				var ecData1 = data1.value as EncapsulatedValue;
+				var runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation;
+				runningFunction.dataToCompute = data1;
+				runningFunction.functiondeclaration = func.function;
+				for (k : 0 ..< func.idExpressions.size) {
+					var elId = func.idExpressions.get(k);
+					val String[] ref = #[elId.serviceName, elId.parameterName];
+					var data = findReference(_self, ref, context);
+					runningFunction.actualParameters.add(data);
+				}
+				
+				conf.pendingLocalComputations.add(runningFunction);
 			}
-			
+
 		}
+		
+		//code to compute function
+		_self.computeFunction(conf.pendingLocalComputations);
 	}
-	
-	def fr.inria.gag.configuration.model.configuration.Data findReference(String[] ref, ArrayList<Task> tasks){
+
+	def fr.inria.gag.configuration.model.configuration.Data findReference(String[] ref, ArrayList<Task> tasks) {
 		var objectRef = null as fr.inria.gag.configuration.model.configuration.Data;
 		var serviceName = ref.get(0).toString.trim;
 		var serviceParameter = ref.get(1).toString.trim;
-		//Console.debug(serviceName+"."+serviceParameter);
-		for (i:0 ..< tasks.size){
-			var element =tasks.get(i);
-			if (element.service.name.equals(serviceName)){
+		// Console.debug(serviceName+"."+serviceParameter);
+		for (i : 0 ..< tasks.size) {
+			var element = tasks.get(i);
+			if (element.service.name.equals(serviceName)) {
 				// we look in inputs and outputs to find the parameter
-				for (j:0 ..< element.inputs.size){
-					if(element.inputs.get(j).parameter.name.equals(serviceParameter)){
+				for (j : 0 ..< element.inputs.size) {
+					if (element.inputs.get(j).parameter.name.equals(serviceParameter)) {
 						objectRef = element.inputs.get(j);
-						//Console.debug('i found');
-					} 
+					// Console.debug('i found');
+					}
 				}
-				for (j:0 ..< element.outputs.size){
-					if(element.outputs.get(j).parameter.name.equals(serviceParameter)){
+				for (j : 0 ..< element.outputs.size) {
+					if (element.outputs.get(j).parameter.name.equals(serviceParameter)) {
 						objectRef = element.outputs.get(j);
-						//Console.debug('i found');
-					} 
+					// Console.debug('i found');
+					}
 				}
-			} 
+			}
 		}
 		return objectRef;
 	}
-	
-	def void initTask (Task t, Service s){
-		t.service=s;
-		t.isOpen=true;
-		for ( i : 0 ..< s.inputParameters.size) {
-			    var data = ConfigurationFactory.eINSTANCE.createData;
-			    data.parameter = s.inputParameters.get(i);
-			    data.value = new EncapsulatedValue;
-				t.inputs.add(data);			
+
+	// method to execute functions
+	def void computeFunction(EList<PendingLocalFunctionComputation> runningFunctions) {
+
+		var executableFunctions = new ArrayList<PendingLocalFunctionComputation>
+		for (i : 0 ..< runningFunctions.size) {
+			var func = runningFunctions.get(i);
+			if (func.executable) {
+				executableFunctions.add(func);
+			}
 		}
-		for ( i : 0 ..< s.outputParameters.size) {
-			    var data = ConfigurationFactory.eINSTANCE.createData;
-			    data.parameter = s.outputParameters.get(i);
-			    data.value =  new EncapsulatedValue ;
-				t.outputs.add(data);			
+		while (executableFunctions.size != 0) {
+			for (i : 0 ..< executableFunctions.size) {
+				//execute the function
+				var elFunc = executableFunctions.get(i);
+				var result = elFunc.execute;
+				var ecObj= elFunc.dataToCompute.value as EncapsulatedValue;
+				ecObj.value = result;
+								
+			}
+			
+			runningFunctions.removeAll(executableFunctions); // remove the executed function
+			executableFunctions = new ArrayList<PendingLocalFunctionComputation> //re-initialize the candidate function list
+			for (i : 0 ..< runningFunctions.size) {
+				var func = runningFunctions.get(i);
+				if (func.executable) {
+					executableFunctions.add(func);
+				}
+			}
+		}
+
+	}
+
+	def void initTask(Task t, Service s) {
+		t.service = s;
+		t.isOpen = true;
+		for (i : 0 ..< s.inputParameters.size) {
+			var data = ConfigurationFactory.eINSTANCE.createData;
+			data.parameter = s.inputParameters.get(i);
+			data.value = new EncapsulatedValue;
+			t.inputs.add(data);
+		}
+		for (i : 0 ..< s.outputParameters.size) {
+			var data = ConfigurationFactory.eINSTANCE.createData;
+			data.parameter = s.outputParameters.get(i);
+			data.value = new EncapsulatedValue;
+			t.outputs.add(data);
 		}
 	}
-	
+
 	def void evaluateAllGuardsForTesting() {
 		Console.debug("Trying guard evaluation on " + _self.eResource.URI);
 		for (Service service : _self.services) {
@@ -272,69 +312,14 @@ class GAGAspect {
 		Console.debug("Trying static guard evaluation on " + _self.eResource.URI);
 		try {
 			Console.debug("Fixed guard evaluation result is : " +
-				_self.exec.isRuleActivable("E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin", "urifia.gag.MyCustomGAGGuard"));
+				_self.exec.isRuleActivable(
+					"E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin",
+					"urifia.gag.MyCustomGAGGuard"));
 		} catch (Exception e) {
 			Console.error("Exception on guard evaluation", e);
 		}
 	}
-	
-	//for groovy evaluation
-	def String callGroovy(Binding binding){
-		binding.setVariable("id", "5")
-		
-		//binding.setVariable("projectPath", EMFResource.getIFile(_self).project.location.toOSString)
-		var ClassLoader lastClassLoader = null;//SystemFunction.classLoader;
-		var ClassLoader currentClassLoader = null;
-		try{
-			println("run code")
-			val List<IJavaProject> javaProjects = new ArrayList<IJavaProject>();
-			val IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
-			for(IProject project: projects){
-			 //project.open(null /* IProgressMonitor */);
-			 project.open(null as IProgressMonitor);
-			 val IJavaProject javaProject = JavaCore.create(project);
-			 javaProjects.add(javaProject);
-			}
-			
-			val List<URL> urlList = new ArrayList<URL>();
-			for(IJavaProject project: javaProjects){
-				val String[] classPathEntries = JavaRuntime.computeDefaultRuntimeClassPath(project);
-				for (var int i = 0; i < classPathEntries.length; i++) {
-				 val String entry = classPathEntries.get(i);
-				 val IPath path = new Path(entry);
-				 val URL url = path.toFile().toURI().toURL();
-				 urlList.add(url);
-				}
-				lastClassLoader = project.getClass().getClassLoader();
-				var URL[] urls = newArrayOfSize(urlList.length);
-				for(var int i = 0; i < urlList.length; i++){
-					urls.set(i,urlList.get(i))
-				}
-				currentClassLoader = new URLClassLoader(urls, lastClassLoader);
-				lastClassLoader = currentClassLoader
-			}			
-			
-			val shell = new GroovyShell(/*currentClassLoader,*/ binding)
-			var cl = shell.classLoader
-			for(var int i = 0; i < urlList.length; i++){
-					cl.addURL(urlList.get(i))
-					Console.debug(urlList.get(i).toString);
-			}
-	        //binding.setVariable("gard","new MyCustomGAGGuard()");
-	        binding.setVariable("gard",shell.evaluate("new urifia.gag.MyCustomGAGGuard()"));
-			//var htmlCleanedDescr = "MyCustomGAGGuard.staticIsRuleActivable()"
-			var htmlCleanedDescr = "gard.isRuleActivable()"
-			val res = shell.evaluate(htmlCleanedDescr) //as Map<String, Object>
-	
-//			for (OutputPin port: _self.outputs) {
-//				//_self.system.sharedMemory.put(portName, res.get(portName))
-//			}
-		} catch (Exception cnfe){
-			println("Failed to call Groovy script "+cnfe.message)
-			cnfe.printStackTrace()
-		}
-		return ""
-	}	
+
 }
 
 @Aspect(className=Service)
@@ -350,7 +335,8 @@ class ServiceAspect {
 class DecompositionRuleAspect {
 	def void evaluateAllGuardsForTesting(GagGuardExecutor exec) {
 		if (_self.guard !== null)
-			Console.debug("Guard for rule " + _self.name + " evaluation result is : " + _self.guard.isRuleActivable(exec));
+			Console.debug("Guard for rule " + _self.name + " evaluation result is : " +
+				_self.guard.isRuleActivable(exec));
 	}
 }
 

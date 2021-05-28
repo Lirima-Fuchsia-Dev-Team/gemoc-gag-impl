@@ -79,13 +79,13 @@ public interface ConfigurationPackage extends EPackage {
 	int CONFIGURATION__ROOT = SpecificationPackage.RUNTIME_DATA_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Pending Local Computation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Pending Local Computations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION__PENDING_LOCAL_COMPUTATION = SpecificationPackage.RUNTIME_DATA_FEATURE_COUNT + 1;
+	int CONFIGURATION__PENDING_LOCAL_COMPUTATIONS = SpecificationPackage.RUNTIME_DATA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Configuration</em>' class.
@@ -310,15 +310,15 @@ public interface ConfigurationPackage extends EPackage {
 	EReference getConfiguration_Root();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.configuration.model.configuration.Configuration#getPendingLocalComputation <em>Pending Local Computation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.configuration.model.configuration.Configuration#getPendingLocalComputations <em>Pending Local Computations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Pending Local Computation</em>'.
-	 * @see fr.inria.gag.configuration.model.configuration.Configuration#getPendingLocalComputation()
+	 * @return the meta object for the containment reference list '<em>Pending Local Computations</em>'.
+	 * @see fr.inria.gag.configuration.model.configuration.Configuration#getPendingLocalComputations()
 	 * @see #getConfiguration()
 	 * @generated
 	 */
-	EReference getConfiguration_PendingLocalComputation();
+	EReference getConfiguration_PendingLocalComputations();
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.configuration.model.configuration.Data <em>Data</em>}'.
@@ -513,12 +513,12 @@ public interface ConfigurationPackage extends EPackage {
 		EReference CONFIGURATION__ROOT = eINSTANCE.getConfiguration_Root();
 
 		/**
-		 * The meta object literal for the '<em><b>Pending Local Computation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Pending Local Computations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONFIGURATION__PENDING_LOCAL_COMPUTATION = eINSTANCE.getConfiguration_PendingLocalComputation();
+		EReference CONFIGURATION__PENDING_LOCAL_COMPUTATIONS = eINSTANCE.getConfiguration_PendingLocalComputations();
 
 		/**
 		 * The meta object literal for the '{@link fr.inria.gag.configuration.model.configuration.impl.DataImpl <em>Data</em>}' class.

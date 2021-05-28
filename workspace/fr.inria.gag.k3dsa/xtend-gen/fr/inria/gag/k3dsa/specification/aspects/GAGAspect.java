@@ -7,11 +7,13 @@ import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import fr.inria.gag.configuration.model.configuration.Configuration;
 import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
 import fr.inria.gag.configuration.model.configuration.Data;
+import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation;
 import fr.inria.gag.configuration.model.configuration.Task;
 import fr.inria.gag.k3dsa.Console;
 import fr.inria.gag.k3dsa.EncapsulatedValue;
 import fr.inria.gag.k3dsa.GagGuardExecutor;
 import fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect;
+import fr.inria.gag.k3dsa.configuration.aspects.PendingLocalFunctionComputationAspect;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
 import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
@@ -22,27 +24,11 @@ import fr.inria.gag.specification.model.specification.GAG;
 import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.Service;
-import groovy.lang.Binding;
-import groovy.lang.GroovyClassLoader;
-import groovy.lang.GroovyShell;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.ArrayList;
-import java.util.List;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.launching.JavaRuntime;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @Aspect(className = GAG.class)
 @SuppressWarnings("all")
@@ -188,6 +174,14 @@ public class GAGAspect {
     return (fr.inria.gag.configuration.model.configuration.Data)result;
   }
   
+  public static void computeFunction(final GAG _self, final EList<PendingLocalFunctionComputation> runningFunctions) {
+    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void computeFunction(EList<PendingLocalFunctionComputation>)
+    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
+    	fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_computeFunction(_self_, (fr.inria.gag.specification.model.specification.GAG)_self,runningFunctions);
+    };
+  }
+  
   public static void initTask(final GAG _self, final Task t, final Service s) {
     final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void initTask(Task,Service)
@@ -210,16 +204,6 @@ public class GAGAspect {
     if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
     	fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_staticGuardEvalForTesting(_self_, (fr.inria.gag.specification.model.specification.GAG)_self);
     };
-  }
-  
-  public static String callGroovy(final GAG _self, final Binding binding) {
-    final fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties _self_ = fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectContext.getSelf(_self);
-    Object result = null;
-    // #DispatchPointCut_before# String callGroovy(Binding)
-    if (_self instanceof fr.inria.gag.specification.model.specification.GAG){
-    	result = fr.inria.gag.k3dsa.specification.aspects.GAGAspect._privk3_callGroovy(_self_, (fr.inria.gag.specification.model.specification.GAG)_self,binding);
-    };
-    return (java.lang.String)result;
   }
   
   public static GagGuardExecutor exec(final GAG _self) {
@@ -249,8 +233,6 @@ public class GAGAspect {
     URI _uRI = _self.eResource().getURI();
     String _plus = ("Hello world on " + _uRI);
     Console.debug(_plus);
-    Binding _binding = new Binding();
-    GAGAspect.callGroovy(_self, _binding);
     RuntimeData _configuration = _self.getConfiguration();
     final Configuration conf = ((Configuration) _configuration);
     GAGAspect.chooseTheAxiom(_self);
@@ -406,6 +388,8 @@ public class GAGAspect {
         t.getSubTasks().add(st);
       }
     }
+    RuntimeData _configuration = _self.getConfiguration();
+    Configuration conf = ((Configuration) _configuration);
     ArrayList<Task> context = new ArrayList<Task>();
     context.add(t);
     context.addAll(t.getSubTasks());
@@ -436,15 +420,26 @@ public class GAGAspect {
           FunctionExpression func = ((FunctionExpression) _rightpart_2);
           Object _value_2 = data1.getValue();
           EncapsulatedValue ecData1_1 = ((EncapsulatedValue) _value_2);
-          boolean _equals = func.getFunction().getName().equals("g");
-          if (_equals) {
-            ecData1_1.setValue(Integer.valueOf(8));
-          } else {
-            ecData1_1.setValue(Integer.valueOf(7));
+          PendingLocalFunctionComputation runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation();
+          runningFunction.setDataToCompute(data1);
+          runningFunction.setFunctiondeclaration(func.getFunction());
+          int _size_2 = func.getIdExpressions().size();
+          ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+          for (final Integer k : _doubleDotLessThan_2) {
+            {
+              IdExpression elId = func.getIdExpressions().get((k).intValue());
+              String _serviceName_2 = elId.getServiceName();
+              String _parameterName_2 = elId.getParameterName();
+              final String[] ref = new String[] { _serviceName_2, _parameterName_2 };
+              Data data = GAGAspect.findReference(_self, ref, context);
+              runningFunction.getActualParameters().add(data);
+            }
           }
+          conf.getPendingLocalComputations().add(runningFunction);
         }
       }
     }
+    GAGAspect.computeFunction(_self, conf.getPendingLocalComputations());
   }
   
   protected static Data _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final ArrayList<Task> tasks) {
@@ -478,6 +473,50 @@ public class GAGAspect {
       }
     }
     return objectRef;
+  }
+  
+  protected static void _privk3_computeFunction(final GAGAspectGAGAspectProperties _self_, final GAG _self, final EList<PendingLocalFunctionComputation> runningFunctions) {
+    ArrayList<PendingLocalFunctionComputation> executableFunctions = new ArrayList<PendingLocalFunctionComputation>();
+    int _size = runningFunctions.size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        PendingLocalFunctionComputation func = runningFunctions.get((i).intValue());
+        boolean _isExecutable = PendingLocalFunctionComputationAspect.isExecutable(func);
+        if (_isExecutable) {
+          executableFunctions.add(func);
+        }
+      }
+    }
+    while ((executableFunctions.size() != 0)) {
+      {
+        int _size_1 = executableFunctions.size();
+        ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+        for (final Integer i_1 : _doubleDotLessThan_1) {
+          {
+            PendingLocalFunctionComputation elFunc = executableFunctions.get((i_1).intValue());
+            Object result = PendingLocalFunctionComputationAspect.execute(elFunc);
+            Object _value = elFunc.getDataToCompute().getValue();
+            EncapsulatedValue ecObj = ((EncapsulatedValue) _value);
+            ecObj.setValue(result);
+          }
+        }
+        runningFunctions.removeAll(executableFunctions);
+        ArrayList<PendingLocalFunctionComputation> _arrayList = new ArrayList<PendingLocalFunctionComputation>();
+        executableFunctions = _arrayList;
+        int _size_2 = runningFunctions.size();
+        ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+        for (final Integer i_2 : _doubleDotLessThan_2) {
+          {
+            PendingLocalFunctionComputation func = runningFunctions.get((i_2).intValue());
+            boolean _isExecutable = PendingLocalFunctionComputationAspect.isExecutable(func);
+            if (_isExecutable) {
+              executableFunctions.add(func);
+            }
+          }
+        }
+      }
+    }
   }
   
   protected static void _privk3_initTask(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task t, final Service s) {
@@ -522,7 +561,9 @@ public class GAGAspect {
     String _plus = ("Trying static guard evaluation on " + _uRI);
     Console.debug(_plus);
     try {
-      boolean _isRuleActivable = GAGAspect.exec(_self).isRuleActivable("E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin", "urifia.gag.MyCustomGAGGuard");
+      boolean _isRuleActivable = GAGAspect.exec(_self).isRuleActivable(
+        "E:/PhD Recherche/Fuchsia Team/Fuchsia Dev/runtime-Modeling_Workbench/gag.with.guard/bin", 
+        "urifia.gag.MyCustomGAGGuard");
       String _plus_1 = ("Fixed guard evaluation result is : " + Boolean.valueOf(_isRuleActivable));
       Console.debug(_plus_1);
     } catch (final Throwable _t) {
@@ -533,68 +574,6 @@ public class GAGAspect {
         throw Exceptions.sneakyThrow(_t);
       }
     }
-  }
-  
-  protected static String _privk3_callGroovy(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Binding binding) {
-    binding.setVariable("id", "5");
-    ClassLoader lastClassLoader = null;
-    ClassLoader currentClassLoader = null;
-    try {
-      InputOutput.<String>println("run code");
-      final List<IJavaProject> javaProjects = new ArrayList<IJavaProject>();
-      final IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
-      for (final IProject project : projects) {
-        {
-          project.open(((IProgressMonitor) null));
-          final IJavaProject javaProject = JavaCore.create(project);
-          javaProjects.add(javaProject);
-        }
-      }
-      final List<URL> urlList = new ArrayList<URL>();
-      for (final IJavaProject project_1 : javaProjects) {
-        {
-          final String[] classPathEntries = JavaRuntime.computeDefaultRuntimeClassPath(project_1);
-          for (int i = 0; (i < classPathEntries.length); i++) {
-            {
-              final String entry = classPathEntries[i];
-              final IPath path = new Path(entry);
-              final URL url = path.toFile().toURI().toURL();
-              urlList.add(url);
-            }
-          }
-          lastClassLoader = project_1.getClass().getClassLoader();
-          URL[] urls = new URL[((Object[])Conversions.unwrapArray(urlList, Object.class)).length];
-          for (int i = 0; (i < ((Object[])Conversions.unwrapArray(urlList, Object.class)).length); i++) {
-            urls[i] = urlList.get(i);
-          }
-          URLClassLoader _uRLClassLoader = new URLClassLoader(urls, lastClassLoader);
-          currentClassLoader = _uRLClassLoader;
-          lastClassLoader = currentClassLoader;
-        }
-      }
-      final GroovyShell shell = new GroovyShell(binding);
-      GroovyClassLoader cl = shell.getClassLoader();
-      for (int i = 0; (i < ((Object[])Conversions.unwrapArray(urlList, Object.class)).length); i++) {
-        {
-          cl.addURL(urlList.get(i));
-          Console.debug(urlList.get(i).toString());
-        }
-      }
-      binding.setVariable("gard", shell.evaluate("new urifia.gag.MyCustomGAGGuard()"));
-      String htmlCleanedDescr = "gard.isRuleActivable()";
-      final Object res = shell.evaluate(htmlCleanedDescr);
-    } catch (final Throwable _t) {
-      if (_t instanceof Exception) {
-        final Exception cnfe = (Exception)_t;
-        String _message = cnfe.getMessage();
-        String _plus = ("Failed to call Groovy script " + _message);
-        InputOutput.<String>println(_plus);
-        cnfe.printStackTrace();
-      } else {
-        throw Exceptions.sneakyThrow(_t);
-      }
-    }
-    return "";
   }
   
   protected static GagGuardExecutor _privk3_exec(final GAGAspectGAGAspectProperties _self_, final GAG _self) {

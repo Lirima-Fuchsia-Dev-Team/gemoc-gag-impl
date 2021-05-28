@@ -437,9 +437,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_8JnARr4ZEeu4lPYIbxOtww" name="[0..*] pendingLocalComputation" sourceNode="_t2CsAKElEeuVt49phsicdg" targetNode="_D4744L4ZEeu4lPYIbxOtww">
-      <target xmi:type="ecore:EReference" href="configuration.ecore#//Configuration/pendingLocalComputation"/>
-      <semanticElements xmi:type="ecore:EReference" href="configuration.ecore#//Configuration/pendingLocalComputation"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_8JnARr4ZEeu4lPYIbxOtww" name="[0..*] pendingLocalComputations" sourceNode="_t2CsAKElEeuVt49phsicdg" targetNode="_D4744L4ZEeu4lPYIbxOtww">
+      <target xmi:type="ecore:EReference" href="configuration.ecore#//Configuration/pendingLocalComputations"/>
+      <semanticElements xmi:type="ecore:EReference" href="configuration.ecore#//Configuration/pendingLocalComputations"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_8JnnUL4ZEeu4lPYIbxOtww" description="_t2k3gKElEeuVt49phsicdg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_8JnnUr4ZEeu4lPYIbxOtww" showIcon="false">
           <customFeatures>labelSize</customFeatures>
