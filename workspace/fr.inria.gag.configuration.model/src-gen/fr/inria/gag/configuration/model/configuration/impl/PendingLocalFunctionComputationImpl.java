@@ -31,7 +31,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.configuration.model.configuration.impl.PendingLocalFunctionComputationImpl#getFunctiondeclaration <em>Functiondeclaration</em>}</li>
- *   <li>{@link fr.inria.gag.configuration.model.configuration.impl.PendingLocalFunctionComputationImpl#getData <em>Data</em>}</li>
+ *   <li>{@link fr.inria.gag.configuration.model.configuration.impl.PendingLocalFunctionComputationImpl#getActualParameters <em>Actual Parameters</em>}</li>
+ *   <li>{@link fr.inria.gag.configuration.model.configuration.impl.PendingLocalFunctionComputationImpl#getDataToCompute <em>Data To Compute</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,14 +50,24 @@ public class PendingLocalFunctionComputationImpl extends MinimalEObjectImpl.Cont
 	protected FunctionDeclaration functiondeclaration;
 
 	/**
-	 * The cached value of the '{@link #getData() <em>Data</em>}' reference list.
+	 * The cached value of the '{@link #getActualParameters() <em>Actual Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getData()
+	 * @see #getActualParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Data> data;
+	protected EList<Data> actualParameters;
+
+	/**
+	 * The cached value of the '{@link #getDataToCompute() <em>Data To Compute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataToCompute()
+	 * @generated
+	 * @ordered
+	 */
+	protected Data dataToCompute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,12 +135,54 @@ public class PendingLocalFunctionComputationImpl extends MinimalEObjectImpl.Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Data> getData() {
-		if (data == null) {
-			data = new EObjectResolvingEList<Data>(Data.class, this,
-					ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA);
+	public EList<Data> getActualParameters() {
+		if (actualParameters == null) {
+			actualParameters = new EObjectResolvingEList<Data>(Data.class, this,
+					ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS);
 		}
-		return data;
+		return actualParameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Data getDataToCompute() {
+		if (dataToCompute != null && dataToCompute.eIsProxy()) {
+			InternalEObject oldDataToCompute = (InternalEObject) dataToCompute;
+			dataToCompute = (Data) eResolveProxy(oldDataToCompute);
+			if (dataToCompute != oldDataToCompute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE, oldDataToCompute,
+							dataToCompute));
+			}
+		}
+		return dataToCompute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Data basicGetDataToCompute() {
+		return dataToCompute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataToCompute(Data newDataToCompute) {
+		Data oldDataToCompute = dataToCompute;
+		dataToCompute = newDataToCompute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE, oldDataToCompute,
+					dataToCompute));
 	}
 
 	/**
@@ -144,8 +197,12 @@ public class PendingLocalFunctionComputationImpl extends MinimalEObjectImpl.Cont
 			if (resolve)
 				return getFunctiondeclaration();
 			return basicGetFunctiondeclaration();
-		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA:
-			return getData();
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS:
+			return getActualParameters();
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE:
+			if (resolve)
+				return getDataToCompute();
+			return basicGetDataToCompute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,9 +219,12 @@ public class PendingLocalFunctionComputationImpl extends MinimalEObjectImpl.Cont
 		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__FUNCTIONDECLARATION:
 			setFunctiondeclaration((FunctionDeclaration) newValue);
 			return;
-		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA:
-			getData().clear();
-			getData().addAll((Collection<? extends Data>) newValue);
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS:
+			getActualParameters().clear();
+			getActualParameters().addAll((Collection<? extends Data>) newValue);
+			return;
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE:
+			setDataToCompute((Data) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,8 +241,11 @@ public class PendingLocalFunctionComputationImpl extends MinimalEObjectImpl.Cont
 		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__FUNCTIONDECLARATION:
 			setFunctiondeclaration((FunctionDeclaration) null);
 			return;
-		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA:
-			getData().clear();
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS:
+			getActualParameters().clear();
+			return;
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE:
+			setDataToCompute((Data) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -198,8 +261,10 @@ public class PendingLocalFunctionComputationImpl extends MinimalEObjectImpl.Cont
 		switch (featureID) {
 		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__FUNCTIONDECLARATION:
 			return functiondeclaration != null;
-		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA:
-			return data != null && !data.isEmpty();
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS:
+			return actualParameters != null && !actualParameters.isEmpty();
+		case ConfigurationPackage.PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE:
+			return dataToCompute != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -29,7 +29,8 @@
     </genClasses>
     <genClasses ecoreClass="configuration.ecore#//PendingLocalFunctionComputation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PendingLocalFunctionComputation/functiondeclaration"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PendingLocalFunctionComputation/data"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PendingLocalFunctionComputation/actualParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//PendingLocalFunctionComputation/dataToCompute"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -51,7 +51,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="functiondeclaration" lowerBound="1" eType="ecore:EClass ../../fr.inria.gag.specification.model/model/specification.ecore#//FunctionDeclaration">
       <eAnnotations source="aspect"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actualParameters" upperBound="-1" eType="#//Data">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataToCompute" lowerBound="1" eType="#//Data">
       <eAnnotations source="aspect"/>
     </eStructuralFeatures>
   </eClassifiers>

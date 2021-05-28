@@ -253,13 +253,22 @@ public interface ConfigurationPackage extends EPackage {
 	int PENDING_LOCAL_FUNCTION_COMPUTATION__FUNCTIONDECLARATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Data</b></em>' reference list.
+	 * The feature id for the '<em><b>Actual Parameters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PENDING_LOCAL_FUNCTION_COMPUTATION__DATA = 1;
+	int PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Data To Compute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Pending Local Function Computation</em>' class.
@@ -268,7 +277,7 @@ public interface ConfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PENDING_LOCAL_FUNCTION_COMPUTATION_FEATURE_COUNT = 2;
+	int PENDING_LOCAL_FUNCTION_COMPUTATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Pending Local Function Computation</em>' class.
@@ -441,15 +450,26 @@ public interface ConfigurationPackage extends EPackage {
 	EReference getPendingLocalFunctionComputation_Functiondeclaration();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getData <em>Data</em>}'.
+	 * Returns the meta object for the reference list '{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getActualParameters <em>Actual Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Data</em>'.
-	 * @see fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getData()
+	 * @return the meta object for the reference list '<em>Actual Parameters</em>'.
+	 * @see fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getActualParameters()
 	 * @see #getPendingLocalFunctionComputation()
 	 * @generated
 	 */
-	EReference getPendingLocalFunctionComputation_Data();
+	EReference getPendingLocalFunctionComputation_ActualParameters();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getDataToCompute <em>Data To Compute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data To Compute</em>'.
+	 * @see fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getDataToCompute()
+	 * @see #getPendingLocalFunctionComputation()
+	 * @generated
+	 */
+	EReference getPendingLocalFunctionComputation_DataToCompute();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -604,12 +624,22 @@ public interface ConfigurationPackage extends EPackage {
 				.getPendingLocalFunctionComputation_Functiondeclaration();
 
 		/**
-		 * The meta object literal for the '<em><b>Data</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Actual Parameters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PENDING_LOCAL_FUNCTION_COMPUTATION__DATA = eINSTANCE.getPendingLocalFunctionComputation_Data();
+		EReference PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS = eINSTANCE
+				.getPendingLocalFunctionComputation_ActualParameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Data To Compute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE = eINSTANCE
+				.getPendingLocalFunctionComputation_DataToCompute();
 
 	}
 

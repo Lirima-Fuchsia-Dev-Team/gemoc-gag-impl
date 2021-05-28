@@ -260,8 +260,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPendingLocalFunctionComputation_Data() {
+	public EReference getPendingLocalFunctionComputation_ActualParameters() {
 		return (EReference) pendingLocalFunctionComputationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPendingLocalFunctionComputation_DataToCompute() {
+		return (EReference) pendingLocalFunctionComputationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -312,7 +321,8 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		pendingLocalFunctionComputationEClass = createEClass(PENDING_LOCAL_FUNCTION_COMPUTATION);
 		createEReference(pendingLocalFunctionComputationEClass,
 				PENDING_LOCAL_FUNCTION_COMPUTATION__FUNCTIONDECLARATION);
-		createEReference(pendingLocalFunctionComputationEClass, PENDING_LOCAL_FUNCTION_COMPUTATION__DATA);
+		createEReference(pendingLocalFunctionComputationEClass, PENDING_LOCAL_FUNCTION_COMPUTATION__ACTUAL_PARAMETERS);
+		createEReference(pendingLocalFunctionComputationEClass, PENDING_LOCAL_FUNCTION_COMPUTATION__DATA_TO_COMPUTE);
 	}
 
 	/**
@@ -391,8 +401,11 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 				theSpecificationPackage.getFunctionDeclaration(), null, "functiondeclaration", null, 1, 1,
 				PendingLocalFunctionComputation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPendingLocalFunctionComputation_Data(), this.getData(), null, "data", null, 0, -1,
-				PendingLocalFunctionComputation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getPendingLocalFunctionComputation_ActualParameters(), this.getData(), null, "actualParameters",
+				null, 0, -1, PendingLocalFunctionComputation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPendingLocalFunctionComputation_DataToCompute(), this.getData(), null, "dataToCompute", null,
+				1, 1, PendingLocalFunctionComputation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
@@ -440,7 +453,8 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		addAnnotation(getTask_Service(), source, new String[] {});
 		addAnnotation(pendingLocalFunctionComputationEClass, source, new String[] {});
 		addAnnotation(getPendingLocalFunctionComputation_Functiondeclaration(), source, new String[] {});
-		addAnnotation(getPendingLocalFunctionComputation_Data(), source, new String[] {});
+		addAnnotation(getPendingLocalFunctionComputation_ActualParameters(), source, new String[] {});
+		addAnnotation(getPendingLocalFunctionComputation_DataToCompute(), source, new String[] {});
 	}
 
 } //ConfigurationPackageImpl

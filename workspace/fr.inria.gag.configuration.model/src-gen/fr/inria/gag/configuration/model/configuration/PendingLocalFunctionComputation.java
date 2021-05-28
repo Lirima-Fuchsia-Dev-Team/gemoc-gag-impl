@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getFunctiondeclaration <em>Functiondeclaration</em>}</li>
- *   <li>{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getData <em>Data</em>}</li>
+ *   <li>{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getActualParameters <em>Actual Parameters</em>}</li>
+ *   <li>{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getDataToCompute <em>Data To Compute</em>}</li>
  * </ul>
  *
  * @see fr.inria.gag.configuration.model.configuration.ConfigurationPackage#getPendingLocalFunctionComputation()
@@ -53,19 +54,45 @@ public interface PendingLocalFunctionComputation extends EObject {
 	void setFunctiondeclaration(FunctionDeclaration value);
 
 	/**
-	 * Returns the value of the '<em><b>Data</b></em>' reference list.
+	 * Returns the value of the '<em><b>Actual Parameters</b></em>' reference list.
 	 * The list contents are of type {@link fr.inria.gag.configuration.model.configuration.Data}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Actual Parameters</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data</em>' reference list.
-	 * @see fr.inria.gag.configuration.model.configuration.ConfigurationPackage#getPendingLocalFunctionComputation_Data()
+	 * @return the value of the '<em>Actual Parameters</em>' reference list.
+	 * @see fr.inria.gag.configuration.model.configuration.ConfigurationPackage#getPendingLocalFunctionComputation_ActualParameters()
 	 * @model
 	 * @generated
 	 */
-	EList<Data> getData();
+	EList<Data> getActualParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Data To Compute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data To Compute</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data To Compute</em>' reference.
+	 * @see #setDataToCompute(Data)
+	 * @see fr.inria.gag.configuration.model.configuration.ConfigurationPackage#getPendingLocalFunctionComputation_DataToCompute()
+	 * @model required="true"
+	 * @generated
+	 */
+	Data getDataToCompute();
+
+	/**
+	 * Sets the value of the '{@link fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation#getDataToCompute <em>Data To Compute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data To Compute</em>' reference.
+	 * @see #getDataToCompute()
+	 * @generated
+	 */
+	void setDataToCompute(Data value);
 
 } // PendingLocalFunctionComputation
