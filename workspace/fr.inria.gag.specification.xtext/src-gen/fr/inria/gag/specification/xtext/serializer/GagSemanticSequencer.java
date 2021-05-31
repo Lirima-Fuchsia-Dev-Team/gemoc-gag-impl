@@ -113,24 +113,21 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FunctionDeclaration returns FunctionDeclaration
 	 *
 	 * Constraint:
-	 *     (name=EString classPath=EString method=EString libLocation=EString)
+	 *     (name=EString location=EString method=EString)
 	 */
 	protected void sequence_FunctionDeclaration(ISerializationContext context, FunctionDeclaration semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__NAME));
-			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__CLASS_PATH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__CLASS_PATH));
+			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__LOCATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__LOCATION));
 			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__METHOD) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__METHOD));
-			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__LIB_LOCATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.FUNCTION_DECLARATION__LIB_LOCATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFunctionDeclarationAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFunctionDeclarationAccess().getClassPathEStringParserRuleCall_3_0(), semanticObject.getClassPath());
-		feeder.accept(grammarAccess.getFunctionDeclarationAccess().getMethodEStringParserRuleCall_5_0(), semanticObject.getMethod());
-		feeder.accept(grammarAccess.getFunctionDeclarationAccess().getLibLocationEStringParserRuleCall_7_0(), semanticObject.getLibLocation());
+		feeder.accept(grammarAccess.getFunctionDeclarationAccess().getLocationEStringParserRuleCall_4_0(), semanticObject.getLocation());
+		feeder.accept(grammarAccess.getFunctionDeclarationAccess().getMethodEStringParserRuleCall_8_0(), semanticObject.getMethod());
 		feeder.finish();
 	}
 	
@@ -165,18 +162,18 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Guard returns Guard
 	 *
 	 * Constraint:
-	 *     (classPath=EString libLocation=EString)
+	 *     (location=EString method=EString)
 	 */
 	protected void sequence_Guard(ISerializationContext context, Guard semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.GUARD__CLASS_PATH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.GUARD__CLASS_PATH));
-			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.GUARD__LIB_LOCATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.GUARD__LIB_LOCATION));
+			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.GUARD__LOCATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.GUARD__LOCATION));
+			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.GUARD__METHOD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.GUARD__METHOD));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGuardAccess().getClassPathEStringParserRuleCall_3_0(), semanticObject.getClassPath());
-		feeder.accept(grammarAccess.getGuardAccess().getLibLocationEStringParserRuleCall_5_0(), semanticObject.getLibLocation());
+		feeder.accept(grammarAccess.getGuardAccess().getLocationEStringParserRuleCall_3_0(), semanticObject.getLocation());
+		feeder.accept(grammarAccess.getGuardAccess().getMethodEStringParserRuleCall_7_0(), semanticObject.getMethod());
 		feeder.finish();
 	}
 	

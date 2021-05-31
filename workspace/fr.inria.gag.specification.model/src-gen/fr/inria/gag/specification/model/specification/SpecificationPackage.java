@@ -260,22 +260,22 @@ public interface SpecificationPackage extends EPackage {
 	int GUARD = 3;
 
 	/**
-	 * The feature id for the '<em><b>Class Path</b></em>' attribute.
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD__CLASS_PATH = 0;
+	int GUARD__LOCATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Lib Location</b></em>' attribute.
+	 * The feature id for the '<em><b>Method</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD__LIB_LOCATION = 1;
+	int GUARD__METHOD = 1;
 
 	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
@@ -426,31 +426,22 @@ public interface SpecificationPackage extends EPackage {
 	int FUNCTION_DECLARATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Class Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_DECLARATION__CLASS_PATH = 1;
-
-	/**
 	 * The feature id for the '<em><b>Method</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_DECLARATION__METHOD = 2;
+	int FUNCTION_DECLARATION__METHOD = 1;
 
 	/**
-	 * The feature id for the '<em><b>Lib Location</b></em>' attribute.
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_DECLARATION__LIB_LOCATION = 3;
+	int FUNCTION_DECLARATION__LOCATION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Function Declaration</em>' class.
@@ -459,7 +450,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_DECLARATION_FEATURE_COUNT = 4;
+	int FUNCTION_DECLARATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Function Declaration</em>' class.
@@ -809,26 +800,26 @@ public interface SpecificationPackage extends EPackage {
 	EClass getGuard();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.Guard#getClassPath <em>Class Path</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.Guard#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class Path</em>'.
-	 * @see fr.inria.gag.specification.model.specification.Guard#getClassPath()
+	 * @return the meta object for the attribute '<em>Location</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Guard#getLocation()
 	 * @see #getGuard()
 	 * @generated
 	 */
-	EAttribute getGuard_ClassPath();
+	EAttribute getGuard_Location();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.Guard#getLibLocation <em>Lib Location</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.Guard#getMethod <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lib Location</em>'.
-	 * @see fr.inria.gag.specification.model.specification.Guard#getLibLocation()
+	 * @return the meta object for the attribute '<em>Method</em>'.
+	 * @see fr.inria.gag.specification.model.specification.Guard#getMethod()
 	 * @see #getGuard()
 	 * @generated
 	 */
-	EAttribute getGuard_LibLocation();
+	EAttribute getGuard_Method();
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.SemanticRule <em>Semantic Rule</em>}'.
@@ -915,17 +906,6 @@ public interface SpecificationPackage extends EPackage {
 	EAttribute getFunctionDeclaration_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getClassPath <em>Class Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class Path</em>'.
-	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getClassPath()
-	 * @see #getFunctionDeclaration()
-	 * @generated
-	 */
-	EAttribute getFunctionDeclaration_ClassPath();
-
-	/**
 	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getMethod <em>Method</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -937,15 +917,15 @@ public interface SpecificationPackage extends EPackage {
 	EAttribute getFunctionDeclaration_Method();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getLibLocation <em>Lib Location</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.FunctionDeclaration#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lib Location</em>'.
-	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getLibLocation()
+	 * @return the meta object for the attribute '<em>Location</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionDeclaration#getLocation()
 	 * @see #getFunctionDeclaration()
 	 * @generated
 	 */
-	EAttribute getFunctionDeclaration_LibLocation();
+	EAttribute getFunctionDeclaration_Location();
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.Equation <em>Equation</em>}'.
@@ -1213,20 +1193,20 @@ public interface SpecificationPackage extends EPackage {
 		EClass GUARD = eINSTANCE.getGuard();
 
 		/**
-		 * The meta object literal for the '<em><b>Class Path</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARD__CLASS_PATH = eINSTANCE.getGuard_ClassPath();
+		EAttribute GUARD__LOCATION = eINSTANCE.getGuard_Location();
 
 		/**
-		 * The meta object literal for the '<em><b>Lib Location</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GUARD__LIB_LOCATION = eINSTANCE.getGuard_LibLocation();
+		EAttribute GUARD__METHOD = eINSTANCE.getGuard_Method();
 
 		/**
 		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.SemanticRuleImpl <em>Semantic Rule</em>}' class.
@@ -1301,14 +1281,6 @@ public interface SpecificationPackage extends EPackage {
 		EAttribute FUNCTION_DECLARATION__NAME = eINSTANCE.getFunctionDeclaration_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Class Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUNCTION_DECLARATION__CLASS_PATH = eINSTANCE.getFunctionDeclaration_ClassPath();
-
-		/**
 		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1317,12 +1289,12 @@ public interface SpecificationPackage extends EPackage {
 		EAttribute FUNCTION_DECLARATION__METHOD = eINSTANCE.getFunctionDeclaration_Method();
 
 		/**
-		 * The meta object literal for the '<em><b>Lib Location</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FUNCTION_DECLARATION__LIB_LOCATION = eINSTANCE.getFunctionDeclaration_LibLocation();
+		EAttribute FUNCTION_DECLARATION__LOCATION = eINSTANCE.getFunctionDeclaration_Location();
 
 		/**
 		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.EquationImpl <em>Equation</em>}' class.

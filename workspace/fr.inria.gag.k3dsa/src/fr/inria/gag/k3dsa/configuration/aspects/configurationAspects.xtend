@@ -180,8 +180,8 @@ class PendingLocalFunctionComputationAspect {
 			}
 			params+=')'
 			// var htmlCleanedDescr = "MyCustomGAGGuard.staticIsRuleActivable()"
-			var stringToExecute = _self.functiondeclaration.libLocation+"."+_self.functiondeclaration.method+params;
-			Console.debug(stringToExecute);
+			var stringToExecute = _self.functiondeclaration.location+"."+_self.functiondeclaration.method+params;
+			//Console.debug(stringToExecute);
 			res = shell.evaluate(stringToExecute)  // as Map<String, Object>
 //			for (OutputPin port: _self.outputs) {
 //				//_self.system.sharedMemory.put(portName, res.get(portName))

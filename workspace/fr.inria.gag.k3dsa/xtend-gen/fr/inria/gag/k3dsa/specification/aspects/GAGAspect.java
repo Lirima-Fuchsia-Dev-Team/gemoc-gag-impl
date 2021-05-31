@@ -1,5 +1,6 @@
 package fr.inria.gag.k3dsa.specification.aspects;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
@@ -15,12 +16,14 @@ import fr.inria.gag.k3dsa.GagGuardExecutor;
 import fr.inria.gag.k3dsa.configuration.aspects.ConfigurationAspect;
 import fr.inria.gag.k3dsa.configuration.aspects.PendingLocalFunctionComputationAspect;
 import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
+import fr.inria.gag.k3dsa.specification.aspects.GuardAspect;
 import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
 import fr.inria.gag.specification.model.specification.Equation;
 import fr.inria.gag.specification.model.specification.Expression;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.GAG;
+import fr.inria.gag.specification.model.specification.Guard;
 import fr.inria.gag.specification.model.specification.IdExpression;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.Service;
@@ -241,7 +244,10 @@ public class GAGAspect {
       {
         Task task = GAGAspect.chooseTask(_self, openTask);
         DecompositionRule rule = GAGAspect.chooseRule(_self, task);
-        GAGAspect.applyRule(_self, task, rule);
+        boolean _notEquals = (!Objects.equal(rule, null));
+        if (_notEquals) {
+          GAGAspect.applyRule(_self, task, rule);
+        }
         String _print = ConfigurationAspect.print(conf);
         String _plus_1 = ("La configuration resultante est " + _print);
         Console.debug(_plus_1);
@@ -337,23 +343,40 @@ public class GAGAspect {
   }
   
   protected static DecompositionRule _privk3_chooseRule(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task t) {
-    Console.debug("Veuillez choisir la règle de décomposition à appliquer parmi les règles suivantes : ");
-    String txtAf = "";
+    ArrayList<DecompositionRule> applicableRules = new ArrayList<DecompositionRule>();
     int _size = t.getService().getRules().size();
     ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
     for (final Integer i : _doubleDotLessThan) {
       {
         final DecompositionRule element = t.getService().getRules().get((i).intValue());
-        String _plus = (Integer.valueOf(((i).intValue() + 1)) + "- ");
-        String _name = element.getName();
+        Guard guard = element.getGuard();
+        if ((Objects.equal(guard, null) || GuardAspect.isApplicable(guard, t))) {
+          applicableRules.add(element);
+        }
+      }
+    }
+    int _size_1 = applicableRules.size();
+    boolean _notEquals = (_size_1 != 0);
+    if (_notEquals) {
+      Console.debug("Veuillez choisir la règle de décomposition à appliquer parmi les règles suivantes : ");
+      String txtAf = "";
+      int _size_2 = applicableRules.size();
+      ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_2, true);
+      for (final Integer i_1 : _doubleDotLessThan_1) {
+        String _plus = (Integer.valueOf(((i_1).intValue() + 1)) + "- ");
+        String _name = applicableRules.get((i_1).intValue()).getName();
         String _plus_1 = (_plus + _name);
         Console.debug(_plus_1);
       }
+      final String choice = Console.readConsoleLine(txtAf);
+      final int id = Integer.parseInt(choice);
+      final DecompositionRule rule = applicableRules.get((id - 1));
+      return rule;
+    } else {
+      Console.debug("Aucune règle de décomposition n\'est actuellement applicable pour cette tâche ");
+      Console.readConsoleLine("");
+      return null;
     }
-    final String choice = Console.readConsoleLine(txtAf);
-    final int id = Integer.parseInt(choice);
-    final DecompositionRule rule = t.getService().getRules().get((id - 1));
-    return rule;
   }
   
   protected static ArrayList<Task> _privk3_getOpenTask(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task root) {

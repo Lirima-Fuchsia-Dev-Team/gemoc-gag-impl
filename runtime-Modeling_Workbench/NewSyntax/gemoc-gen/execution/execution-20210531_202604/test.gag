@@ -2,8 +2,9 @@ GAG g {
 	
 		Axiom S1 (a,b)[c] : {
 			r1 :
+			    guard: { location:"local.functions.Util", method :"guard" }
 				sem : {
-					func : f {classPath "f" method "f" libLocation "f"}
+					func : f {location : "local.functions.Util", method :"f"}
 					equations : S1.c = f(S1.a,S1.b) ;
 				}
 				
@@ -11,10 +12,12 @@ GAG g {
 		},
 		S2 (a)[b] : {
 			r1 :
+			   
 				sem : {
-					func : g {classPath "g" method "g" libLocation "g"}
+					func : g {location : "local.functions.Util", method :"g"}
 					equations : S2.b = g(S2.a) ;
 				}
+				
 				
 		
 		},

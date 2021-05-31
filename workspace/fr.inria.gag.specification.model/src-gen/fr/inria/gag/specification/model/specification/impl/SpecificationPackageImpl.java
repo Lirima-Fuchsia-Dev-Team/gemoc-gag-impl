@@ -327,7 +327,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuard_ClassPath() {
+	public EAttribute getGuard_Location() {
 		return (EAttribute) guardEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -336,7 +336,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGuard_LibLocation() {
+	public EAttribute getGuard_Method() {
 		return (EAttribute) guardEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -417,7 +417,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFunctionDeclaration_ClassPath() {
+	public EAttribute getFunctionDeclaration_Method() {
 		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -426,17 +426,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFunctionDeclaration_Method() {
+	public EAttribute getFunctionDeclaration_Location() {
 		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFunctionDeclaration_LibLocation() {
-		return (EAttribute) functionDeclarationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -577,8 +568,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		createEAttribute(decompositionRuleEClass, DECOMPOSITION_RULE__NAME);
 
 		guardEClass = createEClass(GUARD);
-		createEAttribute(guardEClass, GUARD__CLASS_PATH);
-		createEAttribute(guardEClass, GUARD__LIB_LOCATION);
+		createEAttribute(guardEClass, GUARD__LOCATION);
+		createEAttribute(guardEClass, GUARD__METHOD);
 
 		semanticRuleEClass = createEClass(SEMANTIC_RULE);
 		createEReference(semanticRuleEClass, SEMANTIC_RULE__FUNCTION_DECLARATION);
@@ -591,9 +582,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		functionDeclarationEClass = createEClass(FUNCTION_DECLARATION);
 		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__NAME);
-		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__CLASS_PATH);
 		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__METHOD);
-		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__LIB_LOCATION);
+		createEAttribute(functionDeclarationEClass, FUNCTION_DECLARATION__LOCATION);
 
 		equationEClass = createEClass(EQUATION);
 		createEReference(equationEClass, EQUATION__LEFTPART);
@@ -686,10 +676,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGuard_ClassPath(), ecorePackage.getEString(), "classPath", null, 1, 1, Guard.class,
+		initEAttribute(getGuard_Location(), ecorePackage.getEString(), "location", null, 1, 1, Guard.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGuard_LibLocation(), ecorePackage.getEString(), "libLocation", null, 1, 1, Guard.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGuard_Method(), ecorePackage.getEString(), "method", null, 1, 1, Guard.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semanticRuleEClass, SemanticRule.class, "SemanticRule", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -713,13 +703,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEAttribute(getFunctionDeclaration_Name(), ecorePackage.getEString(), "name", null, 1, 1,
 				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFunctionDeclaration_ClassPath(), ecorePackage.getEString(), "classPath", null, 1, 1,
-				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFunctionDeclaration_Method(), ecorePackage.getEString(), "method", null, 1, 1,
 				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFunctionDeclaration_LibLocation(), ecorePackage.getEString(), "libLocation", null, 1, 1,
+		initEAttribute(getFunctionDeclaration_Location(), ecorePackage.getEString(), "location", null, 1, 1,
 				FunctionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

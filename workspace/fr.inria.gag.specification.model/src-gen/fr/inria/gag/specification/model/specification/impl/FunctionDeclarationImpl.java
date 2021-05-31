@@ -21,9 +21,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl#getClassPath <em>Class Path</em>}</li>
  *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl#getLibLocation <em>Lib Location</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionDeclarationImpl#getLocation <em>Location</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,26 +49,6 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getClassPath() <em>Class Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CLASS_PATH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getClassPath() <em>Class Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassPath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String classPath = CLASS_PATH_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getMethod() <em>Method</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,24 +69,24 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 	protected String method = METHOD_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLibLocation() <em>Lib Location</em>}' attribute.
+	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLibLocation()
+	 * @see #getLocation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LIB_LOCATION_EDEFAULT = null;
+	protected static final String LOCATION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLibLocation() <em>Lib Location</em>}' attribute.
+	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLibLocation()
+	 * @see #getLocation()
 	 * @generated
 	 * @ordered
 	 */
-	protected String libLocation = LIB_LOCATION_EDEFAULT;
+	protected String location = LOCATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,28 +134,6 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getClassPath() {
-		return classPath;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClassPath(String newClassPath) {
-		String oldClassPath = classPath;
-		classPath = newClassPath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.FUNCTION_DECLARATION__CLASS_PATH,
-					oldClassPath, classPath));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getMethod() {
 		return method;
 	}
@@ -199,8 +156,8 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLibLocation() {
-		return libLocation;
+	public String getLocation() {
+		return location;
 	}
 
 	/**
@@ -208,12 +165,12 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLibLocation(String newLibLocation) {
-		String oldLibLocation = libLocation;
-		libLocation = newLibLocation;
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					SpecificationPackage.FUNCTION_DECLARATION__LIB_LOCATION, oldLibLocation, libLocation));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.FUNCTION_DECLARATION__LOCATION,
+					oldLocation, location));
 	}
 
 	/**
@@ -226,12 +183,10 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 		case SpecificationPackage.FUNCTION_DECLARATION__NAME:
 			return getName();
-		case SpecificationPackage.FUNCTION_DECLARATION__CLASS_PATH:
-			return getClassPath();
 		case SpecificationPackage.FUNCTION_DECLARATION__METHOD:
 			return getMethod();
-		case SpecificationPackage.FUNCTION_DECLARATION__LIB_LOCATION:
-			return getLibLocation();
+		case SpecificationPackage.FUNCTION_DECLARATION__LOCATION:
+			return getLocation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,14 +202,11 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 		case SpecificationPackage.FUNCTION_DECLARATION__NAME:
 			setName((String) newValue);
 			return;
-		case SpecificationPackage.FUNCTION_DECLARATION__CLASS_PATH:
-			setClassPath((String) newValue);
-			return;
 		case SpecificationPackage.FUNCTION_DECLARATION__METHOD:
 			setMethod((String) newValue);
 			return;
-		case SpecificationPackage.FUNCTION_DECLARATION__LIB_LOCATION:
-			setLibLocation((String) newValue);
+		case SpecificationPackage.FUNCTION_DECLARATION__LOCATION:
+			setLocation((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,14 +223,11 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 		case SpecificationPackage.FUNCTION_DECLARATION__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case SpecificationPackage.FUNCTION_DECLARATION__CLASS_PATH:
-			setClassPath(CLASS_PATH_EDEFAULT);
-			return;
 		case SpecificationPackage.FUNCTION_DECLARATION__METHOD:
 			setMethod(METHOD_EDEFAULT);
 			return;
-		case SpecificationPackage.FUNCTION_DECLARATION__LIB_LOCATION:
-			setLibLocation(LIB_LOCATION_EDEFAULT);
+		case SpecificationPackage.FUNCTION_DECLARATION__LOCATION:
+			setLocation(LOCATION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -294,12 +243,10 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 		case SpecificationPackage.FUNCTION_DECLARATION__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case SpecificationPackage.FUNCTION_DECLARATION__CLASS_PATH:
-			return CLASS_PATH_EDEFAULT == null ? classPath != null : !CLASS_PATH_EDEFAULT.equals(classPath);
 		case SpecificationPackage.FUNCTION_DECLARATION__METHOD:
 			return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
-		case SpecificationPackage.FUNCTION_DECLARATION__LIB_LOCATION:
-			return LIB_LOCATION_EDEFAULT == null ? libLocation != null : !LIB_LOCATION_EDEFAULT.equals(libLocation);
+		case SpecificationPackage.FUNCTION_DECLARATION__LOCATION:
+			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -317,12 +264,10 @@ public class FunctionDeclarationImpl extends MinimalEObjectImpl.Container implem
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", classPath: ");
-		result.append(classPath);
 		result.append(", method: ");
 		result.append(method);
-		result.append(", libLocation: ");
-		result.append(libLocation);
+		result.append(", location: ");
+		result.append(location);
 		result.append(')');
 		return result.toString();
 	}

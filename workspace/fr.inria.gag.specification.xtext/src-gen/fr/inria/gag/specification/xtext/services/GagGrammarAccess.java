@@ -287,8 +287,9 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSubServicesServiceEStringParserRuleCall_3_3_1_0_1 = (RuleCall)cSubServicesServiceCrossReference_3_3_1_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cGuardKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cGuardAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cGuardGuardParserRuleCall_4_1_0 = (RuleCall)cGuardAssignment_4_1.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cGuardAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cGuardGuardParserRuleCall_4_2_0 = (RuleCall)cGuardAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cSemKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
@@ -297,12 +298,12 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//DecompositionRule:
 		//	{DecompositionRule} name=EString
-		//	':' ('sub' ':' subServices+=[Service|EString] ("," subServices+=[Service|EString])*)? ('guard' guard=Guard)? ('sem'
-		//	':' semantic=SemanticRule)?;
+		//	':' ('sub' ':' subServices+=[Service|EString] ("," subServices+=[Service|EString])*)? ('guard' ':' guard=Guard)?
+		//	('sem' ':' semantic=SemanticRule)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DecompositionRule} name=EString ':' ('sub' ':' subServices+=[Service|EString] ("," subServices+=[Service|EString])*)?
-		//('guard' guard=Guard)? ('sem' ':' semantic=SemanticRule)?
+		//('guard' ':' guard=Guard)? ('sem' ':' semantic=SemanticRule)?
 		public Group getGroup() { return cGroup; }
 		
 		//{DecompositionRule}
@@ -350,17 +351,20 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getSubServicesServiceEStringParserRuleCall_3_3_1_0_1() { return cSubServicesServiceEStringParserRuleCall_3_3_1_0_1; }
 		
-		//('guard' guard=Guard)?
+		//('guard' ':' guard=Guard)?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'guard'
 		public Keyword getGuardKeyword_4_0() { return cGuardKeyword_4_0; }
 		
+		//':'
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+		
 		//guard=Guard
-		public Assignment getGuardAssignment_4_1() { return cGuardAssignment_4_1; }
+		public Assignment getGuardAssignment_4_2() { return cGuardAssignment_4_2; }
 		
 		//Guard
-		public RuleCall getGuardGuardParserRuleCall_4_1_0() { return cGuardGuardParserRuleCall_4_1_0; }
+		public RuleCall getGuardGuardParserRuleCall_4_2_0() { return cGuardGuardParserRuleCall_4_2_0; }
 		
 		//('sem' ':' semantic=SemanticRule)?
 		public Group getGroup_5() { return cGroup_5; }
@@ -423,53 +427,60 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	public class GuardElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.Guard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGuardKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cClassPathKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cClassPathAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cClassPathEStringParserRuleCall_3_0 = (RuleCall)cClassPathAssignment_3.eContents().get(0);
-		private final Keyword cLibLocationKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cLibLocationAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cLibLocationEStringParserRuleCall_5_0 = (RuleCall)cLibLocationAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLocationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLocationAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLocationEStringParserRuleCall_3_0 = (RuleCall)cLocationAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cMethodKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMethodAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMethodEStringParserRuleCall_7_0 = (RuleCall)cMethodAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Guard:
-		//	'Guard'
 		//	'{'
-		//	'classPath' classPath=EString
-		//	'libLocation' libLocation=EString
+		//	'location' ':' location=EString ','
+		//	'method' ':' method=EString
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Guard' '{' 'classPath' classPath=EString 'libLocation' libLocation=EString '}'
+		//'{' 'location' ':' location=EString ',' 'method' ':' method=EString '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'Guard'
-		public Keyword getGuardKeyword_0() { return cGuardKeyword_0; }
-		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//'classPath'
-		public Keyword getClassPathKeyword_2() { return cClassPathKeyword_2; }
+		//'location'
+		public Keyword getLocationKeyword_1() { return cLocationKeyword_1; }
 		
-		//classPath=EString
-		public Assignment getClassPathAssignment_3() { return cClassPathAssignment_3; }
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//EString
-		public RuleCall getClassPathEStringParserRuleCall_3_0() { return cClassPathEStringParserRuleCall_3_0; }
-		
-		//'libLocation'
-		public Keyword getLibLocationKeyword_4() { return cLibLocationKeyword_4; }
-		
-		//libLocation=EString
-		public Assignment getLibLocationAssignment_5() { return cLibLocationAssignment_5; }
+		//location=EString
+		public Assignment getLocationAssignment_3() { return cLocationAssignment_3; }
 		
 		//EString
-		public RuleCall getLibLocationEStringParserRuleCall_5_0() { return cLibLocationEStringParserRuleCall_5_0; }
+		public RuleCall getLocationEStringParserRuleCall_3_0() { return cLocationEStringParserRuleCall_3_0; }
+		
+		//','
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		
+		//'method'
+		public Keyword getMethodKeyword_5() { return cMethodKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//method=EString
+		public Assignment getMethodAssignment_7() { return cMethodAssignment_7; }
+		
+		//EString
+		public RuleCall getMethodEStringParserRuleCall_7_0() { return cMethodEStringParserRuleCall_7_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class SemanticRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.SemanticRule");
@@ -568,28 +579,27 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cClassPathKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cClassPathAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cClassPathEStringParserRuleCall_3_0 = (RuleCall)cClassPathAssignment_3.eContents().get(0);
-		private final Keyword cMethodKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cMethodAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cMethodEStringParserRuleCall_5_0 = (RuleCall)cMethodAssignment_5.eContents().get(0);
-		private final Keyword cLibLocationKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cLibLocationAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cLibLocationEStringParserRuleCall_7_0 = (RuleCall)cLibLocationAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cLocationKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLocationAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLocationEStringParserRuleCall_4_0 = (RuleCall)cLocationAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cMethodKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cMethodAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cMethodEStringParserRuleCall_8_0 = (RuleCall)cMethodAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//FunctionDeclaration:
 		//	name=EString
 		//	'{'
-		//	'classPath' classPath=EString
-		//	'method' method=EString
-		//	'libLocation' libLocation=EString
+		//	'location' ':' location=EString ','
+		//	'method' ':' method=EString
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////'FunctionDeclaration'
-		//name=EString '{' 'classPath' classPath=EString 'method' method=EString 'libLocation' libLocation=EString '}'
+		//name=EString '{' 'location' ':' location=EString ',' 'method' ':' method=EString '}'
 		public Group getGroup() { return cGroup; }
 		
 		////'FunctionDeclaration'
@@ -602,35 +612,35 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//'classPath'
-		public Keyword getClassPathKeyword_2() { return cClassPathKeyword_2; }
+		//'location'
+		public Keyword getLocationKeyword_2() { return cLocationKeyword_2; }
 		
-		//classPath=EString
-		public Assignment getClassPathAssignment_3() { return cClassPathAssignment_3; }
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//location=EString
+		public Assignment getLocationAssignment_4() { return cLocationAssignment_4; }
 		
 		//EString
-		public RuleCall getClassPathEStringParserRuleCall_3_0() { return cClassPathEStringParserRuleCall_3_0; }
+		public RuleCall getLocationEStringParserRuleCall_4_0() { return cLocationEStringParserRuleCall_4_0; }
+		
+		//','
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
 		//'method'
-		public Keyword getMethodKeyword_4() { return cMethodKeyword_4; }
+		public Keyword getMethodKeyword_6() { return cMethodKeyword_6; }
+		
+		//':'
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
 		
 		//method=EString
-		public Assignment getMethodAssignment_5() { return cMethodAssignment_5; }
+		public Assignment getMethodAssignment_8() { return cMethodAssignment_8; }
 		
 		//EString
-		public RuleCall getMethodEStringParserRuleCall_5_0() { return cMethodEStringParserRuleCall_5_0; }
-		
-		//'libLocation'
-		public Keyword getLibLocationKeyword_6() { return cLibLocationKeyword_6; }
-		
-		//libLocation=EString
-		public Assignment getLibLocationAssignment_7() { return cLibLocationAssignment_7; }
-		
-		//EString
-		public RuleCall getLibLocationEStringParserRuleCall_7_0() { return cLibLocationEStringParserRuleCall_7_0; }
+		public RuleCall getMethodEStringParserRuleCall_8_0() { return cMethodEStringParserRuleCall_8_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class EquationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.inria.gag.specification.xtext.Gag.Equation");
@@ -875,8 +885,8 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//DecompositionRule:
 	//	{DecompositionRule} name=EString
-	//	':' ('sub' ':' subServices+=[Service|EString] ("," subServices+=[Service|EString])*)? ('guard' guard=Guard)? ('sem'
-	//	':' semantic=SemanticRule)?;
+	//	':' ('sub' ':' subServices+=[Service|EString] ("," subServices+=[Service|EString])*)? ('guard' ':' guard=Guard)?
+	//	('sem' ':' semantic=SemanticRule)?;
 	public DecompositionRuleElements getDecompositionRuleAccess() {
 		return pDecompositionRule;
 	}
@@ -907,10 +917,9 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Guard:
-	//	'Guard'
 	//	'{'
-	//	'classPath' classPath=EString
-	//	'libLocation' libLocation=EString
+	//	'location' ':' location=EString ','
+	//	'method' ':' method=EString
 	//	'}';
 	public GuardElements getGuardAccess() {
 		return pGuard;
@@ -936,9 +945,8 @@ public class GagGrammarAccess extends AbstractGrammarElementFinder {
 	//FunctionDeclaration:
 	//	name=EString
 	//	'{'
-	//	'classPath' classPath=EString
-	//	'method' method=EString
-	//	'libLocation' libLocation=EString
+	//	'location' ':' location=EString ','
+	//	'method' ':' method=EString
 	//	'}';
 	public FunctionDeclarationElements getFunctionDeclarationAccess() {
 		return pFunctionDeclaration;

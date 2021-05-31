@@ -54,6 +54,7 @@ import fr.inria.gag.k3dsa.GagGuardExecutor
 import fr.inria.gag.k3dsa.EncapsulatedValue
 import java.util.List
 import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation
+import fr.inria.gag.specification.model.specification.SpecificationFactory
 
 @Aspect(className=GAG)
 class GAGAspect {
@@ -82,7 +83,8 @@ class GAGAspect {
 		while (openTask.size != 0) {
 			var task = chooseTask(_self, openTask);
 			var rule = chooseRule(_self, task);
-			applyRule(_self, task, rule);
+			if(rule !=null){
+			applyRule(_self, task, rule);}
 			Console.debug("La configuration resultante est " + conf.print());
 			openTask = getOpenTask(_self, conf.root);
 		}
@@ -145,17 +147,33 @@ class GAGAspect {
 
 	@Step
 	def DecompositionRule chooseRule(Task t) {
-		Console.debug("Veuillez choisir la règle de décomposition à appliquer parmi les règles suivantes : ");
-		var txtAf = "";
+		
+		var applicableRules =new ArrayList<DecompositionRule> ;
 		for (i : 0 ..< t.service.rules.size) {
 			val element = t.service.rules.get(i);
-			Console.debug((i + 1) + "- " + element.name)
-		// txtAf += " " + (i + 1) + "- " + element.name;
+			var guard =element.guard;
+			if(guard ==null || guard.isApplicable(t)){
+				applicableRules.add(element);
+			}
+			
+		
 		}
-		val choice = Console.readConsoleLine(txtAf);
-		val id = Integer.parseInt(choice);
-		val rule = t.service.rules.get(id - 1);
-		return rule;
+		if(applicableRules.size!=0){
+			Console.debug("Veuillez choisir la règle de décomposition à appliquer parmi les règles suivantes : ");
+			var txtAf = "";
+			for(i:0 ..< applicableRules.size){
+				Console.debug((i + 1) + "- " + applicableRules.get(i).name)
+			}
+			val choice = Console.readConsoleLine(txtAf);
+			val id = Integer.parseInt(choice);
+			val rule = applicableRules.get(id - 1);
+			return rule;
+		}else {
+			Console.debug("Aucune règle de décomposition n'est actuellement applicable pour cette tâche ");
+			Console.readConsoleLine("");
+			return null;
+		}
+		
 
 	}
 
@@ -334,15 +352,34 @@ class ServiceAspect {
 @Aspect(className=DecompositionRule)
 class DecompositionRuleAspect {
 	def void evaluateAllGuardsForTesting(GagGuardExecutor exec) {
-		if (_self.guard !== null)
+		/* if (_self.guard !== null)
 			Console.debug("Guard for rule " + _self.name + " evaluation result is : " +
-				_self.guard.isRuleActivable(exec));
+				_self.guard.isRuleActivable(exec));*/
 	}
 }
 
 @Aspect(className=Guard)
 class GuardAspect {
-	def boolean isRuleActivable(GagGuardExecutor exec) {
+	
+	def boolean isApplicable( Task t){
+		var result=false;
+		var funcDec=SpecificationFactory.eINSTANCE.createFunctionDeclaration;
+		funcDec.location = _self.location;
+		funcDec.method =_self.method;
+		var funcCall = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation;
+		funcCall.functiondeclaration = funcDec;
+		for(i:0 ..<t.inputs.size){
+			funcCall.actualParameters.add(t.inputs.get(i));
+		}
+		//if (funcCall.isExecutable){
+			result =funcCall.execute as Boolean ;
+		//}
+		
+		return result;
+		
+	}
+	
+	/*def boolean isRuleActivable(GagGuardExecutor exec) {
 		if (_self.classPath !== null && !_self.classPath.isEmpty()) {
 			try {
 				// val String libLocation = _self.libLocation;
@@ -355,6 +392,8 @@ class GuardAspect {
 		}
 		return true;
 	}
+	* */
+	
 }
 
 @Aspect(className=SemanticRule)

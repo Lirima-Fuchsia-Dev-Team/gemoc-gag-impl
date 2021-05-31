@@ -3,7 +3,6 @@ package fr.inria.gag.k3dsa.configuration.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.gag.configuration.model.configuration.Data;
 import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation;
-import fr.inria.gag.k3dsa.Console;
 import fr.inria.gag.k3dsa.EncapsulatedValue;
 import fr.inria.gag.k3dsa.configuration.aspects.PendingLocalFunctionComputationAspectPendingLocalFunctionComputationAspectProperties;
 import groovy.lang.Binding;
@@ -130,12 +129,11 @@ public class PendingLocalFunctionComputationAspect {
       }
       String _params = params;
       params = (_params + ")");
-      String _libLocation = _self.getFunctiondeclaration().getLibLocation();
-      String _plus = (_libLocation + ".");
+      String _location = _self.getFunctiondeclaration().getLocation();
+      String _plus = (_location + ".");
       String _method = _self.getFunctiondeclaration().getMethod();
       String _plus_1 = (_plus + _method);
       String stringToExecute = (_plus_1 + params);
-      Console.debug(stringToExecute);
       res = shell.evaluate(stringToExecute);
     } catch (final Throwable _t) {
       if (_t instanceof Exception) {

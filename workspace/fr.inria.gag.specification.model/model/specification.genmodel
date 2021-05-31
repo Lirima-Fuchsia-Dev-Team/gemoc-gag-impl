@@ -29,8 +29,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//DecompositionRule/name"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Guard">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/classPath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/libLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//Guard/method"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//SemanticRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//SemanticRule/functionDeclaration"/>
@@ -42,9 +42,8 @@
     <genClasses image="false" ecoreClass="specification.ecore#//RuntimeData"/>
     <genClasses ecoreClass="specification.ecore#//FunctionDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/classPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/method"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/libLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//FunctionDeclaration/location"/>
     </genClasses>
     <genClasses ecoreClass="specification.ecore#//Equation">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//Equation/leftpart"/>

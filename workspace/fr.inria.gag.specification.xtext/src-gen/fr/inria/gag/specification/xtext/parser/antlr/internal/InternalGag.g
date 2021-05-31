@@ -548,12 +548,16 @@ ruleDecompositionRule returns [EObject current=null]
 			{
 				newLeafNode(otherlv_8, grammarAccess.getDecompositionRuleAccess().getGuardKeyword_4_0());
 			}
+			otherlv_9=':'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getDecompositionRuleAccess().getColonKeyword_4_1());
+			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getGuardGuardParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getGuardGuardParserRuleCall_4_2_0());
 					}
-					lv_guard_9_0=ruleGuard
+					lv_guard_10_0=ruleGuard
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDecompositionRuleRule());
@@ -561,7 +565,7 @@ ruleDecompositionRule returns [EObject current=null]
 						set(
 							$current,
 							"guard",
-							lv_guard_9_0,
+							lv_guard_10_0,
 							"fr.inria.gag.specification.xtext.Gag.Guard");
 						afterParserOrEnumRuleCall();
 					}
@@ -569,20 +573,20 @@ ruleDecompositionRule returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_10='sem'
+			otherlv_11='sem'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getDecompositionRuleAccess().getSemKeyword_5_0());
+				newLeafNode(otherlv_11, grammarAccess.getDecompositionRuleAccess().getSemKeyword_5_0());
 			}
-			otherlv_11=':'
+			otherlv_12=':'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getDecompositionRuleAccess().getColonKeyword_5_1());
+				newLeafNode(otherlv_12, grammarAccess.getDecompositionRuleAccess().getColonKeyword_5_1());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getDecompositionRuleAccess().getSemanticSemanticRuleParserRuleCall_5_2_0());
 					}
-					lv_semantic_12_0=ruleSemanticRule
+					lv_semantic_13_0=ruleSemanticRule
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDecompositionRuleRule());
@@ -590,7 +594,7 @@ ruleDecompositionRule returns [EObject current=null]
 						set(
 							$current,
 							"semantic",
-							lv_semantic_12_0,
+							lv_semantic_13_0,
 							"fr.inria.gag.specification.xtext.Gag.SemanticRule");
 						afterParserOrEnumRuleCall();
 					}
@@ -661,63 +665,71 @@ ruleGuard returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Guard'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGuardAccess().getGuardKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getGuardAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1='{'
+		otherlv_1='location'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGuardAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGuardAccess().getLocationKeyword_1());
 		}
-		otherlv_2='classPath'
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGuardAccess().getClassPathKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getGuardAccess().getColonKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGuardAccess().getClassPathEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getGuardAccess().getLocationEStringParserRuleCall_3_0());
 				}
-				lv_classPath_3_0=ruleEString
+				lv_location_3_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGuardRule());
 					}
 					set(
 						$current,
-						"classPath",
-						lv_classPath_3_0,
+						"location",
+						lv_location_3_0,
 						"fr.inria.gag.specification.xtext.Gag.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='libLocation'
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getGuardAccess().getLibLocationKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getGuardAccess().getCommaKeyword_4());
+		}
+		otherlv_5='method'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getGuardAccess().getMethodKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getGuardAccess().getColonKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGuardAccess().getLibLocationEStringParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getGuardAccess().getMethodEStringParserRuleCall_7_0());
 				}
-				lv_libLocation_5_0=ruleEString
+				lv_method_7_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGuardRule());
 					}
 					set(
 						$current,
-						"libLocation",
-						lv_libLocation_5_0,
+						"method",
+						lv_method_7_0,
 						"fr.inria.gag.specification.xtext.Gag.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGuardAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getGuardAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
@@ -897,39 +909,51 @@ ruleFunctionDeclaration returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getFunctionDeclarationAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='classPath'
+		otherlv_2='location'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFunctionDeclarationAccess().getClassPathKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getFunctionDeclarationAccess().getLocationKeyword_2());
+		}
+		otherlv_3=':'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getFunctionDeclarationAccess().getColonKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionDeclarationAccess().getClassPathEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getFunctionDeclarationAccess().getLocationEStringParserRuleCall_4_0());
 				}
-				lv_classPath_3_0=ruleEString
+				lv_location_4_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionDeclarationRule());
 					}
 					set(
 						$current,
-						"classPath",
-						lv_classPath_3_0,
+						"location",
+						lv_location_4_0,
 						"fr.inria.gag.specification.xtext.Gag.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='method'
+		otherlv_5=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFunctionDeclarationAccess().getMethodKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getFunctionDeclarationAccess().getCommaKeyword_5());
+		}
+		otherlv_6='method'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getFunctionDeclarationAccess().getMethodKeyword_6());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getFunctionDeclarationAccess().getColonKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionDeclarationAccess().getMethodEStringParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getFunctionDeclarationAccess().getMethodEStringParserRuleCall_8_0());
 				}
-				lv_method_5_0=ruleEString
+				lv_method_8_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionDeclarationRule());
@@ -937,38 +961,15 @@ ruleFunctionDeclaration returns [EObject current=null]
 					set(
 						$current,
 						"method",
-						lv_method_5_0,
+						lv_method_8_0,
 						"fr.inria.gag.specification.xtext.Gag.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6='libLocation'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFunctionDeclarationAccess().getLibLocationKeyword_6());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getFunctionDeclarationAccess().getLibLocationEStringParserRuleCall_7_0());
-				}
-				lv_libLocation_7_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFunctionDeclarationRule());
-					}
-					set(
-						$current,
-						"libLocation",
-						lv_libLocation_7_0,
-						"fr.inria.gag.specification.xtext.Gag.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_8='}'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getFunctionDeclarationAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getFunctionDeclarationAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;

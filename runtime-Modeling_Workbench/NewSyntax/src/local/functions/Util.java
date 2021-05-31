@@ -10,4 +10,8 @@ public class Util {
 		return 7;
 	}
 	
+	public static boolean guard(Object a, Object b) {
+		return (a!=null && b!=null);
+	}
+	
 }

@@ -20,52 +20,52 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.GuardImpl#getClassPath <em>Class Path</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.GuardImpl#getLibLocation <em>Lib Location</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.GuardImpl#getLocation <em>Location</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.GuardImpl#getMethod <em>Method</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	/**
-	 * The default value of the '{@link #getClassPath() <em>Class Path</em>}' attribute.
+	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClassPath()
+	 * @see #getLocation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLASS_PATH_EDEFAULT = null;
+	protected static final String LOCATION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getClassPath() <em>Class Path</em>}' attribute.
+	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClassPath()
+	 * @see #getLocation()
 	 * @generated
 	 * @ordered
 	 */
-	protected String classPath = CLASS_PATH_EDEFAULT;
+	protected String location = LOCATION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLibLocation() <em>Lib Location</em>}' attribute.
+	 * The default value of the '{@link #getMethod() <em>Method</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLibLocation()
+	 * @see #getMethod()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LIB_LOCATION_EDEFAULT = null;
+	protected static final String METHOD_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLibLocation() <em>Lib Location</em>}' attribute.
+	 * The cached value of the '{@link #getMethod() <em>Method</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLibLocation()
+	 * @see #getMethod()
 	 * @generated
 	 * @ordered
 	 */
-	protected String libLocation = LIB_LOCATION_EDEFAULT;
+	protected String method = METHOD_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,8 +91,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getClassPath() {
-		return classPath;
+	public String getLocation() {
+		return location;
 	}
 
 	/**
@@ -100,12 +100,12 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClassPath(String newClassPath) {
-		String oldClassPath = classPath;
-		classPath = newClassPath;
+	public void setLocation(String newLocation) {
+		String oldLocation = location;
+		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.GUARD__CLASS_PATH, oldClassPath,
-					classPath));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.GUARD__LOCATION, oldLocation,
+					location));
 	}
 
 	/**
@@ -113,8 +113,8 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLibLocation() {
-		return libLocation;
+	public String getMethod() {
+		return method;
 	}
 
 	/**
@@ -122,12 +122,12 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLibLocation(String newLibLocation) {
-		String oldLibLocation = libLocation;
-		libLocation = newLibLocation;
+	public void setMethod(String newMethod) {
+		String oldMethod = method;
+		method = newMethod;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.GUARD__LIB_LOCATION,
-					oldLibLocation, libLocation));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.GUARD__METHOD, oldMethod,
+					method));
 	}
 
 	/**
@@ -138,10 +138,10 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SpecificationPackage.GUARD__CLASS_PATH:
-			return getClassPath();
-		case SpecificationPackage.GUARD__LIB_LOCATION:
-			return getLibLocation();
+		case SpecificationPackage.GUARD__LOCATION:
+			return getLocation();
+		case SpecificationPackage.GUARD__METHOD:
+			return getMethod();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,11 +154,11 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SpecificationPackage.GUARD__CLASS_PATH:
-			setClassPath((String) newValue);
+		case SpecificationPackage.GUARD__LOCATION:
+			setLocation((String) newValue);
 			return;
-		case SpecificationPackage.GUARD__LIB_LOCATION:
-			setLibLocation((String) newValue);
+		case SpecificationPackage.GUARD__METHOD:
+			setMethod((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,11 +172,11 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SpecificationPackage.GUARD__CLASS_PATH:
-			setClassPath(CLASS_PATH_EDEFAULT);
+		case SpecificationPackage.GUARD__LOCATION:
+			setLocation(LOCATION_EDEFAULT);
 			return;
-		case SpecificationPackage.GUARD__LIB_LOCATION:
-			setLibLocation(LIB_LOCATION_EDEFAULT);
+		case SpecificationPackage.GUARD__METHOD:
+			setMethod(METHOD_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -190,10 +190,10 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SpecificationPackage.GUARD__CLASS_PATH:
-			return CLASS_PATH_EDEFAULT == null ? classPath != null : !CLASS_PATH_EDEFAULT.equals(classPath);
-		case SpecificationPackage.GUARD__LIB_LOCATION:
-			return LIB_LOCATION_EDEFAULT == null ? libLocation != null : !LIB_LOCATION_EDEFAULT.equals(libLocation);
+		case SpecificationPackage.GUARD__LOCATION:
+			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
+		case SpecificationPackage.GUARD__METHOD:
+			return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,10 +209,10 @@ public class GuardImpl extends MinimalEObjectImpl.Container implements Guard {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (classPath: ");
-		result.append(classPath);
-		result.append(", libLocation: ");
-		result.append(libLocation);
+		result.append(" (location: ");
+		result.append(location);
+		result.append(", method: ");
+		result.append(method);
 		result.append(')');
 		return result.toString();
 	}

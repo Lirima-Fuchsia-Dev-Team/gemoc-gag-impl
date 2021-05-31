@@ -43,7 +43,7 @@ DecompositionRule returns DecompositionRule:
 	name=EString
 	':'
 		('sub' ':' subServices+=[Service|EString] ( "," subServices+=[Service|EString])*  )?
-		('guard' guard=Guard)?
+		('guard' ':' guard=Guard)?
 		('sem' ':' semantic=SemanticRule)?
 	 ;
 	//'';
@@ -56,10 +56,11 @@ EBoolean returns ecore::EBoolean:
 	'true' | 'false';
 
 Guard returns Guard:
-	'Guard'
+	
 	'{'
-		'classPath' classPath=EString
-		'libLocation' libLocation=EString
+		
+		'location' ':' location=EString','
+		'method' ':' method=EString
 	'}';
 
 SemanticRule returns SemanticRule:
@@ -74,9 +75,8 @@ FunctionDeclaration returns FunctionDeclaration:
 	//'FunctionDeclaration'
 	name=EString
 	'{'
-		'classPath' classPath=EString
-		'method' method=EString
-		'libLocation' libLocation=EString
+		'location' ':' location=EString','
+		'method' ':' method=EString
 	'}';
 
 
