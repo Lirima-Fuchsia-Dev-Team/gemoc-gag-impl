@@ -133,6 +133,8 @@ public class SpecificationSwitch<T> extends Switch<T> {
 			IdExpression idExpression = (IdExpression) theEObject;
 			T result = caseIdExpression(idExpression);
 			if (result == null)
+				result = caseRighPartExpression(idExpression);
+			if (result == null)
 				result = caseExpression(idExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -150,6 +152,26 @@ public class SpecificationSwitch<T> extends Switch<T> {
 			T result = caseFunctionExpression(functionExpression);
 			if (result == null)
 				result = caseExpression(functionExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpecificationPackage.LOCAL_DATA: {
+			LocalData localData = (LocalData) theEObject;
+			T result = caseLocalData(localData);
+			if (result == null)
+				result = caseRighPartExpression(localData);
+			if (result == null)
+				result = caseExpression(localData);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpecificationPackage.RIGH_PART_EXPRESSION: {
+			RighPartExpression righPartExpression = (RighPartExpression) theEObject;
+			T result = caseRighPartExpression(righPartExpression);
+			if (result == null)
+				result = caseExpression(righPartExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -336,6 +358,36 @@ public class SpecificationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFunctionExpression(FunctionExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Local Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Local Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocalData(LocalData object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Righ Part Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Righ Part Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRighPartExpression(RighPartExpression object) {
 		return null;
 	}
 

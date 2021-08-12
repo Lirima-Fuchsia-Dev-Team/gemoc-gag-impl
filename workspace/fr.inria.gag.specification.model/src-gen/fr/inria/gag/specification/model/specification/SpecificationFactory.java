@@ -113,6 +113,15 @@ public interface SpecificationFactory extends EFactory {
 	FunctionExpression createFunctionExpression();
 
 	/**
+	 * Returns a new object of class '<em>Local Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Local Data</em>'.
+	 * @generated
+	 */
+	LocalData createLocalData();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

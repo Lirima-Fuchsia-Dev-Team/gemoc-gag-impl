@@ -76,6 +76,8 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 			return createIdExpression();
 		case SpecificationPackage.FUNCTION_EXPRESSION:
 			return createFunctionExpression();
+		case SpecificationPackage.LOCAL_DATA:
+			return createLocalData();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -179,6 +181,16 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 	public FunctionExpression createFunctionExpression() {
 		FunctionExpressionImpl functionExpression = new FunctionExpressionImpl();
 		return functionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LocalData createLocalData() {
+		LocalDataImpl localData = new LocalDataImpl();
+		return localData;
 	}
 
 	/**

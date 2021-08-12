@@ -536,6 +536,34 @@ public interface SpecificationPackage extends EPackage {
 	int EXPRESSION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.RighPartExpressionImpl <em>Righ Part Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.RighPartExpressionImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getRighPartExpression()
+	 * @generated
+	 */
+	int RIGH_PART_EXPRESSION = 13;
+
+	/**
+	 * The number of structural features of the '<em>Righ Part Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGH_PART_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Righ Part Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGH_PART_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.IdExpressionImpl <em>Id Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -552,7 +580,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSION__SERVICE_NAME = EXPRESSION_FEATURE_COUNT + 0;
+	int ID_EXPRESSION__SERVICE_NAME = RIGH_PART_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter Name</b></em>' attribute.
@@ -561,7 +589,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSION__PARAMETER_NAME = EXPRESSION_FEATURE_COUNT + 1;
+	int ID_EXPRESSION__PARAMETER_NAME = RIGH_PART_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Id Expression</em>' class.
@@ -570,7 +598,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int ID_EXPRESSION_FEATURE_COUNT = RIGH_PART_EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Id Expression</em>' class.
@@ -579,7 +607,7 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ID_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int ID_EXPRESSION_OPERATION_COUNT = RIGH_PART_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl <em>Function Expression</em>}' class.
@@ -626,6 +654,43 @@ public interface SpecificationPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTION_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.inria.gag.specification.model.specification.impl.LocalDataImpl <em>Local Data</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.inria.gag.specification.model.specification.impl.LocalDataImpl
+	 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getLocalData()
+	 * @generated
+	 */
+	int LOCAL_DATA = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DATA__NAME = RIGH_PART_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Local Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DATA_FEATURE_COUNT = RIGH_PART_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Local Data</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_DATA_OPERATION_COUNT = RIGH_PART_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.GAG <em>GAG</em>}'.
@@ -1034,6 +1099,37 @@ public interface SpecificationPackage extends EPackage {
 	EReference getFunctionExpression_IdExpressions();
 
 	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.LocalData <em>Local Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Local Data</em>'.
+	 * @see fr.inria.gag.specification.model.specification.LocalData
+	 * @generated
+	 */
+	EClass getLocalData();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.inria.gag.specification.model.specification.LocalData#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fr.inria.gag.specification.model.specification.LocalData#getName()
+	 * @see #getLocalData()
+	 * @generated
+	 */
+	EAttribute getLocalData_Name();
+
+	/**
+	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.RighPartExpression <em>Righ Part Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Righ Part Expression</em>'.
+	 * @see fr.inria.gag.specification.model.specification.RighPartExpression
+	 * @generated
+	 */
+	EClass getRighPartExpression();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1383,6 +1479,34 @@ public interface SpecificationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FUNCTION_EXPRESSION__ID_EXPRESSIONS = eINSTANCE.getFunctionExpression_IdExpressions();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.LocalDataImpl <em>Local Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.LocalDataImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getLocalData()
+		 * @generated
+		 */
+		EClass LOCAL_DATA = eINSTANCE.getLocalData();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCAL_DATA__NAME = eINSTANCE.getLocalData_Name();
+
+		/**
+		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.RighPartExpressionImpl <em>Righ Part Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.inria.gag.specification.model.specification.impl.RighPartExpressionImpl
+		 * @see fr.inria.gag.specification.model.specification.impl.SpecificationPackageImpl#getRighPartExpression()
+		 * @generated
+		 */
+		EClass RIGH_PART_EXPRESSION = eINSTANCE.getRighPartExpression();
 
 	}
 

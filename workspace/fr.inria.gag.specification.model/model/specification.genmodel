@@ -58,5 +58,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference specification.ecore#//FunctionExpression/idExpressions"/>
     </genClasses>
+    <genClasses ecoreClass="specification.ecore#//LocalData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//LocalData/name"/>
+    </genClasses>
+    <genClasses ecoreClass="specification.ecore#//RighPartExpression"/>
   </genPackages>
 </genmodel:GenModel>

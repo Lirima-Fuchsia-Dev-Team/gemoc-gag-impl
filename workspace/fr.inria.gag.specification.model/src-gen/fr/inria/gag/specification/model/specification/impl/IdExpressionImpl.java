@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class IdExpressionImpl extends ExpressionImpl implements IdExpression {
+public class IdExpressionImpl extends RighPartExpressionImpl implements IdExpression {
 	/**
 	 * The default value of the '{@link #getServiceName() <em>Service Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

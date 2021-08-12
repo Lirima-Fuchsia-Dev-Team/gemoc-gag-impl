@@ -9,7 +9,9 @@ import fr.inria.gag.specification.model.specification.FunctionDeclaration;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.Guard;
 import fr.inria.gag.specification.model.specification.IdExpression;
+import fr.inria.gag.specification.model.specification.LocalData;
 import fr.inria.gag.specification.model.specification.Parameter;
+import fr.inria.gag.specification.model.specification.RighPartExpression;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.SemanticRule;
 import fr.inria.gag.specification.model.specification.Service;
@@ -113,6 +115,20 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * @generated
 	 */
 	private EClass functionExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass localDataEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass righPartExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -525,6 +541,33 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLocalData() {
+		return localDataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocalData_Name() {
+		return (EAttribute) localDataEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRighPartExpression() {
+		return righPartExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SpecificationFactory getSpecificationFactory() {
 		return (SpecificationFactory) getEFactoryInstance();
 	}
@@ -598,6 +641,11 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		functionExpressionEClass = createEClass(FUNCTION_EXPRESSION);
 		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__FUNCTION);
 		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__ID_EXPRESSIONS);
+
+		localDataEClass = createEClass(LOCAL_DATA);
+		createEAttribute(localDataEClass, LOCAL_DATA__NAME);
+
+		righPartExpressionEClass = createEClass(RIGH_PART_EXPRESSION);
 	}
 
 	/**
@@ -629,8 +677,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		idExpressionEClass.getESuperTypes().add(this.getExpression());
+		idExpressionEClass.getESuperTypes().add(this.getRighPartExpression());
 		functionExpressionEClass.getESuperTypes().add(this.getExpression());
+		localDataEClass.getESuperTypes().add(this.getRighPartExpression());
+		righPartExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gagEClass, fr.inria.gag.specification.model.specification.GAG.class, "GAG", !IS_ABSTRACT,
@@ -712,9 +762,9 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		initEClass(equationEClass, Equation.class, "Equation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEquation_Leftpart(), this.getIdExpression(), null, "leftpart", null, 1, 1, Equation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEquation_Leftpart(), this.getRighPartExpression(), null, "leftpart", null, 1, 1,
+				Equation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquation_Rightpart(), this.getExpression(), null, "rightpart", null, 1, 1, Equation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -736,9 +786,17 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEReference(getFunctionExpression_Function(), this.getFunctionDeclaration(), null, "function", null, 1, 1,
 				FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionExpression_IdExpressions(), this.getIdExpression(), null, "idExpressions", null, 0,
-				-1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+		initEReference(getFunctionExpression_IdExpressions(), this.getRighPartExpression(), null, "idExpressions", null,
+				0, -1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(localDataEClass, LocalData.class, "LocalData", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLocalData_Name(), ecorePackage.getEString(), "name", null, 1, 1, LocalData.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(righPartExpressionEClass, RighPartExpression.class, "RighPartExpression", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

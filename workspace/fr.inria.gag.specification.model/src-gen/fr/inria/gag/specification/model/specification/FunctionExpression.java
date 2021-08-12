@@ -50,7 +50,7 @@ public interface FunctionExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Id Expressions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.IdExpression}.
+	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.RighPartExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Id Expressions</em>' containment reference list isn't clear,
@@ -62,6 +62,6 @@ public interface FunctionExpression extends Expression {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<IdExpression> getIdExpressions();
+	EList<RighPartExpression> getIdExpressions();
 
 } // FunctionExpression

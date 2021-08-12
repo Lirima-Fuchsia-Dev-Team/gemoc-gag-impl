@@ -19,7 +19,7 @@ package fr.inria.gag.specification.model.specification;
  * @model
  * @generated
  */
-public interface IdExpression extends Expression {
+public interface IdExpression extends RighPartExpression {
 	/**
 	 * Returns the value of the '<em><b>Service Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
