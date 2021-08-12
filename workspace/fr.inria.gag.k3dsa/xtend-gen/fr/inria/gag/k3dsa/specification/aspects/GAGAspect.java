@@ -19,11 +19,18 @@ import fr.inria.gag.k3dsa.specification.aspects.GAGAspectGAGAspectProperties;
 import fr.inria.gag.k3dsa.specification.aspects.GuardAspect;
 import fr.inria.gag.k3dsa.specification.aspects.ServiceAspect;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
+import fr.inria.gag.specification.model.specification.Equation;
+import fr.inria.gag.specification.model.specification.Expression;
+import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.GAG;
 import fr.inria.gag.specification.model.specification.Guard;
+import fr.inria.gag.specification.model.specification.IdExpression;
+import fr.inria.gag.specification.model.specification.LeftPartExpression;
+import fr.inria.gag.specification.model.specification.LocalData;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.Service;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -395,13 +402,114 @@ public class GAGAspect {
   }
   
   protected static void _privk3_applyRule(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task t, final DecompositionRule r) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field idExpressions is undefined for the type FunctionExpression"
-      + "\nThe method or field idExpressions is undefined for the type FunctionExpression"
-      + "\nsize cannot be resolved"
-      + "\nget cannot be resolved"
-      + "\nserviceName cannot be resolved"
-      + "\nparameterName cannot be resolved");
+    t.setAppliedRule(r.getName());
+    t.setIsOpen(false);
+    int _size = r.getSubServices().size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        final Service element = r.getSubServices().get((i).intValue());
+        Task st = ConfigurationFactory.eINSTANCE.createTask();
+        GAGAspect.initTask(_self, st, element);
+        t.getSubTasks().add(st);
+      }
+    }
+    RuntimeData _configuration = _self.getConfiguration();
+    Configuration conf = ((Configuration) _configuration);
+    ArrayList<Task> context = new ArrayList<Task>();
+    Hashtable<String, Data> localVariables = new Hashtable<String, Data>();
+    context.add(t);
+    context.addAll(t.getSubTasks());
+    int _size_1 = r.getSemantic().getEquations().size();
+    ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+    for (final Integer i_1 : _doubleDotLessThan_1) {
+      {
+        Equation eq = r.getSemantic().getEquations().get((i_1).intValue());
+        Data data1 = ((Data) null);
+        LeftPartExpression _leftpart = eq.getLeftpart();
+        if ((_leftpart instanceof IdExpression)) {
+          LeftPartExpression _leftpart_1 = eq.getLeftpart();
+          IdExpression eql = ((IdExpression) _leftpart_1);
+          String _serviceName = eql.getServiceName();
+          String _parameterName = eql.getParameterName();
+          String[] ref1 = new String[] { _serviceName, _parameterName };
+          data1 = GAGAspect.findReference(_self, ref1, context);
+        } else {
+          LeftPartExpression _leftpart_2 = eq.getLeftpart();
+          LocalData eql_1 = ((LocalData) _leftpart_2);
+          data1 = localVariables.get(eql_1.getName());
+          boolean _equals = Objects.equal(data1, null);
+          if (_equals) {
+            data1 = ConfigurationFactory.eINSTANCE.createData();
+            EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+            data1.setValue(_encapsulatedValue);
+            localVariables.put(eql_1.getName(), data1);
+          }
+        }
+        Expression _rightpart = eq.getRightpart();
+        if ((_rightpart instanceof LeftPartExpression)) {
+          Data data2 = ((Data) null);
+          Expression _rightpart_1 = eq.getRightpart();
+          if ((_rightpart_1 instanceof IdExpression)) {
+            Expression _rightpart_2 = eq.getRightpart();
+            final IdExpression rightPartIdExpression = ((IdExpression) _rightpart_2);
+            String _serviceName_1 = rightPartIdExpression.getServiceName();
+            String _parameterName_1 = rightPartIdExpression.getParameterName();
+            final String[] ref2 = new String[] { _serviceName_1, _parameterName_1 };
+            data2 = GAGAspect.findReference(_self, ref2, context);
+          } else {
+            Expression _rightpart_3 = eq.getRightpart();
+            LocalData eqr = ((LocalData) _rightpart_3);
+            data1 = localVariables.get(eqr.getName());
+            boolean _equals_1 = Objects.equal(data1, null);
+            if (_equals_1) {
+              data1 = ConfigurationFactory.eINSTANCE.createData();
+              EncapsulatedValue _encapsulatedValue_1 = new EncapsulatedValue();
+              data1.setValue(_encapsulatedValue_1);
+              localVariables.put(eqr.getName(), data1);
+            }
+          }
+          Object _value = data1.getValue();
+          EncapsulatedValue ecData1 = ((EncapsulatedValue) _value);
+          Object _value_1 = data2.getValue();
+          ecData1.addReference(((EncapsulatedValue) _value_1));
+        } else {
+          Expression _rightpart_4 = eq.getRightpart();
+          FunctionExpression func = ((FunctionExpression) _rightpart_4);
+          Object _value_2 = data1.getValue();
+          EncapsulatedValue ecData1_1 = ((EncapsulatedValue) _value_2);
+          PendingLocalFunctionComputation runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation();
+          runningFunction.setDataToCompute(data1);
+          runningFunction.setFunctiondeclaration(func.getFunction());
+          int _size_2 = func.getExpressions().size();
+          ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+          for (final Integer k : _doubleDotLessThan_2) {
+            {
+              LeftPartExpression elId = func.getExpressions().get((k).intValue());
+              Data data = ((Data) null);
+              if ((elId instanceof IdExpression)) {
+                String _serviceName_2 = ((IdExpression) elId).getServiceName();
+                String _parameterName_2 = ((IdExpression) elId).getParameterName();
+                final String[] ref = new String[] { _serviceName_2, _parameterName_2 };
+                data = GAGAspect.findReference(_self, ref, context);
+              } else {
+                data = localVariables.get(((LocalData) elId).getName());
+                boolean _equals_2 = Objects.equal(data, null);
+                if (_equals_2) {
+                  data = ConfigurationFactory.eINSTANCE.createData();
+                  EncapsulatedValue _encapsulatedValue_2 = new EncapsulatedValue();
+                  data.setValue(_encapsulatedValue_2);
+                  localVariables.put(((LocalData) elId).getName(), data);
+                }
+              }
+              runningFunction.getActualParameters().add(data);
+            }
+          }
+          conf.getPendingLocalComputations().add(runningFunction);
+        }
+      }
+    }
+    GAGAspect.computeFunction(_self, conf.getPendingLocalComputations());
   }
   
   protected static Data _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final ArrayList<Task> tasks) {

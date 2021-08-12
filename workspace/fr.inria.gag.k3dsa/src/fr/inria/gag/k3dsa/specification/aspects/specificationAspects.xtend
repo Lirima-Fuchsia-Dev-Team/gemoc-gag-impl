@@ -57,6 +57,7 @@ import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComput
 import fr.inria.gag.specification.model.specification.SpecificationFactory
 import java.util.Hashtable
 import fr.inria.gag.specification.model.specification.LocalData
+import fr.inria.gag.specification.model.specification.LeftPartExpression
 
 @Aspect(className=GAG)
 class GAGAspect {
@@ -233,27 +234,50 @@ class GAGAspect {
 			}
 			
 			// creating the right part datas
-			
-			if (eq.rightpart instanceof IdExpression) {
-				var data2 = null as fr.inria.gag.configuration.model.configuration.Data;
+			// if the right part is not a function
+			if (eq.rightpart instanceof LeftPartExpression) {
+				var data2 = null as Data;
+				if(eq.rightpart instanceof IdExpression){
 				val rightPartIdExpression = eq.rightpart as IdExpression;
 				val String[] ref2 = #[rightPartIdExpression.serviceName, rightPartIdExpression.parameterName];
 				data2 = findReference(_self, ref2, context);
-				var ecData1 = data1.value as EncapsulatedValue;
-				ecData1.addReference(data2.value as EncapsulatedValue);
-			} else if (eq.rightpart instanceof LocalData){
 				
 				}
+			 else {
+				var eqr = eq.rightpart as LocalData; 
+				data1=localVariables.get(eqr.name);
+				if(data1==null){
+					data1 = ConfigurationFactory.eINSTANCE.createData();
+					data1.value = new EncapsulatedValue;
+					localVariables.put(eqr.name,data1);
+				}
+				}
+				var ecData1 = data1.value as EncapsulatedValue;
+				ecData1.addReference(data2.value as EncapsulatedValue);
+			}
+			// if the rightPart is a function
 			else {
 				var func = eq.rightpart as FunctionExpression;
 				var ecData1 = data1.value as EncapsulatedValue;
 				var runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation;
 				runningFunction.dataToCompute = data1;
 				runningFunction.functiondeclaration = func.function;
-				for (k : 0 ..< func.idExpressions.size) {
-					var elId = func.idExpressions.get(k);
-					val String[] ref = #[elId.serviceName, elId.parameterName];
-					var data = findReference(_self, ref, context);
+				for (k : 0 ..< func.expressions.size) {
+					var elId = func.expressions.get(k);
+					var data = null as Data;
+					if(elId instanceof IdExpression){
+						val String[] ref = #[(elId as IdExpression).serviceName, (elId as IdExpression).parameterName];
+						data = findReference(_self, ref, context);
+					}
+					// it is a local data
+					else {
+						data=localVariables.get((elId as LocalData).name);
+						if(data==null){
+							data = ConfigurationFactory.eINSTANCE.createData();
+							data.value = new EncapsulatedValue;
+							localVariables.put((elId as LocalData).name,data);
+						}
+					}
 					runningFunction.actualParameters.add(data);
 				}
 				
