@@ -22,7 +22,7 @@ GAG returns GAG:
 
 
 Expression returns Expression:
-	IdExpression | FunctionExpression;
+	RightPartExpression | FunctionExpression;
 
 Service returns Service:
 	(isAxiom?='Axiom')?
@@ -84,9 +84,17 @@ FunctionDeclaration returns FunctionDeclaration:
 
 Equation returns Equation:
 	
-		 leftpart=IdExpression
+		 leftpart=RightPartExpression
 		'=' rightpart=Expression
 	';';
+	
+RightPartExpression returns RightPartExpression:
+	IdExpression | LocalData 
+;
+
+LocalData returns LocalData:
+	name=ID
+;
 
 IdExpression returns IdExpression:
 	

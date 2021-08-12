@@ -56,11 +56,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftpart" lowerBound="1"
-        eType="#//RighPartExpression" containment="true"/>
+        eType="#//RightPartExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightpart" lowerBound="1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IdExpression" eSuperTypes="#//RighPartExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="IdExpression" eSuperTypes="#//RightPartExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterName" lowerBound="1"
@@ -71,11 +71,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
         eType="#//FunctionDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="idExpressions" upperBound="-1"
-        eType="#//RighPartExpression" containment="true"/>
+        eType="#//RightPartExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LocalData" eSuperTypes="#//RighPartExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="LocalData" eSuperTypes="#//RightPartExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RighPartExpression" abstract="true"
+  <eClassifiers xsi:type="ecore:EClass" name="RightPartExpression" abstract="true"
       eSuperTypes="#//Expression"/>
 </ecore:EPackage>

@@ -937,9 +937,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_MXf_0PtSEeug49R-lCGr2g" name="RighPartExpression" tooltipText="" outgoingEdges="_b9Hp4vtSEeug49R-lCGr2g" incomingEdges="_Ffam0K5oEeuG66zZi0ty7A _RwJOFq5nEeuG66zZi0ty7A _9comsK5oEeuG66zZi0ty7A _mzclHPtQEeug49R-lCGr2g" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="specification.ecore#//RighPartExpression"/>
-      <semanticElements xmi:type="ecore:EClass" href="specification.ecore#//RighPartExpression"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_MXf_0PtSEeug49R-lCGr2g" name="RightPartExpression" tooltipText="" outgoingEdges="_b9Hp4vtSEeug49R-lCGr2g" incomingEdges="_Ffam0K5oEeuG66zZi0ty7A _RwJOFq5nEeuG66zZi0ty7A _9comsK5oEeuG66zZi0ty7A _mzclHPtQEeug49R-lCGr2g" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="specification.ecore#//RightPartExpression"/>
+      <semanticElements xmi:type="ecore:EClass" href="specification.ecore#//RightPartExpression"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -950,8 +950,8 @@
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_b9Hp4vtSEeug49R-lCGr2g" sourceNode="_MXf_0PtSEeug49R-lCGr2g" targetNode="_K3WxUK5nEeuG66zZi0ty7A">
-      <target xmi:type="ecore:EClass" href="specification.ecore#//RighPartExpression"/>
-      <semanticElements xmi:type="ecore:EClass" href="specification.ecore#//RighPartExpression"/>
+      <target xmi:type="ecore:EClass" href="specification.ecore#//RightPartExpression"/>
+      <semanticElements xmi:type="ecore:EClass" href="specification.ecore#//RightPartExpression"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_b9Hp4_tSEeug49R-lCGr2g" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_b9Hp5PtSEeug49R-lCGr2g" showIcon="false">

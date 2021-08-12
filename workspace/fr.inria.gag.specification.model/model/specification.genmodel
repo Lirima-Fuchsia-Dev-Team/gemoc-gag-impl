@@ -61,6 +61,6 @@
     <genClasses ecoreClass="specification.ecore#//LocalData">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute specification.ecore#//LocalData/name"/>
     </genClasses>
-    <genClasses ecoreClass="specification.ecore#//RighPartExpression"/>
+    <genClasses ecoreClass="specification.ecore#//RightPartExpression"/>
   </genPackages>
 </genmodel:GenModel>
