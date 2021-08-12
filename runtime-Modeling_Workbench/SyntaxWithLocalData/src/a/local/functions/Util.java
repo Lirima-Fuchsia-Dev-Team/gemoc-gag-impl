@@ -1,4 +1,4 @@
-package local.functions;
+package a.local.functions;
 
 public class Util {
 

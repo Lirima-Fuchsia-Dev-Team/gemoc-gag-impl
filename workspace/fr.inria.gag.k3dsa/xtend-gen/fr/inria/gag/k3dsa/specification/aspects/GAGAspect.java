@@ -437,13 +437,13 @@ public class GAGAspect {
         } else {
           LeftPartExpression _leftpart_2 = eq.getLeftpart();
           LocalData eql_1 = ((LocalData) _leftpart_2);
-          data1 = localVariables.get(eql_1.getName());
+          data1 = localVariables.get(eql_1.getName().trim());
           boolean _equals = Objects.equal(data1, null);
           if (_equals) {
             data1 = ConfigurationFactory.eINSTANCE.createData();
             EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
             data1.setValue(_encapsulatedValue);
-            localVariables.put(eql_1.getName(), data1);
+            localVariables.put(eql_1.getName().trim(), data1);
           }
         }
         Expression _rightpart = eq.getRightpart();
@@ -460,13 +460,13 @@ public class GAGAspect {
           } else {
             Expression _rightpart_3 = eq.getRightpart();
             LocalData eqr = ((LocalData) _rightpart_3);
-            data1 = localVariables.get(eqr.getName());
-            boolean _equals_1 = Objects.equal(data1, null);
+            data2 = localVariables.get(eqr.getName().trim());
+            boolean _equals_1 = Objects.equal(data2, null);
             if (_equals_1) {
-              data1 = ConfigurationFactory.eINSTANCE.createData();
+              data2 = ConfigurationFactory.eINSTANCE.createData();
               EncapsulatedValue _encapsulatedValue_1 = new EncapsulatedValue();
-              data1.setValue(_encapsulatedValue_1);
-              localVariables.put(eqr.getName(), data1);
+              data2.setValue(_encapsulatedValue_1);
+              localVariables.put(eqr.getName().trim(), data2);
             }
           }
           Object _value = data1.getValue();
@@ -493,13 +493,13 @@ public class GAGAspect {
                 final String[] ref = new String[] { _serviceName_2, _parameterName_2 };
                 data = GAGAspect.findReference(_self, ref, context);
               } else {
-                data = localVariables.get(((LocalData) elId).getName());
+                data = localVariables.get(((LocalData) elId).getName().trim());
                 boolean _equals_2 = Objects.equal(data, null);
                 if (_equals_2) {
                   data = ConfigurationFactory.eINSTANCE.createData();
                   EncapsulatedValue _encapsulatedValue_2 = new EncapsulatedValue();
                   data.setValue(_encapsulatedValue_2);
-                  localVariables.put(((LocalData) elId).getName(), data);
+                  localVariables.put(((LocalData) elId).getName().trim(), data);
                 }
               }
               runningFunction.getActualParameters().add(data);

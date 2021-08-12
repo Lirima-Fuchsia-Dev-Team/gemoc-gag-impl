@@ -225,11 +225,11 @@ class GAGAspect {
 					
 			}else{
 				var eql = eq.leftpart as LocalData; 
-				data1=localVariables.get(eql.name);
+				data1=localVariables.get(eql.name.trim());
 				if(data1==null){
 					data1 = ConfigurationFactory.eINSTANCE.createData();
 					data1.value = new EncapsulatedValue;
-					localVariables.put(eql.name,data1);
+					localVariables.put(eql.name.trim(),data1);
 				}
 			}
 			
@@ -245,11 +245,11 @@ class GAGAspect {
 				}
 			 else {
 				var eqr = eq.rightpart as LocalData; 
-				data1=localVariables.get(eqr.name);
-				if(data1==null){
-					data1 = ConfigurationFactory.eINSTANCE.createData();
-					data1.value = new EncapsulatedValue;
-					localVariables.put(eqr.name,data1);
+				data2=localVariables.get(eqr.name.trim());
+				if(data2==null){
+					data2 = ConfigurationFactory.eINSTANCE.createData();
+					data2.value = new EncapsulatedValue;
+					localVariables.put(eqr.name.trim(),data2);
 				}
 				}
 				var ecData1 = data1.value as EncapsulatedValue;
@@ -271,11 +271,11 @@ class GAGAspect {
 					}
 					// it is a local data
 					else {
-						data=localVariables.get((elId as LocalData).name);
+						data=localVariables.get((elId as LocalData).name.trim());
 						if(data==null){
 							data = ConfigurationFactory.eINSTANCE.createData();
 							data.value = new EncapsulatedValue;
-							localVariables.put((elId as LocalData).name,data);
+							localVariables.put((elId as LocalData).name.trim(),data);
 						}
 					}
 					runningFunction.actualParameters.add(data);
@@ -418,6 +418,7 @@ class GuardAspect {
 			funcCall.actualParameters.add(t.inputs.get(i));
 		}
 		//if (funcCall.isExecutable){
+			//Console.debug("the funcCAll: "+funcCall.functiondeclaration.location);
 			result =funcCall.execute as Boolean ;
 		//}
 		

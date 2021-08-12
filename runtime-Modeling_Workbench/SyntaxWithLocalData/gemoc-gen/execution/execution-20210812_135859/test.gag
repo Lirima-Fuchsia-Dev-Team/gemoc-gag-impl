@@ -1,0 +1,42 @@
+GAG g {
+	
+		Axiom S1 (a,b)[c] : {
+			r1 :
+			    guard: { location:"a.local.functions.Util", method :"guard" }
+				sem : {
+					func : f {location : "a.local.functions.Util", method :"f"}
+					equations : S1.c = f(S1.a,S1.b) ;
+				}
+				
+		
+		},
+		S2 (a)[b] : {
+			r1 :
+			   
+				sem : {
+					func : g {location : "a.local.functions.Util", method :"g"}
+					equations : 
+					i=g(S2.a);
+					S2.b = g(i) ;
+				}
+				
+				
+		
+		},
+		Axiom S3 (a)[b,c] : {
+			r1 : sub : S1, S2
+				 sem : {
+					equations : 
+					S1.a = S3.a ;
+					S1.b = S2.b ;
+					S2.a = S3.a ;
+					S3.b = S2.b ;
+					loc = S1.c;		
+					S3.c = loc ;
+				}
+				
+		
+		}
+	
+	
+}
