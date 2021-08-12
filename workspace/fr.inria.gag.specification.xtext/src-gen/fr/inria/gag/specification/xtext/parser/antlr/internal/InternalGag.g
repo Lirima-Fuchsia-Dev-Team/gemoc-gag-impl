@@ -180,11 +180,11 @@ ruleExpression returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getIdExpressionParserRuleCall_0());
+			newCompositeNode(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0());
 		}
-		this_IdExpression_0=ruleIdExpression
+		this_RightPartExpression_0=ruleRightPartExpression
 		{
-			$current = $this_IdExpression_0.current;
+			$current = $this_RightPartExpression_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -993,9 +993,9 @@ ruleEquation returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEquationAccess().getLeftpartIdExpressionParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0());
 				}
-				lv_leftpart_0_0=ruleIdExpression
+				lv_leftpart_0_0=ruleRightPartExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEquationRule());
@@ -1004,7 +1004,7 @@ ruleEquation returns [EObject current=null]
 						$current,
 						"leftpart",
 						lv_leftpart_0_0,
-						"fr.inria.gag.specification.xtext.Gag.IdExpression");
+						"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1036,6 +1036,77 @@ ruleEquation returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getEquationAccess().getSemicolonKeyword_3());
 		}
+	)
+;
+
+// Entry rule entryRuleRightPartExpression
+entryRuleRightPartExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRightPartExpressionRule()); }
+	iv_ruleRightPartExpression=ruleRightPartExpression
+	{ $current=$iv_ruleRightPartExpression.current; }
+	EOF;
+
+// Rule RightPartExpression
+ruleRightPartExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0());
+		}
+		this_IdExpression_0=ruleIdExpression
+		{
+			$current = $this_IdExpression_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1());
+		}
+		this_LocalData_1=ruleLocalData
+		{
+			$current = $this_LocalData_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleLocalData
+entryRuleLocalData returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLocalDataRule()); }
+	iv_ruleLocalData=ruleLocalData
+	{ $current=$iv_ruleLocalData.current; }
+	EOF;
+
+// Rule LocalData
+ruleLocalData returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_name_0_0=RULE_ID
+			{
+				newLeafNode(lv_name_0_0, grammarAccess.getLocalDataAccess().getNameIDTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getLocalDataRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"name",
+					lv_name_0_0,
+					"org.eclipse.xtext.common.Terminals.ID");
+			}
+		)
 	)
 ;
 
@@ -1140,18 +1211,18 @@ ruleFunctionExpression returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionExpressionAccess().getIdExpressionsIdExpressionParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0());
 					}
-					lv_idExpressions_2_0=ruleIdExpression
+					lv_expressions_2_0=ruleRightPartExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionExpressionRule());
 						}
 						add(
 							$current,
-							"idExpressions",
-							lv_idExpressions_2_0,
-							"fr.inria.gag.specification.xtext.Gag.IdExpression");
+							"expressions",
+							lv_expressions_2_0,
+							"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1164,18 +1235,18 @@ ruleFunctionExpression returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFunctionExpressionAccess().getIdExpressionsIdExpressionParserRuleCall_2_1_1_0());
+							newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0());
 						}
-						lv_idExpressions_4_0=ruleIdExpression
+						lv_expressions_4_0=ruleRightPartExpression
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFunctionExpressionRule());
 							}
 							add(
 								$current,
-								"idExpressions",
-								lv_idExpressions_4_0,
-								"fr.inria.gag.specification.xtext.Gag.IdExpression");
+								"expressions",
+								lv_expressions_4_0,
+								"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
 							afterParserOrEnumRuleCall();
 						}
 					)

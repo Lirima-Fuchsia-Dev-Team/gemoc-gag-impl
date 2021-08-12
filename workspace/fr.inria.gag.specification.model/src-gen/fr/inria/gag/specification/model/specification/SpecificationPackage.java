@@ -629,13 +629,13 @@ public interface SpecificationPackage extends EPackage {
 	int FUNCTION_EXPRESSION__FUNCTION = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Id Expressions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_EXPRESSION__ID_EXPRESSIONS = EXPRESSION_FEATURE_COUNT + 1;
+	int FUNCTION_EXPRESSION__EXPRESSIONS = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Function Expression</em>' class.
@@ -1088,15 +1088,15 @@ public interface SpecificationPackage extends EPackage {
 	EReference getFunctionExpression_Function();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpressions <em>Id Expressions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.inria.gag.specification.model.specification.FunctionExpression#getExpressions <em>Expressions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Id Expressions</em>'.
-	 * @see fr.inria.gag.specification.model.specification.FunctionExpression#getIdExpressions()
+	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
+	 * @see fr.inria.gag.specification.model.specification.FunctionExpression#getExpressions()
 	 * @see #getFunctionExpression()
 	 * @generated
 	 */
-	EReference getFunctionExpression_IdExpressions();
+	EReference getFunctionExpression_Expressions();
 
 	/**
 	 * Returns the meta object for class '{@link fr.inria.gag.specification.model.specification.LocalData <em>Local Data</em>}'.
@@ -1473,12 +1473,12 @@ public interface SpecificationPackage extends EPackage {
 		EReference FUNCTION_EXPRESSION__FUNCTION = eINSTANCE.getFunctionExpression_Function();
 
 		/**
-		 * The meta object literal for the '<em><b>Id Expressions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUNCTION_EXPRESSION__ID_EXPRESSIONS = eINSTANCE.getFunctionExpression_IdExpressions();
+		EReference FUNCTION_EXPRESSION__EXPRESSIONS = eINSTANCE.getFunctionExpression_Expressions();
 
 		/**
 		 * The meta object literal for the '{@link fr.inria.gag.specification.model.specification.impl.LocalDataImpl <em>Local Data</em>}' class.

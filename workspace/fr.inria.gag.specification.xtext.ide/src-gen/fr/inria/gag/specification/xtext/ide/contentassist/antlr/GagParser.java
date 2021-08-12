@@ -34,6 +34,7 @@ public class GagParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
+			builder.put(grammarAccess.getRightPartExpressionAccess().getAlternatives(), "rule__RightPartExpression__Alternatives");
 			builder.put(grammarAccess.getGAGAccess().getGroup(), "rule__GAG__Group__0");
 			builder.put(grammarAccess.getGAGAccess().getGroup_3(), "rule__GAG__Group_3__0");
 			builder.put(grammarAccess.getGAGAccess().getGroup_3_2(), "rule__GAG__Group_3_2__0");
@@ -88,11 +89,12 @@ public class GagParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFunctionDeclarationAccess().getMethodAssignment_8(), "rule__FunctionDeclaration__MethodAssignment_8");
 			builder.put(grammarAccess.getEquationAccess().getLeftpartAssignment_0(), "rule__Equation__LeftpartAssignment_0");
 			builder.put(grammarAccess.getEquationAccess().getRightpartAssignment_2(), "rule__Equation__RightpartAssignment_2");
+			builder.put(grammarAccess.getLocalDataAccess().getNameAssignment(), "rule__LocalData__NameAssignment");
 			builder.put(grammarAccess.getIdExpressionAccess().getServiceNameAssignment_0(), "rule__IdExpression__ServiceNameAssignment_0");
 			builder.put(grammarAccess.getIdExpressionAccess().getParameterNameAssignment_2(), "rule__IdExpression__ParameterNameAssignment_2");
 			builder.put(grammarAccess.getFunctionExpressionAccess().getFunctionAssignment_0(), "rule__FunctionExpression__FunctionAssignment_0");
-			builder.put(grammarAccess.getFunctionExpressionAccess().getIdExpressionsAssignment_2_0(), "rule__FunctionExpression__IdExpressionsAssignment_2_0");
-			builder.put(grammarAccess.getFunctionExpressionAccess().getIdExpressionsAssignment_2_1_1(), "rule__FunctionExpression__IdExpressionsAssignment_2_1_1");
+			builder.put(grammarAccess.getFunctionExpressionAccess().getExpressionsAssignment_2_0(), "rule__FunctionExpression__ExpressionsAssignment_2_0");
+			builder.put(grammarAccess.getFunctionExpressionAccess().getExpressionsAssignment_2_1_1(), "rule__FunctionExpression__ExpressionsAssignment_2_1_1");
 		}
 	}
 	

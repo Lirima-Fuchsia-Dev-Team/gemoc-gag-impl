@@ -532,7 +532,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunctionExpression_IdExpressions() {
+	public EReference getFunctionExpression_Expressions() {
 		return (EReference) functionExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -640,7 +640,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		functionExpressionEClass = createEClass(FUNCTION_EXPRESSION);
 		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__FUNCTION);
-		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__ID_EXPRESSIONS);
+		createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__EXPRESSIONS);
 
 		localDataEClass = createEClass(LOCAL_DATA);
 		createEAttribute(localDataEClass, LOCAL_DATA__NAME);
@@ -786,8 +786,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEReference(getFunctionExpression_Function(), this.getFunctionDeclaration(), null, "function", null, 1, 1,
 				FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionExpression_IdExpressions(), this.getRightPartExpression(), null, "idExpressions",
-				null, 0, -1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+		initEReference(getFunctionExpression_Expressions(), this.getRightPartExpression(), null, "expressions", null, 0,
+				-1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localDataEClass, LocalData.class, "LocalData", !IS_ABSTRACT, !IS_INTERFACE,

@@ -11,6 +11,7 @@ import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.GAG;
 import fr.inria.gag.specification.model.specification.Guard;
 import fr.inria.gag.specification.model.specification.IdExpression;
+import fr.inria.gag.specification.model.specification.LocalData;
 import fr.inria.gag.specification.model.specification.SemanticRule;
 import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
@@ -61,6 +62,9 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SpecificationPackage.ID_EXPRESSION:
 				sequence_IdExpression(context, (IdExpression) semanticObject); 
 				return; 
+			case SpecificationPackage.LOCAL_DATA:
+				sequence_LocalData(context, (LocalData) semanticObject); 
+				return; 
 			case SpecificationPackage.PARAMETER:
 				sequence_Parameter(context, (fr.inria.gag.specification.model.specification.Parameter) semanticObject); 
 				return; 
@@ -92,7 +96,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Equation returns Equation
 	 *
 	 * Constraint:
-	 *     (leftpart=IdExpression rightpart=Expression)
+	 *     (leftpart=RightPartExpression rightpart=Expression)
 	 */
 	protected void sequence_Equation(ISerializationContext context, Equation semanticObject) {
 		if (errorAcceptor != null) {
@@ -102,7 +106,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.EQUATION__RIGHTPART));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEquationAccess().getLeftpartIdExpressionParserRuleCall_0_0(), semanticObject.getLeftpart());
+		feeder.accept(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0(), semanticObject.getLeftpart());
 		feeder.accept(grammarAccess.getEquationAccess().getRightpartExpressionParserRuleCall_2_0(), semanticObject.getRightpart());
 		feeder.finish();
 	}
@@ -138,7 +142,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FunctionExpression returns FunctionExpression
 	 *
 	 * Constraint:
-	 *     (function=[FunctionDeclaration|EString] (idExpressions+=IdExpression idExpressions+=IdExpression*)?)
+	 *     (function=[FunctionDeclaration|EString] (expressions+=RightPartExpression expressions+=RightPartExpression*)?)
 	 */
 	protected void sequence_FunctionExpression(ISerializationContext context, FunctionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -181,6 +185,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Expression returns IdExpression
+	 *     RightPartExpression returns IdExpression
 	 *     IdExpression returns IdExpression
 	 *
 	 * Constraint:
@@ -196,6 +201,26 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIdExpressionAccess().getServiceNameEStringParserRuleCall_0_0(), semanticObject.getServiceName());
 		feeder.accept(grammarAccess.getIdExpressionAccess().getParameterNameEStringParserRuleCall_2_0(), semanticObject.getParameterName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns LocalData
+	 *     RightPartExpression returns LocalData
+	 *     LocalData returns LocalData
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_LocalData(ISerializationContext context, LocalData semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SpecificationPackage.Literals.LOCAL_DATA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.LOCAL_DATA__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLocalDataAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

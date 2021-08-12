@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl#getIdExpressions <em>Id Expressions</em>}</li>
+ *   <li>{@link fr.inria.gag.specification.model.specification.impl.FunctionExpressionImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +48,14 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	protected FunctionDeclaration function;
 
 	/**
-	 * The cached value of the '{@link #getIdExpressions() <em>Id Expressions</em>}' containment reference list.
+	 * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIdExpressions()
+	 * @see #getExpressions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RightPartExpression> idExpressions;
+	protected EList<RightPartExpression> expressions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,12 +121,12 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RightPartExpression> getIdExpressions() {
-		if (idExpressions == null) {
-			idExpressions = new EObjectContainmentEList<RightPartExpression>(RightPartExpression.class, this,
-					SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS);
+	public EList<RightPartExpression> getExpressions() {
+		if (expressions == null) {
+			expressions = new EObjectContainmentEList<RightPartExpression>(RightPartExpression.class, this,
+					SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS);
 		}
-		return idExpressions;
+		return expressions;
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
-			return ((InternalEList<?>) getIdExpressions()).basicRemove(otherEnd, msgs);
+		case SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS:
+			return ((InternalEList<?>) getExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,8 +155,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 			if (resolve)
 				return getFunction();
 			return basicGetFunction();
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
-			return getIdExpressions();
+		case SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS:
+			return getExpressions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,9 +173,9 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 		case SpecificationPackage.FUNCTION_EXPRESSION__FUNCTION:
 			setFunction((FunctionDeclaration) newValue);
 			return;
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
-			getIdExpressions().clear();
-			getIdExpressions().addAll((Collection<? extends RightPartExpression>) newValue);
+		case SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS:
+			getExpressions().clear();
+			getExpressions().addAll((Collection<? extends RightPartExpression>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +192,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 		case SpecificationPackage.FUNCTION_EXPRESSION__FUNCTION:
 			setFunction((FunctionDeclaration) null);
 			return;
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
-			getIdExpressions().clear();
+		case SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS:
+			getExpressions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -209,8 +209,8 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 		switch (featureID) {
 		case SpecificationPackage.FUNCTION_EXPRESSION__FUNCTION:
 			return function != null;
-		case SpecificationPackage.FUNCTION_EXPRESSION__ID_EXPRESSIONS:
-			return idExpressions != null && !idExpressions.isEmpty();
+		case SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS:
+			return expressions != null && !expressions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

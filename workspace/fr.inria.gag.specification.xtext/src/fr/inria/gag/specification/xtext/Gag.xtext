@@ -104,5 +104,5 @@ IdExpression returns IdExpression:
 
 FunctionExpression returns FunctionExpression:
 	 function=[FunctionDeclaration|EString]
-		 '(' (idExpressions+=IdExpression ( "," idExpressions+=IdExpression)* )? ')'
+		 '(' (expressions+=RightPartExpression ( "," expressions+=RightPartExpression)* )? ')'
 	;

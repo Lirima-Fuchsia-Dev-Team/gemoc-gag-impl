@@ -468,10 +468,10 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3659:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalGag.g:3659:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGag.g:3745:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalGag.g:3745:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalGag.g:3659:11: ( '^' )?
+            // InternalGag.g:3745:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -480,7 +480,7 @@ public class InternalGagLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalGag.g:3659:11: '^'
+                    // InternalGag.g:3745:11: '^'
                     {
                     match('^'); 
 
@@ -498,7 +498,7 @@ public class InternalGagLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalGag.g:3659:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalGag.g:3745:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -547,10 +547,10 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3661:10: ( ( '0' .. '9' )+ )
-            // InternalGag.g:3661:12: ( '0' .. '9' )+
+            // InternalGag.g:3747:10: ( ( '0' .. '9' )+ )
+            // InternalGag.g:3747:12: ( '0' .. '9' )+
             {
-            // InternalGag.g:3661:12: ( '0' .. '9' )+
+            // InternalGag.g:3747:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -564,7 +564,7 @@ public class InternalGagLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalGag.g:3661:13: '0' .. '9'
+            	    // InternalGag.g:3747:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -596,10 +596,10 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3663:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalGag.g:3663:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalGag.g:3749:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalGag.g:3749:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalGag.g:3663:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalGag.g:3749:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -617,10 +617,10 @@ public class InternalGagLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalGag.g:3663:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalGag.g:3749:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalGag.g:3663:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalGag.g:3749:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -636,7 +636,7 @@ public class InternalGagLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalGag.g:3663:21: '\\\\' .
+                    	    // InternalGag.g:3749:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -644,7 +644,7 @@ public class InternalGagLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalGag.g:3663:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalGag.g:3749:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -669,10 +669,10 @@ public class InternalGagLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalGag.g:3663:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalGag.g:3749:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalGag.g:3663:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalGag.g:3749:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -688,7 +688,7 @@ public class InternalGagLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalGag.g:3663:54: '\\\\' .
+                    	    // InternalGag.g:3749:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -696,7 +696,7 @@ public class InternalGagLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalGag.g:3663:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalGag.g:3749:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -739,12 +739,12 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3665:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalGag.g:3665:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalGag.g:3751:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalGag.g:3751:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalGag.g:3665:24: ( options {greedy=false; } : . )*
+            // InternalGag.g:3751:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -769,7 +769,7 @@ public class InternalGagLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalGag.g:3665:52: .
+            	    // InternalGag.g:3751:52: .
             	    {
             	    matchAny(); 
 
@@ -799,12 +799,12 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3667:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalGag.g:3667:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalGag.g:3753:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalGag.g:3753:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalGag.g:3667:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalGag.g:3753:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -817,7 +817,7 @@ public class InternalGagLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalGag.g:3667:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalGag.g:3753:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -837,7 +837,7 @@ public class InternalGagLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalGag.g:3667:40: ( ( '\\r' )? '\\n' )?
+            // InternalGag.g:3753:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -846,9 +846,9 @@ public class InternalGagLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalGag.g:3667:41: ( '\\r' )? '\\n'
+                    // InternalGag.g:3753:41: ( '\\r' )? '\\n'
                     {
-                    // InternalGag.g:3667:41: ( '\\r' )?
+                    // InternalGag.g:3753:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -857,7 +857,7 @@ public class InternalGagLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalGag.g:3667:41: '\\r'
+                            // InternalGag.g:3753:41: '\\r'
                             {
                             match('\r'); 
 
@@ -889,10 +889,10 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3669:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalGag.g:3669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGag.g:3755:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalGag.g:3755:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalGag.g:3669:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalGag.g:3755:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -946,8 +946,8 @@ public class InternalGagLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalGag.g:3671:16: ( . )
-            // InternalGag.g:3671:18: .
+            // InternalGag.g:3757:16: ( . )
+            // InternalGag.g:3757:18: .
             {
             matchAny(); 
 

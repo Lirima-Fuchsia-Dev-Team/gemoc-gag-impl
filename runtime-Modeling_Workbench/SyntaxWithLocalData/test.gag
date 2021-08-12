@@ -28,8 +28,9 @@ GAG g {
 					S1.a = S3.a ;
 					S1.b = S2.b ;
 					S2.a = S3.a ;
-					S3.b = S2.b ;		
-					S3.c = S1.c ;
+					S3.b = S2.b ;
+					loc = S1.c;		
+					S3.c = loc ;
 				}
 				
 		

@@ -398,8 +398,12 @@ public class GAGAspect {
     throw new Error("Unresolved compilation problems:"
       + "\nThe method or field serviceName is undefined for the type RightPartExpression"
       + "\nThe method or field parameterName is undefined for the type RightPartExpression"
-      + "\nThe method or field serviceName is undefined for the type RightPartExpression"
-      + "\nThe method or field parameterName is undefined for the type RightPartExpression");
+      + "\nThe method or field idExpressions is undefined for the type FunctionExpression"
+      + "\nThe method or field idExpressions is undefined for the type FunctionExpression"
+      + "\nsize cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nserviceName cannot be resolved"
+      + "\nparameterName cannot be resolved");
   }
   
   protected static Data _privk3_findReference(final GAGAspectGAGAspectProperties _self_, final GAG _self, final String[] ref, final ArrayList<Task> tasks) {

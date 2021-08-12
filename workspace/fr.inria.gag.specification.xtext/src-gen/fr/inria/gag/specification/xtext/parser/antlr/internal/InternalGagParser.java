@@ -373,11 +373,11 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalGag.g:174:1: ruleExpression returns [EObject current=null] : (this_IdExpression_0= ruleIdExpression | this_FunctionExpression_1= ruleFunctionExpression ) ;
+    // InternalGag.g:174:1: ruleExpression returns [EObject current=null] : (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject this_IdExpression_0 = null;
+        EObject this_RightPartExpression_0 = null;
 
         EObject this_FunctionExpression_1 = null;
 
@@ -386,21 +386,21 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:180:2: ( (this_IdExpression_0= ruleIdExpression | this_FunctionExpression_1= ruleFunctionExpression ) )
-            // InternalGag.g:181:2: (this_IdExpression_0= ruleIdExpression | this_FunctionExpression_1= ruleFunctionExpression )
+            // InternalGag.g:180:2: ( (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression ) )
+            // InternalGag.g:181:2: (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression )
             {
-            // InternalGag.g:181:2: (this_IdExpression_0= ruleIdExpression | this_FunctionExpression_1= ruleFunctionExpression )
+            // InternalGag.g:181:2: (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
             if ( (LA3_0==RULE_STRING) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==30) ) {
-                    alt3=1;
-                }
-                else if ( (LA3_1==16) ) {
+                if ( (LA3_1==16) ) {
                     alt3=2;
+                }
+                else if ( (LA3_1==30) ) {
+                    alt3=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -412,11 +412,11 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             else if ( (LA3_0==RULE_ID) ) {
                 int LA3_2 = input.LA(2);
 
-                if ( (LA3_2==16) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_2==30) ) {
+                if ( (LA3_2==EOF||(LA3_2>=29 && LA3_2<=30)) ) {
                     alt3=1;
+                }
+                else if ( (LA3_2==16) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -433,18 +433,18 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalGag.g:182:3: this_IdExpression_0= ruleIdExpression
+                    // InternalGag.g:182:3: this_RightPartExpression_0= ruleRightPartExpression
                     {
 
-                    			newCompositeNode(grammarAccess.getExpressionAccess().getIdExpressionParserRuleCall_0());
+                    			newCompositeNode(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0());
                     		
                     pushFollow(FOLLOW_2);
-                    this_IdExpression_0=ruleIdExpression();
+                    this_RightPartExpression_0=ruleRightPartExpression();
 
                     state._fsp--;
 
 
-                    			current = this_IdExpression_0;
+                    			current = this_RightPartExpression_0;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -2343,7 +2343,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEquation"
-    // InternalGag.g:985:1: ruleEquation returns [EObject current=null] : ( ( (lv_leftpart_0_0= ruleIdExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
+    // InternalGag.g:985:1: ruleEquation returns [EObject current=null] : ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
     public final EObject ruleEquation() throws RecognitionException {
         EObject current = null;
 
@@ -2358,23 +2358,23 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:991:2: ( ( ( (lv_leftpart_0_0= ruleIdExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) )
-            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleIdExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // InternalGag.g:991:2: ( ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) )
+            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
             {
-            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleIdExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
-            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleIdExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';'
+            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';'
             {
-            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleIdExpression ) )
-            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleIdExpression )
+            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleRightPartExpression ) )
+            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleRightPartExpression )
             {
-            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleIdExpression )
-            // InternalGag.g:995:5: lv_leftpart_0_0= ruleIdExpression
+            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleRightPartExpression )
+            // InternalGag.g:995:5: lv_leftpart_0_0= ruleRightPartExpression
             {
 
-            					newCompositeNode(grammarAccess.getEquationAccess().getLeftpartIdExpressionParserRuleCall_0_0());
+            					newCompositeNode(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0());
             				
             pushFollow(FOLLOW_23);
-            lv_leftpart_0_0=ruleIdExpression();
+            lv_leftpart_0_0=ruleRightPartExpression();
 
             state._fsp--;
 
@@ -2386,7 +2386,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             						current,
             						"leftpart",
             						lv_leftpart_0_0,
-            						"fr.inria.gag.specification.xtext.Gag.IdExpression");
+            						"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
             					afterParserOrEnumRuleCall();
             				
 
@@ -2456,8 +2456,244 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEquation"
 
 
+    // $ANTLR start "entryRuleRightPartExpression"
+    // InternalGag.g:1043:1: entryRuleRightPartExpression returns [EObject current=null] : iv_ruleRightPartExpression= ruleRightPartExpression EOF ;
+    public final EObject entryRuleRightPartExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleRightPartExpression = null;
+
+
+        try {
+            // InternalGag.g:1043:60: (iv_ruleRightPartExpression= ruleRightPartExpression EOF )
+            // InternalGag.g:1044:2: iv_ruleRightPartExpression= ruleRightPartExpression EOF
+            {
+             newCompositeNode(grammarAccess.getRightPartExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleRightPartExpression=ruleRightPartExpression();
+
+            state._fsp--;
+
+             current =iv_ruleRightPartExpression; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleRightPartExpression"
+
+
+    // $ANTLR start "ruleRightPartExpression"
+    // InternalGag.g:1050:1: ruleRightPartExpression returns [EObject current=null] : (this_IdExpression_0= ruleIdExpression | this_LocalData_1= ruleLocalData ) ;
+    public final EObject ruleRightPartExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_IdExpression_0 = null;
+
+        EObject this_LocalData_1 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalGag.g:1056:2: ( (this_IdExpression_0= ruleIdExpression | this_LocalData_1= ruleLocalData ) )
+            // InternalGag.g:1057:2: (this_IdExpression_0= ruleIdExpression | this_LocalData_1= ruleLocalData )
+            {
+            // InternalGag.g:1057:2: (this_IdExpression_0= ruleIdExpression | this_LocalData_1= ruleLocalData )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
+
+            if ( (LA19_0==RULE_STRING) ) {
+                alt19=1;
+            }
+            else if ( (LA19_0==RULE_ID) ) {
+                int LA19_2 = input.LA(2);
+
+                if ( (LA19_2==EOF||LA19_2==13||LA19_2==17||(LA19_2>=28 && LA19_2<=29)) ) {
+                    alt19=2;
+                }
+                else if ( (LA19_2==30) ) {
+                    alt19=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 19, 2, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 19, 0, input);
+
+                throw nvae;
+            }
+            switch (alt19) {
+                case 1 :
+                    // InternalGag.g:1058:3: this_IdExpression_0= ruleIdExpression
+                    {
+
+                    			newCompositeNode(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_IdExpression_0=ruleIdExpression();
+
+                    state._fsp--;
+
+
+                    			current = this_IdExpression_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalGag.g:1067:3: this_LocalData_1= ruleLocalData
+                    {
+
+                    			newCompositeNode(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_LocalData_1=ruleLocalData();
+
+                    state._fsp--;
+
+
+                    			current = this_LocalData_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleRightPartExpression"
+
+
+    // $ANTLR start "entryRuleLocalData"
+    // InternalGag.g:1079:1: entryRuleLocalData returns [EObject current=null] : iv_ruleLocalData= ruleLocalData EOF ;
+    public final EObject entryRuleLocalData() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLocalData = null;
+
+
+        try {
+            // InternalGag.g:1079:50: (iv_ruleLocalData= ruleLocalData EOF )
+            // InternalGag.g:1080:2: iv_ruleLocalData= ruleLocalData EOF
+            {
+             newCompositeNode(grammarAccess.getLocalDataRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleLocalData=ruleLocalData();
+
+            state._fsp--;
+
+             current =iv_ruleLocalData; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLocalData"
+
+
+    // $ANTLR start "ruleLocalData"
+    // InternalGag.g:1086:1: ruleLocalData returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject ruleLocalData() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalGag.g:1092:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalGag.g:1093:2: ( (lv_name_0_0= RULE_ID ) )
+            {
+            // InternalGag.g:1093:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalGag.g:1094:3: (lv_name_0_0= RULE_ID )
+            {
+            // InternalGag.g:1094:3: (lv_name_0_0= RULE_ID )
+            // InternalGag.g:1095:4: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            				newLeafNode(lv_name_0_0, grammarAccess.getLocalDataAccess().getNameIDTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getLocalDataRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"org.eclipse.xtext.common.Terminals.ID");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLocalData"
+
+
     // $ANTLR start "entryRuleIdExpression"
-    // InternalGag.g:1043:1: entryRuleIdExpression returns [EObject current=null] : iv_ruleIdExpression= ruleIdExpression EOF ;
+    // InternalGag.g:1114:1: entryRuleIdExpression returns [EObject current=null] : iv_ruleIdExpression= ruleIdExpression EOF ;
     public final EObject entryRuleIdExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2465,8 +2701,8 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGag.g:1043:53: (iv_ruleIdExpression= ruleIdExpression EOF )
-            // InternalGag.g:1044:2: iv_ruleIdExpression= ruleIdExpression EOF
+            // InternalGag.g:1114:53: (iv_ruleIdExpression= ruleIdExpression EOF )
+            // InternalGag.g:1115:2: iv_ruleIdExpression= ruleIdExpression EOF
             {
              newCompositeNode(grammarAccess.getIdExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -2493,7 +2729,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdExpression"
-    // InternalGag.g:1050:1: ruleIdExpression returns [EObject current=null] : ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) ) ;
+    // InternalGag.g:1121:1: ruleIdExpression returns [EObject current=null] : ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) ) ;
     public final EObject ruleIdExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2507,17 +2743,17 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:1056:2: ( ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) ) )
-            // InternalGag.g:1057:2: ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) )
+            // InternalGag.g:1127:2: ( ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) ) )
+            // InternalGag.g:1128:2: ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) )
             {
-            // InternalGag.g:1057:2: ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) )
-            // InternalGag.g:1058:3: ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) )
+            // InternalGag.g:1128:2: ( ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) ) )
+            // InternalGag.g:1129:3: ( (lv_serviceName_0_0= ruleEString ) ) otherlv_1= '.' ( (lv_parameterName_2_0= ruleEString ) )
             {
-            // InternalGag.g:1058:3: ( (lv_serviceName_0_0= ruleEString ) )
-            // InternalGag.g:1059:4: (lv_serviceName_0_0= ruleEString )
+            // InternalGag.g:1129:3: ( (lv_serviceName_0_0= ruleEString ) )
+            // InternalGag.g:1130:4: (lv_serviceName_0_0= ruleEString )
             {
-            // InternalGag.g:1059:4: (lv_serviceName_0_0= ruleEString )
-            // InternalGag.g:1060:5: lv_serviceName_0_0= ruleEString
+            // InternalGag.g:1130:4: (lv_serviceName_0_0= ruleEString )
+            // InternalGag.g:1131:5: lv_serviceName_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIdExpressionAccess().getServiceNameEStringParserRuleCall_0_0());
@@ -2548,11 +2784,11 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getIdExpressionAccess().getFullStopKeyword_1());
             		
-            // InternalGag.g:1081:3: ( (lv_parameterName_2_0= ruleEString ) )
-            // InternalGag.g:1082:4: (lv_parameterName_2_0= ruleEString )
+            // InternalGag.g:1152:3: ( (lv_parameterName_2_0= ruleEString ) )
+            // InternalGag.g:1153:4: (lv_parameterName_2_0= ruleEString )
             {
-            // InternalGag.g:1082:4: (lv_parameterName_2_0= ruleEString )
-            // InternalGag.g:1083:5: lv_parameterName_2_0= ruleEString
+            // InternalGag.g:1153:4: (lv_parameterName_2_0= ruleEString )
+            // InternalGag.g:1154:5: lv_parameterName_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIdExpressionAccess().getParameterNameEStringParserRuleCall_2_0());
@@ -2602,7 +2838,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionExpression"
-    // InternalGag.g:1104:1: entryRuleFunctionExpression returns [EObject current=null] : iv_ruleFunctionExpression= ruleFunctionExpression EOF ;
+    // InternalGag.g:1175:1: entryRuleFunctionExpression returns [EObject current=null] : iv_ruleFunctionExpression= ruleFunctionExpression EOF ;
     public final EObject entryRuleFunctionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2610,8 +2846,8 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGag.g:1104:59: (iv_ruleFunctionExpression= ruleFunctionExpression EOF )
-            // InternalGag.g:1105:2: iv_ruleFunctionExpression= ruleFunctionExpression EOF
+            // InternalGag.g:1175:59: (iv_ruleFunctionExpression= ruleFunctionExpression EOF )
+            // InternalGag.g:1176:2: iv_ruleFunctionExpression= ruleFunctionExpression EOF
             {
              newCompositeNode(grammarAccess.getFunctionExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -2638,33 +2874,33 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionExpression"
-    // InternalGag.g:1111:1: ruleFunctionExpression returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )* )? otherlv_5= ')' ) ;
+    // InternalGag.g:1182:1: ruleFunctionExpression returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleFunctionExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        EObject lv_idExpressions_2_0 = null;
+        EObject lv_expressions_2_0 = null;
 
-        EObject lv_idExpressions_4_0 = null;
+        EObject lv_expressions_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalGag.g:1117:2: ( ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )* )? otherlv_5= ')' ) )
-            // InternalGag.g:1118:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )* )? otherlv_5= ')' )
+            // InternalGag.g:1188:2: ( ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' ) )
+            // InternalGag.g:1189:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' )
             {
-            // InternalGag.g:1118:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )* )? otherlv_5= ')' )
-            // InternalGag.g:1119:3: ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )* )? otherlv_5= ')'
+            // InternalGag.g:1189:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' )
+            // InternalGag.g:1190:3: ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')'
             {
-            // InternalGag.g:1119:3: ( ( ruleEString ) )
-            // InternalGag.g:1120:4: ( ruleEString )
+            // InternalGag.g:1190:3: ( ( ruleEString ) )
+            // InternalGag.g:1191:4: ( ruleEString )
             {
-            // InternalGag.g:1120:4: ( ruleEString )
-            // InternalGag.g:1121:5: ruleEString
+            // InternalGag.g:1191:4: ( ruleEString )
+            // InternalGag.g:1192:5: ruleEString
             {
 
             					if (current==null) {
@@ -2692,28 +2928,28 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getFunctionExpressionAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalGag.g:1139:3: ( ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )* )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalGag.g:1210:3: ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( ((LA20_0>=RULE_STRING && LA20_0<=RULE_ID)) ) {
-                alt20=1;
+            if ( ((LA21_0>=RULE_STRING && LA21_0<=RULE_ID)) ) {
+                alt21=1;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalGag.g:1140:4: ( (lv_idExpressions_2_0= ruleIdExpression ) ) (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )*
+                    // InternalGag.g:1211:4: ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )*
                     {
-                    // InternalGag.g:1140:4: ( (lv_idExpressions_2_0= ruleIdExpression ) )
-                    // InternalGag.g:1141:5: (lv_idExpressions_2_0= ruleIdExpression )
+                    // InternalGag.g:1211:4: ( (lv_expressions_2_0= ruleRightPartExpression ) )
+                    // InternalGag.g:1212:5: (lv_expressions_2_0= ruleRightPartExpression )
                     {
-                    // InternalGag.g:1141:5: (lv_idExpressions_2_0= ruleIdExpression )
-                    // InternalGag.g:1142:6: lv_idExpressions_2_0= ruleIdExpression
+                    // InternalGag.g:1212:5: (lv_expressions_2_0= ruleRightPartExpression )
+                    // InternalGag.g:1213:6: lv_expressions_2_0= ruleRightPartExpression
                     {
 
-                    						newCompositeNode(grammarAccess.getFunctionExpressionAccess().getIdExpressionsIdExpressionParserRuleCall_2_0_0());
+                    						newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0());
                     					
                     pushFollow(FOLLOW_8);
-                    lv_idExpressions_2_0=ruleIdExpression();
+                    lv_expressions_2_0=ruleRightPartExpression();
 
                     state._fsp--;
 
@@ -2723,9 +2959,9 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     						}
                     						add(
                     							current,
-                    							"idExpressions",
-                    							lv_idExpressions_2_0,
-                    							"fr.inria.gag.specification.xtext.Gag.IdExpression");
+                    							"expressions",
+                    							lv_expressions_2_0,
+                    							"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -2734,36 +2970,36 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalGag.g:1159:4: (otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) ) )*
-                    loop19:
+                    // InternalGag.g:1230:4: (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )*
+                    loop20:
                     do {
-                        int alt19=2;
-                        int LA19_0 = input.LA(1);
+                        int alt20=2;
+                        int LA20_0 = input.LA(1);
 
-                        if ( (LA19_0==13) ) {
-                            alt19=1;
+                        if ( (LA20_0==13) ) {
+                            alt20=1;
                         }
 
 
-                        switch (alt19) {
+                        switch (alt20) {
                     	case 1 :
-                    	    // InternalGag.g:1160:5: otherlv_3= ',' ( (lv_idExpressions_4_0= ruleIdExpression ) )
+                    	    // InternalGag.g:1231:5: otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) )
                     	    {
                     	    otherlv_3=(Token)match(input,13,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getFunctionExpressionAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalGag.g:1164:5: ( (lv_idExpressions_4_0= ruleIdExpression ) )
-                    	    // InternalGag.g:1165:6: (lv_idExpressions_4_0= ruleIdExpression )
+                    	    // InternalGag.g:1235:5: ( (lv_expressions_4_0= ruleRightPartExpression ) )
+                    	    // InternalGag.g:1236:6: (lv_expressions_4_0= ruleRightPartExpression )
                     	    {
-                    	    // InternalGag.g:1165:6: (lv_idExpressions_4_0= ruleIdExpression )
-                    	    // InternalGag.g:1166:7: lv_idExpressions_4_0= ruleIdExpression
+                    	    // InternalGag.g:1236:6: (lv_expressions_4_0= ruleRightPartExpression )
+                    	    // InternalGag.g:1237:7: lv_expressions_4_0= ruleRightPartExpression
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getFunctionExpressionAccess().getIdExpressionsIdExpressionParserRuleCall_2_1_1_0());
+                    	    							newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0());
                     	    						
                     	    pushFollow(FOLLOW_8);
-                    	    lv_idExpressions_4_0=ruleIdExpression();
+                    	    lv_expressions_4_0=ruleRightPartExpression();
 
                     	    state._fsp--;
 
@@ -2773,9 +3009,9 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     	    							}
                     	    							add(
                     	    								current,
-                    	    								"idExpressions",
-                    	    								lv_idExpressions_4_0,
-                    	    								"fr.inria.gag.specification.xtext.Gag.IdExpression");
+                    	    								"expressions",
+                    	    								lv_expressions_4_0,
+                    	    								"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -2789,7 +3025,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop19;
+                    	    break loop20;
                         }
                     } while (true);
 
