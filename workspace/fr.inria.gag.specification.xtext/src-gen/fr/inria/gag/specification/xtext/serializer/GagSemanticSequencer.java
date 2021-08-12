@@ -96,7 +96,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Equation returns Equation
 	 *
 	 * Constraint:
-	 *     (leftpart=RightPartExpression rightpart=Expression)
+	 *     (leftpart=LeftPartExpression rightpart=Expression)
 	 */
 	protected void sequence_Equation(ISerializationContext context, Equation semanticObject) {
 		if (errorAcceptor != null) {
@@ -106,7 +106,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecificationPackage.Literals.EQUATION__RIGHTPART));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0(), semanticObject.getLeftpart());
+		feeder.accept(grammarAccess.getEquationAccess().getLeftpartLeftPartExpressionParserRuleCall_0_0(), semanticObject.getLeftpart());
 		feeder.accept(grammarAccess.getEquationAccess().getRightpartExpressionParserRuleCall_2_0(), semanticObject.getRightpart());
 		feeder.finish();
 	}
@@ -142,7 +142,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FunctionExpression returns FunctionExpression
 	 *
 	 * Constraint:
-	 *     (function=[FunctionDeclaration|EString] (expressions+=RightPartExpression expressions+=RightPartExpression*)?)
+	 *     (function=[FunctionDeclaration|EString] (expressions+=LeftPartExpression expressions+=LeftPartExpression*)?)
 	 */
 	protected void sequence_FunctionExpression(ISerializationContext context, FunctionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -185,7 +185,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Expression returns IdExpression
-	 *     RightPartExpression returns IdExpression
+	 *     LeftPartExpression returns IdExpression
 	 *     IdExpression returns IdExpression
 	 *
 	 * Constraint:
@@ -208,7 +208,7 @@ public class GagSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Expression returns LocalData
-	 *     RightPartExpression returns LocalData
+	 *     LeftPartExpression returns LocalData
 	 *     LocalData returns LocalData
 	 *
 	 * Constraint:

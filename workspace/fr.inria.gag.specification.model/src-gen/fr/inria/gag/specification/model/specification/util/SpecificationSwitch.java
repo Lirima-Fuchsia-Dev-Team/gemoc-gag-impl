@@ -133,7 +133,7 @@ public class SpecificationSwitch<T> extends Switch<T> {
 			IdExpression idExpression = (IdExpression) theEObject;
 			T result = caseIdExpression(idExpression);
 			if (result == null)
-				result = caseRightPartExpression(idExpression);
+				result = caseLeftPartExpression(idExpression);
 			if (result == null)
 				result = caseExpression(idExpression);
 			if (result == null)
@@ -160,18 +160,18 @@ public class SpecificationSwitch<T> extends Switch<T> {
 			LocalData localData = (LocalData) theEObject;
 			T result = caseLocalData(localData);
 			if (result == null)
-				result = caseRightPartExpression(localData);
+				result = caseLeftPartExpression(localData);
 			if (result == null)
 				result = caseExpression(localData);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SpecificationPackage.RIGHT_PART_EXPRESSION: {
-			RightPartExpression rightPartExpression = (RightPartExpression) theEObject;
-			T result = caseRightPartExpression(rightPartExpression);
+		case SpecificationPackage.LEFT_PART_EXPRESSION: {
+			LeftPartExpression leftPartExpression = (LeftPartExpression) theEObject;
+			T result = caseLeftPartExpression(leftPartExpression);
 			if (result == null)
-				result = caseExpression(rightPartExpression);
+				result = caseExpression(leftPartExpression);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -377,17 +377,17 @@ public class SpecificationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Right Part Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Left Part Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Right Part Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Left Part Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRightPartExpression(RightPartExpression object) {
+	public T caseLeftPartExpression(LeftPartExpression object) {
 		return null;
 	}
 

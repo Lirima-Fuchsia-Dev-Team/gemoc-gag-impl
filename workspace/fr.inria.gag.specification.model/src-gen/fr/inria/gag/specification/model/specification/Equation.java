@@ -31,12 +31,12 @@ public interface Equation extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Leftpart</em>' containment reference.
-	 * @see #setLeftpart(RightPartExpression)
+	 * @see #setLeftpart(LeftPartExpression)
 	 * @see fr.inria.gag.specification.model.specification.SpecificationPackage#getEquation_Leftpart()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	RightPartExpression getLeftpart();
+	LeftPartExpression getLeftpart();
 
 	/**
 	 * Sets the value of the '{@link fr.inria.gag.specification.model.specification.Equation#getLeftpart <em>Leftpart</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface Equation extends EObject {
 	 * @see #getLeftpart()
 	 * @generated
 	 */
-	void setLeftpart(RightPartExpression value);
+	void setLeftpart(LeftPartExpression value);
 
 	/**
 	 * Returns the value of the '<em><b>Rightpart</b></em>' containment reference.

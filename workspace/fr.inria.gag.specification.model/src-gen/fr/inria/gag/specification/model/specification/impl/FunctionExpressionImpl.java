@@ -4,7 +4,7 @@ package fr.inria.gag.specification.model.specification.impl;
 
 import fr.inria.gag.specification.model.specification.FunctionDeclaration;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
-import fr.inria.gag.specification.model.specification.RightPartExpression;
+import fr.inria.gag.specification.model.specification.LeftPartExpression;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
 import java.util.Collection;
@@ -55,7 +55,7 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RightPartExpression> expressions;
+	protected EList<LeftPartExpression> expressions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +121,9 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RightPartExpression> getExpressions() {
+	public EList<LeftPartExpression> getExpressions() {
 		if (expressions == null) {
-			expressions = new EObjectContainmentEList<RightPartExpression>(RightPartExpression.class, this,
+			expressions = new EObjectContainmentEList<LeftPartExpression>(LeftPartExpression.class, this,
 					SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS);
 		}
 		return expressions;
@@ -175,7 +175,7 @@ public class FunctionExpressionImpl extends ExpressionImpl implements FunctionEx
 			return;
 		case SpecificationPackage.FUNCTION_EXPRESSION__EXPRESSIONS:
 			getExpressions().clear();
-			getExpressions().addAll((Collection<? extends RightPartExpression>) newValue);
+			getExpressions().addAll((Collection<? extends LeftPartExpression>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

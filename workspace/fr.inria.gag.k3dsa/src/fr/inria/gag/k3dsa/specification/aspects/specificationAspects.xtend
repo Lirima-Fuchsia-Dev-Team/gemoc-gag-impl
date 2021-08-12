@@ -55,6 +55,8 @@ import fr.inria.gag.k3dsa.EncapsulatedValue
 import java.util.List
 import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation
 import fr.inria.gag.specification.model.specification.SpecificationFactory
+import java.util.Hashtable
+import fr.inria.gag.specification.model.specification.LocalData
 
 @Aspect(className=GAG)
 class GAGAspect {
@@ -207,14 +209,31 @@ class GAGAspect {
 		// code for the semantic rule here
 		var conf = _self.configuration as Configuration;
 		var context = new ArrayList<Task>();
+		var localVariables = new Hashtable<String,Data>(); // for local Variables
 		context.add(t);
 		context.addAll(t.subTasks);
 		for (i : 0 ..< r.semantic.equations.size) {
 			var eq = r.semantic.equations.get(i);
-			var String[] ref1 = #[eq.leftpart.serviceName, eq.leftpart.parameterName];
-
-			var data1 = findReference(_self, ref1, context)
-
+			// test if left part is a local data or an idExpressions
+			// creating the left part data
+			var data1=null as Data;
+			if(eq.leftpart instanceof IdExpression){
+				var eql = eq.leftpart as IdExpression; 
+				var String[] ref1 = #[eql.serviceName, eql.parameterName];
+				data1 = findReference(_self, ref1, context)
+					
+			}else{
+				var eql = eq.leftpart as LocalData; 
+				data1=localVariables.get(eql.name);
+				if(data1==null){
+					data1 = ConfigurationFactory.eINSTANCE.createData();
+					data1.value = new EncapsulatedValue;
+					localVariables.put(eql.name,data1);
+				}
+			}
+			
+			// creating the right part datas
+			
 			if (eq.rightpart instanceof IdExpression) {
 				var data2 = null as fr.inria.gag.configuration.model.configuration.Data;
 				val rightPartIdExpression = eq.rightpart as IdExpression;
@@ -222,7 +241,10 @@ class GAGAspect {
 				data2 = findReference(_self, ref2, context);
 				var ecData1 = data1.value as EncapsulatedValue;
 				ecData1.addReference(data2.value as EncapsulatedValue);
-			} else {
+			} else if (eq.rightpart instanceof LocalData){
+				
+				}
+			else {
 				var func = eq.rightpart as FunctionExpression;
 				var ecData1 = data1.value as EncapsulatedValue;
 				var runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation;

@@ -9,9 +9,9 @@ import fr.inria.gag.specification.model.specification.FunctionDeclaration;
 import fr.inria.gag.specification.model.specification.FunctionExpression;
 import fr.inria.gag.specification.model.specification.Guard;
 import fr.inria.gag.specification.model.specification.IdExpression;
+import fr.inria.gag.specification.model.specification.LeftPartExpression;
 import fr.inria.gag.specification.model.specification.LocalData;
 import fr.inria.gag.specification.model.specification.Parameter;
-import fr.inria.gag.specification.model.specification.RightPartExpression;
 import fr.inria.gag.specification.model.specification.RuntimeData;
 import fr.inria.gag.specification.model.specification.SemanticRule;
 import fr.inria.gag.specification.model.specification.Service;
@@ -128,7 +128,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rightPartExpressionEClass = null;
+	private EClass leftPartExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -559,8 +559,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRightPartExpression() {
-		return rightPartExpressionEClass;
+	public EClass getLeftPartExpression() {
+		return leftPartExpressionEClass;
 	}
 
 	/**
@@ -645,7 +645,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		localDataEClass = createEClass(LOCAL_DATA);
 		createEAttribute(localDataEClass, LOCAL_DATA__NAME);
 
-		rightPartExpressionEClass = createEClass(RIGHT_PART_EXPRESSION);
+		leftPartExpressionEClass = createEClass(LEFT_PART_EXPRESSION);
 	}
 
 	/**
@@ -677,10 +677,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		idExpressionEClass.getESuperTypes().add(this.getRightPartExpression());
+		idExpressionEClass.getESuperTypes().add(this.getLeftPartExpression());
 		functionExpressionEClass.getESuperTypes().add(this.getExpression());
-		localDataEClass.getESuperTypes().add(this.getRightPartExpression());
-		rightPartExpressionEClass.getESuperTypes().add(this.getExpression());
+		localDataEClass.getESuperTypes().add(this.getLeftPartExpression());
+		leftPartExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gagEClass, fr.inria.gag.specification.model.specification.GAG.class, "GAG", !IS_ABSTRACT,
@@ -762,7 +762,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
 		initEClass(equationEClass, Equation.class, "Equation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEquation_Leftpart(), this.getRightPartExpression(), null, "leftpart", null, 1, 1,
+		initEReference(getEquation_Leftpart(), this.getLeftPartExpression(), null, "leftpart", null, 1, 1,
 				Equation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEquation_Rightpart(), this.getExpression(), null, "rightpart", null, 1, 1, Equation.class,
@@ -786,7 +786,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEReference(getFunctionExpression_Function(), this.getFunctionDeclaration(), null, "function", null, 1, 1,
 				FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunctionExpression_Expressions(), this.getRightPartExpression(), null, "expressions", null, 0,
+		initEReference(getFunctionExpression_Expressions(), this.getLeftPartExpression(), null, "expressions", null, 0,
 				-1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -795,8 +795,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 		initEAttribute(getLocalData_Name(), ecorePackage.getEString(), "name", null, 1, 1, LocalData.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(rightPartExpressionEClass, RightPartExpression.class, "RightPartExpression", IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(leftPartExpressionEClass, LeftPartExpression.class, "LeftPartExpression", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -34,7 +34,7 @@ public class GagParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
-			builder.put(grammarAccess.getRightPartExpressionAccess().getAlternatives(), "rule__RightPartExpression__Alternatives");
+			builder.put(grammarAccess.getLeftPartExpressionAccess().getAlternatives(), "rule__LeftPartExpression__Alternatives");
 			builder.put(grammarAccess.getGAGAccess().getGroup(), "rule__GAG__Group__0");
 			builder.put(grammarAccess.getGAGAccess().getGroup_3(), "rule__GAG__Group_3__0");
 			builder.put(grammarAccess.getGAGAccess().getGroup_3_2(), "rule__GAG__Group_3_2__0");

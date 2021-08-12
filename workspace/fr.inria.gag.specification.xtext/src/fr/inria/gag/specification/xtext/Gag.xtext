@@ -22,7 +22,7 @@ GAG returns GAG:
 
 
 Expression returns Expression:
-	RightPartExpression | FunctionExpression;
+	LeftPartExpression | FunctionExpression;
 
 Service returns Service:
 	(isAxiom?='Axiom')?
@@ -84,11 +84,11 @@ FunctionDeclaration returns FunctionDeclaration:
 
 Equation returns Equation:
 	
-		 leftpart=RightPartExpression
+		 leftpart=LeftPartExpression
 		'=' rightpart=Expression
 	';';
 	
-RightPartExpression returns RightPartExpression:
+LeftPartExpression returns LeftPartExpression:
 	IdExpression | LocalData 
 ;
 
@@ -104,5 +104,5 @@ IdExpression returns IdExpression:
 
 FunctionExpression returns FunctionExpression:
 	 function=[FunctionDeclaration|EString]
-		 '(' (expressions+=RightPartExpression ( "," expressions+=RightPartExpression)* )? ')'
+		 '(' (expressions+=LeftPartExpression ( "," expressions+=LeftPartExpression)* )? ')'
 	;

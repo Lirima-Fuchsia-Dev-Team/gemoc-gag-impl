@@ -396,8 +396,6 @@ public class GAGAspect {
   
   protected static void _privk3_applyRule(final GAGAspectGAGAspectProperties _self_, final GAG _self, final Task t, final DecompositionRule r) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field serviceName is undefined for the type RightPartExpression"
-      + "\nThe method or field parameterName is undefined for the type RightPartExpression"
       + "\nThe method or field idExpressions is undefined for the type FunctionExpression"
       + "\nThe method or field idExpressions is undefined for the type FunctionExpression"
       + "\nsize cannot be resolved"

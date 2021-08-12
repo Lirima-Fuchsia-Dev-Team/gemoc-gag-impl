@@ -2,25 +2,25 @@
  */
 package fr.inria.gag.specification.model.specification.impl;
 
-import fr.inria.gag.specification.model.specification.RightPartExpression;
+import fr.inria.gag.specification.model.specification.LeftPartExpression;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Right Part Expression</b></em>'.
+ * An implementation of the model object '<em><b>Left Part Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class RightPartExpressionImpl extends ExpressionImpl implements RightPartExpression {
+public abstract class LeftPartExpressionImpl extends ExpressionImpl implements LeftPartExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RightPartExpressionImpl() {
+	protected LeftPartExpressionImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public abstract class RightPartExpressionImpl extends ExpressionImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SpecificationPackage.Literals.RIGHT_PART_EXPRESSION;
+		return SpecificationPackage.Literals.LEFT_PART_EXPRESSION;
 	}
 
-} //RightPartExpressionImpl
+} //LeftPartExpressionImpl

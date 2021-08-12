@@ -858,20 +858,20 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleEquation"
 
 
-    // $ANTLR start "entryRuleRightPartExpression"
-    // InternalGag.g:303:1: entryRuleRightPartExpression : ruleRightPartExpression EOF ;
-    public final void entryRuleRightPartExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleLeftPartExpression"
+    // InternalGag.g:303:1: entryRuleLeftPartExpression : ruleLeftPartExpression EOF ;
+    public final void entryRuleLeftPartExpression() throws RecognitionException {
         try {
-            // InternalGag.g:304:1: ( ruleRightPartExpression EOF )
-            // InternalGag.g:305:1: ruleRightPartExpression EOF
+            // InternalGag.g:304:1: ( ruleLeftPartExpression EOF )
+            // InternalGag.g:305:1: ruleLeftPartExpression EOF
             {
-             before(grammarAccess.getRightPartExpressionRule()); 
+             before(grammarAccess.getLeftPartExpressionRule()); 
             pushFollow(FOLLOW_1);
-            ruleRightPartExpression();
+            ruleLeftPartExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getRightPartExpressionRule()); 
+             after(grammarAccess.getLeftPartExpressionRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -885,35 +885,35 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleRightPartExpression"
+    // $ANTLR end "entryRuleLeftPartExpression"
 
 
-    // $ANTLR start "ruleRightPartExpression"
-    // InternalGag.g:312:1: ruleRightPartExpression : ( ( rule__RightPartExpression__Alternatives ) ) ;
-    public final void ruleRightPartExpression() throws RecognitionException {
+    // $ANTLR start "ruleLeftPartExpression"
+    // InternalGag.g:312:1: ruleLeftPartExpression : ( ( rule__LeftPartExpression__Alternatives ) ) ;
+    public final void ruleLeftPartExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGag.g:316:2: ( ( ( rule__RightPartExpression__Alternatives ) ) )
-            // InternalGag.g:317:2: ( ( rule__RightPartExpression__Alternatives ) )
+            // InternalGag.g:316:2: ( ( ( rule__LeftPartExpression__Alternatives ) ) )
+            // InternalGag.g:317:2: ( ( rule__LeftPartExpression__Alternatives ) )
             {
-            // InternalGag.g:317:2: ( ( rule__RightPartExpression__Alternatives ) )
-            // InternalGag.g:318:3: ( rule__RightPartExpression__Alternatives )
+            // InternalGag.g:317:2: ( ( rule__LeftPartExpression__Alternatives ) )
+            // InternalGag.g:318:3: ( rule__LeftPartExpression__Alternatives )
             {
-             before(grammarAccess.getRightPartExpressionAccess().getAlternatives()); 
-            // InternalGag.g:319:3: ( rule__RightPartExpression__Alternatives )
-            // InternalGag.g:319:4: rule__RightPartExpression__Alternatives
+             before(grammarAccess.getLeftPartExpressionAccess().getAlternatives()); 
+            // InternalGag.g:319:3: ( rule__LeftPartExpression__Alternatives )
+            // InternalGag.g:319:4: rule__LeftPartExpression__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__RightPartExpression__Alternatives();
+            rule__LeftPartExpression__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRightPartExpressionAccess().getAlternatives()); 
+             after(grammarAccess.getLeftPartExpressionAccess().getAlternatives()); 
 
             }
 
@@ -932,7 +932,7 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleRightPartExpression"
+    // $ANTLR end "ruleLeftPartExpression"
 
 
     // $ANTLR start "entryRuleLocalData"
@@ -1167,13 +1167,13 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives"
-    // InternalGag.g:402:1: rule__Expression__Alternatives : ( ( ruleRightPartExpression ) | ( ruleFunctionExpression ) );
+    // InternalGag.g:402:1: rule__Expression__Alternatives : ( ( ruleLeftPartExpression ) | ( ruleFunctionExpression ) );
     public final void rule__Expression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGag.g:406:1: ( ( ruleRightPartExpression ) | ( ruleFunctionExpression ) )
+            // InternalGag.g:406:1: ( ( ruleLeftPartExpression ) | ( ruleFunctionExpression ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1217,18 +1217,18 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalGag.g:407:2: ( ruleRightPartExpression )
+                    // InternalGag.g:407:2: ( ruleLeftPartExpression )
                     {
-                    // InternalGag.g:407:2: ( ruleRightPartExpression )
-                    // InternalGag.g:408:3: ruleRightPartExpression
+                    // InternalGag.g:407:2: ( ruleLeftPartExpression )
+                    // InternalGag.g:408:3: ruleLeftPartExpression
                     {
-                     before(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0()); 
+                     before(grammarAccess.getExpressionAccess().getLeftPartExpressionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
-                    ruleRightPartExpression();
+                    ruleLeftPartExpression();
 
                     state._fsp--;
 
-                     after(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0()); 
+                     after(grammarAccess.getExpressionAccess().getLeftPartExpressionParserRuleCall_0()); 
 
                     }
 
@@ -1342,9 +1342,9 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EString__Alternatives"
 
 
-    // $ANTLR start "rule__RightPartExpression__Alternatives"
-    // InternalGag.g:444:1: rule__RightPartExpression__Alternatives : ( ( ruleIdExpression ) | ( ruleLocalData ) );
-    public final void rule__RightPartExpression__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__LeftPartExpression__Alternatives"
+    // InternalGag.g:444:1: rule__LeftPartExpression__Alternatives : ( ( ruleIdExpression ) | ( ruleLocalData ) );
+    public final void rule__LeftPartExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -1385,13 +1385,13 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
                     // InternalGag.g:449:2: ( ruleIdExpression )
                     // InternalGag.g:450:3: ruleIdExpression
                     {
-                     before(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0()); 
+                     before(grammarAccess.getLeftPartExpressionAccess().getIdExpressionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
                     ruleIdExpression();
 
                     state._fsp--;
 
-                     after(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0()); 
+                     after(grammarAccess.getLeftPartExpressionAccess().getIdExpressionParserRuleCall_0()); 
 
                     }
 
@@ -1404,13 +1404,13 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
                     // InternalGag.g:455:2: ( ruleLocalData )
                     // InternalGag.g:456:3: ruleLocalData
                     {
-                     before(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1()); 
+                     before(grammarAccess.getLeftPartExpressionAccess().getLocalDataParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
                     ruleLocalData();
 
                     state._fsp--;
 
-                     after(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1()); 
+                     after(grammarAccess.getLeftPartExpressionAccess().getLocalDataParserRuleCall_1()); 
 
                     }
 
@@ -1431,7 +1431,7 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RightPartExpression__Alternatives"
+    // $ANTLR end "rule__LeftPartExpression__Alternatives"
 
 
     // $ANTLR start "rule__GAG__Group__0"
@@ -10806,25 +10806,25 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equation__LeftpartAssignment_0"
-    // InternalGag.g:3621:1: rule__Equation__LeftpartAssignment_0 : ( ruleRightPartExpression ) ;
+    // InternalGag.g:3621:1: rule__Equation__LeftpartAssignment_0 : ( ruleLeftPartExpression ) ;
     public final void rule__Equation__LeftpartAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGag.g:3625:1: ( ( ruleRightPartExpression ) )
-            // InternalGag.g:3626:2: ( ruleRightPartExpression )
+            // InternalGag.g:3625:1: ( ( ruleLeftPartExpression ) )
+            // InternalGag.g:3626:2: ( ruleLeftPartExpression )
             {
-            // InternalGag.g:3626:2: ( ruleRightPartExpression )
-            // InternalGag.g:3627:3: ruleRightPartExpression
+            // InternalGag.g:3626:2: ( ruleLeftPartExpression )
+            // InternalGag.g:3627:3: ruleLeftPartExpression
             {
-             before(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0()); 
+             before(grammarAccess.getEquationAccess().getLeftpartLeftPartExpressionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleRightPartExpression();
+            ruleLeftPartExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0()); 
+             after(grammarAccess.getEquationAccess().getLeftpartLeftPartExpressionParserRuleCall_0_0()); 
 
             }
 
@@ -11056,25 +11056,25 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionExpression__ExpressionsAssignment_2_0"
-    // InternalGag.g:3715:1: rule__FunctionExpression__ExpressionsAssignment_2_0 : ( ruleRightPartExpression ) ;
+    // InternalGag.g:3715:1: rule__FunctionExpression__ExpressionsAssignment_2_0 : ( ruleLeftPartExpression ) ;
     public final void rule__FunctionExpression__ExpressionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGag.g:3719:1: ( ( ruleRightPartExpression ) )
-            // InternalGag.g:3720:2: ( ruleRightPartExpression )
+            // InternalGag.g:3719:1: ( ( ruleLeftPartExpression ) )
+            // InternalGag.g:3720:2: ( ruleLeftPartExpression )
             {
-            // InternalGag.g:3720:2: ( ruleRightPartExpression )
-            // InternalGag.g:3721:3: ruleRightPartExpression
+            // InternalGag.g:3720:2: ( ruleLeftPartExpression )
+            // InternalGag.g:3721:3: ruleLeftPartExpression
             {
-             before(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0()); 
+             before(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleRightPartExpression();
+            ruleLeftPartExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0()); 
+             after(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_0_0()); 
 
             }
 
@@ -11097,25 +11097,25 @@ public class InternalGagParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionExpression__ExpressionsAssignment_2_1_1"
-    // InternalGag.g:3730:1: rule__FunctionExpression__ExpressionsAssignment_2_1_1 : ( ruleRightPartExpression ) ;
+    // InternalGag.g:3730:1: rule__FunctionExpression__ExpressionsAssignment_2_1_1 : ( ruleLeftPartExpression ) ;
     public final void rule__FunctionExpression__ExpressionsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalGag.g:3734:1: ( ( ruleRightPartExpression ) )
-            // InternalGag.g:3735:2: ( ruleRightPartExpression )
+            // InternalGag.g:3734:1: ( ( ruleLeftPartExpression ) )
+            // InternalGag.g:3735:2: ( ruleLeftPartExpression )
             {
-            // InternalGag.g:3735:2: ( ruleRightPartExpression )
-            // InternalGag.g:3736:3: ruleRightPartExpression
+            // InternalGag.g:3735:2: ( ruleLeftPartExpression )
+            // InternalGag.g:3736:3: ruleLeftPartExpression
             {
-             before(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0()); 
+             before(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_1_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleRightPartExpression();
+            ruleLeftPartExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0()); 
+             after(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_1_1_0()); 
 
             }
 

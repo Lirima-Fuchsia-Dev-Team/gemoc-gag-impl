@@ -4,7 +4,7 @@ package fr.inria.gag.specification.model.specification.impl;
 
 import fr.inria.gag.specification.model.specification.Equation;
 import fr.inria.gag.specification.model.specification.Expression;
-import fr.inria.gag.specification.model.specification.RightPartExpression;
+import fr.inria.gag.specification.model.specification.LeftPartExpression;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -39,7 +39,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * @generated
 	 * @ordered
 	 */
-	protected RightPartExpression leftpart;
+	protected LeftPartExpression leftpart;
 
 	/**
 	 * The cached value of the '{@link #getRightpart() <em>Rightpart</em>}' containment reference.
@@ -75,7 +75,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RightPartExpression getLeftpart() {
+	public LeftPartExpression getLeftpart() {
 		return leftpart;
 	}
 
@@ -84,8 +84,8 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLeftpart(RightPartExpression newLeftpart, NotificationChain msgs) {
-		RightPartExpression oldLeftpart = leftpart;
+	public NotificationChain basicSetLeftpart(LeftPartExpression newLeftpart, NotificationChain msgs) {
+		LeftPartExpression oldLeftpart = leftpart;
 		leftpart = newLeftpart;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -103,7 +103,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeftpart(RightPartExpression newLeftpart) {
+	public void setLeftpart(LeftPartExpression newLeftpart) {
 		if (newLeftpart != leftpart) {
 			NotificationChain msgs = null;
 			if (leftpart != null)
@@ -211,7 +211,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case SpecificationPackage.EQUATION__LEFTPART:
-			setLeftpart((RightPartExpression) newValue);
+			setLeftpart((LeftPartExpression) newValue);
 			return;
 		case SpecificationPackage.EQUATION__RIGHTPART:
 			setRightpart((Expression) newValue);
@@ -229,7 +229,7 @@ public class EquationImpl extends MinimalEObjectImpl.Container implements Equati
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case SpecificationPackage.EQUATION__LEFTPART:
-			setLeftpart((RightPartExpression) null);
+			setLeftpart((LeftPartExpression) null);
 			return;
 		case SpecificationPackage.EQUATION__RIGHTPART:
 			setRightpart((Expression) null);

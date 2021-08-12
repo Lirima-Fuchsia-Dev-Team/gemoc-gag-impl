@@ -299,25 +299,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleRightPartExpression
-entryRuleRightPartExpression
+// Entry rule entryRuleLeftPartExpression
+entryRuleLeftPartExpression
 :
-{ before(grammarAccess.getRightPartExpressionRule()); }
-	 ruleRightPartExpression
-{ after(grammarAccess.getRightPartExpressionRule()); } 
+{ before(grammarAccess.getLeftPartExpressionRule()); }
+	 ruleLeftPartExpression
+{ after(grammarAccess.getLeftPartExpressionRule()); } 
 	 EOF 
 ;
 
-// Rule RightPartExpression
-ruleRightPartExpression 
+// Rule LeftPartExpression
+ruleLeftPartExpression 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getRightPartExpressionAccess().getAlternatives()); }
-		(rule__RightPartExpression__Alternatives)
-		{ after(grammarAccess.getRightPartExpressionAccess().getAlternatives()); }
+		{ before(grammarAccess.getLeftPartExpressionAccess().getAlternatives()); }
+		(rule__LeftPartExpression__Alternatives)
+		{ after(grammarAccess.getLeftPartExpressionAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -405,9 +405,9 @@ rule__Expression__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0()); }
-		ruleRightPartExpression
-		{ after(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0()); }
+		{ before(grammarAccess.getExpressionAccess().getLeftPartExpressionParserRuleCall_0()); }
+		ruleLeftPartExpression
+		{ after(grammarAccess.getExpressionAccess().getLeftPartExpressionParserRuleCall_0()); }
 	)
 	|
 	(
@@ -441,21 +441,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RightPartExpression__Alternatives
+rule__LeftPartExpression__Alternatives
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0()); }
+		{ before(grammarAccess.getLeftPartExpressionAccess().getIdExpressionParserRuleCall_0()); }
 		ruleIdExpression
-		{ after(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0()); }
+		{ after(grammarAccess.getLeftPartExpressionAccess().getIdExpressionParserRuleCall_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1()); }
+		{ before(grammarAccess.getLeftPartExpressionAccess().getLocalDataParserRuleCall_1()); }
 		ruleLocalData
-		{ after(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1()); }
+		{ after(grammarAccess.getLeftPartExpressionAccess().getLocalDataParserRuleCall_1()); }
 	)
 ;
 finally {
@@ -3624,9 +3624,9 @@ rule__Equation__LeftpartAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0()); }
-		ruleRightPartExpression
-		{ after(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0()); }
+		{ before(grammarAccess.getEquationAccess().getLeftpartLeftPartExpressionParserRuleCall_0_0()); }
+		ruleLeftPartExpression
+		{ after(grammarAccess.getEquationAccess().getLeftpartLeftPartExpressionParserRuleCall_0_0()); }
 	)
 ;
 finally {
@@ -3718,9 +3718,9 @@ rule__FunctionExpression__ExpressionsAssignment_2_0
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0()); }
-		ruleRightPartExpression
-		{ after(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0()); }
+		{ before(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_0_0()); }
+		ruleLeftPartExpression
+		{ after(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_0_0()); }
 	)
 ;
 finally {
@@ -3733,9 +3733,9 @@ rule__FunctionExpression__ExpressionsAssignment_2_1_1
 	}
 :
 	(
-		{ before(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0()); }
-		ruleRightPartExpression
-		{ after(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0()); }
+		{ before(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_1_1_0()); }
+		ruleLeftPartExpression
+		{ after(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_1_1_0()); }
 	)
 ;
 finally {

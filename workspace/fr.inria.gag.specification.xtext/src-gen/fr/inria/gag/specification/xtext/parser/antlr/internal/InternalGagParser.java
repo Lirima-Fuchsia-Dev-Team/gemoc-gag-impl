@@ -373,11 +373,11 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalGag.g:174:1: ruleExpression returns [EObject current=null] : (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression ) ;
+    // InternalGag.g:174:1: ruleExpression returns [EObject current=null] : (this_LeftPartExpression_0= ruleLeftPartExpression | this_FunctionExpression_1= ruleFunctionExpression ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject this_RightPartExpression_0 = null;
+        EObject this_LeftPartExpression_0 = null;
 
         EObject this_FunctionExpression_1 = null;
 
@@ -386,10 +386,10 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:180:2: ( (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression ) )
-            // InternalGag.g:181:2: (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression )
+            // InternalGag.g:180:2: ( (this_LeftPartExpression_0= ruleLeftPartExpression | this_FunctionExpression_1= ruleFunctionExpression ) )
+            // InternalGag.g:181:2: (this_LeftPartExpression_0= ruleLeftPartExpression | this_FunctionExpression_1= ruleFunctionExpression )
             {
-            // InternalGag.g:181:2: (this_RightPartExpression_0= ruleRightPartExpression | this_FunctionExpression_1= ruleFunctionExpression )
+            // InternalGag.g:181:2: (this_LeftPartExpression_0= ruleLeftPartExpression | this_FunctionExpression_1= ruleFunctionExpression )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -433,18 +433,18 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalGag.g:182:3: this_RightPartExpression_0= ruleRightPartExpression
+                    // InternalGag.g:182:3: this_LeftPartExpression_0= ruleLeftPartExpression
                     {
 
-                    			newCompositeNode(grammarAccess.getExpressionAccess().getRightPartExpressionParserRuleCall_0());
+                    			newCompositeNode(grammarAccess.getExpressionAccess().getLeftPartExpressionParserRuleCall_0());
                     		
                     pushFollow(FOLLOW_2);
-                    this_RightPartExpression_0=ruleRightPartExpression();
+                    this_LeftPartExpression_0=ruleLeftPartExpression();
 
                     state._fsp--;
 
 
-                    			current = this_RightPartExpression_0;
+                    			current = this_LeftPartExpression_0;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -2343,7 +2343,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEquation"
-    // InternalGag.g:985:1: ruleEquation returns [EObject current=null] : ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
+    // InternalGag.g:985:1: ruleEquation returns [EObject current=null] : ( ( (lv_leftpart_0_0= ruleLeftPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
     public final EObject ruleEquation() throws RecognitionException {
         EObject current = null;
 
@@ -2358,23 +2358,23 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:991:2: ( ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) )
-            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // InternalGag.g:991:2: ( ( ( (lv_leftpart_0_0= ruleLeftPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' ) )
+            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleLeftPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
             {
-            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
-            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleRightPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';'
+            // InternalGag.g:992:2: ( ( (lv_leftpart_0_0= ruleLeftPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleLeftPartExpression ) ) otherlv_1= '=' ( (lv_rightpart_2_0= ruleExpression ) ) otherlv_3= ';'
             {
-            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleRightPartExpression ) )
-            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleRightPartExpression )
+            // InternalGag.g:993:3: ( (lv_leftpart_0_0= ruleLeftPartExpression ) )
+            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleLeftPartExpression )
             {
-            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleRightPartExpression )
-            // InternalGag.g:995:5: lv_leftpart_0_0= ruleRightPartExpression
+            // InternalGag.g:994:4: (lv_leftpart_0_0= ruleLeftPartExpression )
+            // InternalGag.g:995:5: lv_leftpart_0_0= ruleLeftPartExpression
             {
 
-            					newCompositeNode(grammarAccess.getEquationAccess().getLeftpartRightPartExpressionParserRuleCall_0_0());
+            					newCompositeNode(grammarAccess.getEquationAccess().getLeftpartLeftPartExpressionParserRuleCall_0_0());
             				
             pushFollow(FOLLOW_23);
-            lv_leftpart_0_0=ruleRightPartExpression();
+            lv_leftpart_0_0=ruleLeftPartExpression();
 
             state._fsp--;
 
@@ -2386,7 +2386,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             						current,
             						"leftpart",
             						lv_leftpart_0_0,
-            						"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
+            						"fr.inria.gag.specification.xtext.Gag.LeftPartExpression");
             					afterParserOrEnumRuleCall();
             				
 
@@ -2456,25 +2456,25 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEquation"
 
 
-    // $ANTLR start "entryRuleRightPartExpression"
-    // InternalGag.g:1043:1: entryRuleRightPartExpression returns [EObject current=null] : iv_ruleRightPartExpression= ruleRightPartExpression EOF ;
-    public final EObject entryRuleRightPartExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleLeftPartExpression"
+    // InternalGag.g:1043:1: entryRuleLeftPartExpression returns [EObject current=null] : iv_ruleLeftPartExpression= ruleLeftPartExpression EOF ;
+    public final EObject entryRuleLeftPartExpression() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleRightPartExpression = null;
+        EObject iv_ruleLeftPartExpression = null;
 
 
         try {
-            // InternalGag.g:1043:60: (iv_ruleRightPartExpression= ruleRightPartExpression EOF )
-            // InternalGag.g:1044:2: iv_ruleRightPartExpression= ruleRightPartExpression EOF
+            // InternalGag.g:1043:59: (iv_ruleLeftPartExpression= ruleLeftPartExpression EOF )
+            // InternalGag.g:1044:2: iv_ruleLeftPartExpression= ruleLeftPartExpression EOF
             {
-             newCompositeNode(grammarAccess.getRightPartExpressionRule()); 
+             newCompositeNode(grammarAccess.getLeftPartExpressionRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleRightPartExpression=ruleRightPartExpression();
+            iv_ruleLeftPartExpression=ruleLeftPartExpression();
 
             state._fsp--;
 
-             current =iv_ruleRightPartExpression; 
+             current =iv_ruleLeftPartExpression; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2489,12 +2489,12 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleRightPartExpression"
+    // $ANTLR end "entryRuleLeftPartExpression"
 
 
-    // $ANTLR start "ruleRightPartExpression"
-    // InternalGag.g:1050:1: ruleRightPartExpression returns [EObject current=null] : (this_IdExpression_0= ruleIdExpression | this_LocalData_1= ruleLocalData ) ;
-    public final EObject ruleRightPartExpression() throws RecognitionException {
+    // $ANTLR start "ruleLeftPartExpression"
+    // InternalGag.g:1050:1: ruleLeftPartExpression returns [EObject current=null] : (this_IdExpression_0= ruleIdExpression | this_LocalData_1= ruleLocalData ) ;
+    public final EObject ruleLeftPartExpression() throws RecognitionException {
         EObject current = null;
 
         EObject this_IdExpression_0 = null;
@@ -2543,7 +2543,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     // InternalGag.g:1058:3: this_IdExpression_0= ruleIdExpression
                     {
 
-                    			newCompositeNode(grammarAccess.getRightPartExpressionAccess().getIdExpressionParserRuleCall_0());
+                    			newCompositeNode(grammarAccess.getLeftPartExpressionAccess().getIdExpressionParserRuleCall_0());
                     		
                     pushFollow(FOLLOW_2);
                     this_IdExpression_0=ruleIdExpression();
@@ -2561,7 +2561,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     // InternalGag.g:1067:3: this_LocalData_1= ruleLocalData
                     {
 
-                    			newCompositeNode(grammarAccess.getRightPartExpressionAccess().getLocalDataParserRuleCall_1());
+                    			newCompositeNode(grammarAccess.getLeftPartExpressionAccess().getLocalDataParserRuleCall_1());
                     		
                     pushFollow(FOLLOW_2);
                     this_LocalData_1=ruleLocalData();
@@ -2594,7 +2594,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleRightPartExpression"
+    // $ANTLR end "ruleLeftPartExpression"
 
 
     // $ANTLR start "entryRuleLocalData"
@@ -2874,7 +2874,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionExpression"
-    // InternalGag.g:1182:1: ruleFunctionExpression returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' ) ;
+    // InternalGag.g:1182:1: ruleFunctionExpression returns [EObject current=null] : ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleFunctionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2890,11 +2890,11 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalGag.g:1188:2: ( ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' ) )
-            // InternalGag.g:1189:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' )
+            // InternalGag.g:1188:2: ( ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )* )? otherlv_5= ')' ) )
+            // InternalGag.g:1189:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )* )? otherlv_5= ')' )
             {
-            // InternalGag.g:1189:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')' )
-            // InternalGag.g:1190:3: ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )? otherlv_5= ')'
+            // InternalGag.g:1189:2: ( ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )* )? otherlv_5= ')' )
+            // InternalGag.g:1190:3: ( ( ruleEString ) ) otherlv_1= '(' ( ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )* )? otherlv_5= ')'
             {
             // InternalGag.g:1190:3: ( ( ruleEString ) )
             // InternalGag.g:1191:4: ( ruleEString )
@@ -2928,7 +2928,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getFunctionExpressionAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalGag.g:1210:3: ( ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )* )?
+            // InternalGag.g:1210:3: ( ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )* )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2937,19 +2937,19 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalGag.g:1211:4: ( (lv_expressions_2_0= ruleRightPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )*
+                    // InternalGag.g:1211:4: ( (lv_expressions_2_0= ruleLeftPartExpression ) ) (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )*
                     {
-                    // InternalGag.g:1211:4: ( (lv_expressions_2_0= ruleRightPartExpression ) )
-                    // InternalGag.g:1212:5: (lv_expressions_2_0= ruleRightPartExpression )
+                    // InternalGag.g:1211:4: ( (lv_expressions_2_0= ruleLeftPartExpression ) )
+                    // InternalGag.g:1212:5: (lv_expressions_2_0= ruleLeftPartExpression )
                     {
-                    // InternalGag.g:1212:5: (lv_expressions_2_0= ruleRightPartExpression )
-                    // InternalGag.g:1213:6: lv_expressions_2_0= ruleRightPartExpression
+                    // InternalGag.g:1212:5: (lv_expressions_2_0= ruleLeftPartExpression )
+                    // InternalGag.g:1213:6: lv_expressions_2_0= ruleLeftPartExpression
                     {
 
-                    						newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_0_0());
+                    						newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_0_0());
                     					
                     pushFollow(FOLLOW_8);
-                    lv_expressions_2_0=ruleRightPartExpression();
+                    lv_expressions_2_0=ruleLeftPartExpression();
 
                     state._fsp--;
 
@@ -2961,7 +2961,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     							current,
                     							"expressions",
                     							lv_expressions_2_0,
-                    							"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
+                    							"fr.inria.gag.specification.xtext.Gag.LeftPartExpression");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -2970,7 +2970,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalGag.g:1230:4: (otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) ) )*
+                    // InternalGag.g:1230:4: (otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) ) )*
                     loop20:
                     do {
                         int alt20=2;
@@ -2983,23 +2983,23 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
 
                         switch (alt20) {
                     	case 1 :
-                    	    // InternalGag.g:1231:5: otherlv_3= ',' ( (lv_expressions_4_0= ruleRightPartExpression ) )
+                    	    // InternalGag.g:1231:5: otherlv_3= ',' ( (lv_expressions_4_0= ruleLeftPartExpression ) )
                     	    {
                     	    otherlv_3=(Token)match(input,13,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_3, grammarAccess.getFunctionExpressionAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalGag.g:1235:5: ( (lv_expressions_4_0= ruleRightPartExpression ) )
-                    	    // InternalGag.g:1236:6: (lv_expressions_4_0= ruleRightPartExpression )
+                    	    // InternalGag.g:1235:5: ( (lv_expressions_4_0= ruleLeftPartExpression ) )
+                    	    // InternalGag.g:1236:6: (lv_expressions_4_0= ruleLeftPartExpression )
                     	    {
-                    	    // InternalGag.g:1236:6: (lv_expressions_4_0= ruleRightPartExpression )
-                    	    // InternalGag.g:1237:7: lv_expressions_4_0= ruleRightPartExpression
+                    	    // InternalGag.g:1236:6: (lv_expressions_4_0= ruleLeftPartExpression )
+                    	    // InternalGag.g:1237:7: lv_expressions_4_0= ruleLeftPartExpression
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsRightPartExpressionParserRuleCall_2_1_1_0());
+                    	    							newCompositeNode(grammarAccess.getFunctionExpressionAccess().getExpressionsLeftPartExpressionParserRuleCall_2_1_1_0());
                     	    						
                     	    pushFollow(FOLLOW_8);
-                    	    lv_expressions_4_0=ruleRightPartExpression();
+                    	    lv_expressions_4_0=ruleLeftPartExpression();
 
                     	    state._fsp--;
 
@@ -3011,7 +3011,7 @@ public class InternalGagParser extends AbstractInternalAntlrParser {
                     	    								current,
                     	    								"expressions",
                     	    								lv_expressions_4_0,
-                    	    								"fr.inria.gag.specification.xtext.Gag.RightPartExpression");
+                    	    								"fr.inria.gag.specification.xtext.Gag.LeftPartExpression");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 

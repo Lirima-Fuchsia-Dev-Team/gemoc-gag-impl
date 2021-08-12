@@ -132,8 +132,8 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRightPartExpression(RightPartExpression object) {
-			return createRightPartExpressionAdapter();
+		public Adapter caseLeftPartExpression(LeftPartExpression object) {
+			return createLeftPartExpressionAdapter();
 		}
 
 		@Override
@@ -338,16 +338,16 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.RightPartExpression <em>Right Part Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.gag.specification.model.specification.LeftPartExpression <em>Left Part Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.inria.gag.specification.model.specification.RightPartExpression
+	 * @see fr.inria.gag.specification.model.specification.LeftPartExpression
 	 * @generated
 	 */
-	public Adapter createRightPartExpressionAdapter() {
+	public Adapter createLeftPartExpressionAdapter() {
 		return null;
 	}
 

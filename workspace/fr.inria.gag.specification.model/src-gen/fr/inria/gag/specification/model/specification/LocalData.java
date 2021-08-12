@@ -18,7 +18,7 @@ package fr.inria.gag.specification.model.specification;
  * @model
  * @generated
  */
-public interface LocalData extends RightPartExpression {
+public interface LocalData extends LeftPartExpression {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

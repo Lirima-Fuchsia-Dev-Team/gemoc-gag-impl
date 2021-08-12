@@ -50,7 +50,7 @@ public interface FunctionExpression extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.RightPartExpression}.
+	 * The list contents are of type {@link fr.inria.gag.specification.model.specification.LeftPartExpression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
@@ -62,6 +62,6 @@ public interface FunctionExpression extends Expression {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RightPartExpression> getExpressions();
+	EList<LeftPartExpression> getExpressions();
 
 } // FunctionExpression
