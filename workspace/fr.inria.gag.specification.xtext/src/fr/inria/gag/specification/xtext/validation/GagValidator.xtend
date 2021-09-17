@@ -3,6 +3,12 @@
  */
 package fr.inria.gag.specification.xtext.validation
 
+import org.eclipse.xtext.validation.Check
+import fr.inria.gag.specification.model.specification.DecompositionRule
+import fr.inria.gag.configuration.model.configuration.Task
+import fr.inria.gag.specification.model.specification.Service
+import fr.inria.gag.configuration.model.configuration.ConfigurationFactory
+import fr.inria.gag.specification.model.specification.SpecificationPackage
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +27,30 @@ class GagValidator extends AbstractGagValidator {
 //					INVALID_NAME)
 //		}
 //	}
+
+	@Check
+	def checkVariableDefinition(DecompositionRule rule) {
+		
+		var service = rule.eContainer as Service;
+		warning('my warning work '+service.name,SpecificationPackage.Literals.DECOMPOSITION_RULE__SUB_SERVICES);
+		
+	}
+	
+	def void initTask(Task t, Service s) {
+		t.service = s;
+		t.isOpen = true;
+		for (i : 0 ..< s.inputParameters.size) {
+			var data = ConfigurationFactory.eINSTANCE.createData;
+			data.parameter = s.inputParameters.get(i);
+			data.value = new EncapsulatedValue;
+			t.inputs.add(data);
+		}
+		for (i : 0 ..< s.outputParameters.size) {
+			var data = ConfigurationFactory.eINSTANCE.createData;
+			data.parameter = s.outputParameters.get(i);
+			data.value = new EncapsulatedValue;
+			t.outputs.add(data);
+		}
+	}
 	
 }

@@ -3,7 +3,17 @@
  */
 package fr.inria.gag.specification.xtext.validation;
 
+import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
+import fr.inria.gag.configuration.model.configuration.Data;
+import fr.inria.gag.configuration.model.configuration.Task;
+import fr.inria.gag.specification.model.specification.DecompositionRule;
+import fr.inria.gag.specification.model.specification.Service;
+import fr.inria.gag.specification.model.specification.SpecificationPackage;
 import fr.inria.gag.specification.xtext.validation.AbstractGagValidator;
+import fr.inria.gag.specification.xtext.validation.EncapsulatedValue;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +22,39 @@ import fr.inria.gag.specification.xtext.validation.AbstractGagValidator;
  */
 @SuppressWarnings("all")
 public class GagValidator extends AbstractGagValidator {
+  @Check
+  public void checkVariableDefinition(final DecompositionRule rule) {
+    EObject _eContainer = rule.eContainer();
+    Service service = ((Service) _eContainer);
+    String _name = service.getName();
+    String _plus = ("my warning work " + _name);
+    this.warning(_plus, SpecificationPackage.Literals.DECOMPOSITION_RULE__SUB_SERVICES);
+  }
+  
+  public void initTask(final Task t, final Service s) {
+    t.setService(s);
+    t.setIsOpen(true);
+    int _size = s.getInputParameters().size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        Data data = ConfigurationFactory.eINSTANCE.createData();
+        data.setParameter(s.getInputParameters().get((i).intValue()));
+        EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+        data.setValue(_encapsulatedValue);
+        t.getInputs().add(data);
+      }
+    }
+    int _size_1 = s.getOutputParameters().size();
+    ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+    for (final Integer i_1 : _doubleDotLessThan_1) {
+      {
+        Data data = ConfigurationFactory.eINSTANCE.createData();
+        data.setParameter(s.getOutputParameters().get((i_1).intValue()));
+        EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+        data.setValue(_encapsulatedValue);
+        t.getOutputs().add(data);
+      }
+    }
+  }
 }
