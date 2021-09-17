@@ -3,14 +3,24 @@
  */
 package fr.inria.gag.specification.xtext.validation;
 
+import com.google.common.base.Objects;
 import fr.inria.gag.configuration.model.configuration.ConfigurationFactory;
 import fr.inria.gag.configuration.model.configuration.Data;
+import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation;
 import fr.inria.gag.configuration.model.configuration.Task;
 import fr.inria.gag.specification.model.specification.DecompositionRule;
+import fr.inria.gag.specification.model.specification.Equation;
+import fr.inria.gag.specification.model.specification.Expression;
+import fr.inria.gag.specification.model.specification.FunctionExpression;
+import fr.inria.gag.specification.model.specification.IdExpression;
+import fr.inria.gag.specification.model.specification.LeftPartExpression;
+import fr.inria.gag.specification.model.specification.LocalData;
 import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 import fr.inria.gag.specification.xtext.validation.AbstractGagValidator;
 import fr.inria.gag.specification.xtext.validation.EncapsulatedValue;
+import java.util.ArrayList;
+import java.util.Hashtable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
@@ -26,9 +36,155 @@ public class GagValidator extends AbstractGagValidator {
   public void checkVariableDefinition(final DecompositionRule rule) {
     EObject _eContainer = rule.eContainer();
     Service service = ((Service) _eContainer);
-    String _name = service.getName();
-    String _plus = ("my warning work " + _name);
-    this.warning(_plus, SpecificationPackage.Literals.DECOMPOSITION_RULE__SUB_SERVICES);
+    Task t = ConfigurationFactory.eINSTANCE.createTask();
+    this.initTask(t, service);
+    int _size = rule.getSubServices().size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        final Service element = rule.getSubServices().get((i).intValue());
+        Task st = ConfigurationFactory.eINSTANCE.createTask();
+        this.initTask(st, element);
+        t.getSubTasks().add(st);
+      }
+    }
+    ArrayList<Task> context = new ArrayList<Task>();
+    Hashtable<String, Data> localVariables = new Hashtable<String, Data>();
+    ArrayList<PendingLocalFunctionComputation> localFunctions = new ArrayList<PendingLocalFunctionComputation>();
+    context.add(t);
+    context.addAll(t.getSubTasks());
+    boolean continue_ = true;
+    int _size_1 = rule.getSemantic().getEquations().size();
+    ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+    for (final Integer i_1 : _doubleDotLessThan_1) {
+      if (continue_) {
+        Equation eq = rule.getSemantic().getEquations().get((i_1).intValue());
+        Data data1 = ((Data) null);
+        LeftPartExpression _leftpart = eq.getLeftpart();
+        if ((_leftpart instanceof IdExpression)) {
+          LeftPartExpression _leftpart_1 = eq.getLeftpart();
+          IdExpression eql = ((IdExpression) _leftpart_1);
+          String _serviceName = eql.getServiceName();
+          String _parameterName = eql.getParameterName();
+          String[] ref1 = new String[] { _serviceName, _parameterName };
+          data1 = this.findReference(ref1, context);
+          boolean _equals = Objects.equal(data1, null);
+          if (_equals) {
+            continue_ = false;
+            String _serviceName_1 = eql.getServiceName();
+            String _plus = ("the parameter " + _serviceName_1);
+            String _plus_1 = (_plus + ".");
+            String _parameterName_1 = eql.getParameterName();
+            String _plus_2 = (_plus_1 + _parameterName_1);
+            String _plus_3 = (_plus_2 + " doesn\'t exist");
+            this.error(_plus_3, 
+              SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+          }
+        } else {
+          LeftPartExpression _leftpart_2 = eq.getLeftpart();
+          LocalData eql_1 = ((LocalData) _leftpart_2);
+          data1 = localVariables.get(eql_1.getName().trim());
+          boolean _equals_1 = Objects.equal(data1, null);
+          if (_equals_1) {
+            data1 = ConfigurationFactory.eINSTANCE.createData();
+            EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
+            data1.setValue(_encapsulatedValue);
+            localVariables.put(eql_1.getName().trim(), data1);
+          }
+        }
+        if (continue_) {
+          Expression _rightpart = eq.getRightpart();
+          if ((_rightpart instanceof LeftPartExpression)) {
+            Data data2 = ((Data) null);
+            Expression _rightpart_1 = eq.getRightpart();
+            if ((_rightpart_1 instanceof IdExpression)) {
+              Expression _rightpart_2 = eq.getRightpart();
+              final IdExpression rightPartIdExpression = ((IdExpression) _rightpart_2);
+              String _serviceName_2 = rightPartIdExpression.getServiceName();
+              String _parameterName_2 = rightPartIdExpression.getParameterName();
+              final String[] ref2 = new String[] { _serviceName_2, _parameterName_2 };
+              data2 = this.findReference(ref2, context);
+              boolean _equals_2 = Objects.equal(data2, null);
+              if (_equals_2) {
+                continue_ = false;
+                String _get = ref2[0];
+                String _plus_4 = ("the parameter " + _get);
+                String _plus_5 = (_plus_4 + ".");
+                String _get_1 = ref2[1];
+                String _plus_6 = (_plus_5 + _get_1);
+                String _plus_7 = (_plus_6 + " doesn\'t exist");
+                this.error(_plus_7, 
+                  SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+              }
+            } else {
+              Expression _rightpart_3 = eq.getRightpart();
+              LocalData eqr = ((LocalData) _rightpart_3);
+              data2 = localVariables.get(eqr.getName().trim());
+              boolean _equals_3 = Objects.equal(data2, null);
+              if (_equals_3) {
+                data2 = ConfigurationFactory.eINSTANCE.createData();
+                EncapsulatedValue _encapsulatedValue_1 = new EncapsulatedValue();
+                data2.setValue(_encapsulatedValue_1);
+                localVariables.put(eqr.getName().trim(), data2);
+              }
+            }
+            Object _value = data1.getValue();
+            EncapsulatedValue ecData1 = ((EncapsulatedValue) _value);
+            Object _value_1 = data2.getValue();
+            ecData1.addReference(((EncapsulatedValue) _value_1));
+          } else {
+            Expression _rightpart_4 = eq.getRightpart();
+            FunctionExpression func = ((FunctionExpression) _rightpart_4);
+            Object _value_2 = data1.getValue();
+            EncapsulatedValue ecData1_1 = ((EncapsulatedValue) _value_2);
+            PendingLocalFunctionComputation runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation();
+            runningFunction.setDataToCompute(data1);
+            runningFunction.setFunctiondeclaration(func.getFunction());
+            int _size_2 = func.getExpressions().size();
+            ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+            for (final Integer k : _doubleDotLessThan_2) {
+              {
+                LeftPartExpression elId = func.getExpressions().get((k).intValue());
+                Data data = ((Data) null);
+                if ((elId instanceof IdExpression)) {
+                  String _serviceName_3 = ((IdExpression) elId).getServiceName();
+                  String _parameterName_3 = ((IdExpression) elId).getParameterName();
+                  final String[] ref = new String[] { _serviceName_3, _parameterName_3 };
+                  data = this.findReference(ref, context);
+                  boolean _equals_4 = Objects.equal(data, null);
+                  if (_equals_4) {
+                    continue_ = false;
+                    String _get_2 = ref[0];
+                    String _plus_8 = ("the parameter " + _get_2);
+                    String _plus_9 = (_plus_8 + ".");
+                    String _get_3 = ref[1];
+                    String _plus_10 = (_plus_9 + _get_3);
+                    String _plus_11 = (_plus_10 + " doesn\'t exist");
+                    this.error(_plus_11, 
+                      SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+                  }
+                } else {
+                  data = localVariables.get(((LocalData) elId).getName().trim());
+                  boolean _equals_5 = Objects.equal(data, null);
+                  if (_equals_5) {
+                    data = ConfigurationFactory.eINSTANCE.createData();
+                    EncapsulatedValue _encapsulatedValue_2 = new EncapsulatedValue();
+                    data.setValue(_encapsulatedValue_2);
+                    localVariables.put(((LocalData) elId).getName().trim(), data);
+                  }
+                }
+                runningFunction.getActualParameters().add(data);
+              }
+            }
+            localFunctions.add(runningFunction);
+          }
+        }
+      }
+    }
+  }
+  
+  public boolean isALocalDataDefined() {
+    return false;
   }
   
   public void initTask(final Task t, final Service s) {
@@ -56,5 +212,38 @@ public class GagValidator extends AbstractGagValidator {
         t.getOutputs().add(data);
       }
     }
+  }
+  
+  public Data findReference(final String[] ref, final ArrayList<Task> tasks) {
+    Data objectRef = ((Data) null);
+    String serviceName = ref[0].toString().trim();
+    String serviceParameter = ref[1].toString().trim();
+    int _size = tasks.size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      {
+        Task element = tasks.get((i).intValue());
+        boolean _equals = element.getService().getName().equals(serviceName);
+        if (_equals) {
+          int _size_1 = element.getInputs().size();
+          ExclusiveRange _doubleDotLessThan_1 = new ExclusiveRange(0, _size_1, true);
+          for (final Integer j : _doubleDotLessThan_1) {
+            boolean _equals_1 = element.getInputs().get((j).intValue()).getParameter().getName().equals(serviceParameter);
+            if (_equals_1) {
+              objectRef = element.getInputs().get((j).intValue());
+            }
+          }
+          int _size_2 = element.getOutputs().size();
+          ExclusiveRange _doubleDotLessThan_2 = new ExclusiveRange(0, _size_2, true);
+          for (final Integer j_1 : _doubleDotLessThan_2) {
+            boolean _equals_2 = element.getOutputs().get((j_1).intValue()).getParameter().getName().equals(serviceParameter);
+            if (_equals_2) {
+              objectRef = element.getOutputs().get((j_1).intValue());
+            }
+          }
+        }
+      }
+    }
+    return objectRef;
   }
 }

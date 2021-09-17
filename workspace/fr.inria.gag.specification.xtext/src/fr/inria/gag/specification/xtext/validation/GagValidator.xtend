@@ -9,14 +9,22 @@ import fr.inria.gag.configuration.model.configuration.Task
 import fr.inria.gag.specification.model.specification.Service
 import fr.inria.gag.configuration.model.configuration.ConfigurationFactory
 import fr.inria.gag.specification.model.specification.SpecificationPackage
+import java.util.ArrayList
+import fr.inria.gag.configuration.model.configuration.Data
+import java.util.Hashtable
+import fr.inria.gag.specification.model.specification.IdExpression
+import fr.inria.gag.specification.model.specification.LocalData
+import fr.inria.gag.specification.model.specification.LeftPartExpression
+import fr.inria.gag.specification.model.specification.FunctionExpression
+import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class GagValidator extends AbstractGagValidator {
-	
+
 //	public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
@@ -27,15 +35,130 @@ class GagValidator extends AbstractGagValidator {
 //					INVALID_NAME)
 //		}
 //	}
-
 	@Check
 	def checkVariableDefinition(DecompositionRule rule) {
-		
+
 		var service = rule.eContainer as Service;
-		warning('my warning work '+service.name,SpecificationPackage.Literals.DECOMPOSITION_RULE__SUB_SERVICES);
+		var t = ConfigurationFactory.eINSTANCE.createTask;
+		initTask(t, service);
+		// we check if the defined rule is applicable
+		for (i : 0 ..< rule.subServices.size) {
+			val element = rule.subServices.get(i)
+			var st = ConfigurationFactory.eINSTANCE.createTask;
+			initTask(st, element);
+
+			t.subTasks.add(st);
+		}
+		// we simulate the rule application
+		var context = new ArrayList<Task>();
+		var localVariables = new Hashtable<String, Data>(); // for local Variables
+		var localFunctions = new ArrayList<PendingLocalFunctionComputation>();
+		context.add(t);
+		context.addAll(t.subTasks);
+		var continue = true;
+		for (i : 0 ..< rule.semantic.equations.size) {
+			if (continue) {
+				var eq = rule.semantic.equations.get(i);
+				// test if left part is a local data or an idExpressions
+				// creating the left part data
+				var data1 = null as Data;
+				if (eq.leftpart instanceof IdExpression) {
+					var eql = eq.leftpart as IdExpression;
+					var String[] ref1 = #[eql.serviceName, eql.parameterName];
+					data1 = findReference(ref1, context)
+					if (data1 == null) {
+						continue = false;
+						error('the parameter ' + eql.serviceName + "." + eql.parameterName + " doesn't exist",
+							SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+
+					}
+
+				} else {
+					var eql = eq.leftpart as LocalData;
+					data1 = localVariables.get(eql.name.trim());
+					if (data1 == null) {
+						data1 = ConfigurationFactory.eINSTANCE.createData();
+						data1.value = new EncapsulatedValue;
+						localVariables.put(eql.name.trim(), data1);
+					}
+				}
+
+				// creating the right part datas if we are allow to continue
+				// if the right part is not a function
+				if (continue) {
+					if (eq.rightpart instanceof LeftPartExpression) {
+						var data2 = null as Data;
+						if (eq.rightpart instanceof IdExpression) {
+							val rightPartIdExpression = eq.rightpart as IdExpression;
+							val String[] ref2 = #[rightPartIdExpression.serviceName,
+								rightPartIdExpression.parameterName];
+							data2 = findReference(ref2, context);
+							if (data2 == null) {
+								continue = false;
+								error('the parameter ' + ref2.get(0) + "." + ref2.get(1) + " doesn't exist",
+									SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+
+							}
+
+						} else {
+							var eqr = eq.rightpart as LocalData;
+							data2 = localVariables.get(eqr.name.trim());
+							if (data2 == null) {
+								data2 = ConfigurationFactory.eINSTANCE.createData();
+								data2.value = new EncapsulatedValue;
+								localVariables.put(eqr.name.trim(), data2);
+							}
+						}
+						var ecData1 = data1.value as EncapsulatedValue;
+						ecData1.addReference(data2.value as EncapsulatedValue);
+					} // if the rightPart is a function
+					else {
+						var func = eq.rightpart as FunctionExpression;
+						var ecData1 = data1.value as EncapsulatedValue;
+						var runningFunction = ConfigurationFactory.eINSTANCE.createPendingLocalFunctionComputation;
+						runningFunction.dataToCompute = data1;
+						runningFunction.functiondeclaration = func.function;
+						for (k : 0 ..< func.expressions.size) {
+							var elId = func.expressions.get(k);
+							var data = null as Data;
+							if (elId instanceof IdExpression) {
+								val String[] ref = #[(elId as IdExpression).serviceName,
+									(elId as IdExpression).parameterName];
+								data = findReference(ref, context);
+								if (data == null) {
+									continue = false;
+									error('the parameter ' + ref.get(0) + "." + ref.get(1) + " doesn't exist",
+										SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+
+								}
+							} // it is a local data
+							else {
+								data = localVariables.get((elId as LocalData).name.trim());
+								if (data == null) {
+									data = ConfigurationFactory.eINSTANCE.createData();
+									data.value = new EncapsulatedValue;
+									localVariables.put((elId as LocalData).name.trim(), data);
+								}
+							}
+							runningFunction.actualParameters.add(data);
+						}
+						localFunctions.add(runningFunction);
+					}
+				}
+			}
+		}
 		
+		// now if continue is true we check if local data are defined
+		
+		//now we check if a local data or parameter is defined twice
+		
+		 
 	}
-	
+
+    def boolean isALocalDataDefined(){
+    	
+    	return false;
+    }
 	def void initTask(Task t, Service s) {
 		t.service = s;
 		t.isOpen = true;
@@ -51,6 +174,33 @@ class GagValidator extends AbstractGagValidator {
 			data.value = new EncapsulatedValue;
 			t.outputs.add(data);
 		}
+
 	}
-	
+
+	def fr.inria.gag.configuration.model.configuration.Data findReference(String[] ref, ArrayList<Task> tasks) {
+		var objectRef = null as fr.inria.gag.configuration.model.configuration.Data;
+		var serviceName = ref.get(0).toString.trim;
+		var serviceParameter = ref.get(1).toString.trim;
+		// Console.debug(serviceName+"."+serviceParameter);
+		for (i : 0 ..< tasks.size) {
+			var element = tasks.get(i);
+			if (element.service.name.equals(serviceName)) {
+				// we look in inputs and outputs to find the parameter
+				for (j : 0 ..< element.inputs.size) {
+					if (element.inputs.get(j).parameter.name.equals(serviceParameter)) {
+						objectRef = element.inputs.get(j);
+					// Console.debug('i found');
+					}
+				}
+				for (j : 0 ..< element.outputs.size) {
+					if (element.outputs.get(j).parameter.name.equals(serviceParameter)) {
+						objectRef = element.outputs.get(j);
+					// Console.debug('i found');
+					}
+				}
+			}
+		}
+		return objectRef;
+	}
+
 }
