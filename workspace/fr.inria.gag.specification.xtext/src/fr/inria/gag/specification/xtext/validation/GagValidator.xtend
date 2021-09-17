@@ -53,6 +53,7 @@ class GagValidator extends AbstractGagValidator {
 		var context = new ArrayList<Task>();
 		var localVariables = new Hashtable<String, Data>(); // for local Variables
 		var localFunctions = new ArrayList<PendingLocalFunctionComputation>();
+		var assignments = new Hashtable<String,Data>();
 		context.add(t);
 		context.addAll(t.subTasks);
 		var continue = true;
@@ -71,6 +72,16 @@ class GagValidator extends AbstractGagValidator {
 						error('the parameter ' + eql.serviceName + "." + eql.parameterName + " doesn't exist",
 							SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
 
+					}else{
+						var name = (eql.serviceName + "." + eql.parameterName).trim();
+						if(assignments.get(name)==null){
+							assignments.put(name,data1);
+						}else{
+							// the variable is already defined, generate error
+							continue=false;
+							error('the parameter ' + name + " is defined twice",
+							SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+						}
 					}
 
 				} else {
@@ -80,6 +91,11 @@ class GagValidator extends AbstractGagValidator {
 						data1 = ConfigurationFactory.eINSTANCE.createData();
 						data1.value = new EncapsulatedValue;
 						localVariables.put(eql.name.trim(), data1);
+					}else{
+						// the variable is already defined, generate error
+							continue=false;
+							error('the local variable ' + eql.name.trim() + " is defined twice",
+							SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
 					}
 				}
 

@@ -53,6 +53,7 @@ public class GagValidator extends AbstractGagValidator {
     ArrayList<Task> context = new ArrayList<Task>();
     Hashtable<String, Data> localVariables = new Hashtable<String, Data>();
     ArrayList<PendingLocalFunctionComputation> localFunctions = new ArrayList<PendingLocalFunctionComputation>();
+    Hashtable<String, Data> assignments = new Hashtable<String, Data>();
     context.add(t);
     context.addAll(t.getSubTasks());
     boolean continue_ = true;
@@ -81,17 +82,38 @@ public class GagValidator extends AbstractGagValidator {
             String _plus_3 = (_plus_2 + " doesn\'t exist");
             this.error(_plus_3, 
               SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+          } else {
+            String _serviceName_2 = eql.getServiceName();
+            String _plus_4 = (_serviceName_2 + ".");
+            String _parameterName_2 = eql.getParameterName();
+            String name = (_plus_4 + _parameterName_2).trim();
+            Data _get = assignments.get(name);
+            boolean _equals_1 = Objects.equal(_get, null);
+            if (_equals_1) {
+              assignments.put(name, data1);
+            } else {
+              continue_ = false;
+              this.error((("the parameter " + name) + " is defined twice"), 
+                SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+            }
           }
         } else {
           LeftPartExpression _leftpart_2 = eq.getLeftpart();
           LocalData eql_1 = ((LocalData) _leftpart_2);
           data1 = localVariables.get(eql_1.getName().trim());
-          boolean _equals_1 = Objects.equal(data1, null);
-          if (_equals_1) {
+          boolean _equals_2 = Objects.equal(data1, null);
+          if (_equals_2) {
             data1 = ConfigurationFactory.eINSTANCE.createData();
             EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
             data1.setValue(_encapsulatedValue);
             localVariables.put(eql_1.getName().trim(), data1);
+          } else {
+            continue_ = false;
+            String _trim = eql_1.getName().trim();
+            String _plus_5 = ("the local variable " + _trim);
+            String _plus_6 = (_plus_5 + " is defined twice");
+            this.error(_plus_6, 
+              SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
           }
         }
         if (continue_) {
@@ -102,28 +124,28 @@ public class GagValidator extends AbstractGagValidator {
             if ((_rightpart_1 instanceof IdExpression)) {
               Expression _rightpart_2 = eq.getRightpart();
               final IdExpression rightPartIdExpression = ((IdExpression) _rightpart_2);
-              String _serviceName_2 = rightPartIdExpression.getServiceName();
-              String _parameterName_2 = rightPartIdExpression.getParameterName();
-              final String[] ref2 = new String[] { _serviceName_2, _parameterName_2 };
+              String _serviceName_3 = rightPartIdExpression.getServiceName();
+              String _parameterName_3 = rightPartIdExpression.getParameterName();
+              final String[] ref2 = new String[] { _serviceName_3, _parameterName_3 };
               data2 = this.findReference(ref2, context);
-              boolean _equals_2 = Objects.equal(data2, null);
-              if (_equals_2) {
+              boolean _equals_3 = Objects.equal(data2, null);
+              if (_equals_3) {
                 continue_ = false;
-                String _get = ref2[0];
-                String _plus_4 = ("the parameter " + _get);
-                String _plus_5 = (_plus_4 + ".");
-                String _get_1 = ref2[1];
-                String _plus_6 = (_plus_5 + _get_1);
-                String _plus_7 = (_plus_6 + " doesn\'t exist");
-                this.error(_plus_7, 
+                String _get_1 = ref2[0];
+                String _plus_7 = ("the parameter " + _get_1);
+                String _plus_8 = (_plus_7 + ".");
+                String _get_2 = ref2[1];
+                String _plus_9 = (_plus_8 + _get_2);
+                String _plus_10 = (_plus_9 + " doesn\'t exist");
+                this.error(_plus_10, 
                   SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
               }
             } else {
               Expression _rightpart_3 = eq.getRightpart();
               LocalData eqr = ((LocalData) _rightpart_3);
               data2 = localVariables.get(eqr.getName().trim());
-              boolean _equals_3 = Objects.equal(data2, null);
-              if (_equals_3) {
+              boolean _equals_4 = Objects.equal(data2, null);
+              if (_equals_4) {
                 data2 = ConfigurationFactory.eINSTANCE.createData();
                 EncapsulatedValue _encapsulatedValue_1 = new EncapsulatedValue();
                 data2.setValue(_encapsulatedValue_1);
@@ -149,26 +171,26 @@ public class GagValidator extends AbstractGagValidator {
                 LeftPartExpression elId = func.getExpressions().get((k).intValue());
                 Data data = ((Data) null);
                 if ((elId instanceof IdExpression)) {
-                  String _serviceName_3 = ((IdExpression) elId).getServiceName();
-                  String _parameterName_3 = ((IdExpression) elId).getParameterName();
-                  final String[] ref = new String[] { _serviceName_3, _parameterName_3 };
+                  String _serviceName_4 = ((IdExpression) elId).getServiceName();
+                  String _parameterName_4 = ((IdExpression) elId).getParameterName();
+                  final String[] ref = new String[] { _serviceName_4, _parameterName_4 };
                   data = this.findReference(ref, context);
-                  boolean _equals_4 = Objects.equal(data, null);
-                  if (_equals_4) {
+                  boolean _equals_5 = Objects.equal(data, null);
+                  if (_equals_5) {
                     continue_ = false;
-                    String _get_2 = ref[0];
-                    String _plus_8 = ("the parameter " + _get_2);
-                    String _plus_9 = (_plus_8 + ".");
-                    String _get_3 = ref[1];
-                    String _plus_10 = (_plus_9 + _get_3);
-                    String _plus_11 = (_plus_10 + " doesn\'t exist");
-                    this.error(_plus_11, 
+                    String _get_3 = ref[0];
+                    String _plus_11 = ("the parameter " + _get_3);
+                    String _plus_12 = (_plus_11 + ".");
+                    String _get_4 = ref[1];
+                    String _plus_13 = (_plus_12 + _get_4);
+                    String _plus_14 = (_plus_13 + " doesn\'t exist");
+                    this.error(_plus_14, 
                       SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
                   }
                 } else {
                   data = localVariables.get(((LocalData) elId).getName().trim());
-                  boolean _equals_5 = Objects.equal(data, null);
-                  if (_equals_5) {
+                  boolean _equals_6 = Objects.equal(data, null);
+                  if (_equals_6) {
                     data = ConfigurationFactory.eINSTANCE.createData();
                     EncapsulatedValue _encapsulatedValue_2 = new EncapsulatedValue();
                     data.setValue(_encapsulatedValue_2);
@@ -194,10 +216,10 @@ public class GagValidator extends AbstractGagValidator {
         boolean _not = (!_isALocalDataDefined);
         if (_not) {
           final Set<String> _converted_keysLocalVariables_1 = (Set<String>)keysLocalVariables;
-          String _get_2 = ((String[])Conversions.unwrapArray(_converted_keysLocalVariables_1, String.class))[(i_2).intValue()];
-          String _plus_8 = ("the local variable " + _get_2);
-          String _plus_9 = (_plus_8 + " is not defined");
-          this.error(_plus_9, 
+          String _get_3 = ((String[])Conversions.unwrapArray(_converted_keysLocalVariables_1, String.class))[(i_2).intValue()];
+          String _plus_11 = ("the local variable " + _get_3);
+          String _plus_12 = (_plus_11 + " is not defined");
+          this.error(_plus_12, 
             SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
         }
       }
