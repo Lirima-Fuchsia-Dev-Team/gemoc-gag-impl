@@ -254,7 +254,7 @@
                 </children>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_jWnFU_tlEeuti4qydf5syg" containerData="7500" selectedElement="_jWnFXftlEeuti4qydf5syg">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_jWnFU_tlEeuti4qydf5syg" containerData="7500" selectedElement="_jWnFVPtlEeuti4qydf5syg">
               <children xsi:type="basic:PartSashContainer" xmi:id="_jWnFVPtlEeuti4qydf5syg" containerData="6188" selectedElement="_jWnFVftlEeuti4qydf5syg" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_jWnFVftlEeuti4qydf5syg" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_jWntcftlEeuti4qydf5syg"/>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_jWnFVvtlEeuti4qydf5syg" containerData="2500" selectedElement="_jWnFV_tlEeuti4qydf5syg">
@@ -411,7 +411,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_jWntevtlEeuti4qydf5syg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="test.gag" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; partName=&quot;test.gag&quot; title=&quot;test.gag&quot; tooltip=&quot;SyntaxWithLocalData/test.gag&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/SyntaxWithLocalData/test.gag&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;432&quot; selectionTopPixel=&quot;150&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;fr.inria.gag.specification.xtext.Gag&quot; name=&quot;test.gag&quot; partName=&quot;test.gag&quot; title=&quot;test.gag&quot; tooltip=&quot;SyntaxWithLocalData/test.gag&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/SyntaxWithLocalData/test.gag&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;246&quot; selectionTopPixel=&quot;37&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>fr.inria.gag.specification.xtext.Gag</tags>
           <tags>removeOnHide</tags>
@@ -1076,7 +1076,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_jWphg_tlEeuti4qydf5syg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_21jTEBdlEey9a8EXzfEofw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_jWyEeftlEeuti4qydf5syg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_LHCKQBedEeyLls1aoLOsFA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_jWyEeftlEeuti4qydf5syg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_jWphkPtlEeuti4qydf5syg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1167,7 +1167,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_jWpiA_tlEeuti4qydf5syg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_21oyoBdlEey9a8EXzfEofw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_jWxe0_tlEeuti4qydf5syg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_LHJfABedEeyLls1aoLOsFA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_jWxe0_tlEeuti4qydf5syg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_jWqvoPtlEeuti4qydf5syg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

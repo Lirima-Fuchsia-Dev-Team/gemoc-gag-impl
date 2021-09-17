@@ -149,14 +149,30 @@ class GagValidator extends AbstractGagValidator {
 		}
 		
 		// now if continue is true we check if local data are defined
+		var keysLocalVariables=localVariables.keySet;
+		for (i : 0 ..< keysLocalVariables.size){
+			var locdat= localVariables.get(keysLocalVariables.get(i));
+			if(!isALocalDataDefined(locdat,localFunctions)){
+				error('the local variable ' + keysLocalVariables.get(i) + " is not defined",
+									SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+			}
+		}
 		
 		//now we check if a local data or parameter is defined twice
 		
 		 
 	}
 
-    def boolean isALocalDataDefined(){
-    	
+    def boolean isALocalDataDefined(Data local, ArrayList<PendingLocalFunctionComputation> functions){
+    	var ecV = local.value as EncapsulatedValue;
+    	if(ecV.reference!=null){
+    		return true;
+    	}
+    	for(i : 0 ..< functions.size){
+    		if(functions.get(i).dataToCompute==local){
+    			return true;
+    		}
+    	}
     	return false;
     }
 	def void initTask(Task t, Service s) {

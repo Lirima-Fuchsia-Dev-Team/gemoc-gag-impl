@@ -21,8 +21,10 @@ import fr.inria.gag.specification.xtext.validation.AbstractGagValidator;
 import fr.inria.gag.specification.xtext.validation.EncapsulatedValue;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 
 /**
@@ -181,9 +183,44 @@ public class GagValidator extends AbstractGagValidator {
         }
       }
     }
+    Set<String> keysLocalVariables = localVariables.keySet();
+    int _size_3 = keysLocalVariables.size();
+    ExclusiveRange _doubleDotLessThan_3 = new ExclusiveRange(0, _size_3, true);
+    for (final Integer i_2 : _doubleDotLessThan_3) {
+      {
+        final Set<String> _converted_keysLocalVariables = (Set<String>)keysLocalVariables;
+        Data locdat = localVariables.get(((Object[])Conversions.unwrapArray(_converted_keysLocalVariables, Object.class))[(i_2).intValue()]);
+        boolean _isALocalDataDefined = this.isALocalDataDefined(locdat, localFunctions);
+        boolean _not = (!_isALocalDataDefined);
+        if (_not) {
+          final Set<String> _converted_keysLocalVariables_1 = (Set<String>)keysLocalVariables;
+          String _get_2 = ((String[])Conversions.unwrapArray(_converted_keysLocalVariables_1, String.class))[(i_2).intValue()];
+          String _plus_8 = ("the local variable " + _get_2);
+          String _plus_9 = (_plus_8 + " is not defined");
+          this.error(_plus_9, 
+            SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+        }
+      }
+    }
   }
   
-  public boolean isALocalDataDefined() {
+  public boolean isALocalDataDefined(final Data local, final ArrayList<PendingLocalFunctionComputation> functions) {
+    Object _value = local.getValue();
+    EncapsulatedValue ecV = ((EncapsulatedValue) _value);
+    EncapsulatedValue _reference = ecV.getReference();
+    boolean _notEquals = (!Objects.equal(_reference, null));
+    if (_notEquals) {
+      return true;
+    }
+    int _size = functions.size();
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, _size, true);
+    for (final Integer i : _doubleDotLessThan) {
+      Data _dataToCompute = functions.get((i).intValue()).getDataToCompute();
+      boolean _equals = Objects.equal(_dataToCompute, local);
+      if (_equals) {
+        return true;
+      }
+    }
     return false;
   }
   

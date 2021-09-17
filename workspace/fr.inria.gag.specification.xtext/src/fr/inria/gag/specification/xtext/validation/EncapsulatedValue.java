@@ -41,4 +41,8 @@ public class EncapsulatedValue {
 		return (getValue()==null);
 	}
 	
+	public EncapsulatedValue getReference() {
+		return next;
+	}
+	
 }
