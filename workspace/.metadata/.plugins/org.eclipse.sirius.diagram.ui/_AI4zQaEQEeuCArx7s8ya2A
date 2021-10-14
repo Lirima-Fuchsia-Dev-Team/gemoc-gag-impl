@@ -1,6 +1,6 @@
-#Thu Aug 12 13:26:36 WAT 2021
+#Thu Oct 14 13:53:17 WAT 2021
 rulergrid.snaptogeometry=true
-viewport.x=391
+viewport.x=0
 zoom=1.0
 print.margin.right=0.5
 rulergrid.rulerunit=1
@@ -17,4 +17,4 @@ rulergrid.gridlevel=true
 print.margin.top=0.5
 print.useMillim=true
 print.usePortrait=true
-viewport.y=443
+viewport.y=327

@@ -17,6 +17,7 @@ import fr.inria.gag.specification.model.specification.LocalData
 import fr.inria.gag.specification.model.specification.LeftPartExpression
 import fr.inria.gag.specification.model.specification.FunctionExpression
 import fr.inria.gag.configuration.model.configuration.PendingLocalFunctionComputation
+import fr.inria.gag.specification.model.specification.GAG
 
 /**
  * This class contains custom validation rules. 
@@ -35,6 +36,40 @@ class GagValidator extends AbstractGagValidator {
 //					INVALID_NAME)
 //		}
 //	}
+/* 
+@Check
+	def checkInterface(GAG gag) {
+		var services = gag.services;
+		var tk = new ValidatorTool();
+		var inter= new ServiceInterface();
+		System.out.println("interface at the beginning :"+inter.toString);
+		System.out.println("services sizes :"+services.size);
+		for( i:0..<services.size){
+			var service=services.get(i);
+			System.out.println("treating service :"+i);
+			for(k:0 ..<service.rules.size){
+				var rule=service.rules.get(k);
+				inter=tk.getRuleInterface(rule);
+				System.out.println("interface :"+inter.toString);
+		//warning("interface :"+tk.getRuleInterface(rule).toString,SpecificationPackage.Literals.GAG__SERVICES);
+			}
+		}
+		System.out.println("interface at the end :"+inter.toString);
+		
+		//error("interface :"+tk.getRuleInterface(rule).toString,SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+		
+	}
+	*/
+	
+	
+	@Check
+	def checkInterface(DecompositionRule rule) {
+		var tk = new ValidatorTool();
+		System.out.println("interface :"+tk.getRuleInterface(rule).toString);
+		warning("interface :"+tk.getRuleInterface(rule).toString,SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+		//error("interface :"+tk.getRuleInterface(rule).toString,SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+		
+	}
 	@Check
 	def checkVariableDefinition(DecompositionRule rule) {
 
@@ -67,14 +102,14 @@ class GagValidator extends AbstractGagValidator {
 					var eql = eq.leftpart as IdExpression;
 					var String[] ref1 = #[eql.serviceName, eql.parameterName];
 					data1 = findReference(ref1, context)
-					if (data1 == null) {
+					if (data1 === null) {
 						continue = false;
 						error('the parameter ' + eql.serviceName + "." + eql.parameterName + " doesn't exist",
 							SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
 
 					}else{
 						var name = (eql.serviceName + "." + eql.parameterName).trim();
-						if(assignments.get(name)==null){
+						if(assignments.get(name)===null){
 							assignments.put(name,data1);
 						}else{
 							// the variable is already defined, generate error
@@ -174,7 +209,7 @@ class GagValidator extends AbstractGagValidator {
 			}
 		}
 		
-		//now we check if a local data or parameter is defined twice
+		//now we check if the grammar is not cyclic 
 		
 		 
 	}

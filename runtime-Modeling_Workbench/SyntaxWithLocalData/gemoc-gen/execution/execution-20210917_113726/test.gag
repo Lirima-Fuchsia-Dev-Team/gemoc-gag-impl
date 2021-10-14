@@ -11,15 +11,13 @@ GAG g {
 		
 		},
 		S2 (a)[b] : {
-			r2 :
+			r1 :
 			   
 				sem : {
 					func : g {location : "a.local.functions.Util", method :"g"}
 					equations : 
-					l=S2.a;
-					k=l;
-					S2.b = g(k) ;
-					
+					i=g(S2.a);
+					S2.b = g(i) ;
 					
 				}
 				
@@ -27,7 +25,7 @@ GAG g {
 		
 		},
 		Axiom S3 (a)[b,c] : {
-			r3 : sub : S1, S2
+			r1 : sub : S1, S2
 				 sem : {
 					equations : 
 					S1.a = S3.a ;

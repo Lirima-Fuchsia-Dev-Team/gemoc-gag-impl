@@ -45,4 +45,6 @@ public class EncapsulatedValue {
 		return next;
 	}
 	
+	
+	
 }

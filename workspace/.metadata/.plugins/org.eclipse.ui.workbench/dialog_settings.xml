@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="374" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
 		<item value="-1" key="dialogWidth"/>
@@ -13,9 +17,11 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.xtext.xtext.ui.wizard.ecore2xtext.NewXtextProjectFromEcoreWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.xtend.ide.wizards.NewXtendClassWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.xtext.projectwiz"/>
+			<item value="fr.inria.diverse.k3.category"/>
+			<item value="org.eclipse.xtend.ide.wizards"/>
+			<item value="org.eclipse.xtend.ide.wizards/org.eclipse.xtend.project.Examples"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">

@@ -19,6 +19,7 @@ import fr.inria.gag.specification.model.specification.Service;
 import fr.inria.gag.specification.model.specification.SpecificationPackage;
 import fr.inria.gag.specification.xtext.validation.AbstractGagValidator;
 import fr.inria.gag.specification.xtext.validation.EncapsulatedValue;
+import fr.inria.gag.specification.xtext.validation.ValidatorTool;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Set;
@@ -34,6 +35,41 @@ import org.eclipse.xtext.xbase.lib.ExclusiveRange;
  */
 @SuppressWarnings("all")
 public class GagValidator extends AbstractGagValidator {
+  /**
+   * @Check
+   * def checkInterface(GAG gag) {
+   * var services = gag.services;
+   * var tk = new ValidatorTool();
+   * var inter= new ServiceInterface();
+   * System.out.println("interface at the beginning :"+inter.toString);
+   * System.out.println("services sizes :"+services.size);
+   * for( i:0..<services.size){
+   * var service=services.get(i);
+   * System.out.println("treating service :"+i);
+   * for(k:0 ..<service.rules.size){
+   * var rule=service.rules.get(k);
+   * inter=tk.getRuleInterface(rule);
+   * System.out.println("interface :"+inter.toString);
+   * //warning("interface :"+tk.getRuleInterface(rule).toString,SpecificationPackage.Literals.GAG__SERVICES);
+   * }
+   * }
+   * System.out.println("interface at the end :"+inter.toString);
+   * 
+   * //error("interface :"+tk.getRuleInterface(rule).toString,SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+   * 
+   * }
+   */
+  @Check
+  public void checkInterface(final DecompositionRule rule) {
+    ValidatorTool tk = new ValidatorTool();
+    String _string = tk.getRuleInterface(rule).toString();
+    String _plus = ("interface :" + _string);
+    System.out.println(_plus);
+    String _string_1 = tk.getRuleInterface(rule).toString();
+    String _plus_1 = ("interface :" + _string_1);
+    this.warning(_plus_1, SpecificationPackage.Literals.DECOMPOSITION_RULE__SEMANTIC);
+  }
+  
   @Check
   public void checkVariableDefinition(final DecompositionRule rule) {
     EObject _eContainer = rule.eContainer();
@@ -71,8 +107,7 @@ public class GagValidator extends AbstractGagValidator {
           String _parameterName = eql.getParameterName();
           String[] ref1 = new String[] { _serviceName, _parameterName };
           data1 = this.findReference(ref1, context);
-          boolean _equals = Objects.equal(data1, null);
-          if (_equals) {
+          if ((data1 == null)) {
             continue_ = false;
             String _serviceName_1 = eql.getServiceName();
             String _plus = ("the parameter " + _serviceName_1);
@@ -88,8 +123,8 @@ public class GagValidator extends AbstractGagValidator {
             String _parameterName_2 = eql.getParameterName();
             String name = (_plus_4 + _parameterName_2).trim();
             Data _get = assignments.get(name);
-            boolean _equals_1 = Objects.equal(_get, null);
-            if (_equals_1) {
+            boolean _tripleEquals = (_get == null);
+            if (_tripleEquals) {
               assignments.put(name, data1);
             } else {
               continue_ = false;
@@ -101,8 +136,8 @@ public class GagValidator extends AbstractGagValidator {
           LeftPartExpression _leftpart_2 = eq.getLeftpart();
           LocalData eql_1 = ((LocalData) _leftpart_2);
           data1 = localVariables.get(eql_1.getName().trim());
-          boolean _equals_2 = Objects.equal(data1, null);
-          if (_equals_2) {
+          boolean _equals = Objects.equal(data1, null);
+          if (_equals) {
             data1 = ConfigurationFactory.eINSTANCE.createData();
             EncapsulatedValue _encapsulatedValue = new EncapsulatedValue();
             data1.setValue(_encapsulatedValue);
@@ -128,8 +163,8 @@ public class GagValidator extends AbstractGagValidator {
               String _parameterName_3 = rightPartIdExpression.getParameterName();
               final String[] ref2 = new String[] { _serviceName_3, _parameterName_3 };
               data2 = this.findReference(ref2, context);
-              boolean _equals_3 = Objects.equal(data2, null);
-              if (_equals_3) {
+              boolean _equals_1 = Objects.equal(data2, null);
+              if (_equals_1) {
                 continue_ = false;
                 String _get_1 = ref2[0];
                 String _plus_7 = ("the parameter " + _get_1);
@@ -144,8 +179,8 @@ public class GagValidator extends AbstractGagValidator {
               Expression _rightpart_3 = eq.getRightpart();
               LocalData eqr = ((LocalData) _rightpart_3);
               data2 = localVariables.get(eqr.getName().trim());
-              boolean _equals_4 = Objects.equal(data2, null);
-              if (_equals_4) {
+              boolean _equals_2 = Objects.equal(data2, null);
+              if (_equals_2) {
                 data2 = ConfigurationFactory.eINSTANCE.createData();
                 EncapsulatedValue _encapsulatedValue_1 = new EncapsulatedValue();
                 data2.setValue(_encapsulatedValue_1);
@@ -175,8 +210,8 @@ public class GagValidator extends AbstractGagValidator {
                   String _parameterName_4 = ((IdExpression) elId).getParameterName();
                   final String[] ref = new String[] { _serviceName_4, _parameterName_4 };
                   data = this.findReference(ref, context);
-                  boolean _equals_5 = Objects.equal(data, null);
-                  if (_equals_5) {
+                  boolean _equals_3 = Objects.equal(data, null);
+                  if (_equals_3) {
                     continue_ = false;
                     String _get_3 = ref[0];
                     String _plus_11 = ("the parameter " + _get_3);
@@ -189,8 +224,8 @@ public class GagValidator extends AbstractGagValidator {
                   }
                 } else {
                   data = localVariables.get(((LocalData) elId).getName().trim());
-                  boolean _equals_6 = Objects.equal(data, null);
-                  if (_equals_6) {
+                  boolean _equals_4 = Objects.equal(data, null);
+                  if (_equals_4) {
                     data = ConfigurationFactory.eINSTANCE.createData();
                     EncapsulatedValue _encapsulatedValue_2 = new EncapsulatedValue();
                     data.setValue(_encapsulatedValue_2);
